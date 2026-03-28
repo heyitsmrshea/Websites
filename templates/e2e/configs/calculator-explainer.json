@@ -1,0 +1,13 @@
+{
+  "slug": "calculator-explainer",
+  "siteDir": "../../calculator-explainer",
+  "artifactsDir": "../../review/calculator-explainer",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "index.html",
+      "requiredSections": ["hero", "calculator", "assumptions", "outputs", "recommendation", "next-step"],
+      "requiredReviewImages": ["hero-graphic", "calculator-frame", "output-chart", "comparison-table"]
+    }
+  ]
+}

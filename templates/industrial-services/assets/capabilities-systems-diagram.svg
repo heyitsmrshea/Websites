@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f0ece4"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#f8f5ef" stroke="#948d80" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="164" fill="#b14d24" opacity="0.12"/><rect x="86" y="292" width="1428" height="586" fill="#f8f5ef" opacity="0.94"/>
+  
+    <rect x="146" y="168" width="404" height="244" fill="#f0ece4" stroke="#948d80" stroke-width="4"/>
+    <rect x="638" y="168" width="326" height="244" fill="#d9d2c4" stroke="#948d80" stroke-width="4"/>
+    <rect x="1042" y="168" width="388" height="244" fill="#f0ece4" stroke="#948d80" stroke-width="4"/>
+    <rect x="276" y="580" width="292" height="188" fill="#d9d2c4" stroke="#948d80" stroke-width="4"/>
+    <rect x="810" y="522" width="420" height="256" fill="#f8f5ef" stroke="#948d80" stroke-width="4"/>
+    <path d="M350 412 L350 560 L548 560" fill="none" stroke="#b14d24" stroke-width="14"/>
+    <path d="M802 290 L964 290 L964 520" fill="none" stroke="#525e67" stroke-width="14"/>
+    <path d="M1160 412 L1160 510 L1018 510" fill="none" stroke="#b14d24" stroke-width="14"/>
+  
+  <line x1="142" y1="866" x2="1458" y2="866" stroke="#b14d24" stroke-width="10"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f0ece4" opacity="0.88"/>
+    <text x="104" y="127" fill="#151718" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">SYSTEMS DIAGRAM</text>
+    <text x="104" y="914" fill="#52585a" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">CAPABILITIES</text>
+  
+</svg>

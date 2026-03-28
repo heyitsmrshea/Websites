@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f3efe6"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#fbf8f1" stroke="#b6ab98" stroke-width="8"/>
+  <rect x="92" y="92" width="1416" height="824" fill="#f3efe6" opacity="0.72"/><rect x="96" y="96" width="420" height="760" fill="#e7decd" opacity="0.92"/>
+  
+    <rect x="188" y="130" width="520" height="700" fill="#e7decd" stroke="#b6ab98" stroke-width="4"/>
+    <ellipse cx="448" cy="366" rx="138" ry="168" fill="#5e6852" opacity="0.32"/>
+    <rect x="812" y="180" width="520" height="520" fill="#f3efe6" stroke="#b6ab98" stroke-width="4"/>
+    <rect x="874" y="246" width="396" height="120" fill="#e7decd" opacity="0.65"/>
+    <rect x="874" y="410" width="396" height="28" fill="#e7decd" opacity="0.85"/>
+    <rect x="874" y="462" width="334" height="18" fill="#e7decd" opacity="0.55"/>
+    <rect x="874" y="506" width="366" height="18" fill="#e7decd" opacity="0.55"/>
+  
+  <line x1="990" y1="748" x2="1326" y2="492" stroke="#5e6852" stroke-width="12"/><circle cx="1098" cy="664" r="14" fill="#8f7a55"/><circle cx="1210" cy="580" r="14" fill="#8f7a55"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f3efe6" opacity="0.88"/>
+    <text x="104" y="127" fill="#1f221e" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">LEADER 02</text>
+    <text x="104" y="914" fill="#58584e" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">LEADERSHIP</text>
+  
+</svg>

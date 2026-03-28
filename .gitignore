@@ -1,0 +1,12 @@
+*
+!.gitignore
+!README.md
+!.github/
+!.github/**
+!templates/
+!templates/**
+
+templates/node_modules/
+templates/.DS_Store
+templates/review/**/*.webp
+templates/review/**/*.tmp

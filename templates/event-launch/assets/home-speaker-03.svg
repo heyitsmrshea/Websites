@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f5eadb"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#fff7ed" stroke="#c59b74" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" fill="#fff7ed" opacity="0.98"/><rect x="112" y="112" width="1376" height="140" fill="#b22b20" opacity="0.16"/>
+  
+    <rect x="188" y="130" width="520" height="700" fill="#f0d8be" stroke="#c59b74" stroke-width="4"/>
+    <ellipse cx="448" cy="366" rx="138" ry="168" fill="#b22b20" opacity="0.32"/>
+    <rect x="812" y="180" width="520" height="520" fill="#f5eadb" stroke="#c59b74" stroke-width="4"/>
+    <rect x="874" y="246" width="396" height="120" fill="#f0d8be" opacity="0.65"/>
+    <rect x="874" y="410" width="396" height="28" fill="#f0d8be" opacity="0.85"/>
+    <rect x="874" y="462" width="334" height="18" fill="#f0d8be" opacity="0.55"/>
+    <rect x="874" y="506" width="366" height="18" fill="#f0d8be" opacity="0.55"/>
+  
+  <text x="132" y="236" fill="#b22b20" font-size="120" font-family="Arial, sans-serif" font-weight="700">27</text>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f5eadb" opacity="0.88"/>
+    <text x="104" y="127" fill="#19120f" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">SPEAKER 03</text>
+    <text x="104" y="914" fill="#6b4e3c" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">HOME</text>
+  
+</svg>

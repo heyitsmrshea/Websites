@@ -1,0 +1,37 @@
+{
+  "slug": "saas-marketing",
+  "siteDir": "../../saas-marketing",
+  "artifactsDir": "../../review/saas-marketing",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "index.html",
+      "requiredSections": ["hero", "feature-architecture", "proof", "workflow", "pricing-preview", "demo-cta"],
+      "requiredReviewImages": ["hero-ui", "workflow-ui", "feature-ui-01", "feature-ui-02", "proof-graphic"]
+    },
+    {
+      "slug": "product",
+      "path": "product.html",
+      "requiredSections": ["hero", "feature-deep-dive", "integrations", "security", "ui-gallery"],
+      "requiredReviewImages": ["hero-ui", "gallery-01", "gallery-02", "gallery-03", "security-graphic"]
+    },
+    {
+      "slug": "pricing",
+      "path": "pricing.html",
+      "requiredSections": ["hero", "plans", "comparison", "faq"],
+      "requiredReviewImages": ["comparison-frame"]
+    },
+    {
+      "slug": "company",
+      "path": "company.html",
+      "requiredSections": ["hero", "story", "team", "principles"],
+      "requiredReviewImages": ["team-image", "story-image"]
+    },
+    {
+      "slug": "demo",
+      "path": "demo.html",
+      "requiredSections": ["hero", "request", "expectations"],
+      "requiredReviewImages": ["hero-ui"]
+    }
+  ]
+}

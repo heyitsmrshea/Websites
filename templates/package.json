@@ -1,0 +1,14 @@
+{
+  "name": "website-template-system",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:all": "node ./tools/generate-all-templates.mjs",
+    "review:all": "./run-zero-stop-template-program.sh",
+    "score:all": "node ./tools/score-fullpage-screenshots.mjs",
+    "loop:finish": "./run-autonomous-finish-loop.sh"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

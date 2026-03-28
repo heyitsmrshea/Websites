@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f3efe7"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#fcf8f1" stroke="#b8ae9f" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" fill="#fcf8f1" opacity="0.98"/><rect x="780" y="110" width="640" height="90" fill="#e4dbce" opacity="0.65"/>
+  
+    <rect x="255" y="185" width="720" height="560" fill="#e4dbce" stroke="#b8ae9f" stroke-width="4"/>
+    <rect x="965" y="375" width="360" height="420" fill="#f3efe7" stroke="#b8ae9f" stroke-width="4"/>
+    <rect x="315" y="245" width="600" height="440" fill="#8a3f34" opacity="0.18"/>
+    <rect x="1005" y="415" width="280" height="320" fill="#34443e" opacity="0.18"/>
+  
+  <rect x="860" y="724" width="440" height="18" fill="#8a3f34" opacity="0.22"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f3efe7" opacity="0.88"/>
+    <text x="104" y="127" fill="#191816" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">HERO FRAME</text>
+    <text x="104" y="914" fill="#645d53" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">SERVICES</text>
+  
+</svg>

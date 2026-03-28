@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f5f7f7"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#ffffff" stroke="#b8c7cf" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" fill="#ffffff" opacity="0.98"/><rect x="86" y="690" width="1428" height="140" fill="#dce4e8" opacity="0.42"/>
+  
+    <rect x="235" y="165" width="720" height="560" fill="#dce4e8" stroke="#b8c7cf" stroke-width="4"/>
+    <rect x="885" y="355" width="360" height="420" fill="#f5f7f7" stroke="#b8c7cf" stroke-width="4"/>
+    <rect x="295" y="225" width="600" height="440" fill="#2456a6" opacity="0.18"/>
+    <rect x="925" y="395" width="280" height="320" fill="#3e6b50" opacity="0.18"/>
+  
+  <rect x="126" y="126" width="168" height="24" fill="#2456a6" opacity="0.22"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f5f7f7" opacity="0.88"/>
+    <text x="104" y="127" fill="#1a2128" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">CONTACT IMAGE</text>
+    <text x="104" y="914" fill="#5a6772" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">CONTACT</text>
+  
+</svg>

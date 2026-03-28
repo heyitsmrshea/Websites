@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f7f4ee"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#fffdf9" stroke="#c8c0b4" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" fill="#fffdf9" opacity="0.98"/><rect x="118" y="118" width="420" height="764" fill="#ebe6dd" opacity="0.55"/>
+  
+    <rect x="206" y="226" width="720" height="560" fill="#ebe6dd" stroke="#c8c0b4" stroke-width="4"/>
+    <rect x="1016" y="386" width="360" height="420" fill="#f7f4ee" stroke="#c8c0b4" stroke-width="4"/>
+    <rect x="266" y="286" width="600" height="440" fill="#7b6d5a" opacity="0.18"/>
+    <rect x="1056" y="426" width="280" height="320" fill="#36312d" opacity="0.18"/>
+  
+  <rect x="1220" y="760" width="180" height="72" fill="#f7f4ee" opacity="0.76"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f7f4ee" opacity="0.88"/>
+    <text x="104" y="127" fill="#171716" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">THUMB 05</text>
+    <text x="104" y="914" fill="#666159" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">PORTFOLIO</text>
+  
+</svg>

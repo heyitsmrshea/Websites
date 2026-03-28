@@ -1,0 +1,19 @@
+{
+  "slug": "event-launch",
+  "siteDir": "../../event-launch",
+  "artifactsDir": "../../review/event-launch",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "index.html",
+      "requiredSections": ["hero", "date-location", "lineup", "agenda", "rsvp-cta", "footer"],
+      "requiredReviewImages": ["hero-poster", "speaker-01", "speaker-02", "speaker-03", "venue-image"]
+    },
+    {
+      "slug": "rsvp",
+      "path": "rsvp.html",
+      "requiredSections": ["hero", "form", "details"],
+      "requiredReviewImages": ["hero-poster"]
+    }
+  ]
+}

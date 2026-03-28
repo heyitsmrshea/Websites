@@ -1,0 +1,31 @@
+{
+  "slug": "luxury-product-launch",
+  "siteDir": "../../luxury-product-launch",
+  "artifactsDir": "../../review/luxury-product-launch",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "index.html",
+      "requiredSections": ["hero", "highlights", "craft", "gallery", "inquiry-cta"],
+      "requiredReviewImages": ["hero-primary", "hero-secondary", "product-detail-01", "product-detail-02", "gallery-01", "gallery-02"]
+    },
+    {
+      "slug": "product",
+      "path": "product.html",
+      "requiredSections": ["hero", "specs", "detail-gallery", "edition-note", "ownership"],
+      "requiredReviewImages": ["hero-primary", "spec-frame", "detail-01", "detail-02", "detail-03", "detail-04"]
+    },
+    {
+      "slug": "story",
+      "path": "story.html",
+      "requiredSections": ["hero", "origin", "materials", "process", "closing"],
+      "requiredReviewImages": ["hero-primary", "materials-frame", "process-frame", "craft-image"]
+    },
+    {
+      "slug": "inquiry",
+      "path": "inquiry.html",
+      "requiredSections": ["hero", "inquiry", "availability"],
+      "requiredReviewImages": ["hero-primary", "ownership-frame"]
+    }
+  ]
+}

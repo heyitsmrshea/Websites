@@ -1,0 +1,31 @@
+{
+  "slug": "startup-brochure",
+  "siteDir": "../../startup-brochure",
+  "artifactsDir": "../../review/startup-brochure",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "index.html",
+      "requiredSections": ["hero", "what-we-do", "why-us", "process", "contact-cta"],
+      "requiredReviewImages": ["hero-frame", "process-graphic"]
+    },
+    {
+      "slug": "about",
+      "path": "about.html",
+      "requiredSections": ["hero", "story", "team"],
+      "requiredReviewImages": ["team-image"]
+    },
+    {
+      "slug": "services",
+      "path": "services.html",
+      "requiredSections": ["hero", "services", "approach"],
+      "requiredReviewImages": ["service-graphic"]
+    },
+    {
+      "slug": "contact",
+      "path": "contact.html",
+      "requiredSections": ["hero", "contact"],
+      "requiredReviewImages": ["contact-image"]
+    }
+  ]
+}

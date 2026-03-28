@@ -1,0 +1,80 @@
+{
+  "templates": 10,
+  "screenshots": 82,
+  "passedCriteria": 2870,
+  "totalCriteria": 2870,
+  "verdict": "PASS",
+  "templateSummaries": [
+    {
+      "template": "calculator-explainer",
+      "screenshots": 2,
+      "passedCriteria": 70,
+      "totalCriteria": 70,
+      "verdict": "PASS"
+    },
+    {
+      "template": "consultancy",
+      "screenshots": 10,
+      "passedCriteria": 350,
+      "totalCriteria": 350,
+      "verdict": "PASS"
+    },
+    {
+      "template": "corporate-investment",
+      "screenshots": 16,
+      "passedCriteria": 560,
+      "totalCriteria": 560,
+      "verdict": "PASS"
+    },
+    {
+      "template": "event-launch",
+      "screenshots": 4,
+      "passedCriteria": 140,
+      "totalCriteria": 140,
+      "verdict": "PASS"
+    },
+    {
+      "template": "industrial-services",
+      "screenshots": 12,
+      "passedCriteria": 420,
+      "totalCriteria": 420,
+      "verdict": "PASS"
+    },
+    {
+      "template": "luxury-product-launch",
+      "screenshots": 8,
+      "passedCriteria": 280,
+      "totalCriteria": 280,
+      "verdict": "PASS"
+    },
+    {
+      "template": "photography-portfolio",
+      "screenshots": 10,
+      "passedCriteria": 350,
+      "totalCriteria": 350,
+      "verdict": "PASS"
+    },
+    {
+      "template": "presentation-microsite",
+      "screenshots": 2,
+      "passedCriteria": 70,
+      "totalCriteria": 70,
+      "verdict": "PASS"
+    },
+    {
+      "template": "saas-marketing",
+      "screenshots": 10,
+      "passedCriteria": 350,
+      "totalCriteria": 350,
+      "verdict": "PASS"
+    },
+    {
+      "template": "startup-brochure",
+      "screenshots": 8,
+      "passedCriteria": 280,
+      "totalCriteria": 280,
+      "verdict": "PASS"
+    }
+  ],
+  "failingScreenshots": []
+}

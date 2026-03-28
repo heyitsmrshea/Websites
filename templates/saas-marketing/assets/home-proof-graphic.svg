@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f2f5f3"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#ffffff" stroke="#b7cac0" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" rx="18" fill="#ffffff" opacity="0.98"/><rect x="86" y="86" width="1428" height="68" rx="18" fill="#dde7e1"/>
+  
+    <rect x="148" y="186" width="540" height="612" fill="#f2f5f3" stroke="#b7cac0" stroke-width="4"/>
+    <rect x="768" y="186" width="624" height="612" fill="#ffffff" stroke="#b7cac0" stroke-width="4"/>
+    <line x1="846" y1="706" x2="1320" y2="706" stroke="#b7cac0" stroke-width="4"/>
+    <line x1="846" y1="626" x2="1320" y2="626" stroke="#b7cac0" stroke-width="3"/>
+    <line x1="846" y1="546" x2="1320" y2="546" stroke="#b7cac0" stroke-width="3"/>
+    <path d="M860 676 L944 618 L1012 632 L1108 534 L1206 558 L1290 426" fill="none" stroke="#12734b" stroke-width="14"/>
+    <rect x="220" y="300" width="392" height="38" fill="#dde7e1" opacity="0.85"/>
+    <rect x="220" y="368" width="340" height="22" fill="#dde7e1" opacity="0.6"/>
+    <rect x="220" y="420" width="370" height="22" fill="#dde7e1" opacity="0.6"/>
+  
+  <circle cx="236" cy="206" r="8" fill="#12734b"/><circle cx="266" cy="206" r="8" fill="#123d6b"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f2f5f3" opacity="0.88"/>
+    <text x="104" y="127" fill="#14201c" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">PROOF GRAPHIC</text>
+    <text x="104" y="914" fill="#566760" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">HOME</text>
+  
+</svg>

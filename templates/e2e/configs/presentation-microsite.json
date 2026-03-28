@@ -1,0 +1,13 @@
+{
+  "slug": "presentation-microsite",
+  "siteDir": "../../presentation-microsite",
+  "artifactsDir": "../../review/presentation-microsite",
+  "pages": [
+    {
+      "slug": "deck",
+      "path": "index.html",
+      "requiredSections": ["slide-01", "slide-02", "slide-03", "slide-04", "slide-05", "slide-06", "slide-07", "slide-08"],
+      "requiredReviewImages": ["slide-01-frame", "slide-02-frame", "slide-03-frame", "slide-04-frame", "slide-05-frame", "slide-06-frame", "slide-07-frame", "slide-08-frame"]
+    }
+  ]
+}

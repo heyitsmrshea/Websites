@@ -1,0 +1,110 @@
+{
+  "template": "saas-marketing",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/saas-marketing",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/saas-marketing",
+  "pages": 5,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-ui",
+        "proof-graphic",
+        "workflow-ui",
+        "feature-ui-01",
+        "feature-ui-02"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "product.html",
+      "slug": "product",
+      "capturedRoles": [
+        "hero-ui",
+        "security-graphic",
+        "gallery-01",
+        "gallery-02",
+        "gallery-03"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "pricing.html",
+      "slug": "pricing",
+      "capturedRoles": [
+        "comparison-frame"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "company.html",
+      "slug": "company",
+      "capturedRoles": [
+        "story-image",
+        "team-image"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "demo.html",
+      "slug": "demo",
+      "capturedRoles": [
+        "hero-ui"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-ui",
+        "proof-graphic",
+        "workflow-ui",
+        "feature-ui-01",
+        "feature-ui-02"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "product.html",
+      "slug": "product",
+      "capturedRoles": [
+        "hero-ui",
+        "security-graphic",
+        "gallery-01",
+        "gallery-02",
+        "gallery-03"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "pricing.html",
+      "slug": "pricing",
+      "capturedRoles": [
+        "comparison-frame"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "company.html",
+      "slug": "company",
+      "capturedRoles": [
+        "story-image",
+        "team-image"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "demo.html",
+      "slug": "demo",
+      "capturedRoles": [
+        "hero-ui"
+      ]
+    }
+  ]
+}

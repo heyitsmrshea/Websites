@@ -1,0 +1,40 @@
+{
+  "template": "calculator-explainer",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/calculator-explainer",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/calculator-explainer",
+  "pages": 1,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-graphic",
+        "calculator-frame",
+        "calculator-frame",
+        "output-chart",
+        "comparison-table",
+        "output-chart",
+        "comparison-table"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-graphic",
+        "calculator-frame",
+        "calculator-frame",
+        "output-chart",
+        "comparison-table",
+        "output-chart",
+        "comparison-table"
+      ]
+    }
+  ]
+}

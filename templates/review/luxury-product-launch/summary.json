@@ -1,0 +1,104 @@
+{
+  "template": "luxury-product-launch",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/luxury-product-launch",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/luxury-product-launch",
+  "pages": 4,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-primary",
+        "hero-secondary",
+        "product-detail-01",
+        "product-detail-02",
+        "gallery-01",
+        "gallery-02"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "product.html",
+      "slug": "product",
+      "capturedRoles": [
+        "hero-primary",
+        "spec-frame",
+        "detail-01",
+        "detail-02",
+        "detail-03",
+        "detail-04"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "story.html",
+      "slug": "story",
+      "capturedRoles": [
+        "hero-primary",
+        "materials-frame",
+        "process-frame",
+        "craft-image"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "inquiry.html",
+      "slug": "inquiry",
+      "capturedRoles": [
+        "hero-primary",
+        "ownership-frame"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-primary",
+        "hero-secondary",
+        "product-detail-01",
+        "product-detail-02",
+        "gallery-01",
+        "gallery-02"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "product.html",
+      "slug": "product",
+      "capturedRoles": [
+        "hero-primary",
+        "spec-frame",
+        "detail-01",
+        "detail-02",
+        "detail-03",
+        "detail-04"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "story.html",
+      "slug": "story",
+      "capturedRoles": [
+        "hero-primary",
+        "materials-frame",
+        "process-frame",
+        "craft-image"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "inquiry.html",
+      "slug": "inquiry",
+      "capturedRoles": [
+        "hero-primary",
+        "ownership-frame"
+      ]
+    }
+  ]
+}

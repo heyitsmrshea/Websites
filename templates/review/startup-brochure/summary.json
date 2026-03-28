@@ -1,0 +1,78 @@
+{
+  "template": "startup-brochure",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/startup-brochure",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/startup-brochure",
+  "pages": 4,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-frame",
+        "process-graphic"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "about.html",
+      "slug": "about",
+      "capturedRoles": [
+        "team-image"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "services.html",
+      "slug": "services",
+      "capturedRoles": [
+        "service-graphic"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "contact-image"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-frame",
+        "process-graphic"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "about.html",
+      "slug": "about",
+      "capturedRoles": [
+        "team-image"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "services.html",
+      "slug": "services",
+      "capturedRoles": [
+        "service-graphic"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "contact-image"
+      ]
+    }
+  ]
+}

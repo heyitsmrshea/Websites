@@ -1,0 +1,42 @@
+{
+  "template": "presentation-microsite",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/presentation-microsite",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/presentation-microsite",
+  "pages": 1,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "deck",
+      "capturedRoles": [
+        "slide-01-frame",
+        "slide-02-frame",
+        "slide-03-frame",
+        "slide-04-frame",
+        "slide-05-frame",
+        "slide-06-frame",
+        "slide-07-frame",
+        "slide-08-frame"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "deck",
+      "capturedRoles": [
+        "slide-01-frame",
+        "slide-02-frame",
+        "slide-03-frame",
+        "slide-04-frame",
+        "slide-05-frame",
+        "slide-06-frame",
+        "slide-07-frame",
+        "slide-08-frame"
+      ]
+    }
+  ]
+}

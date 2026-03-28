@@ -1,0 +1,98 @@
+{
+  "template": "consultancy",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/consultancy",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/consultancy",
+  "pages": 5,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-frame",
+        "proof-graphic"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "services.html",
+      "slug": "services",
+      "capturedRoles": [
+        "hero-frame"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "work.html",
+      "slug": "work",
+      "capturedRoles": [
+        "case-study-01",
+        "case-study-02",
+        "case-study-03"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "about.html",
+      "slug": "about",
+      "capturedRoles": [
+        "portrait"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "portrait"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-frame",
+        "proof-graphic"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "services.html",
+      "slug": "services",
+      "capturedRoles": [
+        "hero-frame"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "work.html",
+      "slug": "work",
+      "capturedRoles": [
+        "case-study-01",
+        "case-study-02",
+        "case-study-03"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "about.html",
+      "slug": "about",
+      "capturedRoles": [
+        "portrait"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "portrait"
+      ]
+    }
+  ]
+}

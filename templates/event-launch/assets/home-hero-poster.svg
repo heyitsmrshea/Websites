@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f5eadb"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#fff7ed" stroke="#c59b74" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" fill="#fff7ed" opacity="0.98"/><rect x="112" y="112" width="1376" height="140" fill="#b22b20" opacity="0.16"/>
+  
+    <rect x="265" y="195" width="720" height="560" fill="#f0d8be" stroke="#c59b74" stroke-width="4"/>
+    <rect x="1015" y="305" width="360" height="420" fill="#f5eadb" stroke="#c59b74" stroke-width="4"/>
+    <rect x="325" y="255" width="600" height="440" fill="#b22b20" opacity="0.18"/>
+    <rect x="1055" y="345" width="280" height="320" fill="#2f3b5a" opacity="0.18"/>
+  
+  <text x="132" y="236" fill="#b22b20" font-size="120" font-family="Arial, sans-serif" font-weight="700">27</text>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f5eadb" opacity="0.88"/>
+    <text x="104" y="127" fill="#19120f" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">HERO POSTER</text>
+    <text x="104" y="914" fill="#6b4e3c" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">HOME</text>
+  
+</svg>

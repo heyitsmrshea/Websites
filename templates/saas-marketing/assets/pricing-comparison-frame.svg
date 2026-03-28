@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f2f5f3"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#ffffff" stroke="#b7cac0" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" rx="18" fill="#ffffff" opacity="0.98"/><rect x="86" y="86" width="1428" height="68" rx="18" fill="#dde7e1"/>
+  
+    <rect x="124" y="168" width="1350" height="660" fill="#ffffff" stroke="#b7cac0" stroke-width="6"/>
+    <rect x="124" y="168" width="1350" height="86" fill="#dde7e1" opacity="0.8"/>
+    <line x1="124" y1="330" x2="1474" y2="330" stroke="#b7cac0" stroke-width="3"/><line x1="124" y1="420" x2="1474" y2="420" stroke="#b7cac0" stroke-width="3"/><line x1="124" y1="510" x2="1474" y2="510" stroke="#b7cac0" stroke-width="3"/><line x1="124" y1="600" x2="1474" y2="600" stroke="#b7cac0" stroke-width="3"/><line x1="124" y1="690" x2="1474" y2="690" stroke="#b7cac0" stroke-width="3"/>
+    <line x1="430" y1="168" x2="430" y2="828" stroke="#b7cac0" stroke-width="3"/><line x1="690" y1="168" x2="690" y2="828" stroke="#b7cac0" stroke-width="3"/><line x1="950" y1="168" x2="950" y2="828" stroke="#b7cac0" stroke-width="3"/><line x1="1210" y1="168" x2="1210" y2="828" stroke="#b7cac0" stroke-width="3"/>
+    <rect x="178" y="286" width="172" height="24" fill="#12734b" opacity="0.28"/>
+    <rect x="468" y="376" width="172" height="24" fill="#123d6b" opacity="0.22"/>
+    <rect x="992" y="556" width="190" height="24" fill="#12734b" opacity="0.22"/>
+  
+  <circle cx="236" cy="206" r="8" fill="#12734b"/><circle cx="266" cy="206" r="8" fill="#123d6b"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f2f5f3" opacity="0.88"/>
+    <text x="104" y="127" fill="#14201c" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">COMPARISON FRAME</text>
+    <text x="104" y="914" fill="#566760" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">PRICING</text>
+  
+</svg>

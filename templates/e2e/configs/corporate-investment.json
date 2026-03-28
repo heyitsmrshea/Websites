@@ -1,0 +1,55 @@
+{
+  "slug": "corporate-investment",
+  "siteDir": "../../corporate-investment",
+  "artifactsDir": "../../review/corporate-investment",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "index.html",
+      "requiredSections": ["hero", "snapshot", "thesis", "model", "transactions-preview", "leadership-preview", "contact-cta"],
+      "requiredReviewImages": ["hero-frame", "snapshot-graphic", "thesis-diagram", "transaction-01", "transaction-02", "leadership-group"]
+    },
+    {
+      "slug": "firm",
+      "path": "firm.html",
+      "requiredSections": ["hero", "positioning", "history", "operating-principles", "team"],
+      "requiredReviewImages": ["hero-frame", "timeline-graphic", "team-portrait"]
+    },
+    {
+      "slug": "strategy",
+      "path": "strategy.html",
+      "requiredSections": ["hero", "mandate", "sectors", "value-creation", "criteria"],
+      "requiredReviewImages": ["hero-frame", "sector-map", "value-creation-diagram"]
+    },
+    {
+      "slug": "transactions",
+      "path": "transactions.html",
+      "requiredSections": ["hero", "featured-transactions", "table", "approach"],
+      "requiredReviewImages": ["hero-frame", "transaction-01", "transaction-02", "transaction-03", "table-frame"]
+    },
+    {
+      "slug": "leadership",
+      "path": "leadership.html",
+      "requiredSections": ["hero", "leaders", "advisors", "contact-cta"],
+      "requiredReviewImages": ["hero-frame", "leader-01", "leader-02", "leader-03"]
+    },
+    {
+      "slug": "contact",
+      "path": "contact.html",
+      "requiredSections": ["hero", "contact-details", "inquiry"],
+      "requiredReviewImages": ["hero-frame", "office-frame"]
+    },
+    {
+      "slug": "privacy",
+      "path": "privacy.html",
+      "requiredSections": ["hero", "policy"],
+      "requiredReviewImages": []
+    },
+    {
+      "slug": "terms",
+      "path": "terms.html",
+      "requiredSections": ["hero", "terms"],
+      "requiredReviewImages": []
+    }
+  ]
+}

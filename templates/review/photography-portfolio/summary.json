@@ -1,0 +1,124 @@
+{
+  "template": "photography-portfolio",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/photography-portfolio",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/photography-portfolio",
+  "pages": 5,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-image",
+        "project-01",
+        "project-02",
+        "project-03",
+        "project-04"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "portfolio.html",
+      "slug": "portfolio",
+      "capturedRoles": [
+        "thumb-01",
+        "thumb-02",
+        "thumb-03",
+        "thumb-04",
+        "thumb-05",
+        "thumb-06"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "project-editorial.html",
+      "slug": "project-editorial",
+      "capturedRoles": [
+        "hero-image",
+        "gallery-01",
+        "gallery-02",
+        "gallery-03",
+        "gallery-04",
+        "gallery-05",
+        "gallery-06"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "about.html",
+      "slug": "about",
+      "capturedRoles": [
+        "portrait",
+        "studio-image"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "portrait"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-image",
+        "project-01",
+        "project-02",
+        "project-03",
+        "project-04"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "portfolio.html",
+      "slug": "portfolio",
+      "capturedRoles": [
+        "thumb-01",
+        "thumb-02",
+        "thumb-03",
+        "thumb-04",
+        "thumb-05",
+        "thumb-06"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "project-editorial.html",
+      "slug": "project-editorial",
+      "capturedRoles": [
+        "hero-image",
+        "gallery-01",
+        "gallery-02",
+        "gallery-03",
+        "gallery-04",
+        "gallery-05",
+        "gallery-06"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "about.html",
+      "slug": "about",
+      "capturedRoles": [
+        "portrait",
+        "studio-image"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "portrait"
+      ]
+    }
+  ]
+}

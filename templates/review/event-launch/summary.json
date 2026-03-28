@@ -1,0 +1,52 @@
+{
+  "template": "event-launch",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/event-launch",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/event-launch",
+  "pages": 2,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-poster",
+        "venue-image",
+        "speaker-01",
+        "speaker-02",
+        "speaker-03"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "rsvp.html",
+      "slug": "rsvp",
+      "capturedRoles": [
+        "hero-poster"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-poster",
+        "venue-image",
+        "speaker-01",
+        "speaker-02",
+        "speaker-03"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "rsvp.html",
+      "slug": "rsvp",
+      "capturedRoles": [
+        "hero-poster"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f3efe6"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#fbf8f1" stroke="#b6ab98" stroke-width="8"/>
+  <rect x="92" y="92" width="1416" height="824" fill="#f3efe6" opacity="0.72"/><rect x="96" y="96" width="420" height="760" fill="#e7decd" opacity="0.92"/>
+  
+    <rect x="146" y="168" width="404" height="244" fill="#f3efe6" stroke="#b6ab98" stroke-width="4"/>
+    <rect x="638" y="168" width="326" height="244" fill="#e7decd" stroke="#b6ab98" stroke-width="4"/>
+    <rect x="1042" y="168" width="388" height="244" fill="#f3efe6" stroke="#b6ab98" stroke-width="4"/>
+    <rect x="276" y="580" width="292" height="188" fill="#e7decd" stroke="#b6ab98" stroke-width="4"/>
+    <rect x="810" y="522" width="420" height="256" fill="#fbf8f1" stroke="#b6ab98" stroke-width="4"/>
+    <path d="M350 412 L350 560 L548 560" fill="none" stroke="#5e6852" stroke-width="14"/>
+    <path d="M802 290 L964 290 L964 520" fill="none" stroke="#8f7a55" stroke-width="14"/>
+    <path d="M1160 412 L1160 510 L1018 510" fill="none" stroke="#5e6852" stroke-width="14"/>
+  
+  <line x1="990" y1="748" x2="1326" y2="492" stroke="#5e6852" stroke-width="12"/><circle cx="1098" cy="664" r="14" fill="#8f7a55"/><circle cx="1210" cy="580" r="14" fill="#8f7a55"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f3efe6" opacity="0.88"/>
+    <text x="104" y="127" fill="#1f221e" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">THESIS DIAGRAM</text>
+    <text x="104" y="914" fill="#58584e" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">HOME</text>
+  
+</svg>

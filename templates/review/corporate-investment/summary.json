@@ -1,0 +1,166 @@
+{
+  "template": "corporate-investment",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/corporate-investment",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/corporate-investment",
+  "pages": 8,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-frame",
+        "snapshot-graphic",
+        "thesis-diagram",
+        "leadership-group",
+        "transaction-01",
+        "transaction-02"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "firm.html",
+      "slug": "firm",
+      "capturedRoles": [
+        "hero-frame",
+        "timeline-graphic",
+        "team-portrait"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "strategy.html",
+      "slug": "strategy",
+      "capturedRoles": [
+        "hero-frame",
+        "sector-map",
+        "value-creation-diagram"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "transactions.html",
+      "slug": "transactions",
+      "capturedRoles": [
+        "hero-frame",
+        "transaction-01",
+        "transaction-02",
+        "transaction-03",
+        "table-frame"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "leadership.html",
+      "slug": "leadership",
+      "capturedRoles": [
+        "hero-frame",
+        "leader-01",
+        "leader-02",
+        "leader-03"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "hero-frame",
+        "office-frame"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "privacy.html",
+      "slug": "privacy",
+      "capturedRoles": []
+    },
+    {
+      "device": "desktop",
+      "page": "terms.html",
+      "slug": "terms",
+      "capturedRoles": []
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-frame",
+        "snapshot-graphic",
+        "thesis-diagram",
+        "leadership-group",
+        "transaction-01",
+        "transaction-02"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "firm.html",
+      "slug": "firm",
+      "capturedRoles": [
+        "hero-frame",
+        "timeline-graphic",
+        "team-portrait"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "strategy.html",
+      "slug": "strategy",
+      "capturedRoles": [
+        "hero-frame",
+        "sector-map",
+        "value-creation-diagram"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "transactions.html",
+      "slug": "transactions",
+      "capturedRoles": [
+        "hero-frame",
+        "transaction-01",
+        "transaction-02",
+        "transaction-03",
+        "table-frame"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "leadership.html",
+      "slug": "leadership",
+      "capturedRoles": [
+        "hero-frame",
+        "leader-01",
+        "leader-02",
+        "leader-03"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "hero-frame",
+        "office-frame"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "privacy.html",
+      "slug": "privacy",
+      "capturedRoles": []
+    },
+    {
+      "device": "mobile",
+      "page": "terms.html",
+      "slug": "terms",
+      "capturedRoles": []
+    }
+  ]
+}

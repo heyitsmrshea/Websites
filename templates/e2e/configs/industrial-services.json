@@ -1,0 +1,43 @@
+{
+  "slug": "industrial-services",
+  "siteDir": "../../industrial-services",
+  "artifactsDir": "../../review/industrial-services",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "index.html",
+      "requiredSections": ["hero", "service-pillars", "facility", "process", "proof", "contact-cta"],
+      "requiredReviewImages": ["hero-frame", "service-01", "service-02", "facility-diagram", "proof-image"]
+    },
+    {
+      "slug": "services",
+      "path": "services.html",
+      "requiredSections": ["hero", "service-grid", "response", "coverage"],
+      "requiredReviewImages": ["hero-frame", "service-01", "service-02", "service-03"]
+    },
+    {
+      "slug": "capabilities",
+      "path": "capabilities.html",
+      "requiredSections": ["hero", "systems", "equipment", "certifications", "facility"],
+      "requiredReviewImages": ["hero-frame", "systems-diagram", "equipment-01", "equipment-02", "facility-frame"]
+    },
+    {
+      "slug": "ownership",
+      "path": "ownership.html",
+      "requiredSections": ["hero", "owners", "departments", "culture"],
+      "requiredReviewImages": ["hero-frame", "owner-portrait", "team-floor"]
+    },
+    {
+      "slug": "about",
+      "path": "about.html",
+      "requiredSections": ["hero", "story", "values", "standards"],
+      "requiredReviewImages": ["hero-frame", "story-image", "values-image"]
+    },
+    {
+      "slug": "contact",
+      "path": "contact.html",
+      "requiredSections": ["hero", "request", "location"],
+      "requiredReviewImages": ["hero-frame", "location-map"]
+    }
+  ]
+}

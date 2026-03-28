@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#121212"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#191919" stroke="#4f483f" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" fill="#121212" opacity="0.96"/><circle cx="1180" cy="520" r="250" fill="#9d7d55" opacity="0.22"/>
+  
+    <rect x="224" y="154" width="720" height="560" fill="#22201d" stroke="#4f483f" stroke-width="4"/>
+    <rect x="974" y="404" width="360" height="420" fill="#121212" stroke="#4f483f" stroke-width="4"/>
+    <rect x="284" y="214" width="600" height="440" fill="#9d7d55" opacity="0.18"/>
+    <rect x="1014" y="444" width="280" height="320" fill="#c7b28d" opacity="0.18"/>
+  
+  <rect x="1006" y="540" width="236" height="164" fill="#121212" opacity="0.82" stroke="#c7b28d" stroke-width="4"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#121212" opacity="0.88"/>
+    <text x="104" y="127" fill="#ece5d8" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">DETAIL 04</text>
+    <text x="104" y="914" fill="#b6ab9c" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">PRODUCT</text>
+  
+</svg>

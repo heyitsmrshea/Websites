@@ -1,0 +1,140 @@
+{
+  "template": "industrial-services",
+  "siteDir": "/Users/andrewshea/Desktop/Websites/templates/industrial-services",
+  "artifactsDir": "/Users/andrewshea/Desktop/Websites/templates/review/industrial-services",
+  "pages": 6,
+  "devices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "device": "desktop",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-frame",
+        "service-01",
+        "service-02",
+        "facility-diagram",
+        "proof-image"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "services.html",
+      "slug": "services",
+      "capturedRoles": [
+        "hero-frame",
+        "service-01",
+        "service-02",
+        "service-03"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "capabilities.html",
+      "slug": "capabilities",
+      "capturedRoles": [
+        "hero-frame",
+        "equipment-01",
+        "equipment-02",
+        "systems-diagram",
+        "facility-frame"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "ownership.html",
+      "slug": "ownership",
+      "capturedRoles": [
+        "hero-frame",
+        "owner-portrait",
+        "team-floor"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "about.html",
+      "slug": "about",
+      "capturedRoles": [
+        "hero-frame",
+        "story-image",
+        "values-image"
+      ]
+    },
+    {
+      "device": "desktop",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "hero-frame",
+        "location-map"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "index.html",
+      "slug": "home",
+      "capturedRoles": [
+        "hero-frame",
+        "service-01",
+        "service-02",
+        "facility-diagram",
+        "proof-image"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "services.html",
+      "slug": "services",
+      "capturedRoles": [
+        "hero-frame",
+        "service-01",
+        "service-02",
+        "service-03"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "capabilities.html",
+      "slug": "capabilities",
+      "capturedRoles": [
+        "hero-frame",
+        "equipment-01",
+        "equipment-02",
+        "systems-diagram",
+        "facility-frame"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "ownership.html",
+      "slug": "ownership",
+      "capturedRoles": [
+        "hero-frame",
+        "owner-portrait",
+        "team-floor"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "about.html",
+      "slug": "about",
+      "capturedRoles": [
+        "hero-frame",
+        "story-image",
+        "values-image"
+      ]
+    },
+    {
+      "device": "mobile",
+      "page": "contact.html",
+      "slug": "contact",
+      "capturedRoles": [
+        "hero-frame",
+        "location-map"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "consultancy",
+  "siteDir": "../../consultancy",
+  "artifactsDir": "../../review/consultancy",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "index.html",
+      "requiredSections": ["hero", "offer", "proof", "engagement-model", "bio", "contact-cta"],
+      "requiredReviewImages": ["hero-frame", "proof-graphic"]
+    },
+    {
+      "slug": "services",
+      "path": "services.html",
+      "requiredSections": ["hero", "services", "approach", "faq"],
+      "requiredReviewImages": ["hero-frame"]
+    },
+    {
+      "slug": "work",
+      "path": "work.html",
+      "requiredSections": ["hero", "case-studies", "outcomes"],
+      "requiredReviewImages": ["case-study-01", "case-study-02", "case-study-03"]
+    },
+    {
+      "slug": "about",
+      "path": "about.html",
+      "requiredSections": ["hero", "bio", "principles"],
+      "requiredReviewImages": ["portrait"]
+    },
+    {
+      "slug": "contact",
+      "path": "contact.html",
+      "requiredSections": ["hero", "contact"],
+      "requiredReviewImages": ["portrait"]
+    }
+  ]
+}

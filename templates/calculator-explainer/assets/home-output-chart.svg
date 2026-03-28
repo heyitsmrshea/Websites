@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f3f1ea"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#fffdfa" stroke="#bab1a2" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="828" fill="#fffdfa" opacity="0.98"/><rect x="86" y="86" width="520" height="828" fill="#f3f1ea" opacity="0.78"/>
+  
+    <rect x="148" y="186" width="540" height="612" fill="#f3f1ea" stroke="#bab1a2" stroke-width="4"/>
+    <rect x="768" y="186" width="624" height="612" fill="#fffdfa" stroke="#bab1a2" stroke-width="4"/>
+    <line x1="846" y1="706" x2="1320" y2="706" stroke="#bab1a2" stroke-width="4"/>
+    <line x1="846" y1="626" x2="1320" y2="626" stroke="#bab1a2" stroke-width="3"/>
+    <line x1="846" y1="546" x2="1320" y2="546" stroke="#bab1a2" stroke-width="3"/>
+    <path d="M860 676 L944 618 L1012 632 L1108 534 L1206 558 L1290 426" fill="none" stroke="#2d5b73" stroke-width="14"/>
+    <rect x="220" y="300" width="392" height="38" fill="#e3ded1" opacity="0.85"/>
+    <rect x="220" y="368" width="340" height="22" fill="#e3ded1" opacity="0.6"/>
+    <rect x="220" y="420" width="370" height="22" fill="#e3ded1" opacity="0.6"/>
+  
+  <rect x="202" y="748" width="294" height="20" fill="#8e6133" opacity="0.22"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f3f1ea" opacity="0.88"/>
+    <text x="104" y="127" fill="#181613" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">OUTPUT CHART</text>
+    <text x="104" y="914" fill="#5d574f" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">HOME</text>
+  
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#f0ece4"/>
+  <rect x="56" y="56" width="1488" height="888" rx="14" fill="#f8f5ef" stroke="#948d80" stroke-width="8"/>
+  <rect x="86" y="86" width="1428" height="164" fill="#b14d24" opacity="0.12"/><rect x="86" y="292" width="1428" height="586" fill="#f8f5ef" opacity="0.94"/>
+  
+    <rect x="176" y="196" width="720" height="560" fill="#d9d2c4" stroke="#948d80" stroke-width="4"/>
+    <rect x="1066" y="356" width="360" height="420" fill="#f0ece4" stroke="#948d80" stroke-width="4"/>
+    <rect x="236" y="256" width="600" height="440" fill="#b14d24" opacity="0.18"/>
+    <rect x="1106" y="396" width="280" height="320" fill="#525e67" opacity="0.18"/>
+  
+  <line x1="142" y1="866" x2="1458" y2="866" stroke="#b14d24" stroke-width="10"/>
+  
+    <rect x="86" y="84" width="360" height="68" fill="#f0ece4" opacity="0.88"/>
+    <text x="104" y="127" fill="#151718" font-size="24" font-family="Arial, sans-serif" letter-spacing="4">PROOF IMAGE</text>
+    <text x="104" y="914" fill="#52585a" font-size="21" font-family="Arial, sans-serif" letter-spacing="6">HOME</text>
+  
+</svg>
