@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECC Reference Guide — Everything Claude Code</title>
+  <meta name="description" content="Searchable quick reference for Everything Claude Code — 45 agents, 149 skills, 76 commands, 31 hooks, 30 MCP servers, and language rules.">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#131318",
+            "surface-bright": "#39383e",
+            "surface-container-low": "#1b1b20",
+            "surface-container-highest": "#35343a",
+            "surface-tint": "#00dbe9",
+            "secondary": "#96d1d6",
+            "on-surface-variant": "#b9cacb",
+            "primary-container": "#00f0ff",
+            "surface-container": "#1f1f25",
+            "secondary-container": "#074f54",
+            "surface-container-high": "#2a292f",
+            "on-surface": "#e4e1e9",
+            "on-primary": "#00363a",
+            "on-secondary-container": "#84bfc5",
+            "surface-variant": "#35343a",
+            "on-background": "#e4e1e9",
+            "primary": "#dbfcff",
+            "surface-container-lowest": "#0e0e13",
+            "outline-variant": "#3b494b",
+            "outline": "#849495",
+            "background": "#131318",
+          },
+          fontFamily: {
+            headline: ["Space Grotesk"],
+            body: ["Inter"],
+            label: ["Space Grotesk"],
+            mono: ["JetBrains Mono"],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="selection:bg-primary-container/30 selection:text-white">
+  <div class="flex h-screen overflow-hidden">
+
+    <!-- Sidebar (desktop) -->
+    <aside class="hidden lg:flex flex-col py-4 h-screen w-64 border-r border-outline-variant/15 bg-surface-container-lowest font-headline uppercase text-xs font-semibold shrink-0">
+      <div class="px-6 mb-8">
+        <div class="flex items-center gap-2 text-primary-container">
+          <span class="material-symbols-outlined" data-fill="1">terminal</span>
+          <span class="text-lg font-bold tracking-tighter">ECC KINETIC</span>
+        </div>
+        <div class="text-slate-500 text-[10px] tracking-[0.2em] mt-1">v1.10.0</div>
+      </div>
+      <nav class="flex-1 space-y-1 px-2">
+        <a class="sidebar-link sidebar-link--active flex items-center gap-3 px-4 py-3 text-slate-500 transition-all duration-150 cursor-pointer" data-tab="agents" href="#">
+          <span class="material-symbols-outlined text-sm">smart_toy</span>
+          <span>Agents</span>
+        </a>
+        <a class="sidebar-link flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-surface-container-low/50 transition-all duration-150 cursor-pointer" data-tab="skills" href="#">
+          <span class="material-symbols-outlined text-sm">bolt</span>
+          <span>Skills</span>
+        </a>
+        <a class="sidebar-link flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-surface-container-low/50 transition-all duration-150 cursor-pointer" data-tab="commands" href="#">
+          <span class="material-symbols-outlined text-sm">terminal</span>
+          <span>Commands</span>
+        </a>
+        <a class="sidebar-link flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-surface-container-low/50 transition-all duration-150 cursor-pointer" data-tab="hooks" href="#">
+          <span class="material-symbols-outlined text-sm">anchor</span>
+          <span>Hooks</span>
+        </a>
+        <a class="sidebar-link flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-surface-container-low/50 transition-all duration-150 cursor-pointer" data-tab="mcpServers" href="#">
+          <span class="material-symbols-outlined text-sm">dns</span>
+          <span>MCP Servers</span>
+        </a>
+        <a class="sidebar-link flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-surface-container-low/50 transition-all duration-150 cursor-pointer" data-tab="rules" href="#">
+          <span class="material-symbols-outlined text-sm">gavel</span>
+          <span>Rules</span>
+        </a>
+      </nav>
+      <div class="px-4 mt-auto">
+        <a href="https://github.com/affaan-m/everything-claude-code" target="_blank" rel="noopener" class="w-full py-3 bg-surface-container text-slate-400 hover:text-primary-container font-bold rounded-lg flex items-center justify-center gap-2 transition-all text-xs tracking-wider">
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+          GitHub Repo
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col min-w-0 bg-surface overflow-y-auto tech-grid">
+      <!-- Top Bar -->
+      <header class="sticky top-0 z-40 flex justify-between items-center px-4 md:px-6 h-14 md:h-16 w-full bg-surface/95 backdrop-blur-sm border-b border-outline-variant/15 font-headline tracking-tight">
+        <div class="flex items-center gap-4">
+          <span class="lg:hidden text-lg font-bold tracking-tighter text-primary-container uppercase">ECC</span>
+        </div>
+        <div class="flex items-center gap-3 flex-1 max-w-xl px-2 md:px-8">
+          <div class="relative w-full group">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <span class="material-symbols-outlined text-slate-500 group-focus-within:text-primary-container transition-colors">search</span>
+            </div>
+            <input id="search-input" class="w-full glass-search border border-outline-variant/15 rounded-lg py-2 pl-10 pr-16 text-sm focus:outline-none focus:ring-1 focus:ring-surface-tint focus:border-surface-tint transition-all placeholder:text-slate-600" placeholder="Search reference..." type="text">
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+              <span class="text-[10px] font-mono text-slate-500 bg-surface-container-lowest px-1.5 py-0.5 rounded border border-outline-variant/15 hidden sm:inline">CMD+K</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-1">
+          <span id="result-count" class="text-[10px] font-label uppercase tracking-widest text-slate-500 hidden md:inline"></span>
+        </div>
+      </header>
+
+      <!-- Hero + Tabs -->
+      <section class="px-4 md:px-8 pt-6 md:pt-8">
+        <div class="mb-6 md:mb-8">
+          <h1 class="font-headline text-3xl md:text-4xl font-bold tracking-tight text-on-surface mb-2">Reference Guide</h1>
+          <p class="text-slate-400 max-w-2xl font-body text-sm">Global registry for automated entities, protocols, and architectural hooks. Version controlled documentation for the ECC Kinetic infrastructure.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex border-b border-outline-variant/15 mb-4 md:mb-6 overflow-x-auto scrollbar-hide whitespace-nowrap">
+          <button class="tab-btn px-4 md:px-6 py-3 border-b-2 border-[#00F0FF] text-[#00F0FF] font-headline font-semibold text-sm flex items-center gap-2" data-tab="agents">
+            Agents <span class="tab-badge bg-surface-container-low text-[#00F0FF] text-[10px] px-1.5 py-0.5 rounded-sm" id="count-agents"></span>
+          </button>
+          <button class="tab-btn px-4 md:px-6 py-3 border-b-2 border-transparent text-slate-500 hover:text-on-surface font-headline font-semibold text-sm flex items-center gap-2 transition-colors" data-tab="skills">
+            Skills <span class="tab-badge bg-surface-container-low text-slate-500 text-[10px] px-1.5 py-0.5 rounded-sm" id="count-skills"></span>
+          </button>
+          <button class="tab-btn px-4 md:px-6 py-3 border-b-2 border-transparent text-slate-500 hover:text-on-surface font-headline font-semibold text-sm flex items-center gap-2 transition-colors" data-tab="commands">
+            Commands <span class="tab-badge bg-surface-container-low text-slate-500 text-[10px] px-1.5 py-0.5 rounded-sm" id="count-commands"></span>
+          </button>
+          <button class="tab-btn px-4 md:px-6 py-3 border-b-2 border-transparent text-slate-500 hover:text-on-surface font-headline font-semibold text-sm flex items-center gap-2 transition-colors" data-tab="hooks">
+            Hooks <span class="tab-badge bg-surface-container-low text-slate-500 text-[10px] px-1.5 py-0.5 rounded-sm" id="count-hooks"></span>
+          </button>
+          <button class="tab-btn px-4 md:px-6 py-3 border-b-2 border-transparent text-slate-500 hover:text-on-surface font-headline font-semibold text-sm flex items-center gap-2 transition-colors" data-tab="mcpServers">
+            MCP Servers <span class="tab-badge bg-surface-container-low text-slate-500 text-[10px] px-1.5 py-0.5 rounded-sm" id="count-mcpServers"></span>
+          </button>
+          <button class="tab-btn px-4 md:px-6 py-3 border-b-2 border-transparent text-slate-500 hover:text-on-surface font-headline font-semibold text-sm flex items-center gap-2 transition-colors" data-tab="rules">
+            Rules <span class="tab-badge bg-surface-container-low text-slate-500 text-[10px] px-1.5 py-0.5 rounded-sm" id="count-rules"></span>
+          </button>
+        </div>
+
+        <!-- Category Chips -->
+        <div id="chip-bar" class="flex items-center gap-3 overflow-x-auto pb-4 scrollbar-hide">
+        </div>
+      </section>
+
+      <!-- Cards Grid -->
+      <div class="px-4 md:px-8 pb-12 flex-1">
+        <div id="cards-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 tab-content">
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-auto flex flex-col sm:flex-row justify-between items-center px-4 md:px-8 py-4 w-full border-t border-outline-variant/15 bg-surface-container-lowest font-body text-[10px] tracking-widest uppercase gap-2">
+        <div class="text-slate-500">&copy; 2026 ECC Kinetic Terminal</div>
+        <div class="flex gap-6">
+          <a class="text-slate-500 hover:text-primary-container transition-colors duration-150" href="https://github.com/affaan-m/everything-claude-code" target="_blank" rel="noopener">GitHub</a>
+          <a class="text-slate-500 hover:text-primary-container transition-colors duration-150" href="https://github.com/affaan-m/everything-claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+          <a class="text-slate-500 hover:text-primary-container transition-colors duration-150" href="https://github.com/affaan-m/everything-claude-code/blob/main/SECURITY.md" target="_blank" rel="noopener">Security</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 h-14 bg-surface-container-lowest flex justify-around items-center border-t border-outline-variant/15 z-50">
+    <button class="mobile-nav-btn mobile-nav-btn--active flex flex-col items-center gap-0.5 text-[#00F0FF]" data-tab="agents">
+      <span class="material-symbols-outlined text-lg">smart_toy</span>
+      <span class="text-[9px] font-label">Agents</span>
+    </button>
+    <button class="mobile-nav-btn flex flex-col items-center gap-0.5 text-slate-500" data-tab="skills">
+      <span class="material-symbols-outlined text-lg">bolt</span>
+      <span class="text-[9px] font-label">Skills</span>
+    </button>
+    <button class="mobile-nav-btn flex flex-col items-center gap-0.5 text-slate-500" data-tab="commands">
+      <span class="material-symbols-outlined text-lg">terminal</span>
+      <span class="text-[9px] font-label">Cmds</span>
+    </button>
+    <button class="mobile-nav-btn flex flex-col items-center gap-0.5 text-slate-500" data-tab="hooks">
+      <span class="material-symbols-outlined text-lg">anchor</span>
+      <span class="text-[9px] font-label">Hooks</span>
+    </button>
+    <button class="mobile-nav-btn flex flex-col items-center gap-0.5 text-slate-500" data-tab="mcpServers">
+      <span class="material-symbols-outlined text-lg">dns</span>
+      <span class="text-[9px] font-label">MCP</span>
+    </button>
+    <button class="mobile-nav-btn flex flex-col items-center gap-0.5 text-slate-500" data-tab="rules">
+      <span class="material-symbols-outlined text-lg">gavel</span>
+      <span class="text-[9px] font-label">Rules</span>
+    </button>
+  </div>
+
+  <!-- Copy Toast -->
+  <div id="copy-toast" class="copy-toast"></div>
+
+  <!-- Data + App Script -->
+  <script src="data.js"></script>
+  <script>
+    // Set tab counts after data loads
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ECC_DATA !== 'undefined') {
+        const counts = {
+          agents: ECC_DATA.agents.length,
+          skills: ECC_DATA.skills.length,
+          commands: ECC_DATA.commands.length,
+          hooks: ECC_DATA.hooks.length,
+          mcpServers: ECC_DATA.mcpServers.length,
+          rules: ECC_DATA.rules.length,
+        };
+        Object.entries(counts).forEach(([key, count]) => {
+          const el = document.getElementById('count-' + key);
+          if (el) el.textContent = count;
+        });
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

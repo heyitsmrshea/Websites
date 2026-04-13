@@ -3,10 +3,14 @@
 !README.md
 !.github/
 !.github/**
-!templates/
-!templates/**
+!.templates/
+!.templates/**
+!DanielTest/
+!DanielTest/**
+!ecc-reference/
+!ecc-reference/**
 
-templates/node_modules/
-templates/.DS_Store
-templates/review/**/*.webp
-templates/review/**/*.tmp
+.templates/node_modules/
+.templates/.DS_Store
+.templates/review/**/*.webp
+.templates/review/**/*.tmp

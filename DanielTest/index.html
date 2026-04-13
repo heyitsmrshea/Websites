@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NorthAxis.Digital — Web Design & AI Solutions</title>
+  <meta name="description" content="NorthAxis.Digital architects high-performance web experiences and integrates autonomous AI systems to propel ambitious brands into the future.">
+  <meta property="og:title" content="NorthAxis.Digital — Web Design & AI Solutions">
+  <meta property="og:description" content="High-impact websites and AI implementation for business productivity.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#00dcfc",
+            "primary-container": "#00eefc",
+            "secondary-container": "#006878",
+            "on-secondary": "#004955",
+            "on-surface": "#ffffff",
+            "surface-container-lowest": "#000000",
+            "outline-variant": "#484847",
+            "background": "#0e0e0e",
+            "primary": "#8ff5ff",
+            "primary-dim": "#00deec",
+            "surface-container-high": "#201f1f",
+            "tertiary-container": "#4aa2f9",
+            "surface-container-highest": "#262626",
+            "outline": "#767575",
+            "surface-container-low": "#131313",
+            "on-primary": "#005d63",
+            "surface-bright": "#2c2c2c",
+            "surface-variant": "#262626",
+            "surface": "#0e0e0e",
+            "surface-container": "#1a1919",
+            "tertiary": "#65afff",
+            "on-surface-variant": "#adaaaa",
+          },
+          fontFamily: {
+            headline: ["Manrope"],
+            body: ["Inter"],
+            label: ["Space Grotesk"],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-background text-on-surface font-body">
+
+  <!-- Navigation -->
+  <nav class="nav-main fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl transition-all duration-300">
+    <div class="flex justify-between items-center w-full px-6 md:px-8 py-5 md:py-6 max-w-screen-2xl mx-auto">
+      <a href="index.html" class="text-2xl font-black tracking-tighter text-white font-headline">
+        NorthAxis.Digital
+      </a>
+      <div class="hidden lg:flex items-center gap-x-8">
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline nav-link-animated active" href="#services">Services</a>
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline nav-link-animated" href="#process">Process</a>
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline nav-link-animated" href="#testimonials">About</a>
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline nav-link-animated" href="contact.html">Contact Us</a>
+        <a href="contact.html" class="primary-btn-gradient text-on-primary font-headline font-bold px-6 py-2.5 rounded-full active:scale-95 transition-transform duration-200 hover:shadow-[0_0_20px_rgba(143,245,255,0.3)]">
+          Start Project
+        </a>
+      </div>
+      <button class="hamburger lg:hidden" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#testimonials">About</a>
+    <a href="services.html">All Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="contact.html" class="primary-btn-gradient text-on-primary font-headline font-bold px-8 py-3 rounded-full mt-4">Start Project</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+    <div class="absolute inset-0 glow-bg pointer-events-none"></div>
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start gap-8">
+        <div class="hero-enter hero-enter--1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label text-xs uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Now accepting new clients
+        </div>
+        <h1 class="hero-enter hero-enter--2 text-5xl md:text-7xl lg:text-8xl font-headline font-extrabold tracking-tighter text-white leading-[0.9] text-glow">
+          Digital Craft <br>for the <span class="text-primary italic">Next Era</span>
+        </h1>
+        <p class="hero-enter hero-enter--3 text-lg md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+          We architect high-performance web experiences and integrate autonomous AI systems to propel ambitious brands into the future.
+        </p>
+        <div class="hero-enter hero-enter--4 flex flex-wrap gap-4 pt-4">
+          <a href="contact.html" class="primary-btn-gradient text-on-primary px-8 py-4 rounded-lg font-headline font-bold hover:shadow-[0_0_20px_rgba(143,245,255,0.3)] transition-all active:scale-95">
+            Book a Discovery Call
+          </a>
+          <a href="#services" class="border border-primary/20 text-white px-8 py-4 rounded-lg font-headline font-bold hover:border-primary transition-all">
+            See What We Do
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 relative hidden lg:block hero-enter hero-enter--5">
+        <div class="aspect-square relative hero-float">
+          <img alt="Abstract 3D architectural render with glass forms and cyan accents" class="w-full h-full object-cover rounded-2xl grayscale-[80%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXKBBHDtx7EWVGruSSoujF4M7Cbh5dFjc6DQ4I7SRFJQqXqe9ma-WIwZAzOOXF7ArYtjO9SXU3lEIw6IUEJ15MmNOkLJldZ3NBJDNQLyIE6o6mdJ9iRQdnINli9pUTlg6_o90ug9obj5pExcuOmQxMSsnePwfIvRPAp_FKv3EBuY0rWvjpWbdqCfkbLYPKrDp3qOZHydBvYRkicHLb2uykVygNRj_0vafSzC_T_z4Ysj-pqQo0WlF_QJPQK6dtdtSt0jPEUoKpgk">
+          <div class="absolute inset-0 bg-primary/10 mix-blend-color rounded-2xl"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-24 md:py-32 bg-surface-container-low relative" id="services">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-6">
+        <div class="max-w-xl">
+          <span class="font-label text-primary text-sm tracking-widest uppercase mb-4 block reveal">01 / Capabilities</span>
+          <h2 class="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight reveal reveal--delay-1">Our Core Expertise</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Custom Web Design -->
+        <div class="group relative p-8 md:p-12 bg-surface-container border border-white/5 hover:border-primary/60 hover:shadow-[0_0_20px_rgba(143,245,255,0.08)] transition-all duration-500 overflow-hidden card-sheen reveal reveal--delay-2">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="mb-8">
+            <span class="material-symbols-outlined text-5xl text-primary">web_asset</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-headline font-bold text-white mb-6">Custom Web Design</h3>
+          <p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+            Bespoke digital architecture tailored to your brand's unique narrative. We focus on speed, accessibility, and breathtaking aesthetics.
+          </p>
+          <a class="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:gap-4 transition-all" href="services.html#web-design">
+            Learn more <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <!-- AI Implementation -->
+        <div class="group relative p-8 md:p-12 bg-surface-container border border-white/5 hover:border-primary/60 hover:shadow-[0_0_20px_rgba(143,245,255,0.08)] transition-all duration-500 overflow-hidden card-sheen reveal reveal--delay-3">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="mb-8">
+            <span class="material-symbols-outlined text-5xl text-secondary">smart_toy</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-headline font-bold text-white mb-6">AI Implementation</h3>
+          <p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+            Deploying intelligence. From RAG-based systems to custom LLM integrations, we automate the friction out of your business workflows.
+          </p>
+          <a class="inline-flex items-center gap-2 text-secondary font-label text-sm uppercase tracking-widest hover:gap-4 transition-all" href="services.html#ai-implementation">
+            Learn more <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="pt-16 pb-24 md:pt-20 md:pb-32" id="why">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+      <span class="font-label text-primary text-sm tracking-widest uppercase mb-12 block reveal">03 / Philosophy</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+        <div class="flex flex-col gap-6 reveal">
+          <span class="font-label text-primary text-2xl font-bold">01</span>
+          <h3 class="text-2xl font-headline font-bold text-white">Strategic Approach</h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            We don't just build; we strategize. Every pixel and line of code is measured against your long-term business objectives.
+          </p>
+        </div>
+        <div class="flex flex-col gap-6 reveal reveal--delay-2">
+          <span class="font-label text-primary text-2xl font-bold">02</span>
+          <h3 class="text-2xl font-headline font-bold text-white">Tech-Forward</h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            The tech stack we use today is what others will discover tomorrow. We stay at the bleeding edge to ensure your longevity.
+          </p>
+        </div>
+        <div class="flex flex-col gap-6 reveal reveal--delay-4">
+          <span class="font-label text-primary text-2xl font-bold">03</span>
+          <h3 class="text-2xl font-headline font-bold text-white">Client-Centric</h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            Your vision is the North Star. We foster deep partnerships based on radical transparency and relentless delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-24 md:py-32 bg-surface-container-low" id="process">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+      <span class="font-label text-primary text-sm tracking-widest uppercase mb-4 block reveal">04 / Workflow</span>
+      <h2 class="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight mb-16 md:mb-20 reveal reveal--delay-1">The Void to Reality</h2>
+      <div class="relative">
+        <div class="absolute top-6 left-0 w-full h-[2px] bg-gradient-to-r from-primary/30 via-primary/15 to-primary/30 hidden md:block"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 relative">
+          <div class="flex flex-col gap-8 md:gap-12 relative reveal reveal--delay-1">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary font-bold z-10 shrink-0">1</div>
+            <div class="text-left">
+              <h4 class="text-xl font-headline font-bold text-white mb-2">Discovery</h4>
+              <p class="text-on-surface-variant text-sm">Deep dive into your domain, users, and ultimate project goals.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-8 md:gap-12 relative reveal reveal--delay-2">
+            <div class="w-12 h-12 bg-surface-container border border-primary/50 rounded-full flex items-center justify-center text-primary font-bold z-10 shrink-0">2</div>
+            <div class="text-left">
+              <h4 class="text-xl font-headline font-bold text-white mb-2">Design</h4>
+              <p class="text-on-surface-variant text-sm">Architecting the visual and functional blueprints of your experience.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-8 md:gap-12 relative reveal reveal--delay-3">
+            <div class="w-12 h-12 bg-surface-container border border-primary/50 rounded-full flex items-center justify-center text-primary font-bold z-10 shrink-0">3</div>
+            <div class="text-left">
+              <h4 class="text-xl font-headline font-bold text-white mb-2">Build</h4>
+              <p class="text-on-surface-variant text-sm">Translating pixels into high-performance, future-proof codebases.</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-8 md:gap-12 relative reveal reveal--delay-4">
+            <div class="w-12 h-12 bg-surface-container border border-primary/50 rounded-full flex items-center justify-center text-primary font-bold z-10 shrink-0">4</div>
+            <div class="text-left">
+              <h4 class="text-xl font-headline font-bold text-white mb-2">Launch &amp; Grow</h4>
+              <p class="text-on-surface-variant text-sm">Deploying the solution and providing continuous optimization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-24 md:py-32" id="testimonials">
+    <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+      <h2 class="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight mb-16 md:mb-20 text-center reveal">Trusted by Founders</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 bg-surface-container border border-white/5 rounded-xl flex flex-col gap-8 card-sheen reveal reveal--delay-1">
+          <div class="flex gap-1 text-primary">
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+          </div>
+          <p class="text-lg text-white leading-relaxed italic">"NorthAxis didn't just build us a website; they built a digital engine that has fundamentally changed how we acquire customers."</p>
+          <div class="flex items-center gap-4">
+            <img class="w-12 h-12 rounded-full object-cover" alt="James Arnell portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUSUZJ0PCU23sukyVEuuLIUhsPMI371VeHRXvTBY_KDGu5j7tAJoZv2FbLghxsEqt4jhmgY1Fb77VlZMTZOUc67YZX3ldaRyPdM6eAWYuLDh6kVt-DSjaGGgGYRNAixzJwHYz-U43usHmL0Rj6CrRc8oiNz641VrEZcJRFcP7zVXB1yE2cmt-g8LUhBJGS8kzDmhxF_tOp7CRTLTnEmtgqVxd-dpn4yE7L4jZIdnG4MSvFx0QScUjM9g7qJBk0QWXGOo2Qev6r4jk">
+            <div>
+              <p class="font-headline font-bold text-white">James Arnell</p>
+              <p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">CEO, SynthLabs</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-8 bg-surface-container border border-white/5 rounded-xl flex flex-col gap-8 card-sheen reveal reveal--delay-2">
+          <div class="flex gap-1 text-primary">
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+          </div>
+          <p class="text-lg text-white leading-relaxed italic">"The AI integration they delivered was months ahead of what we expected. Their technical depth is truly rare in the agency world."</p>
+          <div class="flex items-center gap-4">
+            <img class="w-12 h-12 rounded-full object-cover" alt="Elena Rodriguez portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABfC2NIdnXWhcGItQLsPze65thmYjbMpQ0sWTJ8oKCylIHyyRw_bVin93x_97JYXZJJq7ornlF9QFh9pUeCYbo4Yku_zFaHkyfg3_wSunFiDiJBgspfdwP_xCEyJ7zNkchZr2QQEc8F9qV4aZKtSPavT2iGn_7qIXVyvdrxUl0-LAxQ6Lr3VZPnmTc1N-Nn4Z0T8bI72frP0tGLaTpjO3OStprepbRbHtQ7FSF6w9s2z2u5bk8YibOhly9XvmV1-LKMhe3R5tOWUU">
+            <div>
+              <p class="font-headline font-bold text-white">Elena Rodriguez</p>
+              <p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Product Lead, Nexus</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-8 bg-surface-container border border-white/5 rounded-xl flex flex-col gap-8 card-sheen reveal reveal--delay-3">
+          <div class="flex gap-1 text-primary">
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+          </div>
+          <p class="text-lg text-white leading-relaxed italic">"Precision. Craft. Speed. They hit every deadline and exceeded every aesthetic benchmark we set for our rebranding."</p>
+          <div class="flex items-center gap-4">
+            <img class="w-12 h-12 rounded-full object-cover" alt="Marcus Thorne portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0e8Zd7ddGixhcY5q0vw_kOo6RGM5EEC6vvoCrIGcpbP4zvwPsthhJmHRzaHBafv6uIPzB230_zL7v2ttbg3OL_ibomRhz0mjhizOLAj73_WzaTCanOPVLrdtCZf0qMvg78xTyn27jR4DJN4FWHBzvvOs82kO-nBcv3-pUBmauUQfAr-I8CrodGNd2_IYX35Vxe3X-oXMxDw_2_aVOSoIkTH5XgYRMQzj-zoIKVCxipH4g9pp0wnr8ayjDQSPF9o26HkTvUCHyIbE">
+            <div>
+              <p class="font-headline font-bold text-white">Marcus Thorne</p>
+              <p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Founder, Altura</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="py-16 md:py-32 px-6 md:px-8 overflow-hidden">
+    <div class="max-w-screen-xl mx-auto relative p-12 md:p-24 bg-surface-container-high rounded-3xl overflow-hidden text-center reveal">
+      <div class="absolute inset-0 glow-bg opacity-50"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl md:text-6xl font-headline font-extrabold text-white mb-8 tracking-tighter">Ready to enter the <span class="text-primary italic">next axis?</span></h2>
+        <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-12">
+          Our team is currently reviewing proposals for next quarter. Let's discuss your project and see if we're the right fit.
+        </p>
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6">
+          <a href="contact.html" class="primary-btn-gradient text-on-primary px-10 py-5 rounded-lg font-headline font-bold active:scale-95 transition-transform btn-glow-pulse">
+            Start Your Project
+          </a>
+          <a href="contact.html" class="bg-white/5 text-white px-10 py-5 rounded-lg font-headline font-bold hover:bg-white/10 transition-colors">
+            Contact Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0e0e0e] w-full py-16 px-6 md:px-8 border-t border-white/5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+      <div>
+        <a href="index.html" class="text-xl font-black text-white font-headline mb-6 block">NorthAxis.Digital</a>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">
+          Architecting digital landscapes that define tomorrow's leaders.
+        </p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <span class="text-xs font-label uppercase tracking-widest text-white mb-2">Internal</span>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="services.html">Services</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#process">Process</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#testimonials">About</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <span class="text-xs font-label uppercase tracking-widest text-white mb-2">Connect</span>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#">LinkedIn</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#">Twitter</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="contact.html">Contact Us</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <span class="text-xs font-label uppercase tracking-widest text-white mb-2">Legal</span>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#">Privacy Policy</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="max-w-screen-2xl mx-auto mt-16 pt-8 border-t border-white/5">
+      <p class="text-gray-500 font-label text-[10px] tracking-widest uppercase">
+        &copy; 2026 NorthAxis.Digital. Built for the Architectural Void.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

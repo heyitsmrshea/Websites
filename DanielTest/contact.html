@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — NorthAxis.Digital</title>
+  <meta name="description" content="Get in touch with NorthAxis.Digital. Let's talk about your website or AI project.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#00dcfc",
+            "primary-container": "#00eefc",
+            "secondary-container": "#006878",
+            "on-secondary": "#004955",
+            "on-surface": "#ffffff",
+            "surface-container-lowest": "#000000",
+            "outline-variant": "#484847",
+            "background": "#0e0e0e",
+            "primary": "#8ff5ff",
+            "primary-dim": "#00deec",
+            "surface-container-high": "#201f1f",
+            "tertiary-container": "#4aa2f9",
+            "surface-container-highest": "#262626",
+            "outline": "#767575",
+            "surface-container-low": "#131313",
+            "on-primary": "#005d63",
+            "on-primary-container": "#005359",
+            "surface-bright": "#2c2c2c",
+            "surface-variant": "#262626",
+            "surface": "#0e0e0e",
+            "surface-container": "#1a1919",
+            "tertiary": "#65afff",
+            "on-surface-variant": "#adaaaa",
+          },
+          fontFamily: {
+            headline: ["Manrope"],
+            body: ["Inter"],
+            label: ["Space Grotesk"],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-background text-on-surface font-body">
+
+  <!-- Navigation -->
+  <nav class="nav-main fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl transition-all duration-300">
+    <div class="flex justify-between items-center w-full px-6 md:px-8 py-5 md:py-6 max-w-screen-2xl mx-auto">
+      <a href="index.html" class="text-2xl font-black tracking-tighter text-white font-headline">
+        NorthAxis.Digital
+      </a>
+      <div class="hidden lg:flex items-center space-x-10">
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline" href="services.html">Services</a>
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline" href="index.html#process">Process</a>
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline" href="index.html#testimonials">About</a>
+        <a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 font-headline" href="contact.html">Contact Us</a>
+        <a href="contact.html" class="primary-btn-gradient text-on-primary-container font-headline font-bold px-6 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(143,245,255,0.3)] transition-all active:scale-95">
+          Start Project
+        </a>
+      </div>
+      <button class="hamburger lg:hidden" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#process">Process</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="contact.html" class="primary-btn-gradient text-on-primary font-headline font-bold px-8 py-3 rounded-full mt-4">Start Project</a>
+  </div>
+
+  <main class="pt-32 pb-20 px-6 md:px-8 max-w-screen-2xl mx-auto min-h-screen">
+    <!-- Hero Header -->
+    <header class="mb-16 md:mb-20">
+      <p class="font-label text-primary text-sm tracking-[0.2em] uppercase mb-4 hero-enter hero-enter--1">01 Contact</p>
+      <h1 class="font-headline text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-6 max-w-4xl hero-enter hero-enter--2">
+        Let's construct the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">future void</span> together.
+      </h1>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+      <!-- Contact Form -->
+      <div class="lg:col-span-7 reveal">
+        <form class="contact-form space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-2">
+              <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant" for="name">Name</label>
+              <input class="w-full bg-surface-container-lowest border-none outline-none focus:ring-1 focus:ring-primary/50 p-4 text-on-surface placeholder:text-outline transition-all" id="name" name="name" placeholder="John Doe" type="text" required>
+            </div>
+            <div class="space-y-2">
+              <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant" for="email">Email</label>
+              <input class="w-full bg-surface-container-lowest border-none outline-none focus:ring-1 focus:ring-primary/50 p-4 text-on-surface placeholder:text-outline transition-all" id="email" name="email" placeholder="john@example.com" type="email" required>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant" for="project-type">Project Type</label>
+            <select class="w-full bg-surface-container-lowest border-none outline-none focus:ring-1 focus:ring-primary/50 p-4 text-on-surface transition-all appearance-none" id="project-type" name="project-type">
+              <option>Web Design</option>
+              <option>AI Implementation</option>
+              <option>Web Design + AI</option>
+              <option>Technical Strategy</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant" for="message">Message</label>
+            <textarea class="w-full bg-surface-container-lowest border-none outline-none focus:ring-1 focus:ring-primary/50 p-4 text-on-surface placeholder:text-outline transition-all resize-none" id="message" name="message" placeholder="Tell us about your project, goals, or questions..." rows="6" required></textarea>
+          </div>
+          <button class="group flex items-center gap-3 bg-primary text-on-primary-container font-headline font-bold py-4 px-10 rounded-lg hover:shadow-[0_0_30px_rgba(143,245,255,0.4)] transition-all active:scale-95" type="submit">
+            Send Inquiry
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-5 space-y-12 md:space-y-16 reveal reveal--delay-2">
+        <!-- Contact Methods -->
+        <section class="space-y-10">
+          <div class="space-y-6">
+            <p class="font-label text-xs uppercase tracking-widest text-primary">Inquiries</p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 text-on-surface-variant hover:text-white transition-colors cursor-pointer group">
+                <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">mail</span>
+                <span class="font-headline text-lg font-bold">hello@northaxis.digital</span>
+              </div>
+              <div class="flex items-center gap-4 text-on-surface-variant hover:text-white transition-colors cursor-pointer group">
+                <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">call</span>
+                <span class="font-headline text-lg font-bold">+1 (555) 012-3456</span>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <p class="font-label text-xs uppercase tracking-widest text-primary">Social Channels</p>
+            <div class="flex flex-wrap gap-4">
+              <a class="px-5 py-2 border border-outline-variant hover:border-primary/50 text-sm font-label uppercase tracking-widest transition-all hover:text-primary" href="#">LinkedIn</a>
+              <a class="px-5 py-2 border border-outline-variant hover:border-primary/50 text-sm font-label uppercase tracking-widest transition-all hover:text-primary" href="#">Twitter</a>
+              <a class="px-5 py-2 border border-outline-variant hover:border-primary/50 text-sm font-label uppercase tracking-widest transition-all hover:text-primary" href="#">Instagram</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Office Location -->
+        <section class="space-y-6 reveal reveal--delay-3">
+          <p class="font-label text-xs uppercase tracking-widest text-primary">Global Studio</p>
+          <div class="bg-surface-container-low p-1 rounded-xl overflow-hidden aspect-video relative group">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+            <img class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-80 transition-opacity duration-500" alt="Studio location in Reykjavik, Iceland" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe1FW3EA1CBXSMkS4zJJdYDb0sL4ostVdjm6izNnTMEjL9ERDeRb-TaUIFjHLSXSSeHyN-5tUV9zUh5JzzvWaa9fGKw4eQTCx6zuiyIqaCcxNC13VRh_LaJIhpk5nx9VdBuIEoklkiUNzEVuk2Cwk_Mic_zaIu3Vndm964a3cZFsN0kVY8fLLMEOzE5cZ7V36ycAhTOYhxHPwyaklzdwIqhNIo2n4NjXuJ6clWGsT0-uY9hhXPoqmvo5GHYclifR6c3TVLWwjDMI8">
+            <div class="absolute bottom-6 left-6 z-20">
+              <p class="font-headline font-bold text-xl">Reykjav&iacute;k, Iceland</p>
+              <p class="text-on-surface-variant text-sm">Katr&iacute;nart&uacute;n 4, 105 Reykjav&iacute;k</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0e0e0e] w-full py-16 px-6 md:px-8 border-t border-white/5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+      <div class="space-y-6">
+        <a href="index.html" class="text-xl font-black text-white font-headline">NorthAxis.Digital</a>
+        <p class="text-gray-500 font-label text-sm leading-relaxed">
+          Sculpting digital experiences in the architectural void of the modern web.
+        </p>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <p class="font-label text-xs text-white uppercase tracking-widest mb-2">Navigation</p>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="index.html">Home</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="services.html">Services</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="index.html#process">Process</a>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <p class="font-label text-xs text-white uppercase tracking-widest mb-2">Legal</p>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#">Privacy Policy</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#">Terms of Service</a>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <p class="font-label text-xs text-white uppercase tracking-widest mb-2">Connect</p>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#">LinkedIn</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="#">Twitter</a>
+        <a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="max-w-screen-2xl mx-auto mt-16 pt-8 border-t border-white/5">
+      <p class="text-gray-500 font-label text-[10px] tracking-widest uppercase">
+        &copy; 2026 NorthAxis.Digital. Built for the Architectural Void.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

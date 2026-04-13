@@ -1,4 +1,4 @@
-name: Deploy template library to GitHub Pages
+name: Deploy sites to GitHub Pages
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
       - name: Upload static site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: templates
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — NorthAxis.Digital</title>
+  <meta name="description" content="Web design and AI implementation services from NorthAxis.Digital. Custom websites and practical AI solutions for business productivity.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#00dcfc",
+            "primary-container": "#00eefc",
+            "secondary-container": "#006878",
+            "on-secondary": "#004955",
+            "on-surface": "#ffffff",
+            "surface-container-lowest": "#000000",
+            "outline-variant": "#484847",
+            "background": "#0e0e0e",
+            "primary": "#8ff5ff",
+            "primary-dim": "#00deec",
+            "surface-container-high": "#201f1f",
+            "tertiary-container": "#4aa2f9",
+            "surface-container-highest": "#262626",
+            "outline": "#767575",
+            "surface-container-low": "#131313",
+            "on-primary": "#005d63",
+            "on-primary-container": "#005359",
+            "surface-bright": "#2c2c2c",
+            "surface-variant": "#262626",
+            "surface": "#0e0e0e",
+            "surface-container": "#1a1919",
+            "tertiary": "#65afff",
+            "on-surface-variant": "#adaaaa",
+          },
+          fontFamily: {
+            headline: ["Manrope"],
+            body: ["Inter"],
+            label: ["Space Grotesk"],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-background text-on-surface font-body">
+
+  <!-- Navigation -->
+  <nav class="nav-main fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl transition-all duration-300">
+    <div class="flex justify-between items-center w-full px-6 md:px-8 py-5 md:py-6 max-w-screen-2xl mx-auto">
+      <a href="index.html" class="text-2xl font-black tracking-tighter text-white font-headline">
+        NorthAxis.Digital
+      </a>
+      <div class="hidden lg:flex items-center space-x-10">
+        <a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 font-headline tracking-tight" href="services.html">Services</a>
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline tracking-tight" href="index.html#process">Process</a>
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline tracking-tight" href="index.html#testimonials">About</a>
+        <a class="text-gray-400 font-medium hover:text-white transition-colors font-headline tracking-tight" href="contact.html">Contact Us</a>
+        <a href="contact.html" class="primary-btn-gradient text-on-primary-container px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-tight active:scale-95 transition-transform duration-200 hover:shadow-[0_0_20px_rgba(143,245,255,0.3)]">
+          Start Project
+        </a>
+      </div>
+      <button class="hamburger lg:hidden" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#process">Process</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="contact.html" class="primary-btn-gradient text-on-primary font-headline font-bold px-8 py-3 rounded-full mt-4">Start Project</a>
+  </div>
+
+  <main class="pt-32 pb-24">
+    <!-- Hero Section -->
+    <section class="px-6 md:px-8 max-w-screen-2xl mx-auto mb-24 md:mb-32">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+        <div class="md:col-span-8">
+          <span class="font-label text-sm tracking-widest text-primary uppercase mb-4 block hero-enter hero-enter--1">01 / Capabilities</span>
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-headline font-black tracking-tighter text-white leading-none hero-enter hero-enter--2">
+            Our <span class="text-gradient">Expertise</span>.
+          </h1>
+        </div>
+        <div class="md:col-span-4 pb-2 hero-enter hero-enter--3">
+          <p class="text-on-surface-variant text-lg leading-relaxed max-w-sm">
+            Architecting high-performance digital ecosystems through meticulous design and machine intelligence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Web Design Section -->
+    <section class="px-6 md:px-8 max-w-screen-2xl mx-auto mb-32 md:mb-40" id="web-design">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <!-- Visual Content -->
+        <div class="lg:col-span-5 order-2 lg:order-1 reveal">
+          <div class="relative group">
+            <div class="absolute -inset-4 bg-primary/5 rounded-xl blur-2xl group-hover:bg-primary/10 transition-all"></div>
+            <div class="relative aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden border border-white/5">
+              <img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" alt="Abstract architectural rendering with glowing blue glass structures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAviz65slLGPSUCM86BSeUCwVHldp2YJ93b_XeA5xZ2-v4j8GzPdKq3u0ZVbIDYI5sg484dmDxsFC6OW5PdmS8FXbMZ8dik8XZdkVXmgU0ZGDsNEk1U8ZND9BkvpvJCCw2Bz9Q4U8pfbxrpnZOOVWgS1ILGOOHlaKQcEuIwI2Bd63ram_TYbx03GoWffp6aD4xjfuEpbsLzjrKrF7Tw-h2NphOlgAbRZjqDoCkTk8FYSPHYm66qqU6kJ34YsKgPe0mD-dgulxfqJ88">
+              <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+              <div class="absolute bottom-8 left-8">
+                <span class="font-label text-xs tracking-widest text-white/50 mb-2 block">STRUCTURAL INTEGRITY</span>
+                <div class="h-[1px] w-12 bg-primary"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Text Content -->
+        <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-center">
+          <span class="font-label text-xs tracking-widest text-primary-dim uppercase mb-6 flex items-center gap-3 reveal">
+            <span class="w-8 h-[1px] bg-primary-dim"></span>
+            Specialization
+          </span>
+          <h2 class="text-3xl md:text-5xl font-headline font-extrabold text-white mb-8 tracking-tight reveal reveal--delay-1">Custom Web Design</h2>
+          <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-12 max-w-2xl reveal reveal--delay-2">
+            We don't build websites; we engineer digital destinations. Our approach merges the structural rigor of architecture with the fluid dynamics of modern interaction design.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div class="p-6 md:p-8 bg-surface-container-low border-t border-primary/20 rounded-xl card-sheen reveal reveal--delay-2">
+              <span class="material-symbols-outlined text-primary mb-4">architecture</span>
+              <h4 class="font-headline font-bold text-white text-lg mb-2">Spatial Layouts</h4>
+              <p class="text-on-surface-variant text-sm">Non-linear grid systems that guide user flow with intentional tension and release.</p>
+            </div>
+            <div class="p-6 md:p-8 bg-surface-container-low border-t border-primary/20 rounded-xl card-sheen reveal reveal--delay-3">
+              <span class="material-symbols-outlined text-primary mb-4">speed</span>
+              <h4 class="font-headline font-bold text-white text-lg mb-2">Performance First</h4>
+              <p class="text-on-surface-variant text-sm">Optimized rendering cycles ensuring sub-second load times across the architectural void.</p>
+            </div>
+            <div class="p-6 md:p-8 bg-surface-container-low border-t border-primary/20 rounded-xl card-sheen reveal reveal--delay-4">
+              <span class="material-symbols-outlined text-primary mb-4">responsive_layout</span>
+              <h4 class="font-headline font-bold text-white text-lg mb-2">Adaptive Motion</h4>
+              <p class="text-on-surface-variant text-sm">Micro-interactions that respond to intent, providing tactile feedback in digital space.</p>
+            </div>
+            <div class="p-6 md:p-8 bg-surface-container-low border-t border-primary/20 rounded-xl card-sheen reveal reveal--delay-5">
+              <span class="material-symbols-outlined text-primary mb-4">auto_awesome</span>
+              <h4 class="font-headline font-bold text-white text-lg mb-2">Editorial UI</h4>
+              <p class="text-on-surface-variant text-sm">Sophisticated typography hierarchies that prioritize content clarity and brand authority.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Implementation Section -->
+    <section class="bg-surface-container-low py-24 md:py-32" id="ai-implementation">
+      <div class="px-6 md:px-8 max-w-screen-2xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div class="lg:col-span-5">
+            <span class="font-label text-xs tracking-widest text-tertiary uppercase mb-6 flex items-center gap-3 reveal">
+              <span class="w-8 h-[1px] bg-tertiary"></span>
+              Future-Proofing
+            </span>
+            <h2 class="text-3xl md:text-5xl font-headline font-extrabold text-white mb-8 tracking-tight reveal reveal--delay-1">AI Implementation</h2>
+            <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 reveal reveal--delay-2">
+              Integrating large language models and predictive analytics into your core operations to automate the mundane and amplify the creative.
+            </p>
+            <ul class="space-y-6">
+              <li class="flex items-start gap-4 reveal reveal--delay-3">
+                <div class="mt-1 w-6 h-6 rounded-full border border-tertiary/30 flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined text-[14px] text-tertiary">check</span>
+                </div>
+                <div>
+                  <h5 class="text-white font-headline font-bold">Custom LLM Training</h5>
+                  <p class="text-sm text-on-surface-variant">Train models on your proprietary data for secure, internal knowledge bases.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 reveal reveal--delay-4">
+                <div class="mt-1 w-6 h-6 rounded-full border border-tertiary/30 flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined text-[14px] text-tertiary">check</span>
+                </div>
+                <div>
+                  <h5 class="text-white font-headline font-bold">Workflow Automation</h5>
+                  <p class="text-sm text-on-surface-variant">Intelligent agents that handle scheduling, lead qualification, and data entry.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 reveal reveal--delay-5">
+                <div class="mt-1 w-6 h-6 rounded-full border border-tertiary/30 flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined text-[14px] text-tertiary">check</span>
+                </div>
+                <div>
+                  <h5 class="text-white font-headline font-bold">Semantic Search</h5>
+                  <p class="text-sm text-on-surface-variant">Enhance user discovery with AI-driven contextual search and recommendations.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Bento Grid -->
+          <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+            <div class="col-span-2 sm:col-span-1 aspect-square bg-surface-container rounded-xl p-8 flex flex-col justify-between border border-white/5 card-sheen reveal reveal--delay-2">
+              <span class="font-label text-[10px] tracking-widest text-on-surface-variant">01 / EFFICIENCY</span>
+              <div>
+                <h3 class="text-3xl font-headline font-bold text-white mb-2" data-count="40" data-suffix="%">0%</h3>
+                <p class="text-xs text-on-surface-variant uppercase tracking-widest">Reduction in operational overhead through automated routing.</p>
+              </div>
+            </div>
+            <div class="col-span-2 sm:col-span-1 aspect-square bg-surface-container rounded-xl overflow-hidden relative border border-white/5 reveal reveal--delay-3">
+              <img class="w-full h-full object-cover" alt="Neural network connections with glowing violet light nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5sjctGRenk7BHVuGnrEU99QNHepUjLWRu7fHhGqYobVnor5JHphiVuo5LyamyuLtbfz33Vt4vrOF_6EMxvkPL3lBtQZ7TNQM3ut8CMDHWMLeWD4y0HLKywv_YqmZQshbeazf-HSZ5IQocebj0hjV3EVaNkm64E-YrGh7XMyUvkrijAX564rHEoR0mVR4BnmqYexKuDvFTLQcF6sXBbFXH7y00NFSgk90bXSlSkqBsQvF4eUUY30dc4yOaJf3kdG07yWEk1iKqctk">
+              <div class="absolute inset-0 bg-tertiary/10 mix-blend-overlay"></div>
+            </div>
+            <div class="col-span-2 bg-surface-container rounded-xl p-8 border border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 reveal reveal--delay-4">
+              <div class="max-w-xs">
+                <h4 class="font-headline font-bold text-white mb-1">Seamless API Integration</h4>
+                <p class="text-sm text-on-surface-variant">We bridge your existing stack with OpenAI, Anthropic, or local open-source models.</p>
+              </div>
+              <span class="material-symbols-outlined text-tertiary text-4xl">hub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="px-6 md:px-8 max-w-screen-2xl mx-auto mt-24 md:mt-40 mb-16">
+      <div class="relative py-16 md:py-24 px-8 md:px-12 rounded-2xl overflow-hidden bg-surface-container text-center reveal">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-tertiary/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+          <span class="font-label text-sm tracking-[0.2em] text-primary uppercase mb-6 block">Initiate Phase One</span>
+          <h2 class="text-4xl md:text-6xl font-headline font-black text-white mb-8 tracking-tighter leading-tight">Ready to transcend the <span class="text-gradient">Ordinary</span>?</h2>
+          <p class="text-lg md:text-xl text-on-surface-variant mb-12">
+            Schedule a strategic consultation to audit your digital infrastructure and explore implementation pathways.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="contact.html" class="primary-btn-gradient text-on-primary-container px-10 py-4 rounded-md font-headline font-bold text-lg tracking-tight active:scale-95 transition-transform">
+              Book a Call
+            </a>
+            <a href="index.html#process" class="outline-ghost text-white px-10 py-4 rounded-md font-headline font-bold text-lg tracking-tight transition-all">
+              View Process
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0e0e0e] w-full py-16 px-6 md:px-8 border-t border-white/5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+      <div>
+        <a href="index.html" class="text-xl font-black text-white font-headline mb-6 block">NorthAxis.Digital</a>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">
+          Architecting digital landscapes that define tomorrow's leaders.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-white font-label text-sm uppercase tracking-widest mb-6">Core</h5>
+        <ul class="space-y-4">
+          <li><a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase tracking-widest" href="services.html">Services</a></li>
+          <li><a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase tracking-widest" href="index.html#process">Process</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-label text-sm uppercase tracking-widest mb-6">Connect</h5>
+        <ul class="space-y-4">
+          <li><a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase tracking-widest flex items-center gap-2" href="#">LinkedIn <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+          <li><a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase tracking-widest flex items-center gap-2" href="#">Twitter <span class="material-symbols-outlined text-xs">north_east</span></a></li>
+          <li><a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase tracking-widest" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-label text-sm uppercase tracking-widest mb-6">Legal</h5>
+        <ul class="space-y-4">
+          <li><a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase tracking-widest" href="#">Privacy Policy</a></li>
+          <li><a class="text-gray-500 hover:text-cyan-400 transition-colors font-label text-sm uppercase tracking-widest" href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-screen-2xl mx-auto mt-16 pt-8 border-t border-white/5">
+      <p class="text-gray-500 font-label text-[10px] tracking-widest uppercase">
+        &copy; 2026 NorthAxis.Digital. Built for the Architectural Void.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
