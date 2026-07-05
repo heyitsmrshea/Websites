@@ -33,7 +33,7 @@ jobs:
       - name: Upload static site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: RoadRunner
 
       - name: Deploy to GitHub Pages
         id: deployment
