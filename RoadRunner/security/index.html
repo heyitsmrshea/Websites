@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security | RoadRunner Secure data handling and connector posture</title>
+  <meta name="description" content="Security posture for RoadRunner Secure: read-only collection, connector permissions, tenant isolation, retention, offboarding, and disclosure process.">
+  <link rel="canonical" href="https://roadrunnersecure.com/security">
+  <meta property="og:title" content="Security | RoadRunner Secure data handling and connector posture">
+  <meta property="og:description" content="Security posture for RoadRunner Secure: read-only collection, connector permissions, tenant isolation, retention, offboarding, and disclosure process.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://roadrunnersecure.com/security">
+  <meta property="og:image" content="https://roadrunnersecure.com/assets/roadrunner-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/roadrunner-logo.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="/" aria-label="RoadRunner Secure home">
+        <span class="brand-logo-box"><img src="/assets/roadrunner-logo.svg" alt=""></span>
+        <span class="brand-title"><strong>RoadRunner Secure</strong><span>Assessment by RoadRunner Strategies</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/" aria-current="page">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
+      <div class="nav-cta">
+        <a class="button secondary" href="/contact/">Scope pilot</a>
+        <a class="button primary" href="/demo/">Walkthrough</a>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-inner hero-grid">
+        <div>
+          <div class="eyebrow">Security and trust</div>
+          <h1>Sensitive evidence needs explicit rules.</h1>
+          <p class="lead">RoadRunner Secure is designed around read-only evidence collection, least-privilege access, tenant separation, visible limitations, and customer-controlled deployment options where required.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="/contact/">Ask security questions</a>
+            <a class="button secondary" href="/pricing/">Discuss pilot</a>
+          </div>
+          <div class="assurance-row">
+            <span class="pill">Read-only evidence</span>
+            <span class="pill">White-label ready</span>
+            <span class="pill">Evidence-verified closure</span>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="RoadRunner Secure assessment summary">
+    <div class="logo-hero">
+      <img src="/assets/roadrunner-logo.svg" alt="RoadRunner Strategies">
+      <div>
+        <h3>Weekly assessment run</h3>
+        <p class="subtle">Evidence becomes findings, findings become weekly work, and only changed evidence closes the loop.</p>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><strong>14</strong><span>Needs action now</span></div>
+      <div class="metric"><strong>9</strong><span>Verified closed</span></div>
+      <div class="metric"><strong>3</strong><span>Source gaps surfaced</span></div>
+    </div>
+    <div class="queue">
+      <div class="queue-row"><span class="tag high">HIGH</span><span>Legacy authentication still active for named accounts</span><span class="mono">validate next run</span></div>
+      <div class="queue-row"><span class="tag high">HIGH</span><span>Standing Global Admins should move to just-in-time access</span><span class="mono">owner: identity</span></div>
+      <div class="queue-row"><span class="tag done">DONE</span><span>MFA gap closed by evidence change</span><span class="mono">stamped closed</span></div>
+    </div>
+  </aside>
+      </div>
+    </section>
+    
+<section class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Trust posture</div>
+          <h2>Security claims should be specific enough to review.</h2>
+        </div>
+        <p>This page now covers the minimum categories a security reviewer will expect before deeper due diligence.</p>
+      </div>
+      <div class="grid three">
+        <div class="card"><h3>Data handling</h3><p>Evidence is collected for assessment, reporting, validation, and source-health visibility.</p></div>
+        <div class="card"><h3>Encryption</h3><p>Use encrypted transport for uploads and encrypted storage for retained evidence and reports.</p></div>
+        <div class="card"><h3>Access control</h3><p>Limit access by tenant, role, and operational need. Revoke customer access paths during offboarding.</p></div>
+        <div class="card"><h3>Tenant isolation</h3><p>Keep customer evidence scoped by tenant and separate client surfaces for MSP delivery.</p></div>
+        <div class="card"><h3>Logging</h3><p>Track connector status, evidence freshness, access activity, and validation runs.</p></div>
+        <div class="card"><h3>Retention</h3><p>Set retention during the pilot or contract; delete or export evidence during offboarding as agreed.</p></div>
+      </div>
+    </div>
+  </section>
+<section class="section dark">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Connector permissions</div>
+          <h2>Read-only by design, with permissions tied to assessment value.</h2>
+        </div>
+        <p>Final permission names should match the live implementation and customer approval package. This page states the operational intent clearly.</p>
+      </div>
+      <div class="comparison">
+    <table>
+      <thead><tr><th>Connector</th><th>Permission intent</th><th>Why it is needed</th></tr></thead>
+      <tbody><tr><td>Microsoft Graph</td><td>Read directory, policy, device, and security posture where granted</td><td>Create identity, device, policy, and incident findings</td></tr><tr><td>Defender / security signals</td><td>Read alerts, exposure, and onboarding state where licensed</td><td>Surface detection backlog, endpoint gaps, and response work</td></tr><tr><td>On-prem collector</td><td>Read AD topology and privilege relationships</td><td>Map attack paths without collecting secrets or changing objects</td></tr><tr><td>Manual evidence</td><td>Accept customer/MSP notes and approved exceptions</td><td>Attach business context without overriding evidence validation</td></tr></tbody>
+    </table>
+  </div>
+    </div>
+  </section>
+<section class="section alt">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Data handling</div>
+          <h2>Make offboarding and limits explicit.</h2>
+        </div>
+        <p>This is the difference between a trust page and vague reassurance.</p>
+      </div>
+      <div class="grid three">
+        <div class="card"><h3>Retention</h3><p>Pilot retention should be defined before access is granted. Long-term retention follows the contract and reporting needs.</p></div>
+        <div class="card"><h3>Offboarding</h3><p>Revoke connectors, export agreed reports, delete retained evidence according to the agreed timeline, and confirm completion.</p></div>
+        <div class="card"><h3>Subprocessors</h3><p>List hosting, email, analytics, and operational subprocessors before production procurement. If none are used for a category, say so.</p></div>
+      </div>
+    </div>
+  </section>
+<section class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Boundaries</div>
+          <h2>What RoadRunner does not do by default.</h2>
+        </div>
+        <p>Explicit boundaries reduce fear and prevent the product from sounding like an exploit platform.</p>
+      </div>
+      <div class="grid four">
+        <div class="card"><h3>No destructive testing</h3><p>The assessment observes configuration and evidence. Destructive testing is not part of default behavior.</p></div>
+        <div class="card"><h3>No credential collection</h3><p>Collectors do not harvest passwords, hashes, tokens, or secrets.</p></div>
+        <div class="card"><h3>No automatic changes</h3><p>RoadRunner recommends fixes. Customers or MSPs execute approved changes.</p></div>
+        <div class="card"><h3>Disclosure path</h3><p>Send security reports to drew@roadrunnerstrategies.com. Acknowledge valid reports and coordinate remediation directly.</p></div>
+      </div>
+    </div>
+  </section>
+<section class="section alt">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Review maturity</div>
+          <h2>Be clear about what exists now and what belongs in procurement.</h2>
+        </div>
+        <p>If formal certifications are not yet available, the page should not imply them. It should describe the review path and the evidence package that can be supplied.</p>
+      </div>
+      <div class="grid three">
+        <div class="card"><h3>Current review package</h3><p>Connector purposes, read-only posture, retention plan, offboarding plan, subprocessors, and deployment model.</p></div>
+        <div class="card"><h3>Disclosure SLA</h3><p>Security reports sent to drew@roadrunnerstrategies.com should receive acknowledgement within one business day and remediation coordination after validation.</p></div>
+        <div class="card"><h3>Compliance roadmap</h3><p>Formal control mapping and third-party assurance can be added as enterprise demand requires. Do not claim certifications before they exist.</p></div>
+      </div>
+    </div>
+  </section>
+<section class="section">
+    <div class="section-inner">
+      <div class="contact-grid">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h2>Walk through the product or scope a pilot.</h2>
+      <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
+      <div class="section-actions">
+        <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
+      </div>
+    </div>
+    <form class="panel card contact-form" data-contact-form>
+      <div class="field-grid">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Work email<input name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="field-grid">
+        <label>Company<input name="company" autocomplete="organization"></label>
+        <label>Role<input name="role" autocomplete="organization-title"></label>
+      </div>
+      <label>Interest
+        <select name="interest">
+          <option value="pilot">Scope a pilot</option>
+          <option value="white-label">Review MSP white-label model</option>
+          <option value="walkthrough">Product walkthrough</option>
+          <option value="security">Security review</option>
+        </select>
+      </label>
+      <div class="field-grid">
+        <label>Environment size<input name="size" placeholder="Users, endpoints, tenants"></label>
+        <label>Microsoft / on-prem scope<input name="scope" placeholder="M365, Azure, AD, Defender, Intune"></label>
+      </div>
+      <label>Notes
+        <textarea name="notes" rows="5" placeholder="Pilot goals, MSP/client model, deployment constraints, security-review concerns"></textarea>
+      </label>
+      <button class="button primary" type="submit">Open email draft</button>
+      <p class="form-note">No data is stored by this static page unless you send the generated email.</p>
+    </form>
+  </div>
+    </div>
+  </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo"><img src="/assets/roadrunner-logo.svg" alt=""></span>
+          <div><strong>RoadRunner Secure</strong><br><span class="subtle">RoadRunner owns the assessment method and product logic. MSPs can deliver the client-facing surface under their own brand.</span></div>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation"><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
+      </div>
+      <div class="footer-meta">
+        <span>Read-only evidence posture</span>
+        <span>No auto-remediation by default</span>
+        <span>Synthetic walkthrough uses fictional evidence</span>
+        <span>&copy; RoadRunner Strategies, LLC</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+</body>
+</html>

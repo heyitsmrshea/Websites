@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Microsoft Security | Entra, Defender, Intune, M365, and Azure assessment</title>
+  <meta name="description" content="RoadRunner Secure converts Microsoft security evidence into prioritized findings, owner-ready remediation, and verified closure.">
+  <link rel="canonical" href="https://roadrunnersecure.com/microsoft-security">
+  <meta property="og:title" content="Microsoft Security | Entra, Defender, Intune, M365, and Azure assessment">
+  <meta property="og:description" content="RoadRunner Secure converts Microsoft security evidence into prioritized findings, owner-ready remediation, and verified closure.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://roadrunnersecure.com/microsoft-security">
+  <meta property="og:image" content="https://roadrunnersecure.com/assets/roadrunner-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/roadrunner-logo.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="/" aria-label="RoadRunner Secure home">
+        <span class="brand-logo-box"><img src="/assets/roadrunner-logo.svg" alt=""></span>
+        <span class="brand-title"><strong>RoadRunner Secure</strong><span>Assessment by RoadRunner Strategies</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/" aria-current="page">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
+      <div class="nav-cta">
+        <a class="button secondary" href="/contact/">Scope pilot</a>
+        <a class="button primary" href="/demo/">Walkthrough</a>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-inner hero-grid">
+        <div>
+          <div class="eyebrow">Microsoft security assessment</div>
+          <h1>Microsoft posture without the score theater.</h1>
+          <p class="lead">Secure Score is useful context, not the whole assessment. RoadRunner turns Entra, Defender, Intune, M365, and Azure evidence into specific work your team can assign and validate.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="/demo/#walkthrough-microsoft">View Microsoft walkthrough</a>
+            <a class="button secondary" href="/security/">Review permissions</a>
+          </div>
+          <div class="assurance-row">
+            <span class="pill">Read-only evidence</span>
+            <span class="pill">White-label ready</span>
+            <span class="pill">Evidence-verified closure</span>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="RoadRunner Secure assessment summary">
+    <div class="logo-hero">
+      <img src="/assets/roadrunner-logo.svg" alt="RoadRunner Strategies">
+      <div>
+        <h3>Weekly assessment run</h3>
+        <p class="subtle">Evidence becomes findings, findings become weekly work, and only changed evidence closes the loop.</p>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><strong>14</strong><span>Needs action now</span></div>
+      <div class="metric"><strong>9</strong><span>Verified closed</span></div>
+      <div class="metric"><strong>3</strong><span>Source gaps surfaced</span></div>
+    </div>
+    <div class="queue">
+      <div class="queue-row"><span class="tag high">HIGH</span><span>Legacy authentication still active for named accounts</span><span class="mono">validate next run</span></div>
+      <div class="queue-row"><span class="tag high">HIGH</span><span>Standing Global Admins should move to just-in-time access</span><span class="mono">owner: identity</span></div>
+      <div class="queue-row"><span class="tag done">DONE</span><span>MFA gap closed by evidence change</span><span class="mono">stamped closed</span></div>
+    </div>
+  </aside>
+      </div>
+    </section>
+    
+<section class="section" id="walkthrough-microsoft"><div class="section-inner">
+  <div class="section-head"><div><div class="eyebrow">Microsoft coverage</div><h2>Exact domains, exact findings, exact limits.</h2></div><p>Coverage depends on licensing and granted permissions. RoadRunner should say what it can prove and what remains unknown.</p></div>
+  <div class="grid three">
+    <div class="card"><h3>Entra ID</h3><p>Privileged roles, MFA coverage, Conditional Access gaps, risky users, legacy auth, guest exposure, and role assignment drift.</p></div>
+    <div class="card"><h3>Defender</h3><p>Incident backlog, exposure signals, device risk, alert hygiene, and onboarding coverage where available.</p></div>
+    <div class="card"><h3>Intune</h3><p>Compliance policy coverage, unmanaged devices, stale enrollments, device encryption, and platform-specific baseline gaps.</p></div>
+    <div class="card"><h3>Exchange and M365</h3><p>Legacy protocol exposure, mailbox forwarding, audit posture, sharing controls, and risky collaboration settings.</p></div>
+    <div class="card"><h3>SharePoint and OneDrive</h3><p>External sharing posture, sensitive site exposure, anonymous links, and admin control coverage.</p></div>
+    <div class="card"><h3>Azure posture</h3><p>Subscription security settings, Defender plan coverage, privileged access, network exposure, and policy gaps.</p></div>
+  </div>
+</div></section>
+<section class="section">
+    <div class="section-inner">
+      <div class="artifact">
+        <div class="artifact-header">
+          <div class="artifact-title">
+            <strong>Sample Microsoft finding</strong>
+            <h3>Conditional Access excludes legacy service accounts without compensating control</h3>
+          </div>
+          <span class="tag high">HIGH</span>
+        </div>
+        <div class="artifact-grid">
+          <div class="artifact-field"><b>Affected</b><span>4 accounts excluded from MFA policy; 2 observed interactive sign-ins in the last 14 days</span></div>
+          <div class="artifact-field"><b>Evidence</b><span>Policy exclusion list plus sign-in evidence shows recent use outside expected service context.</span></div>
+          <div class="artifact-field"><b>Risk</b><span>Excluded accounts create a durable identity bypass that attackers can use after password compromise.</span></div>
+          <div class="artifact-field"><b>Recommended action</b><span>Remove interactive-capable accounts from exclusion, convert to managed identities where possible, or attach documented exception controls.</span></div>
+          <div class="artifact-field"><b>Validation</b><span>Next run must show no recent interactive sign-ins for excluded service accounts or an approved exception.</span></div>
+          <div class="artifact-field"><b>Closure rule</b><span>Manual status cannot close this finding. Evidence from the next run must satisfy the validation condition.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="section dark">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Secure Score is not enough</div>
+          <h2>Scores do not assign work or prove closure.</h2>
+        </div>
+        <p>RoadRunner can use Microsoft score data as context, but the assessment output is built around named evidence and validation.</p>
+      </div>
+      <div class="comparison">
+    <table>
+      <thead><tr><th>Question</th><th>Microsoft Secure Score</th><th>RoadRunner Secure</th></tr></thead>
+      <tbody><tr><td>What is wrong?</td><td>Control-level recommendations</td><td>Named findings with affected accounts, devices, policies, or resources</td></tr><tr><td>Who owns it?</td><td>Usually outside the score</td><td>Owner-ready queue with remediation context</td></tr><tr><td>Why this first?</td><td>Score impact may dominate</td><td>Prioritized by exposure, blast radius, confidence, and operational urgency</td></tr><tr><td>How does it close?</td><td>Score movement or manual review</td><td>Next evidence run must satisfy validation criteria</td></tr></tbody>
+    </table>
+  </div>
+    </div>
+  </section>
+<section class="section alt">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Connector permissions</div>
+          <h2>Permissions are part of the buying decision.</h2>
+        </div>
+        <p>Exact permission names should be finalized against the implementation, but the public page now explains the purpose and read-only posture.</p>
+      </div>
+      <div class="comparison">
+    <table>
+      <thead><tr><th>Area</th><th>Typical read purpose</th><th>Assessment value</th></tr></thead>
+      <tbody><tr><td>Directory</td><td>Read users, groups, roles, guests, and assignments</td><td>Detect privilege sprawl, stale access, and risky identities</td></tr><tr><td>Policy</td><td>Read Conditional Access and authentication posture</td><td>Find MFA exceptions, weak access paths, and policy drift</td></tr><tr><td>Security</td><td>Read incidents, alerts, and exposure signals where licensed</td><td>Fold detection and response gaps into the weekly queue</td></tr><tr><td>Device</td><td>Read Intune compliance and device inventory where available</td><td>Find unmanaged or noncompliant endpoints tied to identity risk</td></tr><tr><td>Azure</td><td>Read subscription posture and security configuration</td><td>Assess cloud control coverage and prioritized misconfigurations</td></tr></tbody>
+    </table>
+  </div>
+    </div>
+  </section>
+<section class="section">
+    <div class="section-inner">
+      <div class="contact-grid">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h2>Walk through the product or scope a pilot.</h2>
+      <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
+      <div class="section-actions">
+        <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
+      </div>
+    </div>
+    <form class="panel card contact-form" data-contact-form>
+      <div class="field-grid">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Work email<input name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="field-grid">
+        <label>Company<input name="company" autocomplete="organization"></label>
+        <label>Role<input name="role" autocomplete="organization-title"></label>
+      </div>
+      <label>Interest
+        <select name="interest">
+          <option value="pilot">Scope a pilot</option>
+          <option value="white-label">Review MSP white-label model</option>
+          <option value="walkthrough">Product walkthrough</option>
+          <option value="security">Security review</option>
+        </select>
+      </label>
+      <div class="field-grid">
+        <label>Environment size<input name="size" placeholder="Users, endpoints, tenants"></label>
+        <label>Microsoft / on-prem scope<input name="scope" placeholder="M365, Azure, AD, Defender, Intune"></label>
+      </div>
+      <label>Notes
+        <textarea name="notes" rows="5" placeholder="Pilot goals, MSP/client model, deployment constraints, security-review concerns"></textarea>
+      </label>
+      <button class="button primary" type="submit">Open email draft</button>
+      <p class="form-note">No data is stored by this static page unless you send the generated email.</p>
+    </form>
+  </div>
+    </div>
+  </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo"><img src="/assets/roadrunner-logo.svg" alt=""></span>
+          <div><strong>RoadRunner Secure</strong><br><span class="subtle">RoadRunner owns the assessment method and product logic. MSPs can deliver the client-facing surface under their own brand.</span></div>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation"><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
+      </div>
+      <div class="footer-meta">
+        <span>Read-only evidence posture</span>
+        <span>No auto-remediation by default</span>
+        <span>Synthetic walkthrough uses fictional evidence</span>
+        <span>&copy; RoadRunner Strategies, LLC</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+</body>
+</html>
