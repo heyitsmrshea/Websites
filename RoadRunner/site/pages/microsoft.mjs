@@ -40,16 +40,18 @@ function scoreSection() {
   return `<section class="section tinted tint-amber" id="score-theater">
     <div class="shell">
       ${sectionHead("Secure Score is not enough", "The score is context. <span class='ital'>The work is the product.</span>", "RoadRunner can use Microsoft score data as context, but the output is built around named evidence and validation.", "amber")}
-      <div class="gauge-wrap">
-        <div class="rv" id="gauge-stage">
-          <svg viewBox="0 0 340 220" role="img" aria-label="A Secure-Score-style gauge shown as context, not the deliverable">
+      <div class="gauge-wrap" data-gauge>
+        <div class="gauge-stage rv" id="gauge-stage">
+          <svg viewBox="0 0 340 230" role="img" aria-label="A Secure-Score-style gauge, shown as context and then deconstructed into named work">
             <path d="M 40 190 A 130 130 0 1 1 300 190" fill="none" stroke="rgba(198,220,236,.12)" stroke-width="16" stroke-linecap="round"/>
-            <path id="gauge-arc" d="M 40 190 A 130 130 0 1 1 300 190" fill="none" stroke="#fbbf24" stroke-width="16" stroke-linecap="round" stroke-dasharray="612" stroke-dashoffset="215"/>
-            <text x="170" y="150" text-anchor="middle" fill="#f2f6f9" font-family="ui-monospace, Menlo, monospace" font-size="44" font-weight="640">65.8%</text>
+            <path id="gauge-arc" d="M 40 190 A 130 130 0 1 1 300 190" fill="none" stroke="#fbbf24" stroke-width="16" stroke-linecap="round" stroke-dasharray="612" stroke-dashoffset="612"/>
+            <text id="gauge-num" x="170" y="150" text-anchor="middle" fill="#f2f6f9" font-family="ui-monospace, Menlo, monospace" font-size="44" font-weight="640">65.8%</text>
             <text x="170" y="180" text-anchor="middle" fill="#6d7b88" font-family="ui-monospace, Menlo, monospace" font-size="11" letter-spacing="3">COMPOSITE</text>
           </svg>
+          <div class="gauge-caption">Context only. Not the deliverable.</div>
         </div>
-        <div class="worklist">
+        <div class="worklist" data-worklist>
+          <div class="worklist-head">The score, deconstructed into named work</div>
           ${workItem(1, "Remove 4 interactive-capable accounts from the MFA exclusion list", "ENTRA · POLICY · owner: identity")}
           ${workItem(2, "Move 3 standing Global Admins to PIM-eligible access", "ENTRA · ROLES · owner: identity")}
           ${workItem(3, "Onboard Intune or record the device-posture data gap", "INTUNE · SOURCE GAP · owner: endpoint")}

@@ -74,11 +74,12 @@ export function attackGraphSvg(id = "adgraph") {
     { id: "u2", x: 348, y: 62, label: "helpdesk-7", sub: "group", shape: "rect" },
     { id: "srv", x: 520, y: 356, label: "FS-01", sub: "server", shape: "rect" }
   ];
+  const hotNodes = new Set(["svc", "grp", "ws", "sess", "da"]);
   const edges = [
-    { from: "svc", to: "grp", cls: "path-1", label: "memberOf" },
-    { from: "grp", to: "ws", cls: "path-2", label: "localAdmin" },
-    { from: "ws", to: "sess", cls: "path-3 cut-target", label: "activeSession" },
-    { from: "sess", to: "da", cls: "path-4", label: "sessionOf" },
+    { from: "svc", to: "grp", cls: "hot path-1", label: "memberOf" },
+    { from: "grp", to: "ws", cls: "hot path-2", label: "localAdmin" },
+    { from: "ws", to: "sess", cls: "hot path-3 cut-target", label: "activeSession" },
+    { from: "sess", to: "da", cls: "hot path-4 downstream", label: "sessionOf" },
     { from: "u1", to: "u2", cls: "", label: "" },
     { from: "u2", to: "da", cls: "", label: "" },
     { from: "srv", to: "ws", cls: "", label: "" }
@@ -94,13 +95,14 @@ export function attackGraphSvg(id = "adgraph") {
       : n.shape === "hex"
         ? `<circle r="20"/>`
         : `<circle r="15"/>`;
-    return `<g class="g-node ${n.sub === "TIER 0" ? "t0" : ""}" data-node="${n.id}" transform="translate(${n.x} ${n.y})">
+    const cls = n.sub === "TIER 0" ? "t0" : hotNodes.has(n.id) ? "hot" : "";
+    return `<g class="g-node ${cls}" data-node="${n.id}" transform="translate(${n.x} ${n.y})">
       ${shape}
       <text x="0" y="${n.shape === "hex" ? 38 : 32}" text-anchor="middle">${n.label}</text>
       <text class="sub" x="0" y="${n.shape === "hex" ? 50 : 44}" text-anchor="middle">${n.sub}</text>
     </g>`;
   }).join("\n      ");
-  return `<svg id="${id}" viewBox="0 0 760 420" role="img" aria-label="Synthetic Active Directory attack path: svc-build reaches Domain Admins through workstation admin and an exposed session">
+  return `<svg id="${id}" data-graph viewBox="0 0 760 420" role="img" aria-label="Synthetic Active Directory attack path: svc-build reaches Domain Admins through workstation admin and an exposed session">
       ${edgeSvg}
       <g class="cut-mark" opacity="0"><line x1="452" y1="222" x2="480" y2="278" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/><line x1="480" y1="222" x2="452" y2="278" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/></g>
       ${nodeSvg}

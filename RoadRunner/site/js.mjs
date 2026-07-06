@@ -176,6 +176,67 @@ export function clientJs(brand) {
     }
   }
 
+  /* ---------- Moment 4: gauge shatters into work (microsoft) ---------- */
+  const gauge = document.querySelector("[data-gauge]");
+  if (gauge) {
+    const arc = gauge.querySelector("#gauge-arc");
+    const num = gauge.querySelector("#gauge-num");
+    const worklist = gauge.querySelector("[data-worklist]");
+    const items = [...gauge.querySelectorAll(".workitem")];
+    items.forEach((it, i) => (it.style.animationDelay = (0.15 + i * 0.11).toFixed(2) + "s"));
+    const play = () => {
+      if (rm.matches) { gauge.classList.add("shattered"); worklist.classList.add("cascade"); return; }
+      // 1) draw the arc to 65.8% (offset 612 -> 215) + count the number
+      requestAnimationFrame(() => { if (arc) arc.style.strokeDashoffset = "215"; });
+      if (num) {
+        const t0 = performance.now();
+        const tick = (t) => {
+          const p = Math.min(1, (t - t0) / 1200);
+          num.textContent = (65.8 * (1 - Math.pow(1 - p, 3))).toFixed(1) + "%";
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+      // 2) shatter into work
+      setTimeout(() => { gauge.classList.add("shattered"); worklist.classList.add("cascade"); }, 1500);
+    };
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((e, obs) => {
+        if (e[0].isIntersecting) { play(); obs.disconnect(); }
+      }, { threshold: 0.4 }).observe(gauge);
+    } else {
+      gauge.classList.add("shattered"); worklist.classList.add("cascade");
+    }
+  }
+
+  /* ---------- Moment: the edge cut (on-prem) ---------- */
+  const edgecut = document.querySelector("[data-edgecut]");
+  if (edgecut) {
+    const svg = edgecut.querySelector("svg[data-graph]");
+    const tag = edgecut.querySelector("[data-cut-tag]");
+    const verdict = edgecut.querySelector("[data-verdict]");
+    const vtext = edgecut.querySelector("[data-verdict-text]");
+    const sever = () => {
+      svg.classList.add("severed");
+      if (tag) { tag.textContent = "PATH SEVERED"; tag.classList.remove("high"); tag.classList.add("done"); }
+      if (verdict) verdict.classList.add("severed");
+      if (vtext) vtext.textContent = "edge cut · no route to Tier 0 · proven on run RR-2026-08";
+    };
+    if ("IntersectionObserver" in window && !rm.matches) {
+      let armed = false;
+      new IntersectionObserver((entries, obs) => {
+        if (entries[0].isIntersecting && !armed) {
+          armed = true;
+          svg.classList.add("ignited");
+          setTimeout(sever, 1900);
+          obs.disconnect();
+        }
+      }, { threshold: 0.5 }).observe(edgecut);
+    }
+    // reduced motion / no IO: leave the ignited path standing (the exposure);
+    // the recommended cut is stated in the finding + closure table below.
+  }
+
   /* ---------- walkthrough chapters ignite on approach ---------- */
   const chapters = document.querySelectorAll(".chapter");
   if (chapters.length && "IntersectionObserver" in window) {

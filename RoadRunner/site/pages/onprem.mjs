@@ -17,19 +17,18 @@ function graphSection() {
   return `<section class="section tinted tint-rose" id="walkthrough-onprem">
     <div class="shell">
       ${sectionHead("The path", "One service account. Three hops. Tier 0.", "The graph below is a synthetic topology. The product finds the shortest privilege path to Domain Admins and points at the cheapest edge to cut.", "rose")}
-      <div class="runpanel graph-panel rv-scale">
+      <div class="runpanel graph-panel rv-scale" data-edgecut>
         <div class="runpanel-top">
           <div class="titleblock">
             <strong>Attack-path graph — corp.example</strong>
             <span class="runid">collector rr-ad-2026-07-05.json · SAMPLE FIXTURE</span>
           </div>
-          <span class="tag high">TIER 0 REACHABLE</span>
+          <span class="tag high" data-cut-tag>TIER 0 REACHABLE</span>
         </div>
         <div class="graph-canvas">${attackGraphSvg("adgraph-main")}</div>
-        <div class="graph-legend">
-          <span><i style="background:var(--rose-deep)"></i>ignited path svc-build → Domain Admins</span>
-          <span><i style="background:var(--panel-2);border:1px solid rgba(182,194,203,.5)"></i>principal / computer</span>
-          <span><i style="background:rgba(244,63,94,.35)"></i>Tier 0</span>
+        <div class="graph-legend" style="justify-content:space-between">
+          <span class="graph-verdict" data-verdict><span class="dot"></span><span data-verdict-text>svc-build → Domain Admins · 4 hops · Tier 0 reachable</span></span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--faint);letter-spacing:.08em">scroll to cut the edge ↓</span>
         </div>
       </div>
     </div>

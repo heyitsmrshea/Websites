@@ -1047,14 +1047,35 @@ tbody tr:hover { background: rgba(255, 255, 255, .02); }
 .graph-legend span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; color: var(--muted); display: inline-flex; align-items: center; gap: 7px; }
 .graph-legend i { width: 9px; height: 9px; border-radius: 50%; }
 
-.g-edge { stroke: rgba(182, 194, 203, .28); stroke-width: 1.6; }
+.g-edge { stroke: rgba(182, 194, 203, .28); stroke-width: 1.6; transition: stroke .6s var(--ease-out), opacity .6s var(--ease-out); }
 .g-edge.hot { stroke: var(--rose-deep); stroke-width: 2.6; filter: drop-shadow(0 0 6px rgba(244, 63, 94, .55)); }
-.g-edge.cuttable { stroke: var(--rose-deep); stroke-width: 3.4; }
-.g-node circle, .g-node rect { fill: var(--panel-2); stroke: rgba(182, 194, 203, .4); stroke-width: 1.5; }
+.g-node circle, .g-node rect { fill: var(--panel-2); stroke: rgba(182, 194, 203, .4); stroke-width: 1.5; transition: stroke .6s var(--ease-out), opacity .6s var(--ease-out); }
 .g-node.hot circle, .g-node.hot rect { stroke: var(--rose); filter: drop-shadow(0 0 7px rgba(244, 63, 94, .5)); }
 .g-node.t0 circle { fill: rgba(244, 63, 94, .16); stroke: var(--rose-deep); stroke-width: 2; }
-.g-node text { fill: var(--soft); font-family: var(--font-mono); font-size: 10.5px; }
+.g-node text { fill: var(--soft); font-family: var(--font-mono); font-size: 10.5px; transition: fill .6s; }
 .g-node .sub { fill: var(--faint); font-size: 8.5px; }
+
+/* --- the edge cut: staged ignition, then the sever --- */
+html.js svg[data-graph] .g-edge.hot { stroke-dasharray: 4 6; }
+html.js svg[data-graph].ignited .g-edge.hot { stroke-dasharray: none; }
+html.js svg[data-graph] .cut-mark { transform-box: fill-box; transform-origin: center; }
+svg[data-graph].severed .cut-target { stroke: var(--faint); stroke-width: 1.4; filter: none; stroke-dasharray: 3 5; opacity: .5; }
+svg[data-graph].severed .downstream { stroke: rgba(182, 194, 203, .18); filter: none; stroke-width: 1.4; opacity: .45; }
+svg[data-graph].severed .g-node[data-node="sess"] circle,
+svg[data-graph].severed .g-node[data-node="sess"] text { stroke: rgba(182,194,203,.3); filter: none; fill: var(--faint); opacity: .55; }
+html.js svg[data-graph].severed .cut-mark { animation: cut-flash .55s var(--ease-snap) forwards; }
+svg[data-graph].severed .cut-mark { opacity: 1; }
+.graph-verdict {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--rose);
+  transition: color .5s;
+}
+.graph-verdict.severed { color: var(--green); }
+.graph-verdict .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 8px currentColor; }
 
 /* ---------- collector rules ---------- */
 .rules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--radius-s); overflow: hidden; }
@@ -1213,14 +1234,28 @@ tbody tr:hover { background: rgba(255, 255, 255, .02); }
 .notfound .routes a:hover { color: var(--teal-hi); padding-left: 10px; }
 .notfound .routes .mono { color: var(--faint); font-size: 11px; }
 
-/* ---------- score deconstruction placeholder (P4 upgrades) ---------- */
+/* ---------- score deconstruction (Moment 4) ---------- */
 .gauge-wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(30px, 4vw, 64px); align-items: center; }
+.gauge-stage { position: relative; display: grid; justify-items: center; gap: 4px; transition: opacity .7s var(--ease-out), transform .7s var(--ease-out), filter .7s; }
+.gauge-stage svg { max-width: 300px; }
+.gauge-caption { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: var(--amber); opacity: .8; }
+html.js [data-gauge].shattered .gauge-stage { opacity: .32; transform: scale(.94); filter: saturate(.5); }
+#gauge-arc { transition: stroke-dashoffset 1.3s var(--ease-out); }
+
 .worklist { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.worklist-head { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding: 12px 4px; }
 .workitem { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 15px 4px; border-bottom: 1px solid var(--line-soft); }
+html.js [data-worklist] .workitem { opacity: 0; transform: translateX(18px); }
+html.js [data-worklist].cascade .workitem { animation: shard-in .55s var(--ease-out) forwards; }
 .workitem .rank { font-family: var(--font-mono); font-size: 11px; color: var(--teal); width: 24px; }
 .workitem .what { font-size: 14.5px; color: var(--soft); }
 .workitem .what strong { color: var(--ink); font-weight: 640; display: block; font-size: 14.5px; }
 .workitem .what span { font-size: 12px; color: var(--faint); font-family: var(--font-mono); }
+@keyframes shard-in { from { opacity: 0; transform: translateX(18px) scale(.98); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-worklist] .workitem { opacity: 1; transform: none; }
+  html.js [data-gauge].shattered .gauge-stage { opacity: 1; transform: none; filter: none; }
+}
 
 /* ---------- responsive ---------- */
 @media (max-width: 980px) {
