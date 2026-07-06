@@ -50,18 +50,18 @@ function productProof() {
     <div class="shell">
       ${sectionHead("Product proof", "Show the real surfaces, not decoration.", "The Polaris screens are MSP white-label examples. RoadRunner owns the assessment logic underneath.")}
       ${exhibitRow(
-        exhibit({ img: "/refs/polaris-executive-v2.png", url: "polaris.msp/executive", letter: "A", alt: "Polaris executive posture dashboard with composite score, needs-action count, and what-changed list", caption: "Executive posture — risk direction, closure counts, source gaps", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-exec", url: "polaris.msp/executive", letter: "A", alt: "Polaris executive posture dashboard: composite gauge at 65.8%, 27 needs-action, $10k savings, a what-changed list of new and resolved findings, and a coverage-and-honesty panel", caption: "Executive posture — risk direction, closure counts, source gaps", width: 1440, height: 900 }),
         "Leadership sees the story, not a wall of charts.",
         "Risk direction, verified closure counts, identified savings, and exactly what changed since last run — with the honesty panel showing what cannot be assessed yet."
       )}
       ${exhibitRow(
-        exhibit({ img: "/refs/polaris-onprem.png", url: "polaris.msp/on-prem", letter: "B", alt: "Polaris on-prem Active Directory attack path graph with collector run options", caption: "On-prem attack paths — the edge that should die this week", width: 1440, height: 992 }),
+        exhibit({ img: "exhibit-attack", url: "polaris.msp/on-prem", letter: "B", alt: "Polaris on-prem view: an Active Directory attack-path graph with the shortest route from svc-build to Domain Admins ignited in red, a four-hop breakdown panel, and a recommended-cut callout", caption: "On-prem attack paths — the edge that should die this week", width: 1440, height: 900 }),
         "Technical owners see the path and the cut.",
         "AD topology becomes a shortest-path-to-Tier-0 graph, the risky edge, low-disruption collector options, and the validation target for the next run.",
         true
       )}
       ${exhibitRow(
-        exhibit({ img: "/refs/polaris-vciso-v2.png", url: "polaris.msp/vciso", letter: "C", alt: "Polaris AI vCISO answering with citations to live findings and source evidence", caption: "Evidence-grounded vCISO — cited answers, no invention", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-vciso", url: "polaris.msp/vciso", letter: "C", alt: "Polaris AI vCISO answering what to fix first, naming entities and citing finding IDs and evidence sources for every claim, and stating a data gap instead of inventing", caption: "Evidence-grounded vCISO — cited answers, no invention", width: 1440, height: 900 }),
         "Answers cite evidence instead of inventing it.",
         "The vCISO names entities, cites the finding and source for every claim, and says plainly when data is missing instead of writing fiction around it."
       )}

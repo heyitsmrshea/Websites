@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Polaris — Work queue (exhibit source)</title>
+<link rel="stylesheet" href="/shots/polaris.css">
+<style>
+  .layout { display: grid; grid-template-columns: 210px 1fr; gap: 14px; }
+  .rail-card { padding: 14px 16px; }
+  .f-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 2px; font: 500 11.5px/1 var(--sans); color: var(--soft); border-bottom: 1px solid rgba(190,214,232,.05); }
+  .f-row:last-child { border-bottom: 0; }
+  .f-row .ct { font: 600 10px/1 var(--mono); color: var(--muted); }
+  .f-row.on { color: var(--ink); }
+  .f-row.on .ct { color: var(--teal); }
+  .lane { font: 650 9px/1 var(--mono); letter-spacing: .1em; padding: 4px 7px; border-radius: 4px; }
+  .lane.h72 { color: #f43f5e; background: rgba(244,63,94,.1); border: 1px solid rgba(244,63,94,.4); }
+  .lane.w2 { color: #f5a623; background: rgba(245,166,35,.08); border: 1px solid rgba(245,166,35,.35); }
+  .val { font: 500 10px/1.4 var(--mono); color: var(--faint); }
+  .qhead { display: flex; gap: 22px; align-items: center; margin-bottom: 12px; }
+  .qstat { display: grid; gap: 3px; }
+  .qstat b { font: 640 20px/1 var(--mono); color: var(--ink); }
+  .qstat span { font: 500 9.5px/1 var(--mono); color: var(--muted); letter-spacing: .12em; }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">
+      <span class="gem"></span>
+      <div><div class="brand-name">POLARIS</div><div class="brand-sub">Weekly Security Assessment</div></div>
+    </div>
+    <div class="nav-item"><span class="n">01</span><span class="t">Executive</span><span class="s">posture · cost · what changed</span></div>
+    <div class="nav-item on"><span class="n">02</span><span class="t">Work Queue</span><span class="s">fix these, in order</span></div>
+    <div class="nav-item"><span class="n">03</span><span class="t">On-Prem</span><span class="s">AD topology · attack paths</span></div>
+    <div class="nav-item"><span class="n">04</span><span class="t">AI vCISO</span><span class="s">ask, grounded in evidence</span></div>
+    <div class="nav-right">
+      <span class="nav-live">LIVE</span>
+      <span class="tenant">Acme Industries (fictional)</span>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">This week's queue</h1>
+        <p class="page-sub">Ranked by exposure × blast radius × confidence — <span class="m">not by score impact</span></p>
+      </div>
+      <span class="pill">27 OPEN · 6 VERIFIED CLOSED</span>
+    </div>
+
+    <div class="layout">
+      <aside style="display:grid; gap:14px; align-content:start">
+        <div class="card rail-card">
+          <span class="k" style="display:block; margin-bottom:8px">Lanes</span>
+          <div class="f-row on"><span>72-hour</span><span class="ct">5</span></div>
+          <div class="f-row on"><span>Two-week</span><span class="ct">9</span></div>
+          <div class="f-row"><span>This quarter</span><span class="ct">13</span></div>
+        </div>
+        <div class="card rail-card">
+          <span class="k" style="display:block; margin-bottom:8px">Owner</span>
+          <div class="f-row"><span>identity</span><span class="ct">11</span></div>
+          <div class="f-row"><span>endpoint</span><span class="ct">7</span></div>
+          <div class="f-row"><span>cloud</span><span class="ct">5</span></div>
+          <div class="f-row"><span>collab</span><span class="ct">4</span></div>
+        </div>
+        <div class="card rail-card">
+          <span class="k" style="display:block; margin-bottom:8px">State</span>
+          <div class="f-row"><span>Open</span><span class="ct">27</span></div>
+          <div class="f-row"><span>Fix claimed — awaiting run</span><span class="ct">4</span></div>
+          <div class="f-row"><span>Verified closed</span><span class="ct">6</span></div>
+        </div>
+      </aside>
+
+      <div class="card" style="padding-top:14px">
+        <div class="qhead">
+          <div class="qstat"><b>5</b><span>72-HOUR</span></div>
+          <div class="qstat"><b>9</b><span>TWO-WEEK</span></div>
+          <div class="qstat"><b>4</b><span>AWAITING RUN</span></div>
+          <span class="sub mono" style="margin-left:auto">manual "done" does not close — the next run does</span>
+        </div>
+        <table class="tbl">
+          <tr><th style="width:34px">#</th><th>Finding</th><th style="width:96px">Severity</th><th style="width:110px">Owner</th><th style="width:84px">Lane</th><th style="width:250px">Closes when</th></tr>
+          <tr><td class="mono">01</td><td>Remove 4 interactive-capable accounts from MFA exclusion list</td><td><span class="chipx hi">HIGH</span></td><td><span class="owner"><i>ID</i>identity</span></td><td><span class="lane h72">72H</span></td><td class="val">no interactive sign-ins for excluded accounts in next evidence run</td></tr>
+          <tr><td class="mono">02</td><td>Cut AD edge: svc-build → Workstation Admins (Tier 0 path)</td><td><span class="chipx hi">HIGH</span></td><td><span class="owner"><i>OP</i>on-prem</span></td><td><span class="lane h72">72H</span></td><td class="val">next collector run shows no route svc-build → Domain Admins</td></tr>
+          <tr><td class="mono">03</td><td>Disable legacy authentication for svc-scanner, svc-fax</td><td><span class="chipx hi">HIGH</span></td><td><span class="owner"><i>ID</i>identity</span></td><td><span class="lane h72">72H</span></td><td class="val">sign-in log shows zero legacy protocol auth for named accounts</td></tr>
+          <tr><td class="mono">04</td><td>Move 2 standing Global Admins to PIM-eligible access</td><td><span class="chipx med">MEDIUM</span></td><td><span class="owner"><i>ID</i>identity</span></td><td><span class="lane w2">2WK</span></td><td class="val">role assignment diff shows eligible, not permanent, assignment</td></tr>
+          <tr><td class="mono">05</td><td>Remove standing Owner roles at subscription scope (3 principals)</td><td><span class="chipx hi">HIGH</span></td><td><span class="owner"><i>CL</i>cloud</span></td><td><span class="lane w2">2WK</span></td><td class="val">RBAC snapshot shows no permanent Owner outside break-glass</td></tr>
+          <tr><td class="mono">06</td><td>Quarantine 12 devices with no Defender onboarding signal</td><td><span class="chipx med">MEDIUM</span></td><td><span class="owner"><i>EP</i>endpoint</span></td><td><span class="lane w2">2WK</span></td><td class="val">onboarding evidence present or device retired in inventory</td></tr>
+          <tr><td class="mono">07</td><td>Disable anonymous sharing for 2 sensitive SharePoint sites</td><td><span class="chipx med">MEDIUM</span></td><td><span class="owner"><i>CO</i>collab</span></td><td><span class="lane w2">2WK</span></td><td class="val">site policy snapshot shows link scope restricted</td></tr>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <div class="statusbar">
+    <span><b>POLARIS</b> white-label portal · powered by RoadRunner Secure</span>
+    <span>SYNTHETIC FIXTURE — all entities fictional</span>
+    <span style="margin-left:auto">RUN RR-2026-07 · QUEUE REGENERATES EVERY RUN</span>
+  </div>
+</body>
+</html>

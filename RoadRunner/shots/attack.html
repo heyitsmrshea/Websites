@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Polaris — On-prem attack path (exhibit source)</title>
+<link rel="stylesheet" href="/shots/polaris.css">
+<style>
+  .layout { display: grid; grid-template-columns: 1fr 330px; gap: 14px; }
+  .gedge { stroke: rgba(170, 190, 205, .22); stroke-width: 1.6; }
+  .gedge.hot { stroke: #f43f5e; stroke-width: 2.8; filter: drop-shadow(0 0 7px rgba(244,63,94,.6)); }
+  .gnode circle, .gnode rect { fill: #10161f; stroke: rgba(170,190,205,.4); stroke-width: 1.5; }
+  .gnode.hot circle, .gnode.hot rect { stroke: #fb7185; filter: drop-shadow(0 0 8px rgba(244,63,94,.55)); }
+  .gnode.t0 circle { fill: rgba(244,63,94,.15); stroke: #f43f5e; stroke-width: 2.2; }
+  .gnode text { fill: #aab8c4; font: 500 10.5px ui-monospace, Menlo, monospace; }
+  .gnode .lb2 { fill: #66737f; font-size: 8.5px; }
+  .hop { display: grid; grid-template-columns: 26px 1fr; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(190,214,232,.06); }
+  .hop:last-child { border-bottom: 0; }
+  .hop .n { font: 640 11px/1.6 var(--mono); color: var(--rose); }
+  .hop .t { font: 550 12px/1.35 var(--sans); color: var(--ink); }
+  .hop .s { font: 450 10.5px/1.4 var(--sans); color: var(--muted); }
+  .hop .m { font: 500 9.5px/1.5 var(--mono); color: var(--faint); }
+  .cutbox { border: 1px dashed rgba(45,212,191,.5); background: rgba(45,212,191,.05); border-radius: 8px; padding: 12px 14px; margin-top: 12px; }
+  .cutbox .k { color: var(--teal); }
+  .cutbox p { font: 450 11.5px/1.5 var(--sans); color: var(--soft); margin-top: 6px; }
+  .collector { display: flex; align-items: center; gap: 16px; margin-top: 14px; }
+  .cmd { flex: 1; background: #04070b; border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; font: 500 12px/1.6 var(--mono); color: #7ff0e1; }
+  .cmd .c2 { color: #66737f; }
+  .copybtn { font: 600 10px/1 var(--mono); letter-spacing: .1em; color: var(--teal); border: 1px solid rgba(45,212,191,.4); background: rgba(45,212,191,.08); padding: 9px 14px; border-radius: 7px; }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">
+      <span class="gem"></span>
+      <div><div class="brand-name">POLARIS</div><div class="brand-sub">Weekly Security Assessment</div></div>
+    </div>
+    <div class="nav-item"><span class="n">01</span><span class="t">Executive</span><span class="s">posture · cost · what changed</span></div>
+    <div class="nav-item"><span class="n">02</span><span class="t">Work Queue</span><span class="s">fix these, in order</span></div>
+    <div class="nav-item on"><span class="n">03</span><span class="t">On-Prem</span><span class="s">AD topology · attack paths</span></div>
+    <div class="nav-item"><span class="n">04</span><span class="t">AI vCISO</span><span class="s">ask, grounded in evidence</span></div>
+    <div class="nav-right">
+      <span class="nav-live">LIVE</span>
+      <span class="tenant">Acme Industries (fictional)</span>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">On-Prem — Active Directory</h1>
+        <p class="page-sub">Shortest privilege path to Tier 0 — <span class="m">corp.example · collector rr-ad-2026-07-05.json · SAMPLE FIXTURE</span></p>
+      </div>
+      <span class="pill">TIER 0 REACHABLE · 1 PATH</span>
+    </div>
+
+    <div class="layout">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:4px">
+          <h3>Attack-path graph</h3>
+          <span class="sub mono">click any node → shortest path to Tier 0 ignites</span>
+        </div>
+        <svg viewBox="0 0 940 470" style="width:100%">
+          <line class="gedge" x1="180" y1="120" x2="400" y2="80"/>
+          <line class="gedge" x1="400" y1="80" x2="790" y2="140"/>
+          <line class="gedge" x1="620" y1="420" x2="480" y2="350"/>
+          <line class="gedge" x1="180" y1="120" x2="250" y2="290"/>
+          <line class="gedge hot" x1="90" y1="360" x2="250" y2="290"/>
+          <line class="gedge hot" x1="250" y1="290" x2="480" y2="350"/>
+          <line class="gedge hot" x1="480" y1="350" x2="650" y2="245"/>
+          <line class="gedge hot" x1="650" y1="245" x2="790" y2="140"/>
+          <g class="gnode hot" transform="translate(90 360)"><circle r="17"/><text x="0" y="36" text-anchor="middle">svc-build</text><text class="lb2" x="0" y="49" text-anchor="middle">service acct · START</text></g>
+          <g class="gnode hot" transform="translate(250 290)"><rect x="-17" y="-17" width="34" height="34" rx="8"/><text x="0" y="36" text-anchor="middle">Workstation Admins</text><text class="lb2" x="0" y="49" text-anchor="middle">group · memberOf</text></g>
+          <g class="gnode hot" transform="translate(480 350)"><rect x="-17" y="-17" width="34" height="34" rx="8"/><text x="0" y="36" text-anchor="middle">ENG-WS-044</text><text class="lb2" x="0" y="49" text-anchor="middle">workstation · localAdmin</text></g>
+          <g class="gnode hot" transform="translate(650 245)"><circle r="15"/><text x="0" y="34" text-anchor="middle">admin session</text><text class="lb2" x="0" y="47" text-anchor="middle">activeSession · med conf</text></g>
+          <g class="gnode t0" transform="translate(790 140)"><circle r="22"/><text x="0" y="42" text-anchor="middle">Domain Admins</text><text class="lb2" x="0" y="55" text-anchor="middle">TIER 0</text></g>
+          <g class="gnode" transform="translate(180 120)"><circle r="14"/><text x="0" y="32" text-anchor="middle">j.keller</text><text class="lb2" x="0" y="44" text-anchor="middle">user</text></g>
+          <g class="gnode" transform="translate(400 80)"><rect x="-14" y="-14" width="28" height="28" rx="7"/><text x="0" y="32" text-anchor="middle">helpdesk-7</text><text class="lb2" x="0" y="44" text-anchor="middle">group</text></g>
+          <g class="gnode" transform="translate(620 420)"><rect x="-14" y="-14" width="28" height="28" rx="7"/><text x="0" y="34" text-anchor="middle">FS-01</text><text class="lb2" x="0" y="46" text-anchor="middle">server</text></g>
+        </svg>
+        <div class="collector">
+          <div class="cmd">Install-Module RRCollector -Scope AllUsers -Force<br><span class="c2"># read-only · run on a DC · results go to your tenant only</span><br>Invoke-RRCollection -Offline -OutputPath C:\RR\scan.json</div>
+          <span class="copybtn">COPY COMMAND</span>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-bottom:2px">Selected principal</h3>
+        <p class="sub mono" style="margin-bottom:10px">CORP\svc-build · shortest path · 4 hops</p>
+        <div class="hop"><span class="n">01</span><div><div class="t">svc-build → Workstation Admins</div><div class="s">group membership grants broad workstation control</div><div class="m">edge: memberOf</div></div></div>
+        <div class="hop"><span class="n">02</span><div><div class="t">Workstation Admins → ENG-WS-044</div><div class="s">local admin on a workstation with privileged use</div><div class="m">edge: localAdmin</div></div></div>
+        <div class="hop"><span class="n">03</span><div><div class="t">ENG-WS-044 → admin session</div><div class="s">privileged session observed on exposed endpoint</div><div class="m">edge: activeSession · confidence: medium</div></div></div>
+        <div class="hop"><span class="n">04</span><div><div class="t">session → Domain Admins</div><div class="s">session credential reaches Tier 0</div><div class="m">edge: sessionOf</div></div></div>
+        <div class="cutbox">
+          <span class="k">RECOMMENDED CUT — CHEAPEST DEFENSIBLE EDGE</span>
+          <p>Remove svc-build from Workstation Admins <em>or</em> isolate admin sessions from exposed endpoints. Validation: next collector run contains no route svc-build → Tier 0.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="statusbar">
+    <span><b>POLARIS</b> white-label portal · powered by RoadRunner Secure</span>
+    <span>SYNTHETIC FIXTURE — all entities fictional</span>
+    <span style="margin-left:auto">READ-ONLY · CHANGES NOTHING ON THE BOX</span>
+  </div>
+</body>
+</html>

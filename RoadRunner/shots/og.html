@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>OG card template — ?t=Title&i=italic tail&k=KICKER</title>
+<style>
+  @font-face { font-family: "Newsreader"; src: url("/assets/fonts/newsreader-var.woff2") format("woff2"); font-weight: 200 800; }
+  @font-face { font-family: "Newsreader"; src: url("/assets/fonts/newsreader-italic-var.woff2") format("woff2"); font-weight: 200 800; font-style: italic; }
+  @font-face { font-family: "Inter"; src: url("/assets/fonts/inter-var.woff2") format("woff2"); font-weight: 100 900; }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background: #04060a; color: #f2f6f9; font-family: "Inter", sans-serif;
+    padding: 64px 72px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  body::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(760px 420px at 82% -10%, rgba(45,212,191,.16), transparent 62%),
+      radial-gradient(520px 320px at 4% 108%, rgba(244,63,94,.1), transparent 60%),
+      linear-gradient(90deg, rgba(198,220,236,.05) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(198,220,236,.04) 1px, transparent 1px);
+    background-size: auto, auto, 56px 56px, 56px 56px;
+  }
+  body::after {
+    content: ""; position: absolute; inset: 0; opacity: .05; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  }
+  .top { position: relative; display: flex; justify-content: space-between; align-items: center; }
+  .brandrow { display: flex; align-items: center; gap: 16px; }
+  .brandrow img { width: 58px; }
+  .brandrow b { font-size: 23px; font-weight: 750; letter-spacing: -.01em; }
+  .brandrow span { display: block; font: 600 10.5px/1.6 ui-monospace, Menlo, monospace; letter-spacing: .18em; color: #6d7b88; }
+  .kicker { font: 650 13px/1 ui-monospace, Menlo, monospace; letter-spacing: .22em; color: #2dd4bf; }
+  h1 { position: relative; font: 470 74px/1.04 "Newsreader", Georgia, serif; letter-spacing: -.018em; max-width: 17ch; text-wrap: balance; }
+  h1 .ital { font-style: italic; color: #7ff0e1; }
+  .bottom { position: relative; display: flex; justify-content: space-between; align-items: center; font: 550 13px/1 ui-monospace, Menlo, monospace; letter-spacing: .14em; color: #6d7b88; }
+  .chips { display: flex; gap: 10px; }
+  .chips span { border: 1px solid rgba(198,220,236,.2); border-radius: 6px; padding: 8px 12px; font-size: 10.5px; letter-spacing: .12em; color: #b4c0cb; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brandrow">
+      <img src="/assets/roadrunner-mark.svg" alt="">
+      <div><b>RoadRunner Secure</b><span>EVIDENCE-VERIFIED CLOSURE</span></div>
+    </div>
+    <span class="kicker" id="k">// ASSESSMENT PLATFORM</span>
+  </div>
+  <h1><span id="t">A dashboard is not a </span><span class="ital" id="i">decision.</span></h1>
+  <div class="bottom">
+    <div class="chips"><span>READ-ONLY</span><span>WHITE-LABEL</span><span>VALIDATED CLOSURE</span></div>
+    <span>ROADRUNNERSECURE.COM</span>
+  </div>
+<script>
+  // Capture-time parameterization. textContent only — params are untrusted.
+  const q = new URLSearchParams(location.search);
+  if (q.get("t") !== null) document.getElementById("t").textContent = q.get("t");
+  if (q.get("i") !== null) document.getElementById("i").textContent = q.get("i");
+  if (q.get("k")) document.getElementById("k").textContent = "// " + q.get("k");
+</script>
+</body>
+</html>

@@ -12,11 +12,13 @@
   <meta property="og:description" content="A guided synthetic RoadRunner Secure walkthrough showing baseline assessment, findings, remediation queue, validation, and white-label reporting.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://roadrunnersecure.com/demo/">
-  <meta property="og:image" content="https://roadrunnersecure.com/assets/roadrunner-logo.png">
+  <meta property="og:image" content="https://roadrunnersecure.com/assets/og/demo.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://roadrunnersecure.com/assets/roadrunner-logo.png">
+  <meta name="twitter:image" content="https://roadrunnersecure.com/assets/og/demo.jpg">
   <link rel="icon" href="/assets/roadrunner-mark.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
@@ -104,7 +106,10 @@
       <span class="exhibit-url">polaris.msp/executive</span>
       <span class="exhibit-tag">EXHIBIT A · SYNTHETIC TENANT</span>
     </div>
-    <img src="/refs/polaris-executive-v2.png" alt="Polaris executive posture view: composite gauge, needs-action count, savings, what-changed list" width="1440" height="900" loading="lazy" decoding="async">
+    <picture>
+      <source srcset="/assets/img/exhibit-exec.webp" type="image/webp">
+      <img src="/assets/img/exhibit-exec.png" alt="Polaris executive posture view: composite gauge at 65.8%, needs-action count, monthly savings, a what-changed list, and a coverage-and-honesty panel" width="1440" height="900" loading="lazy" decoding="async">
+    </picture>
     <figcaption class="exhibit-caption"><span>Executive posture — the run in one screen</span><span>RUN RR-2026-07</span></figcaption>
   </figure>
       <div class="chapter-note rv">
@@ -129,12 +134,15 @@
       <span class="exhibit-url">polaris.msp/on-prem</span>
       <span class="exhibit-tag">EXHIBIT B · SYNTHETIC TENANT</span>
     </div>
-    <img src="/refs/polaris-onprem.png" alt="Polaris on-prem view: AD attack-path graph and read-only collector run options" width="1440" height="992" loading="lazy" decoding="async">
+    <picture>
+      <source srcset="/assets/img/exhibit-attack.webp" type="image/webp">
+      <img src="/assets/img/exhibit-attack.png" alt="Polaris on-prem view: an AD attack-path graph with the svc-build-to-Tier-0 route ignited, a four-hop breakdown, a recommended cut, and a read-only collector command" width="1440" height="900" loading="lazy" decoding="async">
+    </picture>
     <figcaption class="exhibit-caption"><span>On-prem — find the path, cut the edge</span><span>RUN RR-2026-07</span></figcaption>
   </figure>
       <div class="chapter-note rv">
         <span class="k">Watch for</span>
-        <p>Click any node and the shortest privilege path to Tier 0 ignites hop by hop. Below it, four collector deployment options — one-liner, RMM, scheduled task, air-gapped — all read-only.</p>
+        <p>Click any node and the shortest privilege path to Tier 0 ignites hop by hop. Beside it, the four-hop breakdown and the cheapest defensible edge to cut — with a read-only collector command below.</p>
       </div>
     </div>
   </section>
@@ -154,7 +162,10 @@
       <span class="exhibit-url">polaris.msp/vciso</span>
       <span class="exhibit-tag">EXHIBIT C · SYNTHETIC TENANT</span>
     </div>
-    <img src="/refs/polaris-vciso-v2.png" alt="Polaris AI vCISO view answering with entity names and cited sources" width="1440" height="900" loading="lazy" decoding="async">
+    <picture>
+      <source srcset="/assets/img/exhibit-vciso.webp" type="image/webp">
+      <img src="/assets/img/exhibit-vciso.png" alt="Polaris AI vCISO view answering with entity names and cited finding IDs and sources, and stating a data gap rather than inventing" width="1440" height="900" loading="lazy" decoding="async">
+    </picture>
     <figcaption class="exhibit-caption"><span>AI vCISO — cited, scoped, honest</span><span>RUN RR-2026-07</span></figcaption>
   </figure>
       <div class="chapter-note rv">

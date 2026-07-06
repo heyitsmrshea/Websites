@@ -5,18 +5,18 @@ export function demoBody() {
   return `
 ${scenario()}
 ${chapter(1, "walkthrough-executive", "Executive posture", "Leadership gets risk direction, closure counts, source gaps, and the story of what changed.", {
-    img: "/refs/polaris-executive-v2.png", url: "polaris.msp/executive", letter: "A",
-    alt: "Polaris executive posture view: composite gauge, needs-action count, savings, what-changed list",
+    img: "exhibit-exec", url: "polaris.msp/executive", letter: "A",
+    alt: "Polaris executive posture view: composite gauge at 65.8%, needs-action count, monthly savings, a what-changed list, and a coverage-and-honesty panel",
     caption: "Executive posture — the run in one screen", width: 1440, height: 900
   }, "The composite number is context. The panel that matters is <em>what changed</em> — findings new and resolved, diffed against the previous run, plus the coverage panel that says out loud what cannot be assessed yet.")}
 ${chapter(2, "walkthrough-onprem", "On-prem attack path", "The product does not stop at graph visualization. It points to the path edge that should be cut.", {
-    img: "/refs/polaris-onprem.png", url: "polaris.msp/on-prem", letter: "B",
-    alt: "Polaris on-prem view: AD attack-path graph and read-only collector run options",
-    caption: "On-prem — find the path, cut the edge", width: 1440, height: 992
-  }, "Click any node and the shortest privilege path to Tier 0 ignites hop by hop. Below it, four collector deployment options — one-liner, RMM, scheduled task, air-gapped — all read-only.", true)}
+    img: "exhibit-attack", url: "polaris.msp/on-prem", letter: "B",
+    alt: "Polaris on-prem view: an AD attack-path graph with the svc-build-to-Tier-0 route ignited, a four-hop breakdown, a recommended cut, and a read-only collector command",
+    caption: "On-prem — find the path, cut the edge", width: 1440, height: 900
+  }, "Click any node and the shortest privilege path to Tier 0 ignites hop by hop. Beside it, the four-hop breakdown and the cheapest defensible edge to cut — with a read-only collector command below.", true)}
 ${chapter(3, "walkthrough-microsoft", "Evidence-grounded vCISO", "Answers are grounded in findings and source evidence. Missing data is stated instead of invented.", {
-    img: "/refs/polaris-vciso-v2.png", url: "polaris.msp/vciso", letter: "C",
-    alt: "Polaris AI vCISO view answering with entity names and cited sources",
+    img: "exhibit-vciso", url: "polaris.msp/vciso", letter: "C",
+    alt: "Polaris AI vCISO view answering with entity names and cited finding IDs and sources, and stating a data gap rather than inventing",
     caption: "AI vCISO — cited, scoped, honest", width: 1440, height: 900
   }, "Ask what to fix first and the answer names entities, cites the finding and the source for every claim, and refuses to invent around missing evidence.")}
 ${combinedFinding()}

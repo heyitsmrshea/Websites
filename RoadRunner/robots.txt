@@ -3,5 +3,6 @@ Allow: /
 Disallow: /Homepage%20Directions.dc.html
 Disallow: /Homepage Directions.dc.html
 Disallow: /Home.dc.html
+Disallow: /shots/
 
 Sitemap: https://roadrunnersecure.com/sitemap.xml

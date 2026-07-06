@@ -53,13 +53,19 @@ export function table(rows, opts = {}) {
 }
 
 export function exhibit({ img, url, letter, alt, caption, meta = "SYNTHETIC TENANT", width = 1440, height = 900, eager = false }) {
+  // img is the base name under /assets/img (no extension); WebP with PNG fallback.
+  const webp = `/assets/img/${img}.webp`;
+  const png = `/assets/img/${img}.png`;
   return `<figure class="exhibit rv-scale">
     <div class="exhibit-bar">
       <span class="exhibit-dots"><i></i><i></i><i></i></span>
       <span class="exhibit-url">${url}</span>
       <span class="exhibit-tag">EXHIBIT ${letter} · ${meta}</span>
     </div>
-    <img src="${img}" alt="${alt}" width="${width}" height="${height}" ${eager ? `loading="eager" fetchpriority="high"` : `loading="lazy" decoding="async"`}>
+    <picture>
+      <source srcset="${webp}" type="image/webp">
+      <img src="${png}" alt="${alt}" width="${width}" height="${height}" ${eager ? `loading="eager" fetchpriority="high"` : `loading="lazy" decoding="async"`}>
+    </picture>
     <figcaption class="exhibit-caption"><span>${caption}</span><span>RUN RR-2026-07</span></figcaption>
   </figure>`;
 }

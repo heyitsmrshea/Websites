@@ -6,7 +6,7 @@ const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 export function shell(page) {
   const canonical = page.slug ? `${brand.root}/${page.slug}/` : `${brand.root}/`;
-  const ogImage = page.ogImage || `${brand.root}/assets/roadrunner-logo.png`;
+  const ogImage = `${brand.root}/assets/og/${page.og}.jpg`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -25,7 +25,9 @@ export function shell(page) {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="${ogImage}">
   <link rel="icon" href="/assets/roadrunner-mark.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
@@ -243,6 +245,7 @@ Allow: /
 Disallow: /Homepage%20Directions.dc.html
 Disallow: /Homepage Directions.dc.html
 Disallow: /Home.dc.html
+Disallow: /shots/
 
 Sitemap: ${brand.root}/sitemap.xml
 `;

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Polaris — Executive posture (exhibit source)</title>
+<link rel="stylesheet" href="/shots/polaris.css">
+<style>
+  .kpis { grid-template-columns: 1.25fr 1fr 1fr 1fr; margin-bottom: 14px; }
+  .gauge-card { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
+  .gauge-meta { display: grid; gap: 8px; }
+  .legend { display: flex; gap: 12px; font: 500 9.5px/1 var(--mono); color: var(--muted); }
+  .legend i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 5px; }
+  .two { grid-template-columns: 1.5fr 1fr; align-items: start; }
+  .cov-row { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(190,214,232,.06); align-items: start; }
+  .cov-row:last-child { border-bottom: 0; }
+  .cov-num { font: 640 22px/1 var(--mono); }
+  .cov-t { font: 550 12px/1.35 var(--sans); color: var(--ink); }
+  .cov-s { font: 400 10.5px/1.45 var(--sans); color: var(--muted); }
+  .delta { font: 600 10px/1 var(--mono); }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">
+      <span class="gem"></span>
+      <div><div class="brand-name">POLARIS</div><div class="brand-sub">Weekly Security Assessment</div></div>
+    </div>
+    <div class="nav-item on"><span class="n">01</span><span class="t">Executive</span><span class="s">posture · cost · what changed</span></div>
+    <div class="nav-item"><span class="n">02</span><span class="t">Work Queue</span><span class="s">fix these, in order</span></div>
+    <div class="nav-item"><span class="n">03</span><span class="t">On-Prem</span><span class="s">AD topology · attack paths</span></div>
+    <div class="nav-item"><span class="n">04</span><span class="t">AI vCISO</span><span class="s">ask, grounded in evidence</span></div>
+    <div class="nav-right">
+      <span class="nav-live">LIVE</span>
+      <span class="tenant">Acme Industries (fictional)</span>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">Executive posture</h1>
+        <p class="page-sub">How bad is it, which direction, and what is it costing — <span class="m">as of run RR-2026-07 · evidence sha 9f21c4</span></p>
+      </div>
+      <span class="pill">WEEK 07 · BASELINE +3</span>
+    </div>
+
+    <div class="grid kpis">
+      <div class="card gauge-card">
+        <svg width="150" height="150" viewBox="0 0 150 150">
+          <circle cx="75" cy="75" r="62" fill="none" stroke="rgba(190,214,232,.09)" stroke-width="11"/>
+          <circle cx="75" cy="75" r="62" fill="none" stroke="#f5a623" stroke-width="11" stroke-linecap="round"
+                  stroke-dasharray="389.5" stroke-dashoffset="133" transform="rotate(-90 75 75)"/>
+          <text x="75" y="72" text-anchor="middle" fill="#eef4f8" font-family="ui-monospace, Menlo, monospace" font-size="27" font-weight="640">65.8%</text>
+          <text x="75" y="92" text-anchor="middle" fill="#66737f" font-family="ui-monospace, Menlo, monospace" font-size="8.5" letter-spacing="2.5">COMPOSITE</text>
+        </svg>
+        <div class="gauge-meta">
+          <span class="k">Posture composite</span>
+          <span class="delta ambertx">▲ +2.1 vs last run</span>
+          <div class="legend"><span><i style="background:#f43f5e"></i>&lt;50</span><span><i style="background:#f5a623"></i>50–75</span><span><i style="background:#2fd483"></i>&gt;75</span></div>
+          <span class="sub">secure score · plan coverage · compliance — context, not the deliverable</span>
+        </div>
+      </div>
+      <div class="card accent" style="--a:#f43f5e">
+        <span class="k">Needs action now</span>
+        <div class="big rose" style="margin:10px 0 6px">27</div>
+        <span class="sub">Critical + High · 72-hour and 2-week lanes</span>
+      </div>
+      <div class="card accent" style="--a:#f5a623">
+        <span class="k">Standing Global Admins</span>
+        <div class="big amber" style="margin:10px 0 6px">2</div>
+        <span class="sub">move to PIM-eligible · break-glass documented</span>
+      </div>
+      <div class="card accent" style="--a:#2fd483">
+        <span class="k">Identified monthly savings</span>
+        <div class="big green" style="margin:10px 0 6px">$10k</div>
+        <span class="sub">of ~$25k/mo licensed spend reviewed</span>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px">
+          <h3>What changed — findings new &amp; resolved</h3>
+          <span class="sub mono">this run vs last · evidence-driven</span>
+        </div>
+        <table class="tbl">
+          <tr><td style="width:74px"><span class="chipx new">NEW</span></td><td style="width:86px"><span class="chipx hi">HIGH</span></td><td>Standing privileged access assigned outside emergency workflow</td><td style="width:130px"><span class="owner"><i>ID</i>identity</span></td></tr>
+          <tr><td><span class="chipx new">NEW</span></td><td><span class="chipx med">MEDIUM</span></td><td>Cannot assess device compliance — Intune not onboarded</td><td><span class="owner"><i>EP</i>endpoint</span></td></tr>
+          <tr><td><span class="chipx new">NEW</span></td><td><span class="chipx med">MEDIUM</span></td><td>Cannot assess PIM eligibility — Entra ID P2 not licensed</td><td><span class="owner"><i>ID</i>identity</span></td></tr>
+          <tr><td><span class="chipx res">RESOLVED</span></td><td><span class="chipx ok">VERIFIED</span></td><td>MFA exception removed for svc-legacy-print — evidence stamped closed</td><td><span class="owner"><i>ID</i>identity</span></td></tr>
+          <tr><td><span class="chipx res">RESOLVED</span></td><td><span class="chipx ok">VERIFIED</span></td><td>Anonymous sharing links disabled tenant-wide — policy diff attached</td><td><span class="owner"><i>CO</i>collab</span></td></tr>
+          <tr><td><span class="chipx new">NEW</span></td><td><span class="chipx low">LOW</span></td><td>Reduce standing Global Administrators (2) — move to PIM-eligible</td><td><span class="owner"><i>ID</i>identity</span></td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px">
+          <h3>Coverage &amp; honesty</h3>
+          <span class="sub mono">what we can't assess yet</span>
+        </div>
+        <div class="cov-row"><span class="cov-num ambertx">3</span><div><div class="cov-t">data-gap findings</div><div class="cov-s">licensing / onboarding blocks — each says exactly what unlocks it</div></div></div>
+        <div class="cov-row"><span class="cov-num greentx">6</span><div><div class="cov-t">verified closures this run</div><div class="cov-s">evidence diff satisfied the validation condition — no manual closes</div></div></div>
+        <div class="cov-row"><span class="cov-num tealtx">4/5</span><div><div class="cov-t">sources reporting fresh</div><div class="cov-s">Entra · Defender · M365 · Azure fresh — Intune absent (gap above)</div></div></div>
+        <div class="cov-row"><span class="cov-num rosetx">1</span><div><div class="cov-t">regression reopened</div><div class="cov-s">legacy auth re-enabled on svc-scanner — reopened automatically</div></div></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="statusbar">
+    <span><b>POLARIS</b> white-label portal · powered by RoadRunner Secure</span>
+    <span>SYNTHETIC FIXTURE — all entities fictional</span>
+    <span style="margin-left:auto">RUN RR-2026-07 · NEXT RUN IN 6D 14H</span>
+  </div>
+</body>
+</html>

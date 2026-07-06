@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>White-label portal (exhibit source) — ?brand=polaris|meridian|roadrunner</title>
+<link rel="stylesheet" href="/shots/polaris.css">
+<style>
+  body { width: 1280px; height: 800px; }
+  .nav { height: 58px; }
+  .hero { padding: 30px 30px 22px; border-bottom: 1px solid var(--line); background: radial-gradient(700px 260px at 80% -40%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%); }
+  .hero h1 { font: 500 26px/1.15 var(--serif); }
+  .hero p { font: 450 12.5px/1.5 var(--sans); color: var(--muted); margin-top: 6px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 22px 30px; }
+  .closed { padding: 0 30px; }
+  .closed-row { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; padding: 11px 0; border-bottom: 1px solid rgba(190,214,232,.06); }
+  .closed-row .t { font: 500 12.5px/1.4 var(--sans); color: var(--soft); }
+  .vstamp { font: 700 8.5px/1 var(--mono); letter-spacing: .12em; color: var(--green); border: 1.5px solid var(--green); border-radius: 4px; padding: 4px 7px; transform: rotate(-2deg); }
+  .msp-note { position: fixed; bottom: 30px; left: 30px; right: 30px; display: flex; justify-content: space-between; font: 500 10px/1 var(--mono); color: var(--faint); letter-spacing: .1em; }
+  .brand-name { letter-spacing: .3em; color: var(--accent); }
+  .brand .gem { background: var(--accent); box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 60%, transparent); }
+  .nav-item.on::after { background: var(--accent); }
+  .big.acc { color: var(--accent); }
+  body[data-brand="meridian"] { --accent: #f59e0b; }
+  body[data-brand="meridian"] .gem { border-radius: 50%; transform: none; }
+  body[data-brand="roadrunner"] { --accent: #2dd4bf; }
+  body { --accent: #2dd4bf; }
+</style>
+</head>
+<body data-brand="polaris">
+  <nav class="nav">
+    <div class="brand">
+      <span class="gem"></span>
+      <div><div class="brand-name" id="bn">POLARIS</div><div class="brand-sub" id="bs">Weekly Security Assessment</div></div>
+    </div>
+    <div class="nav-item on"><span class="n">01</span><span class="t">Your posture</span><span class="s">this week</span></div>
+    <div class="nav-item"><span class="n">02</span><span class="t">Closed with proof</span><span class="s">verified history</span></div>
+    <div class="nav-item"><span class="n">03</span><span class="t">Reports</span><span class="s">board-ready</span></div>
+    <div class="nav-right">
+      <span class="nav-live">CURRENT</span>
+      <span class="tenant">Acme Industries (fictional)</span>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Your week in security — verified, not vibes.</h1>
+    <p>What changed, what your team closed with evidence, and what happens next. Prepared by <b id="msp1" style="color:var(--soft)">Polaris</b> · powered by RoadRunner Secure.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card accent" style="--a:var(--accent)">
+      <span class="k">Verified closed this week</span>
+      <div class="big acc" style="margin:10px 0 6px">6</div>
+      <span class="sub">every closure proven by evidence diff on the next run</span>
+    </div>
+    <div class="card accent" style="--a:#f43f5e">
+      <span class="k">In your queue</span>
+      <div class="big rose" style="margin:10px 0 6px">5</div>
+      <span class="sub">72-hour lane — named entities, owner-ready steps</span>
+    </div>
+    <div class="card accent" style="--a:#f5a623">
+      <span class="k">Blocked visibility</span>
+      <div class="big amber" style="margin:10px 0 6px">3</div>
+      <span class="sub">stated as data-gap findings — each says what unlocks it</span>
+    </div>
+  </div>
+
+  <div class="closed">
+    <div class="card" style="padding:16px 20px">
+      <h3 style="margin-bottom:4px">Closed with proof</h3>
+      <div class="closed-row"><span class="vstamp">VERIFIED</span><span class="t">MFA exception removed for svc-legacy-print — sign-in evidence attached</span><span class="sub mono">RUN 07</span></div>
+      <div class="closed-row"><span class="vstamp">VERIFIED</span><span class="t">Anonymous sharing links disabled tenant-wide — policy diff attached</span><span class="sub mono">RUN 07</span></div>
+      <div class="closed-row"><span class="vstamp">VERIFIED</span><span class="t">Dormant admin accounts removed from Server Operators — membership diff</span><span class="sub mono">RUN 06</span></div>
+    </div>
+  </div>
+
+  <div class="msp-note">
+    <span id="msp2">POLARIS · YOUR MSP'S SECURITY PRACTICE</span>
+    <span>SYNTHETIC FIXTURE · POWERED BY ROADRUNNER SECURE</span>
+  </div>
+
+<script>
+  const q = new URLSearchParams(location.search);
+  const b = q.get("brand") || "polaris";
+  document.body.dataset.brand = b;
+  const names = {
+    polaris: ["POLARIS", "Weekly Security Assessment", "Polaris", "POLARIS · YOUR MSP'S SECURITY PRACTICE"],
+    meridian: ["MERIDIAN MSP", "Managed Security Review", "Meridian MSP", "MERIDIAN MSP · YOUR MSP'S SECURITY PRACTICE"],
+    roadrunner: ["ROADRUNNER", "Evidence-Verified Assessment", "RoadRunner Secure", "ROADRUNNER SECURE · DIRECT"]
+  };
+  const n = names[b] || names.polaris;
+  document.getElementById("bn").textContent = n[0];
+  document.getElementById("bs").textContent = n[1];
+  document.getElementById("msp1").textContent = n[2];
+  document.getElementById("msp2").textContent = n[3];
+</script>
+</body>
+</html>

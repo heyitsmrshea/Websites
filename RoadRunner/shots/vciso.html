@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Polaris — AI vCISO (exhibit source)</title>
+<link rel="stylesheet" href="/shots/polaris.css">
+<style>
+  .layout { display: grid; grid-template-columns: 1fr 290px; gap: 14px; }
+  .chat { display: grid; gap: 14px; align-content: start; }
+  .q { justify-self: end; max-width: 60%; background: rgba(45,212,191,.09); border: 1px solid rgba(45,212,191,.3); border-radius: 12px 12px 3px 12px; padding: 12px 16px; font: 500 13px/1.5 var(--sans); color: var(--ink); }
+  .a { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: 12px 12px 12px 3px; padding: 16px 18px; }
+  .a p { font: 450 12.5px/1.6 var(--sans); color: var(--soft); margin-bottom: 10px; }
+  .a b { color: var(--ink); font-weight: 640; }
+  .a .ent { font: 500 11px/1.5 var(--mono); color: #7ff0e1; }
+  .cite { display: inline-flex; align-items: center; gap: 6px; font: 600 9px/1 var(--mono); letter-spacing: .08em; color: var(--teal); background: rgba(45,212,191,.08); border: 1px solid rgba(45,212,191,.3); border-radius: 5px; padding: 4px 8px; margin: 2px 4px 2px 0; }
+  .cite.gap { color: var(--amber); background: rgba(245,166,35,.08); border-color: rgba(245,166,35,.35); }
+  .refuse { border-left: 2px solid var(--amber); background: rgba(245,166,35,.05); padding: 10px 14px; border-radius: 0 8px 8px 0; font: 450 12px/1.55 var(--sans); color: var(--soft); }
+  .try { display: grid; gap: 8px; }
+  .try button { text-align: left; font: 500 11.5px/1.4 var(--sans); color: var(--soft); background: var(--panel); border: 1px solid var(--line); border-radius: 9px; padding: 11px 13px; }
+  .try button.on { border-color: rgba(45,212,191,.5); color: var(--ink); background: rgba(45,212,191,.06); }
+  .askbar { display: flex; gap: 10px; margin-top: 4px; }
+  .askbar input { flex: 1; background: var(--panel); border: 1px solid var(--line-2); border-radius: 9px; padding: 12px 15px; font: 450 12.5px var(--sans); color: var(--muted); }
+  .askbar .go { font: 650 11px/1 var(--mono); color: #042621; background: var(--teal); border-radius: 8px; padding: 0 18px; display: grid; place-items: center; }
+  .scope { font: 500 9.5px/1 var(--mono); color: var(--faint); letter-spacing: .1em; display: flex; gap: 8px; align-items: center; }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">
+      <span class="gem"></span>
+      <div><div class="brand-name">POLARIS</div><div class="brand-sub">Weekly Security Assessment</div></div>
+    </div>
+    <div class="nav-item"><span class="n">01</span><span class="t">Executive</span><span class="s">posture · cost · what changed</span></div>
+    <div class="nav-item"><span class="n">02</span><span class="t">Work Queue</span><span class="s">fix these, in order</span></div>
+    <div class="nav-item"><span class="n">03</span><span class="t">On-Prem</span><span class="s">AD topology · attack paths</span></div>
+    <div class="nav-item on"><span class="n">04</span><span class="t">AI vCISO</span><span class="s">ask, grounded in evidence</span></div>
+    <div class="nav-right">
+      <span class="nav-live">LIVE</span>
+      <span class="tenant">Acme Industries (fictional)</span>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">AI vCISO</h1>
+        <p class="page-sub">Grounded in your live findings — <span class="m">names entities, cites the source, refuses to invent</span></p>
+      </div>
+      <span class="pill">79 FINDINGS IN SCOPE</span>
+    </div>
+
+    <div class="layout">
+      <div class="chat">
+        <div class="q">What should I fix first this week?</div>
+        <div class="a">
+          <p><b>1) Remove interactive-capable accounts from the MFA exclusion list.</b><br>
+          Affected identities: <span class="ent">svc-scanner</span> · <span class="ent">svc-fax</span> · <span class="ent">svc-legacy-print</span> · <span class="ent">app-migration</span><br>
+          Two of these signed in interactively within 14 days. Actions this week: remove from exclusion, or attach a documented exception with compensating controls.</p>
+          <span class="cite">◈ RR-F-0155 · CONDITIONAL ACCESS</span><span class="cite">◈ SIGN-IN LOG 14D</span>
+          <p style="margin-top:12px"><b>2) Cut the on-prem path to Tier 0.</b><br>
+          <span class="ent">CORP\svc-build</span> reaches <span class="ent">Domain Admins</span> in 4 hops via <span class="ent">Workstation Admins</span> → <span class="ent">ENG-WS-044</span>. Cheapest cut: remove the group membership. Validation is automatic on the next collector run.</p>
+          <span class="cite">◈ RR-F-0142 · AD COLLECTOR</span>
+          <div class="refuse" style="margin-top:12px">I can't rank device-compliance work yet — Intune isn't onboarded, so I have no device evidence. That gap is itself finding <b>RR-F-0119</b> and unlocks 7 blocked checks.</div>
+          <span class="cite gap">◈ RR-F-0119 · DATA GAP</span>
+        </div>
+        <div class="askbar"><input placeholder="Ask the vCISO — answers cite findings and sources…"><span class="go">ASK</span></div>
+        <div class="scope"><span>◈</span><span>SCOPE: FINDINGS_CL · 79 FINDINGS · THIS TENANT ONLY · NO INVENTION</span></div>
+      </div>
+
+      <aside style="display:grid; gap:14px; align-content:start">
+        <div class="card" style="padding:14px 16px">
+          <span class="k" style="display:block; margin-bottom:10px">Try</span>
+          <div class="try">
+            <button class="on">What should I fix first this week?</button>
+            <button>Which findings are blocked by missing data?</button>
+            <button>Who has standing Global Admin?</button>
+            <button>What can't you assess, and why?</button>
+            <button>What should I tell leadership?</button>
+          </div>
+        </div>
+        <div class="card" style="padding:14px 16px">
+          <span class="k" style="display:block; margin-bottom:8px">Grounding rules</span>
+          <p class="sub" style="line-height:1.6">Every claim cites a finding and its evidence source. Missing data is stated as a data-gap finding — never papered over. Answers are scoped to this tenant.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="statusbar">
+    <span><b>POLARIS</b> white-label portal · powered by RoadRunner Secure</span>
+    <span>SYNTHETIC FIXTURE — all entities fictional</span>
+    <span style="margin-left:auto">RUN RR-2026-07 · ANSWERS EXPIRE WITH EVIDENCE</span>
+  </div>
+</body>
+</html>
