@@ -82,8 +82,8 @@ export function exhibitRow(exhibitHtml, title, text, flip = false, extra = "") {
 }
 
 export function flow(steps) {
-  return `<div class="flow rv">${steps.map(([t, s], i) =>
-    `<div class="flow-step"><span class="num">${String(i + 1).padStart(2, "0")}</span><strong>${t}</strong><span>${s}</span></div>`
+  return `<div class="flow rv" data-flow><span class="flow-progress" aria-hidden="true"></span>${steps.map(([t, s], i) =>
+    `<div class="flow-step" style="--d:${(i * 0.09).toFixed(2)}s"><span class="num">${String(i + 1).padStart(2, "0")}</span><strong>${t}</strong><span>${s}</span></div>`
   ).join("")}</div>`;
 }
 

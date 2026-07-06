@@ -18,7 +18,10 @@
   }
   // Safety net: nothing stays hidden if observation never fires (print,
   // full-page capture, partial JS failure). Reveal is enhancement, not a gate.
-  setTimeout(() => revealEls.forEach((el) => el.classList.add("in")), 2600);
+  setTimeout(() => {
+    revealEls.forEach((el) => el.classList.add("in"));
+    document.querySelectorAll("[data-flow]").forEach((f) => f.classList.add("flowed"));
+  }, 2600);
 
   /* ---------- stamps slam when seen ---------- */
   const stamps = document.querySelectorAll(".stamp.will-slam");
@@ -231,6 +234,19 @@
     }
     // reduced motion / no IO: leave the ignited path standing (the exposure);
     // the recommended cut is stated in the finding + closure table below.
+  }
+
+  /* ---------- flow pipelines fill on approach ---------- */
+  const flows = document.querySelectorAll("[data-flow]");
+  if (flows.length && "IntersectionObserver" in window) {
+    const fio = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("flowed"); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.3 });
+    flows.forEach((f) => fio.observe(f));
+  } else {
+    flows.forEach((f) => f.classList.add("flowed"));
   }
 
   /* ---------- walkthrough chapters ignite on approach ---------- */

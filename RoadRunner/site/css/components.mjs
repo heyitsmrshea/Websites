@@ -462,13 +462,25 @@ tbody tr:hover { background: rgba(255, 255, 255, .02); }
 .paper tbody td:first-child { color: var(--paper-ink); }
 .paper tbody tr:hover { background: rgba(20, 24, 29, .03); }
 
-/* ---------- flow rail (numbered steps) ---------- */
-.flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--radius-s); overflow: hidden; }
+/* ---------- flow rail (numbered pipeline steps) ---------- */
+.flow { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--radius-s); overflow: hidden; }
+.flow-progress { position: absolute; top: 0; left: 0; height: 2px; width: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--rose-deep), var(--amber) 55%, var(--green)); z-index: 2; }
+html.js [data-flow].flowed .flow-progress { animation: flow-fill 1.5s var(--ease-out) forwards; }
+@keyframes flow-fill { to { transform: scaleX(1); } }
 .flow-step { padding: 20px 18px; border-right: 1px solid var(--line-soft); display: grid; gap: 8px; align-content: start; background: rgba(255,255,255,.012); position: relative; }
 .flow-step:last-child { border-right: 0; }
+.flow-step::after { content: "›"; position: absolute; right: -6px; top: 22px; z-index: 1; font-family: var(--font-mono); color: var(--faint); font-size: 14px; }
+.flow-step:last-child::after { display: none; }
+html.js [data-flow] .flow-step { opacity: 0; transform: translateY(8px); }
+html.js [data-flow].flowed .flow-step { animation: flow-step-in .5s var(--ease-out) both; animation-delay: var(--d, 0s); }
+@keyframes flow-step-in { to { opacity: 1; transform: none; } }
 .flow-step .num { font-family: var(--font-mono); font-size: 10px; color: var(--teal); letter-spacing: .14em; }
 .flow-step strong { font-size: 13.5px; font-weight: 680; }
 .flow-step span { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-flow] .flow-step { opacity: 1; transform: none; }
+  html.js [data-flow].flowed .flow-progress { animation: none; transform: scaleX(1); }
+}
 
 /* ---------- contact ---------- */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 5vw, 72px); align-items: start; }
