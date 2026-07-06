@@ -11,7 +11,7 @@ if (form) {
       "white-label": "RoadRunner Secure MSP white-label model",
       security: "RoadRunner Secure security review"
     };
-    const interest = data.get("interest") || "walkthrough";
+    const interest = data.get("interest") || "pilot";
     const body = [
       "Name: " + (data.get("name") || ""),
       "Work email: " + (data.get("email") || ""),
@@ -25,7 +25,7 @@ if (form) {
       data.get("notes") || ""
     ].join("\n");
     window.location.href = "mailto:drew@roadrunnerstrategies.com?subject=" +
-      encodeURIComponent(subjectByInterest[interest] || subjectByInterest.walkthrough) +
+      encodeURIComponent(subjectByInterest[interest] || subjectByInterest.pilot) +
       "&body=" + encodeURIComponent(body);
   });
 }

@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,69 +22,68 @@ const navItems = [
   ["/contact/", "Contact"]
 ];
 
-const messaging = {
-  proofLine: "RoadRunner owns the assessment method and product logic. MSPs can deliver the client-facing surface under their own brand.",
-  productOutcome: "Evidence becomes findings, findings become weekly work, and only changed evidence closes the loop.",
-  polarisNote: "Polaris-branded screens are examples of an MSP white-label client surface powered by RoadRunner Secure."
-};
-
 const pages = [
   {
     file: "index.html",
     slug: "",
     active: "Home",
-    title: "RoadRunner Secure | Weekly evidence-based security assessment",
-    description: "RoadRunner Secure turns Microsoft, endpoint, cloud, and on-prem evidence into prioritized findings, weekly remediation work, and verified closure.",
+    visual: "cockpit",
+    title: "RoadRunner Secure | Evidence-verified security assessment",
+    description: "RoadRunner Secure turns Microsoft, endpoint, cloud, and on-prem evidence into named findings, weekly remediation work, and evidence-verified closure.",
     eyebrow: "RoadRunner-owned assessment platform",
-    h1: "Security findings that actually close.",
-    lead: "RoadRunner Secure converts tenant evidence into a weekly assessment loop: specific findings, named affected entities, recommended fixes, validation criteria, and client-ready reporting. Polaris branding appears only as a white-label MSP example.",
-    primary: ["/demo/", "Review product walkthrough"],
+    h1: "A dashboard is not a decision.",
+    lead: "RoadRunner Secure converts tenant evidence into a weekly operating loop: what changed, who is affected, what to fix, who owns it, and what the next run must prove before closure.",
+    primary: ["/demo/", "Open the walkthrough"],
     secondary: ["/contact/", "Scope a pilot"],
-    body: homeBody()
+    body: homeBody
   },
   {
     file: "Platform.dc.html",
     slug: "platform",
     active: "Platform",
-    title: "Platform | RoadRunner Secure assessment workflow",
+    visual: "architecture",
+    title: "Platform | RoadRunner Secure evidence workflow",
     description: "How RoadRunner Secure turns read-only evidence into findings, remediation queues, validation runs, and client-ready reporting.",
     eyebrow: "Platform workflow",
     h1: "Evidence in. Verified closure out.",
-    lead: "The platform is a repeatable operating loop. Sources are read, findings are generated, work is prioritized, and the next run decides what is truly closed.",
+    lead: "The product is a repeatable assessment machine. Sources are read, findings are generated, work is prioritized, and the next run decides what is actually closed.",
     primary: ["/demo/", "See the workflow"],
-    secondary: ["/contact/", "Discuss deployment"],
-    body: platformBody()
+    secondary: ["/security/", "Review trust model"],
+    body: platformBody
   },
   {
     file: "OnPrem Attack Paths.dc.html",
     slug: "on-prem-attack-paths",
     active: "On-Prem",
+    visual: "attack",
     title: "On-Prem Attack Paths | Active Directory path assessment",
     description: "RoadRunner Secure maps Active Directory attack paths, recommends low-disruption fixes, and verifies path closure on the next run.",
     eyebrow: "On-prem attack paths",
-    h1: "Find the path. Cut the right edge. Prove it died.",
-    lead: "RoadRunner Secure turns Active Directory topology into practical path-closure work: which account, group, delegation, or server creates exposure, what to change, and what the next collector run must prove.",
-    primary: ["/demo/#walkthrough-onprem", "View AD walkthrough"],
+    h1: "Find the path. Cut the edge. Prove it died.",
+    lead: "RoadRunner turns Active Directory topology into practical path-closure work: which account, group, delegation, or server creates exposure, what to change, and what the next collector run must prove.",
+    primary: ["/demo/#walkthrough-onprem", "Open AD walkthrough"],
     secondary: ["/contact/", "Scope on-prem"],
-    body: onPremBody()
+    body: onPremBody
   },
   {
     file: "Microsoft Security.dc.html",
     slug: "microsoft-security",
     active: "Microsoft",
+    visual: "microsoft",
     title: "Microsoft Security | Entra, Defender, Intune, M365, and Azure assessment",
     description: "RoadRunner Secure converts Microsoft security evidence into prioritized findings, owner-ready remediation, and verified closure.",
     eyebrow: "Microsoft security assessment",
-    h1: "Microsoft posture without the score theater.",
-    lead: "Secure Score is useful context, not the whole assessment. RoadRunner turns Entra, Defender, Intune, M365, and Azure evidence into specific work your team can assign and validate.",
-    primary: ["/demo/#walkthrough-microsoft", "View Microsoft walkthrough"],
+    h1: "Microsoft posture without score theater.",
+    lead: "Secure Score is useful context, not the assessment. RoadRunner turns Entra, Defender, Intune, M365, and Azure evidence into specific work your team can assign and validate.",
+    primary: ["/demo/#walkthrough-microsoft", "Open Microsoft walkthrough"],
     secondary: ["/security/", "Review permissions"],
-    body: microsoftBody()
+    body: microsoftBody
   },
   {
     file: "Pricing.dc.html",
     slug: "pricing",
     active: "Pricing",
+    visual: "deployment",
     title: "Pricing | RoadRunner Secure pilot and MSP partner models",
     description: "RoadRunner Secure starts with a scoped pilot, then prices by tenant count, evidence sources, deployment model, and white-label requirements.",
     eyebrow: "Pilot-first pricing",
@@ -92,12 +91,13 @@ const pages = [
     lead: "Start with a focused pilot that produces real findings, a weekly queue, and a final remediation roadmap. Continue only if the output creates useful work.",
     primary: ["/contact/", "Scope a pilot"],
     secondary: ["/demo/", "Review walkthrough"],
-    body: pricingBody()
+    body: pricingBody
   },
   {
     file: "Security.dc.html",
     slug: "security",
     active: "Security",
+    visual: "trust",
     title: "Security | RoadRunner Secure data handling and connector posture",
     description: "Security posture for RoadRunner Secure: read-only collection, connector permissions, tenant isolation, retention, offboarding, and disclosure process.",
     eyebrow: "Security and trust",
@@ -105,25 +105,27 @@ const pages = [
     lead: "RoadRunner Secure is designed around read-only evidence collection, least-privilege access, tenant separation, visible limitations, and customer-controlled deployment options where required.",
     primary: ["/contact/", "Ask security questions"],
     secondary: ["/pricing/", "Discuss pilot"],
-    body: securityBody()
+    body: securityBody
   },
   {
     file: "Demo.dc.html",
     slug: "demo",
     active: "Walkthrough",
+    visual: "walkthrough",
     title: "Product Walkthrough | RoadRunner Secure",
     description: "A guided synthetic RoadRunner Secure walkthrough showing baseline assessment, findings, remediation queue, validation, and white-label reporting.",
     eyebrow: "Guided product walkthrough",
     h1: "A weekly run, start to finish.",
-    lead: "This is a synthetic walkthrough using fictional evidence. Polaris branding demonstrates an MSP white-label client portal powered by RoadRunner Secure.",
+    lead: "A synthetic run using fictional evidence. Polaris branding demonstrates an MSP white-label client portal powered by RoadRunner Secure.",
     primary: ["#walkthrough", "Start walkthrough"],
     secondary: ["/contact/", "Walk through it live"],
-    body: demoBody()
+    body: demoBody
   },
   {
     file: "Contact.dc.html",
     slug: "contact",
     active: "Contact",
+    visual: "contact",
     title: "Contact | RoadRunner Secure pilot and white-label assessment",
     description: "Contact RoadRunner Secure to scope a pilot, review the MSP white-label model, or walk through the synthetic assessment demo.",
     eyebrow: "Contact RoadRunner",
@@ -131,43 +133,51 @@ const pages = [
     lead: "Use this page to request a pilot, review the MSP white-label model, or walk through the synthetic product flow. The static form opens your email client and stores nothing on the site.",
     primary: [`mailto:${brand.email}?subject=RoadRunner%20Secure%20pilot%20scope`, "Email directly"],
     secondary: ["/demo/", "Review walkthrough"],
-    body: contactBody()
+    body: contactBody
   }
 ];
 
 const css = String.raw`
 :root {
-  --ink: #081522;
-  --navy: #0d385b;
-  --navy-2: #124568;
+  color-scheme: dark;
+  --void: #03070b;
+  --void-2: #071019;
+  --ink: #f4f8fb;
+  --soft: #b8c4ce;
+  --muted: #6f7d8a;
+  --panel: #0b121a;
+  --panel-2: #101922;
+  --panel-3: #131f2a;
+  --line: rgba(203, 224, 238, .15);
+  --line-strong: rgba(45, 212, 191, .42);
   --cyan: #2dd4bf;
-  --cyan-2: #0ea5a4;
-  --paper: #f7f8f4;
-  --paper-2: #eef3ef;
-  --paper-3: #e6ece8;
-  --line: rgba(8, 21, 34, .14);
-  --line-dark: rgba(247, 248, 244, .16);
-  --muted: #5c6b74;
-  --muted-light: rgba(247, 248, 244, .7);
-  --danger: #e04f5f;
-  --warn: #b06a00;
-  --success: #14723a;
+  --cyan-2: #67e8f9;
+  --blue: #3b82f6;
+  --red: #f43f5e;
+  --amber: #f59e0b;
+  --green: #22c55e;
+  --paper: #f7f9fb;
+  --paper-ink: #071019;
   --radius: 8px;
-  --shadow: 0 20px 60px rgba(8, 21, 34, .16);
+  --shadow: 0 32px 110px rgba(0, 0, 0, .45);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,.03) 1px, transparent 1px),
+    var(--void);
+  background-size: 72px 72px;
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
 }
 img, svg { max-width: 100%; }
 a { color: inherit; }
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
   outline: 3px solid var(--cyan);
   outline-offset: 3px;
 }
@@ -177,10 +187,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   top: -60px;
   z-index: 100;
   background: var(--cyan);
-  color: var(--ink);
+  color: var(--void);
   padding: 10px 14px;
   border-radius: var(--radius);
-  font-weight: 800;
+  font-weight: 900;
 }
 .skip-link:focus { top: 16px; }
 
@@ -188,18 +198,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(247, 248, 244, .94);
+  background: rgba(3, 7, 11, .84);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(18px) saturate(130%);
 }
 .nav-shell {
-  max-width: 1240px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 12px 24px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 .brand {
   display: inline-flex;
@@ -208,73 +218,65 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   text-decoration: none;
   min-width: 0;
 }
-.brand-logo-box {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius);
+.brand-mark {
+  width: 44px;
+  height: 36px;
   display: grid;
   place-items: center;
-  background: #fff;
-  border: 1px solid var(--line);
-  overflow: hidden;
   flex: none;
 }
-.brand-logo-box img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+.brand-mark img { width: 44px; height: auto; display: block; }
+.brand-title {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
 }
-.brand-title { display: grid; gap: 1px; }
 .brand-title strong {
-  font-size: 15px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 850;
 }
 .brand-title span {
-  font-size: 12px;
   color: var(--muted);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
 }
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 2px;
   flex-wrap: wrap;
 }
 .nav-links a {
   text-decoration: none;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 750;
-  color: #40515d;
-  padding: 7px 8px;
-  border-radius: var(--radius);
+  color: var(--soft);
+  padding: 8px 9px;
+  border: 1px solid transparent;
+  border-radius: 6px;
 }
 .nav-links a:hover, .nav-links a[aria-current="page"] {
-  background: rgba(13, 56, 91, .08);
-  color: var(--navy);
+  color: var(--ink);
+  border-color: var(--line);
+  background: rgba(255,255,255,.05);
 }
 .nav-cta {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
   justify-content: flex-end;
 }
-.mobile-menu {
-  display: none;
-}
+.mobile-menu { display: none; }
 .mobile-menu summary {
   list-style: none;
 }
-.mobile-menu summary::-webkit-details-marker {
-  display: none;
-}
+.mobile-menu summary::-webkit-details-marker { display: none; }
 .mobile-menu-panel {
   display: grid;
   gap: 8px;
   padding-top: 12px;
 }
-.mobile-menu:not([open]) .mobile-menu-panel {
-  display: none;
-}
+.mobile-menu:not([open]) .mobile-menu-panel { display: none; }
 .mobile-menu-panel a {
   min-height: 44px;
   display: flex;
@@ -282,85 +284,110 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   justify-content: center;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background: #fff;
+  background: rgba(255,255,255,.055);
   color: var(--ink);
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 850;
 }
 .mobile-menu-panel a[aria-current="page"] {
-  background: rgba(13, 56, 91, .08);
-  color: var(--navy);
-  border-color: rgba(13, 56, 91, .28);
+  border-color: var(--line-strong);
+  color: var(--cyan);
 }
+
 .button, button.button {
+  min-height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  border-radius: var(--radius);
-  border: 1px solid transparent;
+  gap: 9px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
   padding: 11px 16px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 850;
   text-decoration: none;
-  font-weight: 800;
-  font-size: 14px;
   cursor: pointer;
 }
-.button.primary { background: var(--navy); color: #fff; }
-.button.primary:hover { background: var(--navy-2); }
+.button.primary {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--void);
+  box-shadow: 0 0 30px rgba(45, 212, 191, .22);
+}
 .button.secondary {
-  border-color: var(--line);
-  background: #fff;
+  background: rgba(255,255,255,.045);
   color: var(--ink);
 }
-.button.secondary:hover { border-color: rgba(13, 56, 91, .4); }
+.button:hover { transform: translateY(-1px); }
 
 .hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background:
-    radial-gradient(circle at top right, rgba(45, 212, 191, .15), transparent 28rem),
-    linear-gradient(180deg, #fff, var(--paper));
+    linear-gradient(115deg, rgba(45, 212, 191, .16), transparent 28%),
+    linear-gradient(180deg, rgba(7, 16, 25, .62), rgba(3, 7, 11, .95));
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background: repeating-linear-gradient(180deg, transparent 0, transparent 5px, rgba(255,255,255,.035) 6px);
+  mix-blend-mode: overlay;
 }
 .hero-inner, .section-inner {
-  max-width: 1240px;
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 84px 24px;
+  padding: 88px 24px;
 }
 .hero-grid {
+  min-height: 690px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
+  grid-template-columns: minmax(0, .88fr) minmax(520px, 1.12fr);
   gap: 44px;
   align-items: center;
 }
+.hero-copy { max-width: 660px; }
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 18px;
-  color: var(--navy);
+  gap: 9px;
+  margin-bottom: 20px;
+  color: var(--cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
-  letter-spacing: .12em;
+  font-weight: 800;
   text-transform: uppercase;
-  font-weight: 900;
 }
 .eyebrow::before {
   content: "";
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   background: var(--cyan);
-  transform: rotate(45deg);
-  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(45, 212, 191, .72);
 }
 h1, h2, h3 {
   margin: 0;
-  line-height: 1.08;
+  line-height: 1.06;
   letter-spacing: 0;
 }
 h1 {
-  max-width: 12ch;
-  font-size: clamp(42px, 7vw, 76px);
+  font-size: 76px;
   font-weight: 900;
 }
 h2 {
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: 46px;
   font-weight: 900;
 }
 h3 {
@@ -368,262 +395,375 @@ h3 {
   font-weight: 850;
 }
 .lead {
-  margin: 22px 0 0;
+  margin: 24px 0 0;
   max-width: 66ch;
-  color: #40515d;
+  color: var(--soft);
   font-size: 18px;
 }
 .hero-actions, .section-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 32px;
 }
-.assurance-row {
+.signal-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
+  gap: 8px;
+  margin-top: 24px;
 }
-.pill {
+.signal-chip {
+  min-height: 30px;
   display: inline-flex;
   align-items: center;
-  min-height: 30px;
-  border-radius: 999px;
+  gap: 7px;
   border: 1px solid var(--line);
-  background: #fff;
-  color: #40515d;
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 800;
+  border-radius: 6px;
+  background: rgba(255,255,255,.045);
+  color: var(--soft);
+  padding: 6px 9px;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
-.hero-card, .panel {
+.signal-chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+}
+
+.command-surface, .data-panel, .finding-artifact, .product-shot, .comparison, .contact-form {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fff;
+  background: linear-gradient(180deg, rgba(16, 25, 34, .96), rgba(8, 14, 21, .98));
   box-shadow: var(--shadow);
 }
-.hero-card { padding: 22px; }
-.logo-hero {
-  display: grid;
-  grid-template-columns: 112px 1fr;
-  gap: 20px;
-  align-items: center;
-  padding-bottom: 20px;
+.command-surface {
+  min-height: 520px;
+  padding: 18px;
+  overflow: hidden;
+}
+.surface-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
 }
-.logo-hero img {
-  display: block;
-  width: 112px;
+.surface-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.surface-title img {
+  width: 52px;
   height: auto;
 }
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 18px;
+.surface-title strong { display: block; }
+.surface-title span, .surface-kicker {
+  display: block;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
 }
-.metric {
+.live-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--green);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 800;
+}
+.live-dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  box-shadow: 0 0 16px rgba(34, 197, 94, .8);
+}
+.surface-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.metric-tile {
+  min-height: 116px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 16px;
-  background: var(--paper);
+  padding: 14px;
+  background: rgba(255,255,255,.035);
 }
-.metric strong {
+.metric-tile strong {
   display: block;
-  font-size: 34px;
+  color: var(--ink);
+  font-size: 38px;
   line-height: 1;
-  color: var(--navy);
 }
-.metric span {
+.metric-tile span {
   display: block;
-  margin-top: 6px;
+  margin-top: 10px;
   color: var(--muted);
   font-size: 13px;
-  font-weight: 750;
 }
-.queue {
-  margin-top: 18px;
+.metric-tile.red { border-left: 3px solid var(--red); }
+.metric-tile.cyan { border-left: 3px solid var(--cyan); }
+.metric-tile.green { border-left: 3px solid var(--green); }
+.metric-tile.amber { border-left: 3px solid var(--amber); }
+.finding-feed {
   display: grid;
   gap: 8px;
+  margin-top: 16px;
 }
-.queue-row {
+.feed-row {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 72px 1fr auto;
   gap: 12px;
   align-items: center;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 6px;
   padding: 12px;
-  background: #fff;
+  background: rgba(3,7,11,.55);
   font-size: 13px;
+}
+.mono {
+  color: var(--muted);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
 }
 .tag {
   display: inline-flex;
-  border-radius: 5px;
+  justify-content: center;
+  border-radius: 4px;
   padding: 4px 7px;
-  font-size: 11px;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
   font-weight: 900;
-  line-height: 1;
+  text-transform: uppercase;
 }
-.tag.high { color: var(--danger); background: rgba(224, 79, 95, .12); }
-.tag.gap { color: var(--warn); background: rgba(240, 162, 41, .16); }
-.tag.done { color: var(--success); background: rgba(72, 199, 116, .16); }
+.tag.high { color: var(--red); background: rgba(244, 63, 94, .12); }
+.tag.gap { color: var(--amber); background: rgba(245, 158, 11, .12); }
+.tag.done { color: var(--green); background: rgba(34, 197, 94, .12); }
+.tag.live { color: var(--cyan); background: rgba(45, 212, 191, .12); }
 
-.section { border-top: 1px solid var(--line); }
-.section.dark {
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--line-dark);
+.hero-visual {
+  position: relative;
 }
-.section.alt { background: var(--paper-2); }
-.section.dark .lead, .section.dark .subtle, .section.dark p { color: var(--muted-light); }
-.section.dark .eyebrow { color: var(--cyan); }
-.section.dark .card, .section.dark .panel, .section.dark .proof-card, .section.dark .artifact {
-  background: #0d1c2a;
-  border-color: var(--line-dark);
-  box-shadow: none;
+.mini-map, .attack-map, .matrix-map, .deployment-map, .trust-map, .contact-map {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
 }
+.node-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.node {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: rgba(255,255,255,.035);
+}
+.node strong { display: block; color: var(--ink); }
+.node span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+.trace-line {
+  min-height: 42px;
+  border-left: 2px solid var(--cyan);
+  border-bottom: 2px solid var(--cyan);
+  margin-left: 24px;
+  opacity: .8;
+}
+.attack-canvas {
+  min-height: 340px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(90deg, rgba(45,212,191,.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(45,212,191,.06) 1px, transparent 1px),
+    #050a10;
+  background-size: 36px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.attack-canvas svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.matrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.matrix .node { min-height: 124px; }
+.deployment-lane {
+  display: grid;
+  gap: 8px;
+}
+.trust-row {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+  background: rgba(255,255,255,.035);
+}
+
+.section {
+  border-top: 1px solid var(--line);
+  background: rgba(3, 7, 11, .88);
+}
+.section.alt {
+  background: #071019;
+}
+.section.light {
+  background: var(--paper);
+  color: var(--paper-ink);
+}
+.section.light .lead, .section.light .section-head p, .section.light .info-card p, .section.light .subtle {
+  color: #455260;
+}
+.section.light .eyebrow { color: #0d385b; }
+.section.light .eyebrow::before { background: #0d385b; box-shadow: none; }
 .section-head {
   display: grid;
-  grid-template-columns: minmax(0, .85fr) minmax(280px, .55fr);
-  gap: 32px;
+  grid-template-columns: minmax(0, .92fr) minmax(300px, .58fr);
+  gap: 36px;
   align-items: end;
   margin-bottom: 34px;
 }
 .section-head p {
   margin: 0;
-  color: var(--muted);
+  color: var(--soft);
   font-size: 16px;
 }
 .grid { display: grid; gap: 16px; }
-.grid.one { grid-template-columns: 1fr; }
 .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.card, .proof-card, .artifact {
+.info-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fff;
+  background: rgba(255,255,255,.035);
   padding: 22px;
 }
-.card p, .proof-card p, .artifact p {
+.section.light .info-card {
+  background: #fff;
+  border-color: rgba(7, 16, 25, .13);
+}
+.info-card p {
   margin: 10px 0 0;
-  color: var(--muted);
+  color: var(--soft);
 }
 .number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 30px;
+  min-width: 34px;
   height: 30px;
-  padding: 0 9px;
-  border-radius: var(--radius);
-  background: rgba(13, 56, 91, .1);
-  color: var(--navy);
+  margin-bottom: 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  color: var(--cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
   font-weight: 900;
-  margin-bottom: 16px;
 }
-.section.dark .number {
-  background: rgba(45, 212, 191, .14);
-  color: var(--cyan);
+.manifesto {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(360px, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
-.product-shot {
-  border: 1px solid var(--line-dark);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #02070c;
+.statement {
+  border-left: 3px solid var(--cyan);
+  padding: 8px 0 8px 20px;
 }
-.product-shot img {
+.statement strong {
   display: block;
-  width: 100%;
+  font-size: 30px;
+  line-height: 1.12;
 }
-.caption {
-  padding: 12px 14px;
-  border-top: 1px solid var(--line-dark);
-  color: rgba(247, 248, 244, .72);
-  font-size: 13px;
+.statement span {
+  display: block;
+  margin-top: 12px;
+  color: var(--soft);
 }
-.proof-list { display: grid; gap: 12px; }
-.proof-item {
+.contrast-list {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 14px;
-  border-top: 1px solid var(--line);
-  padding-top: 14px;
+  gap: 10px;
 }
-.proof-item:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-.proof-item strong { color: var(--navy); }
-.section.dark .proof-item { border-color: var(--line-dark); }
-.section.dark .proof-item strong { color: var(--cyan); }
-
-.artifact {
+.contrast-row {
   display: grid;
-  gap: 16px;
-}
-.artifact-header {
-  display: flex;
+  grid-template-columns: minmax(150px, .38fr) 1fr;
   gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: rgba(255,255,255,.035);
+}
+.contrast-row b { color: var(--red); }
+.contrast-row strong { color: var(--cyan); }
+
+.finding-artifact {
+  overflow: hidden;
+}
+.artifact-top {
+  display: flex;
   justify-content: space-between;
+  gap: 18px;
+  align-items: start;
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
 }
-.artifact-title {
-  display: grid;
-  gap: 4px;
-}
-.artifact-title strong {
-  color: var(--navy);
-  font-size: 13px;
-  letter-spacing: .08em;
+.artifact-top strong {
+  display: block;
+  color: var(--cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
   text-transform: uppercase;
 }
-.artifact-title h3 { font-size: 24px; }
-.section.dark .artifact-title strong { color: var(--cyan); }
+.artifact-top h3 {
+  margin-top: 6px;
+  font-size: 28px;
+}
 .artifact-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
 }
 .artifact-field {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--paper);
-  padding: 14px;
+  min-height: 128px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 20px;
 }
-.section.dark .artifact-field {
-  background: #081522;
-  border-color: var(--line-dark);
-}
+.artifact-field:nth-child(even) { border-right: 0; }
 .artifact-field b {
   display: block;
-  margin-bottom: 6px;
-  color: var(--navy);
-  font-size: 12px;
-  letter-spacing: .08em;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
   text-transform: uppercase;
 }
-.section.dark .artifact-field b { color: var(--cyan); }
-.artifact-field span {
-  display: block;
-  color: #40515d;
-  font-size: 14px;
-}
-.section.dark .artifact-field span { color: var(--muted-light); }
+.artifact-field span { color: var(--soft); }
 .code-block {
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #07111b;
+  background: #02060a;
   color: #d6f7ef;
-  padding: 16px;
+  padding: 18px;
   font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.6;
+}
+.code-block code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 .flow {
   display: grid;
@@ -631,61 +771,75 @@ h3 {
   gap: 10px;
 }
 .flow-step {
+  min-height: 150px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fff;
+  background: rgba(255,255,255,.035);
   padding: 14px;
 }
 .flow-step strong {
   display: block;
-  color: var(--navy);
-  font-size: 13px;
-  margin-bottom: 8px;
+  color: var(--cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
-.flow-step span {
-  color: var(--muted);
+.flow-step span { color: var(--soft); font-size: 13px; }
+.product-shot {
+  overflow: hidden;
+  background: #02060a;
+}
+.product-shot img {
+  display: block;
+  width: 100%;
+}
+.caption {
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+  color: var(--soft);
   font-size: 13px;
 }
-
 .comparison {
   overflow-x: auto;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: #fff;
-  color: var(--ink);
+  background: rgba(255,255,255,.98);
+  color: var(--paper-ink);
+  box-shadow: none;
 }
 .comparison table {
   width: 100%;
+  min-width: 760px;
   border-collapse: collapse;
-  min-width: 720px;
 }
 .comparison th, .comparison td {
   padding: 16px;
   text-align: left;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(7, 16, 25, .12);
   vertical-align: top;
-  color: var(--ink);
 }
 .comparison tr:last-child th, .comparison tr:last-child td { border-bottom: 0; }
 .comparison th {
-  color: var(--navy);
-  font-size: 13px;
+  color: #0d385b;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: .06em;
 }
-.callout {
-  border: 1px solid rgba(45, 212, 191, .45);
-  border-radius: var(--radius);
-  background: rgba(45, 212, 191, .08);
-  padding: 22px;
-}
-.contact-grid {
+.split {
   display: grid;
-  grid-template-columns: minmax(0, .75fr) minmax(320px, .9fr);
+  grid-template-columns: minmax(0, .75fr) minmax(360px, .85fr);
   gap: 28px;
   align-items: start;
 }
-.contact-form { display: grid; gap: 14px; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(360px, .95fr);
+  gap: 28px;
+  align-items: start;
+}
+.contact-form {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+}
 .field-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -700,8 +854,8 @@ label {
 input, select, textarea {
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: #fff;
+  border-radius: 6px;
+  background: #060b11;
   color: var(--ink);
   padding: 12px 13px;
   font: inherit;
@@ -713,15 +867,15 @@ textarea { resize: vertical; }
   font-size: 13px;
 }
 .site-footer {
-  background: #06101b;
-  color: var(--paper);
+  border-top: 1px solid var(--line);
+  background: #02060a;
 }
 .footer-inner {
-  max-width: 1240px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 36px 24px;
+  padding: 38px 24px;
   display: grid;
-  gap: 22px;
+  gap: 24px;
 }
 .footer-top {
   display: flex;
@@ -732,133 +886,100 @@ textarea { resize: vertical; }
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  max-width: 620px;
 }
-.footer-logo {
-  width: 54px;
-  height: 54px;
-  border-radius: var(--radius);
-  background: #fff;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-.footer-logo img { width: 46px; }
+.footer-brand img { width: 74px; }
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  color: rgba(247, 248, 244, .68);
+  color: var(--soft);
 }
-.footer-links a { text-decoration: none; }
+.footer-links a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 .footer-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  color: rgba(247, 248, 244, .54);
-  font-size: 12px;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
 }
 .subtle { color: var(--muted); }
-.mono {
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  letter-spacing: .02em;
-}
 
-@media (max-width: 1120px) {
-  .nav-shell {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-  .nav-links, .nav-cta { justify-content: flex-start; }
-  .hero-grid, .section-head, .contact-grid { grid-template-columns: 1fr; }
-  h1 { max-width: 14ch; }
-  .grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 760px) {
-  .hero-inner, .section-inner { padding: 58px 18px; }
-  .nav-shell {
-    padding: 12px 16px;
-    gap: 14px;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-  }
-  .nav-links,
-  .nav-cta {
-    display: none;
-  }
-  .mobile-menu {
-    display: block;
-    justify-self: end;
-  }
-  .mobile-menu[open] {
-    grid-column: 1 / -1;
-    justify-self: stretch;
-  }
+@media (max-width: 1160px) {
+  .nav-shell { grid-template-columns: 1fr auto; }
+  .nav-links, .nav-cta { display: none; }
+  .mobile-menu { display: block; justify-self: end; }
+  .mobile-menu[open] { grid-column: 1 / -1; justify-self: stretch; }
   .mobile-menu summary {
-    min-width: 48px;
+    min-width: 52px;
     min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: #fff;
+    border-radius: 6px;
+    background: rgba(255,255,255,.055);
     color: var(--ink);
     font-weight: 900;
     cursor: pointer;
   }
-  .brand-logo-box {
-    width: 42px;
-    height: 42px;
-  }
-  .brand-title strong { font-size: 13px; }
-  .brand-title span { font-size: 11px; }
-  .nav-links { gap: 4px; }
-  .nav-links a {
-    padding: 7px 8px;
-    font-size: 12px;
-  }
-  h1 {
-    max-width: none;
-    font-size: clamp(34px, 10vw, 42px);
-  }
-  h2 {
-    font-size: clamp(28px, 9vw, 36px);
-  }
-  .lead {
-    font-size: 16px;
-  }
-  .queue-row, .grid.two, .grid.three, .grid.four, .field-grid, .proof-item, .artifact-grid, .flow {
+  .hero-grid, .section-head, .manifesto, .split, .contact-grid {
     grid-template-columns: 1fr;
   }
-  .logo-hero {
-    grid-template-columns: 84px 1fr;
-    gap: 14px;
-  }
-  .logo-hero img {
-    width: 84px;
-  }
-  .metrics {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .metric {
-    padding: 12px 8px;
-  }
-  .metric strong {
-    font-size: 28px;
-  }
-  .metric span {
-    font-size: 11px;
-  }
+  .hero-grid { min-height: auto; }
+  .hero-copy { max-width: none; }
+  .grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .nav-shell { padding: 10px 16px; }
+  .brand-mark { width: 40px; }
+  .brand-mark img { width: 40px; }
+  .brand-title strong { font-size: 13px; }
+  .brand-title span { display: none; }
+  .hero-inner, .section-inner { padding: 58px 18px; }
+  h1 { font-size: 40px; }
+  h2 { font-size: 32px; }
+  .lead { font-size: 16px; }
+  .hero-actions .button, .section-actions .button, button.button { width: 100%; }
+  .command-surface { min-height: 0; padding: 14px; }
+  .hero-inner { padding-top: 44px; padding-bottom: 44px; }
   .hero-grid { gap: 28px; }
-  .hero-card { padding: 16px; }
-  .hero-card .queue {
+  .surface-top, .artifact-top { display: grid; }
+  .grid.two, .grid.three, .grid.four, .field-grid, .artifact-grid, .node-grid, .matrix {
+    grid-template-columns: 1fr;
+  }
+  .surface-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .metric-tile {
+    min-height: 92px;
+    padding: 12px;
+  }
+  .metric-tile strong {
+    font-size: 30px;
+  }
+  .attack-canvas {
+    min-height: 230px;
+  }
+  .hero .finding-feed .feed-row:nth-child(n+3) {
     display: none;
   }
-  .queue-row { align-items: start; }
-  .button { width: 100%; }
+  .feed-row, .trust-row, .contrast-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .artifact-field, .artifact-field:nth-child(even) {
+    border-right: 0;
+  }
   .comparison {
     overflow-x: visible;
   }
@@ -882,12 +1003,10 @@ textarea { resize: vertical; }
     white-space: nowrap;
   }
   .comparison tr {
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(7, 16, 25, .12);
     padding: 10px 0;
   }
-  .comparison tr:last-child {
-    border-bottom: 0;
-  }
+  .comparison tr:last-child { border-bottom: 0; }
   .comparison td {
     border-bottom: 0;
     padding: 9px 14px;
@@ -896,18 +1015,11 @@ textarea { resize: vertical; }
     content: attr(data-label);
     display: block;
     margin-bottom: 4px;
-    color: var(--navy);
+    color: #0d385b;
+    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 11px;
     font-weight: 900;
-    letter-spacing: .08em;
     text-transform: uppercase;
-  }
-  .section.dark .comparison td::before {
-    color: var(--navy);
-  }
-  .code-block {
-    font-size: 12px;
-    padding: 12px;
   }
   .footer-links {
     display: grid;
@@ -918,22 +1030,23 @@ textarea { resize: vertical; }
     min-height: 44px;
     display: flex;
     align-items: center;
-    border: 1px solid var(--line-dark);
+    border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 8px 10px;
   }
 }
 
 @media (max-width: 360px) {
-  .brand-title span {
-    display: none;
-  }
-  .hero-inner, .section-inner {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .metrics {
-    grid-template-columns: 1fr;
+  .hero-inner, .section-inner { padding-left: 16px; padding-right: 16px; }
+  h1 { font-size: 36px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 `;
@@ -951,7 +1064,7 @@ if (form) {
       "white-label": "RoadRunner Secure MSP white-label model",
       security: "RoadRunner Secure security review"
     };
-    const interest = data.get("interest") || "walkthrough";
+    const interest = data.get("interest") || "pilot";
     const body = [
       "Name: " + (data.get("name") || ""),
       "Work email: " + (data.get("email") || ""),
@@ -965,14 +1078,14 @@ if (form) {
       data.get("notes") || ""
     ].join("\n");
     window.location.href = "mailto:${brand.email}?subject=" +
-      encodeURIComponent(subjectByInterest[interest] || subjectByInterest.walkthrough) +
+      encodeURIComponent(subjectByInterest[interest] || subjectByInterest.pilot) +
       "&body=" + encodeURIComponent(body);
   });
 }
 `;
 
 function shell(page) {
-  const canonical = `${brand.root}/${page.slug}`;
+  const canonical = page.slug ? `${brand.root}/${page.slug}/` : `${brand.root}/`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -987,37 +1100,19 @@ function shell(page) {
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${brand.root}/assets/roadrunner-logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/assets/roadrunner-logo.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/roadrunner-mark.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   ${header(page.active)}
   <main id="main">
-    <section class="hero">
-      <div class="hero-inner hero-grid">
-        <div>
-          <div class="eyebrow">${page.eyebrow}</div>
-          <h1>${page.h1}</h1>
-          <p class="lead">${page.lead}</p>
-          <div class="hero-actions">
-            <a class="button primary" href="${page.primary[0]}">${page.primary[1]}</a>
-            <a class="button secondary" href="${page.secondary[0]}">${page.secondary[1]}</a>
-          </div>
-          <div class="assurance-row">
-            <span class="pill">Read-only evidence</span>
-            <span class="pill">White-label ready</span>
-            <span class="pill">Evidence-verified closure</span>
-          </div>
-        </div>
-        ${heroCard()}
-      </div>
-    </section>
-    ${page.body}
+    ${hero(page)}
+    ${page.body()}
   </main>
   ${footer()}
   <script src="/script.js"></script>
@@ -1035,8 +1130,8 @@ function header(active) {
   return `<header class="site-header">
     <div class="nav-shell">
       <a class="brand" href="/" aria-label="RoadRunner Secure home">
-        <span class="brand-logo-box"><img src="/assets/roadrunner-logo.svg" alt=""></span>
-        <span class="brand-title"><strong>RoadRunner Secure</strong><span>Assessment by ${brand.owner}</span></span>
+        <span class="brand-mark"><img src="/assets/roadrunner-mark.svg" alt=""></span>
+        <span class="brand-title"><strong>RoadRunner Secure</strong><span>Evidence verified closure</span></span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">${links}</nav>
       <div class="nav-cta">
@@ -1051,20 +1146,232 @@ function header(active) {
   </header>`;
 }
 
+function hero(page) {
+  return `<section class="hero hero-${page.visual}">
+    <div class="hero-inner hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">${page.eyebrow}</div>
+        <h1>${page.h1}</h1>
+        <p class="lead">${page.lead}</p>
+        <div class="hero-actions">
+          <a class="button primary" href="${page.primary[0]}">${page.primary[1]}</a>
+          <a class="button secondary" href="${page.secondary[0]}">${page.secondary[1]}</a>
+        </div>
+        <div class="signal-row">
+          <span class="signal-chip">Read-only</span>
+          <span class="signal-chip">White-label</span>
+          <span class="signal-chip">Validated closure</span>
+        </div>
+      </div>
+      <div class="hero-visual">${heroVisual(page.visual)}</div>
+    </div>
+  </section>`;
+}
+
+function heroVisual(visual) {
+  const visuals = {
+    cockpit: cockpitVisual,
+    architecture: architectureVisual,
+    attack: attackVisual,
+    microsoft: microsoftVisual,
+    deployment: deploymentVisual,
+    trust: trustVisual,
+    walkthrough: walkthroughVisual,
+    contact: contactVisual
+  };
+  return (visuals[visual] || cockpitVisual)();
+}
+
+function cockpitVisual() {
+  return `<aside class="command-surface" aria-label="RoadRunner Secure weekly assessment cockpit">
+    <div class="surface-top">
+      <div class="surface-title">
+        <img src="/assets/roadrunner-mark.svg" alt="">
+        <div><strong>Weekly assessment run</strong><span>tenant: RoadRunner live / run RR-2026-07</span></div>
+      </div>
+      <span class="live-dot">LIVE</span>
+    </div>
+    <div class="surface-grid">
+      <div class="metric-tile red"><strong>27</strong><span>Needs action now</span></div>
+      <div class="metric-tile green"><strong>19</strong><span>Verified closed</span></div>
+      <div class="metric-tile amber"><strong>3</strong><span>Source gaps</span></div>
+      <div class="metric-tile cyan"><strong>$10k</strong><span>Monthly savings found</span></div>
+    </div>
+    <div class="finding-feed">
+      ${feedRow("HIGH", "Standing Global Admins remain assigned outside just-in-time access", "owner: identity")}
+      ${feedRow("HIGH", "Legacy auth still active for named service accounts", "validate next run")}
+      ${feedRow("GAP", "Cannot assess device compliance because Intune is not onboarded", "source gap")}
+      ${feedRow("DONE", "MFA exception removed and evidence stamped closed", "closed")}
+    </div>
+  </aside>`;
+}
+
+function architectureVisual() {
+  return `<aside class="command-surface mini-map" aria-label="RoadRunner Secure platform architecture">
+    <div class="surface-top">
+      <div><strong>Evidence pipeline</strong><span class="surface-kicker">read -> normalize -> decide -> validate</span></div>
+      <span class="tag live">RUNNING</span>
+    </div>
+    <div class="node-grid">
+      ${node("Microsoft", "Entra, Defender, Intune, M365, Azure")}
+      ${node("On-Prem", "AD topology, privilege edges, collector export")}
+      ${node("Manual", "Exceptions, service notes, context")}
+    </div>
+    <div class="trace-line"></div>
+    <div class="node-grid">
+      ${node("Evidence Store", "Freshness, source health, tenant boundary")}
+      ${node("Finding Engine", "Named entities, risk, fix, validation")}
+      ${node("Output", "Queue, report, white-label portal")}
+    </div>
+  </aside>`;
+}
+
+function attackVisual() {
+  return `<aside class="command-surface attack-map" aria-label="Active Directory attack path preview">
+    <div class="surface-top">
+      <div><strong>Attack-path graph</strong><span class="surface-kicker">click edge -> cut path -> re-run collector</span></div>
+      <span class="tag high">TIER 0</span>
+    </div>
+    <div class="attack-canvas">
+      <svg viewBox="0 0 760 340" role="img" aria-label="Synthetic Active Directory attack path">
+        <defs>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <path d="M80 250 L190 220 L300 235 L410 170 L540 155 L660 84" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-dasharray="8 8" filter="url(#glow)"/>
+        <path d="M300 235 L410 170" fill="none" stroke="#f43f5e" stroke-width="6" filter="url(#glow)"/>
+        ${graphNode(80,250,"svc")}
+        ${graphNode(190,220,"grp")}
+        ${graphNode(300,235,"ws")}
+        ${graphNode(410,170,"sess")}
+        ${graphNode(540,155,"adm")}
+        ${graphNode(660,84,"T0")}
+      </svg>
+    </div>
+    <div class="finding-feed">
+      ${feedRow("HIGH", "CORP\\svc-build reaches Tier 0 through workstation admin path", "cut edge")}
+      ${feedRow("DONE", "Next collector run must show no route to Domain Admins", "validation")}
+    </div>
+  </aside>`;
+}
+
+function microsoftVisual() {
+  return `<aside class="command-surface matrix-map" aria-label="Microsoft evidence matrix">
+    <div class="surface-top">
+      <div><strong>Microsoft evidence matrix</strong><span class="surface-kicker">score context is not closure</span></div>
+      <span class="tag live">GRAPH</span>
+    </div>
+    <div class="matrix">
+      ${node("Entra", "Privileged roles, MFA, guests", "HIGH")}
+      ${node("Defender", "Incidents, exposure, coverage", "GAP")}
+      ${node("Intune", "Compliance, stale devices", "GAP")}
+      ${node("M365", "Mail, sharing, audit posture", "OK")}
+      ${node("Azure", "Subscriptions, policy, network", "HIGH")}
+      ${node("Closure", "Changed evidence only", "DONE")}
+    </div>
+    <div class="finding-feed">
+      ${feedRow("HIGH", "Conditional Access excludes interactive-capable service accounts", "owner: identity")}
+      ${feedRow("GAP", "Defender plan coverage blocks endpoint confidence", "source gap")}
+    </div>
+  </aside>`;
+}
+
+function deploymentVisual() {
+  return `<aside class="command-surface deployment-map" aria-label="RoadRunner deployment models">
+    <div class="surface-top">
+      <div><strong>Deployment model</strong><span class="surface-kicker">pilot -> MSP partner -> enterprise controls</span></div>
+      <span class="tag live">PILOT</span>
+    </div>
+    <div class="deployment-lane">
+      ${lane("01", "Scoped pilot", "2 to 4 weeks, one tenant or client sample, real findings")}
+      ${lane("02", "MSP partner", "White-label portal, multi-client queue, recurring run cadence")}
+      ${lane("03", "Enterprise custom", "Customer-owned evidence flow, security review, tailored retention")}
+    </div>
+  </aside>`;
+}
+
+function trustVisual() {
+  return `<aside class="command-surface trust-map" aria-label="RoadRunner Secure trust controls">
+    <div class="surface-top">
+      <div><strong>Trust control ledger</strong><span class="surface-kicker">explicit rules for sensitive evidence</span></div>
+      <span class="tag live">READ ONLY</span>
+    </div>
+    ${trustRow("Collection", "Read-only connectors and offline collector options", "PASS")}
+    ${trustRow("Retention", "Defined during pilot or contract", "SET")}
+    ${trustRow("Offboarding", "Revoke, export, delete, confirm", "READY")}
+    ${trustRow("Boundary", "No credentials, no auto-remediation", "LOCKED")}
+  </aside>`;
+}
+
+function walkthroughVisual() {
+  return `<aside class="command-surface" aria-label="RoadRunner walkthrough preview">
+    <div class="surface-top">
+      <div><strong>Product walkthrough</strong><span class="surface-kicker">Polaris is the MSP white-label surface</span></div>
+      <span class="tag live">SYNTHETIC</span>
+    </div>
+    <div class="grid three" style="margin-top:16px">
+      ${imageTile("/refs/polaris-executive-v2.png", "Executive")}
+      ${imageTile("/refs/polaris-onprem.png", "On-Prem")}
+      ${imageTile("/refs/polaris-vciso-v2.png", "AI vCISO")}
+    </div>
+    <div class="finding-feed">
+      ${feedRow("HIGH", "MFA exception and AD path combine into priority work", "walkthrough")}
+      ${feedRow("DONE", "The next run decides whether the fix is closed", "evidence")}
+    </div>
+  </aside>`;
+}
+
+function contactVisual() {
+  return `<aside class="command-surface contact-map" aria-label="RoadRunner pilot intake">
+    <div class="surface-top">
+      <div><strong>Pilot intake</strong><span class="surface-kicker">the first call should produce a run plan</span></div>
+      <span class="tag live">READY</span>
+    </div>
+    ${trustRow("Scope", "Tenants, users, endpoints, AD domains", "NEEDED")}
+    ${trustRow("Access", "Microsoft and collector read-only review", "NEEDED")}
+    ${trustRow("Output", "Weekly queue, validation, final roadmap", "SET")}
+    ${trustRow("White-label", "MSP brand surface and client reporting", "OPTION")}
+  </aside>`;
+}
+
+function feedRow(level, text, meta) {
+  const cls = level === "DONE" ? "done" : level === "GAP" ? "gap" : "high";
+  return `<div class="feed-row"><span class="tag ${cls}">${level}</span><span>${text}</span><span class="mono">${meta}</span></div>`;
+}
+
+function node(title, text, status = "") {
+  return `<div class="node"><strong>${title}</strong><span>${text}</span>${status ? `<span class="tag ${status === "DONE" || status === "OK" ? "done" : status === "GAP" ? "gap" : "high"}" style="margin-top:12px">${status}</span>` : ""}</div>`;
+}
+
+function graphNode(x, y, label) {
+  return `<g><circle cx="${x}" cy="${y}" r="22" fill="#0b121a" stroke="#2dd4bf" stroke-width="2"/><text x="${x}" y="${y + 5}" text-anchor="middle" fill="#f4f8fb" font-size="12" font-family="monospace">${label}</text></g>`;
+}
+
+function lane(num, title, text) {
+  return `<div class="feed-row"><span class="number">${num}</span><span><strong>${title}</strong><br><span class="subtle">${text}</span></span><span class="mono">priced by scope</span></div>`;
+}
+
+function trustRow(title, text, status) {
+  return `<div class="trust-row"><strong>${title}</strong><span>${text}</span><span class="tag live">${status}</span></div>`;
+}
+
+function imageTile(src, label) {
+  return `<div class="node"><img src="${src}" alt="${label} product screenshot" loading="lazy"><span>${label}</span></div>`;
+}
+
 function footer() {
   const links = navItems.slice(1).map(([href, label]) => `<a href="${href}">${label}</a>`).join("");
   return `<footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="footer-logo"><img src="/assets/roadrunner-logo.svg" alt=""></span>
-          <div><strong>${brand.name}</strong><br><span class="subtle">${messaging.proofLine}</span></div>
+          <img src="/assets/roadrunner-mark.svg" alt="">
+          <div><strong>${brand.name}</strong><br><span class="subtle">RoadRunner owns the assessment method. MSPs can deliver the client-facing surface under their own brand.</span></div>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">${links}</nav>
       </div>
       <div class="footer-meta">
         <span>Read-only evidence posture</span>
-        <span>No auto-remediation by default</span>
+        <span>No automatic remediation by default</span>
         <span>Synthetic walkthrough uses fictional evidence</span>
         <span>&copy; ${brand.owner}, LLC</span>
       </div>
@@ -1072,129 +1379,58 @@ function footer() {
   </footer>`;
 }
 
-function heroCard() {
-  return `<aside class="hero-card" aria-label="RoadRunner Secure assessment summary">
-    <div class="logo-hero">
-      <img src="/assets/roadrunner-logo.svg" alt="RoadRunner Strategies">
-      <div>
-        <h3>Weekly assessment run</h3>
-        <p class="subtle">${messaging.productOutcome}</p>
-      </div>
-    </div>
-    <div class="metrics">
-      <div class="metric"><strong>14</strong><span>Needs action now</span></div>
-      <div class="metric"><strong>9</strong><span>Verified closed</span></div>
-      <div class="metric"><strong>3</strong><span>Source gaps surfaced</span></div>
-    </div>
-    <div class="queue">
-      <div class="queue-row"><span class="tag high">HIGH</span><span>Legacy authentication still active for named accounts</span><span class="mono">validate next run</span></div>
-      <div class="queue-row"><span class="tag high">HIGH</span><span>Standing Global Admins should move to just-in-time access</span><span class="mono">owner: identity</span></div>
-      <div class="queue-row"><span class="tag done">DONE</span><span>MFA gap closed by evidence change</span><span class="mono">stamped closed</span></div>
-    </div>
-  </aside>`;
-}
-
 function homeBody() {
   return `
-${whatItDoes()}
-${sampleFindingCard("home")}
-${weeklyAssessmentLoop()}
-${whiteLabelPolarisNote()}
-${artifactScreens()}
+${manifestoSection()}
+${sampleFindingSection("home")}
+${productGallerySection()}
+${whiteLabelSection()}
 ${comparisonSection()}
 ${contactSection()}`;
 }
 
-function whatItDoes() {
+function manifestoSection() {
   return `<section class="section">
-    <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">What RoadRunner does</div>
-          <h2>It turns posture evidence into accountable weekly work.</h2>
-        </div>
-        <p>Most tools expose more information than a lean team can absorb. RoadRunner turns the evidence into a smaller set of findings with owners, target states, and validation logic.</p>
+    <div class="section-inner manifesto">
+      <div class="statement">
+        <div class="eyebrow">Operating thesis</div>
+        <strong>Most security tools tell you to be afraid. RoadRunner tells you what to fix.</strong>
+        <span>Names. Hostnames. App IDs. Attack-path edges. Validation criteria. The artifact matters because it turns anxiety into a work queue.</span>
       </div>
-      <div class="grid four">
-        ${plainCard("Evidence", "Read Microsoft, endpoint, cloud, on-prem, and manual evidence sources without changing customer systems.")}
-        ${plainCard("Findings", "Produce findings that name affected entities and explain why the exposure matters.")}
-        ${plainCard("Work queue", "Rank fixes across domains so the team can decide what happens this week.")}
-        ${plainCard("Closure trail", "Stamp work closed only when the next run proves the evidence changed.")}
+      <div class="contrast-list">
+        ${contrast("Dashboard", "You are at risk.", "RoadRunner", "These identities, devices, policies, and paths need action this week.")}
+        ${contrast("Audit", "Here is a point-in-time report.", "RoadRunner", "Here is the next run condition that proves closure.")}
+        ${contrast("Score", "Improve the number.", "RoadRunner", "Close the exposure and show the changed evidence.")}
       </div>
     </div>
   </section>`;
 }
 
-function weeklyAssessmentLoop() {
+function contrast(leftLabel, left, rightLabel, right) {
+  return `<div class="contrast-row"><div><b>${leftLabel}</b><br><span class="subtle">${left}</span></div><div><strong>${rightLabel}</strong><br><span>${right}</span></div></div>`;
+}
+
+function productGallerySection() {
   return `<section class="section alt">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Weekly assessment loop</div>
-          <h2>Six answers, in the same order every run.</h2>
-        </div>
-        <p>The point is operational rhythm. A finding is not done because someone clicked done. It is done when source evidence proves it.</p>
-      </div>
+      ${sectionHead("Product proof", "Show the real surfaces, not decoration.", "The Polaris screens are MSP white-label examples. RoadRunner owns the assessment logic underneath.")}
       <div class="grid three">
-        ${card("01", "What changed", "New, regressed, verified-closed, and data-gap findings this run versus last.")}
-        ${card("02", "What matters", "Ranked by exposure, exploitability, blast radius, and confidence in the evidence.")}
-        ${card("03", "What to fix", "A concrete target state, not vague guidance like review configuration.")}
-        ${card("04", "Who is affected", "Named accounts, devices, resources, groups, and paths. A count alone is not a finding.")}
-        ${card("05", "How to fix it", "Steps a capable IT generalist, MSP engineer, or security owner can execute or assign.")}
-        ${card("06", "How to validate", "Every fix states what next week's evidence must show before closure is stamped.")}
+        ${productShot("/refs/polaris-executive-v2.png", "Executive posture", "Leadership sees risk direction, closure counts, source gaps, and what changed.")}
+        ${productShot("/refs/polaris-onprem.png", "On-prem attack paths", "Technical owners see the path, the risky edge, collector options, and validation target.")}
+        ${productShot("/refs/polaris-vciso-v2.png", "Evidence-grounded vCISO", "Answers cite findings and source evidence instead of inventing around missing data.")}
       </div>
     </div>
   </section>`;
 }
 
-function whiteLabelPolarisNote() {
-  return `<section class="section dark">
+function whiteLabelSection() {
+  return `<section class="section light">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">White-label model</div>
-          <h2>RoadRunner powers the assessment. MSPs can own the client-facing brand.</h2>
-        </div>
-        <p>${messaging.polarisNote} The brand relationship is explicit so the site does not blur RoadRunner, Polaris, and customer delivery.</p>
-      </div>
-      <div class="grid two">
-        <div class="product-shot">
-          <img src="/refs/polaris-executive-v2.png" alt="Polaris-branded white-label executive posture dashboard">
-          <div class="caption">Example MSP-branded client portal: executive posture, closure metrics, and source gaps under Polaris branding.</div>
-        </div>
-        <div class="panel card">
-          <span class="number">RR</span>
-          <h3>Brand ownership model</h3>
-          <div class="proof-list">
-            <div class="proof-item"><strong>RoadRunner</strong><span>Owns the assessment method, platform logic, evidence model, and closure doctrine.</span></div>
-            <div class="proof-item"><strong>MSP</strong><span>Can present client-facing assessment delivery under its own brand and service packaging.</span></div>
-            <div class="proof-item"><strong>Client</strong><span>Receives named findings, proof, remediation guidance, and validation history they can review.</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>`;
-}
-
-function artifactScreens() {
-  return `<section class="section">
-    <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Product artifacts</div>
-          <h2>Use screenshots as proof, not decoration.</h2>
-        </div>
-        <p>Each visual explains what decision the viewer can make from the product surface.</p>
-      </div>
-      <div class="grid two">
-        <div class="product-shot">
-          <img src="/refs/polaris-onprem.png" alt="White-label Active Directory attack-path graph and collector workflow">
-          <div class="caption">On-prem attack paths: see the route to Tier 0, the risky edge, and the collector options that refresh evidence.</div>
-        </div>
-        <div class="product-shot">
-          <img src="/refs/polaris-vciso-v2.png" alt="White-label AI vCISO screen grounded in finding evidence">
-          <div class="caption">Grounded vCISO answers: cite the underlying findings and state when evidence is missing.</div>
-        </div>
+      ${sectionHead("White-label model", "RoadRunner powers the assessment. MSPs can own the client-facing brand.", "Polaris is the MSP you work for. The site must make the brand relationship explicit: RoadRunner is yours, the assessment is yours, and MSPs can put their name on the client surface.")}
+      <div class="grid three">
+        ${plainCard("RoadRunner", "Owns the assessment method, product logic, evidence model, validation doctrine, and RoadRunner Secure brand.")}
+        ${plainCard("MSP partner", "Can present the client-facing portal, reporting language, and service package under its own brand.")}
+        ${plainCard("Client", "Receives named findings, proof, remediation guidance, and closure history they can review.")}
       </div>
     </div>
   </section>`;
@@ -1202,52 +1438,39 @@ function artifactScreens() {
 
 function platformBody() {
   return `
-${dataFlowSection()}
+${architectureSection()}
 ${sourceCoverageTable()}
 ${lifecycleSection()}
-${roleViews()}
-${whiteLabelPolarisNote()}
+${roleViewsSection()}
 ${contactSection()}`;
 }
 
-function dataFlowSection() {
+function architectureSection() {
   return `<section class="section">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Data flow</div>
-          <h2>The architecture is simple enough to inspect.</h2>
-        </div>
-        <p>RoadRunner is intentionally organized around the assessment chain: source evidence, stored proof, generated findings, assigned work, validation, and reporting.</p>
-      </div>
-      <div class="flow" aria-label="RoadRunner Secure data flow">
+      ${sectionHead("Architecture", "Simple enough to inspect. Strong enough to operate weekly.", "RoadRunner is organized around the assessment chain: source evidence, stored proof, generated findings, assigned work, validation, and reporting.")}
+      <div class="flow">
         ${flowStep("Sources", "Microsoft, endpoint, cloud, AD, and manual evidence.")}
-        ${flowStep("Read-only collection", "Connectors and collectors observe posture.")}
-        ${flowStep("Evidence store", "Normalized proof with freshness and source health.")}
-        ${flowStep("Finding engine", "Rules produce named, explainable findings.")}
-        ${flowStep("Weekly queue", "Prioritized remediation work by owner.")}
-        ${flowStep("Validation run", "Next run checks whether evidence changed.")}
-        ${flowStep("Closure trail", "Verified findings roll into reports.")}
+        ${flowStep("Collect", "Read-only connectors and collector exports observe posture.")}
+        ${flowStep("Normalize", "Evidence is stored with freshness and source health.")}
+        ${flowStep("Decide", "Rules produce named, explainable findings.")}
+        ${flowStep("Assign", "Prioritized work is routed by owner.")}
+        ${flowStep("Validate", "The next run checks whether evidence changed.")}
+        ${flowStep("Report", "Verified closures roll into client-ready artifacts.")}
       </div>
     </div>
   </section>`;
 }
 
 function sourceCoverageTable() {
-  return `<section class="section alt">
+  return `<section class="section light">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Source coverage</div>
-          <h2>Signals are useful only when their limits are visible.</h2>
-        </div>
-        <p>RoadRunner treats missing visibility as an assessment finding, not a quiet blank space in a dashboard.</p>
-      </div>
+      ${sectionHead("Source coverage", "Signals are useful only when their limits are visible.", "Missing visibility should become a data-gap finding, not a quiet blank space in a dashboard.")}
       ${table([
-        ["Source", "Typical evidence", "What RoadRunner does with it"],
+        ["Source", "Typical evidence", "Assessment value"],
         ["Microsoft", "Entra roles, Conditional Access, sign-ins, Defender, Intune, M365, Azure posture", "Creates identity, endpoint, cloud, and collaboration findings with owner-ready remediation."],
         ["On-prem AD", "Groups, ACLs, delegation, sessions where available, local admin exposure, path topology", "Maps attack paths and recommends low-disruption edge cuts."],
-        ["Endpoint/security tools", "Device health, onboarding state, incidents, alert backlog, exposure signals", "Turns coverage and response gaps into weekly work."],
+        ["Endpoint/security tools", "Device health, onboarding state, incident backlog, exposure signals", "Turns coverage and response gaps into weekly work."],
         ["Manual evidence", "Exceptions, business context, compensating controls, MSP notes", "Adds human context without letting manual status override validation evidence."]
       ])}
     </div>
@@ -1255,15 +1478,9 @@ function sourceCoverageTable() {
 }
 
 function lifecycleSection() {
-  return `<section class="section dark">
+  return `<section class="section alt">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Lifecycle</div>
-          <h2>Discovery to closure without losing the thread.</h2>
-        </div>
-        <p>The workflow is built for teams that need recurring execution, not one more static report.</p>
-      </div>
+      ${sectionHead("Lifecycle", "Discovery to closure without losing the thread.", "The workflow is built for recurring execution, not one more static report.")}
       <div class="grid four">
         ${card("01", "Discover", "Collect evidence, detect gaps, and baseline the tenant.")}
         ${card("02", "Prioritize", "Rank findings across Microsoft, endpoint, cloud, and on-prem work.")}
@@ -1274,16 +1491,10 @@ function lifecycleSection() {
   </section>`;
 }
 
-function roleViews() {
+function roleViewsSection() {
   return `<section class="section">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Role-based views</div>
-          <h2>Same evidence, different decisions.</h2>
-        </div>
-        <p>RoadRunner should not make every stakeholder read the same security artifact.</p>
-      </div>
+      ${sectionHead("Role-based views", "Same evidence, different decisions.", "RoadRunner should not make every stakeholder read the same security artifact.")}
       <div class="grid three">
         ${plainCard("MSP operator", "Needs source health, client queues, owner status, blocked evidence, and service delivery notes.")}
         ${plainCard("Client executive", "Needs risk direction, verified closures, unresolved priority items, and business-facing posture summaries.")}
@@ -1295,49 +1506,36 @@ function roleViews() {
 
 function onPremBody() {
   return `
-<section class="section dark" id="walkthrough-onprem"><div class="section-inner">
-  <div class="product-shot">
-    <img src="/refs/polaris-onprem.png" alt="White-label Active Directory attack-path graph and collector options">
-    <div class="caption">Representative white-label AD topology and collector workflow. RoadRunner assessment logic powers the path analysis.</div>
+<section class="section alt" id="walkthrough-onprem">
+  <div class="section-inner">
+    ${productShot("/refs/polaris-onprem.png", "White-label Active Directory attack-path graph", "Representative AD topology and collector workflow. RoadRunner assessment logic powers the path analysis.")}
   </div>
-</div></section>
-${sampleFindingCard("onprem")}
-${collectorDetailSection()}
+</section>
+${sampleFindingSection("onprem")}
+${collectorSection()}
 ${collectorSampleSection()}
-${remediationMappingSection()}
+${pathClosureTable()}
 ${contactSection()}`;
 }
 
-function collectorDetailSection() {
+function collectorSection() {
   return `<section class="section">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Collector model</div>
-          <h2>Read-only, scoped, and deployable by normal IT operations.</h2>
-        </div>
-        <p>The collector should be explainable to an AD owner before it ever runs. This page now states what it reads, what it avoids, and how evidence can move.</p>
-      </div>
+      ${sectionHead("Collector model", "Read-only, scoped, and deployable by normal IT operations.", "The collector should be explainable to an AD owner before it ever runs.")}
       <div class="grid four">
-        ${plainCard("Permissions", "Run with scoped read access sufficient to enumerate directory objects, group membership, ACLs, delegation, and relevant computer metadata.")}
+        ${plainCard("Permissions", "Scoped read access sufficient to enumerate directory objects, group membership, ACLs, delegation, and computer metadata.")}
         ${plainCard("Collected fields", "Users, groups, computers, memberships, privileged relationships, ACL edges, delegation indicators, and source timestamps.")}
         ${plainCard("Never collected", "No password material, no credential harvesting, no destructive testing, and no automatic changes to directory objects.")}
-        ${plainCard("Upload paths", "Direct upload to the tenant evidence store, MSP-managed upload, or offline export for isolated environments.")}
+        ${plainCard("Upload paths", "Direct upload to tenant evidence store, MSP-managed upload, or offline export for isolated environments.")}
       </div>
     </div>
   </section>`;
 }
 
 function collectorSampleSection() {
-  return `<section class="section alt">
+  return `<section class="section light">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Redacted collector sample</div>
-          <h2>Technical buyers need to see the shape of evidence.</h2>
-        </div>
-        <p>This is representative output, not customer data. It makes clear that the collector is topology-focused rather than credential-focused.</p>
-      </div>
+      ${sectionHead("Redacted collector sample", "Technical buyers need to see the shape of evidence.", "Representative output makes clear the collector is topology-focused, not credential-focused.")}
       <pre class="code-block"><code>roadrunner-ad-collector.exe --domain corp.example --mode read-only --output rr-ad-2026-07-05.json
 
 {
@@ -1356,16 +1554,10 @@ function collectorSampleSection() {
   </section>`;
 }
 
-function remediationMappingSection() {
-  return `<section class="section dark">
+function pathClosureTable() {
+  return `<section class="section alt">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Path closure</div>
-          <h2>Every path finding maps to a fix and a validation condition.</h2>
-        </div>
-        <p>The useful output is not a large graph. It is the cheapest defensible change that kills meaningful exposure.</p>
-      </div>
+      ${sectionHead("Path closure", "Every path finding maps to a fix and a validation condition.", "The useful output is not a large graph. It is the cheapest defensible change that kills meaningful exposure.")}
       ${table([
         ["Finding", "Evidence", "Recommended fix", "Validation"],
         ["Service account creates path to Tier 0", "svc-build -> Workstation Admins -> ENG-WS-044 -> Domain Admins", "Remove svc-build from workstation admin path or isolate admin session exposure", "Next collector run no longer contains a route from svc-build to Tier 0"],
@@ -1378,38 +1570,38 @@ function remediationMappingSection() {
 
 function microsoftBody() {
   return `
-<section class="section" id="walkthrough-microsoft"><div class="section-inner">
-  <div class="section-head"><div><div class="eyebrow">Microsoft coverage</div><h2>Exact domains, exact findings, exact limits.</h2></div><p>Coverage depends on licensing and granted permissions. RoadRunner should say what it can prove and what remains unknown.</p></div>
-  <div class="grid three">
-    ${plainCard("Entra ID", "Privileged roles, MFA coverage, Conditional Access gaps, risky users, legacy auth, guest exposure, and role assignment drift.")}
-    ${plainCard("Defender", "Incident backlog, exposure signals, device risk, alert hygiene, and onboarding coverage where available.")}
-    ${plainCard("Intune", "Compliance policy coverage, unmanaged devices, stale enrollments, device encryption, and platform-specific baseline gaps.")}
-    ${plainCard("Exchange and M365", "Legacy protocol exposure, mailbox forwarding, audit posture, sharing controls, and risky collaboration settings.")}
-    ${plainCard("SharePoint and OneDrive", "External sharing posture, sensitive site exposure, anonymous links, and admin control coverage.")}
-    ${plainCard("Azure posture", "Subscription security settings, Defender plan coverage, privileged access, network exposure, and policy gaps.")}
-  </div>
-</div></section>
-${sampleFindingCard("microsoft")}
+${microsoftCoverageSection()}
+${sampleFindingSection("microsoft")}
 ${secureScoreSection()}
 ${permissionsSection()}
 ${contactSection()}`;
 }
 
-function secureScoreSection() {
-  return `<section class="section dark">
+function microsoftCoverageSection() {
+  return `<section class="section" id="walkthrough-microsoft">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Secure Score is not enough</div>
-          <h2>Scores do not assign work or prove closure.</h2>
-        </div>
-        <p>RoadRunner can use Microsoft score data as context, but the assessment output is built around named evidence and validation.</p>
+      ${sectionHead("Microsoft coverage", "Exact domains, exact findings, exact limits.", "Coverage depends on licensing and granted permissions. RoadRunner says what it can prove and what remains unknown.")}
+      <div class="grid three">
+        ${plainCard("Entra ID", "Privileged roles, MFA coverage, Conditional Access gaps, risky users, legacy auth, guest exposure, and role drift.")}
+        ${plainCard("Defender", "Incident backlog, exposure signals, device risk, alert hygiene, and onboarding coverage where available.")}
+        ${plainCard("Intune", "Compliance policy coverage, unmanaged devices, stale enrollments, device encryption, and baseline gaps.")}
+        ${plainCard("Exchange and M365", "Legacy protocol exposure, mailbox forwarding, audit posture, sharing controls, and risky collaboration settings.")}
+        ${plainCard("SharePoint and OneDrive", "External sharing posture, sensitive site exposure, anonymous links, and admin control coverage.")}
+        ${plainCard("Azure posture", "Subscription security settings, Defender plan coverage, privileged access, network exposure, and policy gaps.")}
       </div>
+    </div>
+  </section>`;
+}
+
+function secureScoreSection() {
+  return `<section class="section light">
+    <div class="section-inner">
+      ${sectionHead("Secure Score is not enough", "Scores do not assign work or prove closure.", "RoadRunner can use Microsoft score data as context, but the output is built around named evidence and validation.")}
       ${table([
         ["Question", "Microsoft Secure Score", "RoadRunner Secure"],
         ["What is wrong?", "Control-level recommendations", "Named findings with affected accounts, devices, policies, or resources"],
         ["Who owns it?", "Usually outside the score", "Owner-ready queue with remediation context"],
-        ["Why this first?", "Score impact may dominate", "Prioritized by exposure, blast radius, confidence, and operational urgency"],
+        ["Why this first?", "Score impact may dominate", "Prioritized by exposure, blast radius, confidence, and urgency"],
         ["How does it close?", "Score movement or manual review", "Next evidence run must satisfy validation criteria"]
       ])}
     </div>
@@ -1419,13 +1611,7 @@ function secureScoreSection() {
 function permissionsSection() {
   return `<section class="section alt">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Connector permissions</div>
-          <h2>Permissions are part of the buying decision.</h2>
-        </div>
-        <p>Exact permission names should be finalized against the implementation, but the public page now explains the purpose and read-only posture.</p>
-      </div>
+      ${sectionHead("Connector permissions", "Permissions are part of the buying decision.", "Exact permission names should match implementation, but the public page should explain purpose and read-only posture.")}
       ${table([
         ["Area", "Typical read purpose", "Assessment value"],
         ["Directory", "Read users, groups, roles, guests, and assignments", "Detect privilege sprawl, stale access, and risky identities"],
@@ -1442,45 +1628,32 @@ function pricingBody() {
   return `
 ${pilotShapeSection()}
 ${packageSection()}
-${includedNotIncludedSection()}
 ${pricingInputsSection()}
-${buyingObjectionsSection()}
+${includedSection()}
 ${contactSection()}`;
 }
 
 function pilotShapeSection() {
   return `<section class="section">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Pilot shape</div>
-          <h2>A useful pilot proves the loop in 2 to 4 weeks.</h2>
-        </div>
-        <p>If the weekly findings and closure trail do not create usable work, the pilot should end cleanly with the output retained.</p>
-      </div>
+      ${sectionHead("Pilot shape", "A useful pilot proves the loop in 2 to 4 weeks.", "If the weekly findings and closure trail do not create usable work, the pilot should end cleanly with the output retained.")}
       <div class="grid four">
-        ${card("Week 0", "Scope and access", "Confirm tenant count, Microsoft/on-prem scope, white-label needs, and read-only access.")}
-        ${card("Week 1", "Baseline", "Run the first assessment and review highest-priority findings.")}
-        ${card("Weeks 2-3", "Work the queue", "Fix selected findings, refresh evidence, and watch validation behavior.")}
-        ${card("Week 4", "Decision", "Deliver report, roadmap, and recommendation to continue, expand, or stop.")}
+        ${card("W0", "Scope and access", "Confirm tenant count, Microsoft/on-prem scope, white-label needs, and read-only access.")}
+        ${card("W1", "Baseline", "Run the first assessment and review highest-priority findings.")}
+        ${card("W2", "Work the queue", "Fix selected findings, refresh evidence, and watch validation behavior.")}
+        ${card("W4", "Decision", "Deliver report, roadmap, and recommendation to continue, expand, or stop.")}
       </div>
     </div>
   </section>`;
 }
 
 function packageSection() {
-  return `<section class="section dark">
+  return `<section class="section light">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Commercial models</div>
-          <h2>Pricing follows scope, not a generic seat grid.</h2>
-        </div>
-        <p>Exact numbers can be quoted after the deployment shape is known. The public page should still make the buying motion concrete.</p>
-      </div>
+      ${sectionHead("Commercial models", "Pricing follows scope, not a generic seat grid.", "Exact numbers can be quoted after deployment shape is known. The public page should still make the buying motion concrete.")}
       ${table([
         ["Model", "Best fit", "Included shape"],
-        ["Pilot", "A first tenant or controlled client sample", "Baseline assessment, weekly findings review, final report, and remediation roadmap"],
+        ["Pilot", "A first tenant or controlled client sample", "Baseline assessment, weekly finding review, final report, and remediation roadmap"],
         ["MSP Partner", "Recurring white-label delivery across clients", "Client portals, MSP operating queue, white-label reporting, and tenant rollout planning"],
         ["Enterprise / Custom", "Customer-owned or constrained deployment", "Custom access model, evidence flow review, security review support, and tailored source scope"]
       ])}
@@ -1491,32 +1664,20 @@ function packageSection() {
 function pricingInputsSection() {
   return `<section class="section alt">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Pricing inputs</div>
-          <h2>Bring the facts that change the scope.</h2>
-        </div>
-        <p>These inputs keep the conversation concrete without publishing a fake one-size-fits-all price.</p>
-      </div>
+      ${sectionHead("Pricing inputs", "Bring the facts that change the scope.", "These inputs keep the conversation concrete without publishing a fake one-size-fits-all price.")}
       <div class="grid three">
         ${plainCard("Environment size", "Users, endpoints, tenants, subscriptions, and on-prem domains.")}
-        ${plainCard("Evidence sources", "Microsoft-only, on-prem AD, endpoint/security tooling, and any manual evidence needs.")}
+        ${plainCard("Evidence sources", "Microsoft-only, on-prem AD, endpoint/security tooling, and manual evidence needs.")}
         ${plainCard("Deployment model", "RoadRunner-hosted, MSP-managed, customer-owned, or offline collector requirements.")}
       </div>
     </div>
   </section>`;
 }
 
-function includedNotIncludedSection() {
+function includedSection() {
   return `<section class="section">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Included and not included</div>
-          <h2>Define the boundary before the pilot starts.</h2>
-        </div>
-        <p>This prevents the first assessment from turning into an open-ended consulting engagement.</p>
-      </div>
+      ${sectionHead("Boundary", "Define the pilot before it starts.", "This prevents the first assessment from turning into an open-ended consulting engagement.")}
       ${table([
         ["Included", "Not included by default"],
         ["Read-only connector setup and evidence review", "Production remediation performed by RoadRunner"],
@@ -1528,49 +1689,24 @@ function includedNotIncludedSection() {
   </section>`;
 }
 
-function buyingObjectionsSection() {
-  return `<section class="section">
-    <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Common objections</div>
-          <h2>The pilot is designed to reduce procurement friction.</h2>
-        </div>
-        <p>The site should answer the questions a cautious buyer will ask before they book the first call.</p>
-      </div>
-      <div class="grid three">
-        ${plainCard("No long-term commitment", "Start with a bounded pilot and continue only if the closure trail is useful.")}
-        ${plainCard("Scoped access", "Use read-only permissions and document what each connector needs before approval.")}
-        ${plainCard("Clear deliverables", "Baseline findings, weekly queue, validation results, final report, and roadmap.")}
-      </div>
-    </div>
-  </section>`;
-}
-
 function securityBody() {
   return `
 ${securityTrustGrid()}
 ${connectorPermissionsTable()}
 ${dataHandlingSection()}
 ${securityBoundariesSection()}
-${complianceRoadmapSection()}
+${complianceSection()}
 ${contactSection()}`;
 }
 
 function securityTrustGrid() {
   return `<section class="section">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Trust posture</div>
-          <h2>Security claims should be specific enough to review.</h2>
-        </div>
-        <p>This page now covers the minimum categories a security reviewer will expect before deeper due diligence.</p>
-      </div>
+      ${sectionHead("Trust posture", "Security claims should be specific enough to review.", "This page covers the minimum categories a security reviewer expects before deeper due diligence.")}
       <div class="grid three">
         ${plainCard("Data handling", "Evidence is collected for assessment, reporting, validation, and source-health visibility.")}
         ${plainCard("Encryption", "Use encrypted transport for uploads and encrypted storage for retained evidence and reports.")}
-        ${plainCard("Access control", "Limit access by tenant, role, and operational need. Revoke customer access paths during offboarding.")}
+        ${plainCard("Access control", "Limit access by tenant, role, and operational need. Revoke access paths during offboarding.")}
         ${plainCard("Tenant isolation", "Keep customer evidence scoped by tenant and separate client surfaces for MSP delivery.")}
         ${plainCard("Logging", "Track connector status, evidence freshness, access activity, and validation runs.")}
         ${plainCard("Retention", "Set retention during the pilot or contract; delete or export evidence during offboarding as agreed.")}
@@ -1580,15 +1716,9 @@ function securityTrustGrid() {
 }
 
 function connectorPermissionsTable() {
-  return `<section class="section dark">
+  return `<section class="section light">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Connector permissions</div>
-          <h2>Read-only by design, with permissions tied to assessment value.</h2>
-        </div>
-        <p>Final permission names should match the live implementation and customer approval package. This page states the operational intent clearly.</p>
-      </div>
+      ${sectionHead("Connector permissions", "Read-only by design, with permissions tied to assessment value.", "Final permission names should match the live implementation and customer approval package.")}
       ${table([
         ["Connector", "Permission intent", "Why it is needed"],
         ["Microsoft Graph", "Read directory, policy, device, and security posture where granted", "Create identity, device, policy, and incident findings"],
@@ -1603,17 +1733,11 @@ function connectorPermissionsTable() {
 function dataHandlingSection() {
   return `<section class="section alt">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Data handling</div>
-          <h2>Make offboarding and limits explicit.</h2>
-        </div>
-        <p>This is the difference between a trust page and vague reassurance.</p>
-      </div>
+      ${sectionHead("Data handling", "Make offboarding and limits explicit.", "This is the difference between a trust page and vague reassurance.")}
       <div class="grid three">
-        ${plainCard("Retention", "Pilot retention should be defined before access is granted. Long-term retention follows the contract and reporting needs.")}
-        ${plainCard("Offboarding", "Revoke connectors, export agreed reports, delete retained evidence according to the agreed timeline, and confirm completion.")}
-        ${plainCard("Subprocessors", "List hosting, email, analytics, and operational subprocessors before production procurement. If none are used for a category, say so.")}
+        ${plainCard("Retention", "Pilot retention should be defined before access is granted. Long-term retention follows contract and reporting needs.")}
+        ${plainCard("Offboarding", "Revoke connectors, export agreed reports, delete retained evidence according to timeline, and confirm completion.")}
+        ${plainCard("Subprocessors", "List hosting, email, analytics, and operational subprocessors before production procurement.")}
       </div>
     </div>
   </section>`;
@@ -1622,37 +1746,25 @@ function dataHandlingSection() {
 function securityBoundariesSection() {
   return `<section class="section">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Boundaries</div>
-          <h2>What RoadRunner does not do by default.</h2>
-        </div>
-        <p>Explicit boundaries reduce fear and prevent the product from sounding like an exploit platform.</p>
-      </div>
+      ${sectionHead("Boundaries", "What RoadRunner does not do by default.", "Explicit boundaries reduce fear and prevent the product from sounding like an exploit platform.")}
       <div class="grid four">
-        ${plainCard("No destructive testing", "The assessment observes configuration and evidence. Destructive testing is not part of default behavior.")}
+        ${plainCard("No destructive testing", "The assessment observes configuration and evidence. Destructive testing is not default behavior.")}
         ${plainCard("No credential collection", "Collectors do not harvest passwords, hashes, tokens, or secrets.")}
         ${plainCard("No automatic changes", "RoadRunner recommends fixes. Customers or MSPs execute approved changes.")}
-        ${plainCard("Disclosure path", `Send security reports to ${brand.email}. Acknowledge valid reports and coordinate remediation directly.`)}
+        ${plainCard("Disclosure path", `Send security reports to ${brand.email}. Valid reports receive direct remediation coordination.`)}
       </div>
     </div>
   </section>`;
 }
 
-function complianceRoadmapSection() {
-  return `<section class="section alt">
+function complianceSection() {
+  return `<section class="section light">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Review maturity</div>
-          <h2>Be clear about what exists now and what belongs in procurement.</h2>
-        </div>
-        <p>If formal certifications are not yet available, the page should not imply them. It should describe the review path and the evidence package that can be supplied.</p>
-      </div>
+      ${sectionHead("Review maturity", "Be clear about what exists now and what belongs in procurement.", "If formal certifications are not yet available, the page should not imply them.")}
       <div class="grid three">
         ${plainCard("Current review package", "Connector purposes, read-only posture, retention plan, offboarding plan, subprocessors, and deployment model.")}
-        ${plainCard("Disclosure SLA", `Security reports sent to ${brand.email} should receive acknowledgement within one business day and remediation coordination after validation.`)}
-        ${plainCard("Compliance roadmap", "Formal control mapping and third-party assurance can be added as enterprise demand requires. Do not claim certifications before they exist.")}
+        ${plainCard("Disclosure SLA", `Security reports sent to ${brand.email} should receive acknowledgement within one business day after validation.`)}
+        ${plainCard("Compliance roadmap", "Formal control mapping and third-party assurance can be added as enterprise demand requires.")}
       </div>
     </div>
   </section>`;
@@ -1662,13 +1774,7 @@ function demoBody() {
   return `
 <section class="section" id="walkthrough">
   <div class="section-inner">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Scenario</div>
-        <h2>A client has privilege sprawl, Conditional Access gaps, and on-prem lateral movement exposure.</h2>
-      </div>
-      <p>The walkthrough follows one synthetic weekly run from baseline through findings, remediation queue, validation, and reporting.</p>
-    </div>
+    ${sectionHead("Scenario", "A client has privilege sprawl, Conditional Access gaps, and on-prem lateral movement exposure.", "The walkthrough follows one synthetic weekly run from baseline through findings, remediation queue, validation, and reporting.")}
     <div class="flow">
       ${flowStep("Baseline", "Connect read-only sources and establish the first evidence snapshot.")}
       ${flowStep("Findings", "Create named findings tied to accounts, devices, policies, and paths.")}
@@ -1680,113 +1786,48 @@ function demoBody() {
     </div>
   </div>
 </section>
-${guidedScreenshot("walkthrough-executive", "1. Executive posture", "/refs/polaris-executive-v2.png", "Polaris-branded executive dashboard", "What to notice: leadership gets risk direction, closure counts, source gaps, and the story of what changed. This is an MSP white-label view powered by RoadRunner.")}
-${guidedScreenshot("walkthrough-onprem", "2. On-prem attack path", "/refs/polaris-onprem.png", "Polaris-branded Active Directory attack path screen", "What to notice: the product does not stop at graph visualization. It points to the path edge that should be cut and gives the next collector run a validation job.")}
-${guidedScreenshot("walkthrough-microsoft", "3. Evidence-grounded vCISO", "/refs/polaris-vciso-v2.png", "Polaris-branded evidence-grounded vCISO screen", "What to notice: answers are grounded in findings and source evidence. Missing data is stated instead of invented.")}
-${sampleFindingCard("demo")}
+${guidedScreenshot("walkthrough-executive", "1. Executive posture", "/refs/polaris-executive-v2.png", "Leadership gets risk direction, closure counts, source gaps, and the story of what changed.")}
+${guidedScreenshot("walkthrough-onprem", "2. On-prem attack path", "/refs/polaris-onprem.png", "The product does not stop at graph visualization. It points to the path edge that should be cut.")}
+${guidedScreenshot("walkthrough-microsoft", "3. Evidence-grounded vCISO", "/refs/polaris-vciso-v2.png", "Answers are grounded in findings and source evidence. Missing data is stated instead of invented.")}
+${sampleFindingSection("demo")}
 ${contactSection()}`;
 }
 
-function guidedScreenshot(id, title, image, alt, caption) {
-  return `<section class="section dark" id="${id}">
+function guidedScreenshot(id, title, image, caption) {
+  return `<section class="section alt" id="${id}">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Product walkthrough</div>
-          <h2>${title}</h2>
-        </div>
-        <p>${caption}</p>
-      </div>
-      <div class="product-shot">
-        <img src="${image}" alt="${alt}">
-        <div class="caption">${caption}</div>
-      </div>
+      ${sectionHead("Product walkthrough", title, caption)}
+      ${productShot(image, title, caption)}
     </div>
   </section>`;
 }
 
 function contactBody() {
   return `
-<section class="section"><div class="section-inner">
-  <div class="section-head">
-    <div>
-      <div class="eyebrow">Two useful conversations</div>
-      <h2>Scope a pilot or review the MSP white-label model.</h2>
+<section class="section">
+  <div class="section-inner">
+    ${sectionHead("Two useful conversations", "Scope a pilot or review the MSP white-label model.", "A good first call should leave with enough detail to define access, source scope, deployment model, and the first four weekly runs.")}
+    <div class="grid two">
+      ${plainCard("Scope a pilot", "Define tenant size, Microsoft/on-prem coverage, read-only access, timeline, expected deliverables, and the first remediation queue.")}
+      ${plainCard("Review MSP model", "Discuss white-label branding, client portal needs, reporting language, tenant rollout, and service delivery rhythm.")}
     </div>
-    <p>A good first call should leave with enough detail to define access, source scope, deployment model, and the first four weekly runs.</p>
   </div>
-  <div class="grid two">
-    ${plainCard("Scope a pilot", "Define tenant size, Microsoft/on-prem coverage, read-only access, timeline, expected deliverables, and the first remediation queue.")}
-    ${plainCard("Review MSP model", "Discuss white-label branding, client portal needs, reporting language, tenant rollout, and operating rhythm for service delivery.")}
-  </div>
-</div></section>
-<section class="section alt"><div class="section-inner">
-  <div class="section-head">
-    <div>
-      <div class="eyebrow">What happens next</div>
-      <h2>The next step should be concrete.</h2>
+</section>
+<section class="section light">
+  <div class="section-inner">
+    ${sectionHead("What happens next", "The next step should be concrete.", "Bring approximate users, endpoints, tenants, Microsoft licensing, on-prem AD scope, and deployment constraints.")}
+    <div class="grid four">
+      ${card("01", "30-minute fit call", "Confirm use case, buyer role, and whether the pilot should be direct or MSP white-label.")}
+      ${card("02", "Scope confirmation", "Define sources, tenant count, on-prem needs, security review requirements, and success criteria.")}
+      ${card("03", "Access review", "Approve read-only connectors, collector model, retention, and offboarding behavior.")}
+      ${card("04", "Pilot kickoff", "Run baseline assessment and review the first queue of findings.")}
     </div>
-    <p>Bring approximate users, endpoints, tenants, Microsoft licensing, on-prem AD scope, and any deployment constraints.</p>
   </div>
-  <div class="grid four">
-    ${card("01", "30-minute fit call", "Confirm use case, buyer role, and whether the pilot should be direct or MSP white-label.")}
-    ${card("02", "Scope confirmation", "Define sources, tenant count, on-prem needs, security review requirements, and success criteria.")}
-    ${card("03", "Access review", "Approve read-only connectors, collector model, retention, and offboarding behavior.")}
-    ${card("04", "Pilot kickoff", "Run baseline assessment and review the first queue of findings.")}
-  </div>
-</div></section>
+</section>
 ${contactSection()}`;
 }
 
-function contactSection() {
-  return `<section class="section">
-    <div class="section-inner">
-      ${contactSectionInner()}
-    </div>
-  </section>`;
-}
-
-function contactSectionInner() {
-  return `<div class="contact-grid">
-    <div>
-      <div class="eyebrow">Contact</div>
-      <h2>Walk through the product or scope a pilot.</h2>
-      <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
-      <div class="section-actions">
-        <a class="button secondary" href="mailto:${brand.email}">${brand.email}</a>
-      </div>
-    </div>
-    <form class="panel card contact-form" data-contact-form>
-      <div class="field-grid">
-        <label>Name<input name="name" autocomplete="name" required></label>
-        <label>Work email<input name="email" type="email" autocomplete="email" required></label>
-      </div>
-      <div class="field-grid">
-        <label>Company<input name="company" autocomplete="organization"></label>
-        <label>Role<input name="role" autocomplete="organization-title"></label>
-      </div>
-      <label>Interest
-        <select name="interest">
-          <option value="pilot">Scope a pilot</option>
-          <option value="white-label">Review MSP white-label model</option>
-          <option value="walkthrough">Product walkthrough</option>
-          <option value="security">Security review</option>
-        </select>
-      </label>
-      <div class="field-grid">
-        <label>Environment size<input name="size" placeholder="Users, endpoints, tenants"></label>
-        <label>Microsoft / on-prem scope<input name="scope" placeholder="M365, Azure, AD, Defender, Intune"></label>
-      </div>
-      <label>Notes
-        <textarea name="notes" rows="5" placeholder="Pilot goals, MSP/client model, deployment constraints, security-review concerns"></textarea>
-      </label>
-      <button class="button primary" type="submit">Open email draft</button>
-      <p class="form-note">No data is stored by this static page unless you send the generated email.</p>
-    </form>
-  </div>`;
-}
-
-function sampleFindingCard(context) {
+function sampleFindingSection(context) {
   const examples = {
     home: {
       label: "Sample assessment finding",
@@ -1815,7 +1856,7 @@ function sampleFindingCard(context) {
       affected: "4 accounts excluded from MFA policy; 2 observed interactive sign-ins in the last 14 days",
       evidence: "Policy exclusion list plus sign-in evidence shows recent use outside expected service context.",
       risk: "Excluded accounts create a durable identity bypass that attackers can use after password compromise.",
-      action: "Remove interactive-capable accounts from exclusion, convert to managed identities where possible, or attach documented exception controls.",
+      action: "Remove interactive-capable accounts from exclusion or attach documented exception controls.",
       validation: "Next run must show no recent interactive sign-ins for excluded service accounts or an approved exception."
     },
     demo: {
@@ -1832,9 +1873,9 @@ function sampleFindingCard(context) {
   const item = examples[context] || examples.home;
   return `<section class="section">
     <div class="section-inner">
-      <div class="artifact">
-        <div class="artifact-header">
-          <div class="artifact-title">
+      <div class="finding-artifact">
+        <div class="artifact-top">
+          <div>
             <strong>${item.label}</strong>
             <h3>${item.title}</h3>
           </div>
@@ -1858,15 +1899,9 @@ function artifactField(label, text) {
 }
 
 function comparisonSection() {
-  return `<section class="section">
+  return `<section class="section light">
     <div class="section-inner">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Positioning</div>
-          <h2>Dashboards report. Assessments age. RoadRunner closes.</h2>
-        </div>
-        <p>The distinction matters: a finding is open until evidence changes, not until someone clicks done.</p>
-      </div>
+      ${sectionHead("Positioning", "Dashboards report. Assessments age. RoadRunner closes.", "The distinction matters: a finding is open until evidence changes, not until someone clicks done.")}
       ${table([
         ["Question", "Dashboard", "Point-in-time assessment", "RoadRunner Secure"],
         ["What changed this week?", "Usually buried in charts", "Not available after delivery", "Diffed every run"],
@@ -1876,6 +1911,65 @@ function comparisonSection() {
       ])}
     </div>
   </section>`;
+}
+
+function contactSection() {
+  return `<section class="section">
+    <div class="section-inner contact-grid">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Walk through the product or scope a pilot.</h2>
+        <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
+        <div class="section-actions">
+          <a class="button secondary" href="mailto:${brand.email}">${brand.email}</a>
+        </div>
+      </div>
+      <form class="contact-form" data-contact-form>
+        <div class="field-grid">
+          <label>Name<input name="name" autocomplete="name" required></label>
+          <label>Work email<input name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <div class="field-grid">
+          <label>Company<input name="company" autocomplete="organization"></label>
+          <label>Role<input name="role" autocomplete="organization-title"></label>
+        </div>
+        <label>Interest
+          <select name="interest">
+            <option value="pilot">Scope a pilot</option>
+            <option value="white-label">Review MSP white-label model</option>
+            <option value="walkthrough">Product walkthrough</option>
+            <option value="security">Security review</option>
+          </select>
+        </label>
+        <div class="field-grid">
+          <label>Environment size<input name="size" placeholder="Users, endpoints, tenants"></label>
+          <label>Microsoft / on-prem scope<input name="scope" placeholder="M365, Azure, AD, Defender, Intune"></label>
+        </div>
+        <label>Notes
+          <textarea name="notes" rows="5" placeholder="Pilot goals, MSP/client model, deployment constraints, security-review concerns"></textarea>
+        </label>
+        <button class="button primary" type="submit">Open email draft</button>
+        <p class="form-note">No data is stored by this static page unless you send the generated email.</p>
+      </form>
+    </div>
+  </section>`;
+}
+
+function sectionHead(eyebrow, title, copy) {
+  return `<div class="section-head">
+    <div>
+      <div class="eyebrow">${eyebrow}</div>
+      <h2>${title}</h2>
+    </div>
+    <p>${copy}</p>
+  </div>`;
+}
+
+function productShot(image, alt, caption) {
+  return `<div class="product-shot">
+    <img src="${image}" alt="${alt}" loading="lazy">
+    <div class="caption">${caption}</div>
+  </div>`;
 }
 
 function table(rows) {
@@ -1893,13 +1987,36 @@ function flowStep(title, text) {
 }
 
 function card(num, title, text) {
-  return `<div class="card"><span class="number">${num}</span><h3>${title}</h3><p>${text}</p></div>`;
+  return `<div class="info-card"><span class="number">${num}</span><h3>${title}</h3><p>${text}</p></div>`;
 }
 
 function plainCard(title, text) {
-  return `<div class="card"><h3>${title}</h3><p>${text}</p></div>`;
+  return `<div class="info-card"><h3>${title}</h3><p>${text}</p></div>`;
 }
 
+function writeLogoVariants() {
+  const sourcePath = join(siteDir, "assets", "roadrunner-logo.svg");
+  const source = readFileSync(sourcePath, "utf8");
+  const markPath = source.match(/<path d="([^"]+)"/)?.[1];
+  if (!markPath) return;
+
+  const markSvg = (fill) => `<svg width="180" height="120" viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="${markPath}" fill="${fill}" transform="translate(-110 0) scale(.22)"/>
+</svg>
+`;
+  const lockupSvg = (ink, accent) => `<svg width="760" height="140" viewBox="0 0 760 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RoadRunner Secure">
+  <path d="${markPath}" fill="${accent}" transform="translate(-86 -8) scale(.25)"/>
+  <text x="176" y="58" fill="${ink}" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="850">RoadRunner Secure</text>
+  <text x="178" y="94" fill="${accent}" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="700">Evidence verified closure</text>
+</svg>
+`;
+  writeFileSync(join(siteDir, "assets", "roadrunner-mark.svg"), markSvg("#2DD4BF"));
+  writeFileSync(join(siteDir, "assets", "roadrunner-mark-dark.svg"), markSvg("#0D385B"));
+  writeFileSync(join(siteDir, "assets", "roadrunner-lockup-secure.svg"), lockupSvg("#F4F8FB", "#2DD4BF"));
+  writeFileSync(join(siteDir, "assets", "roadrunner-lockup-secure-dark.svg"), lockupSvg("#071019", "#0D385B"));
+}
+
+writeLogoVariants();
 writeFileSync(join(siteDir, "styles.css"), css);
 writeFileSync(join(siteDir, "script.js"), js);
 
@@ -1915,7 +2032,7 @@ writeFileSync(join(siteDir, "Homepage Directions.dc.html"), designArchivePage())
 writeFileSync(join(siteDir, "robots.txt"), robotsTxt());
 writeFileSync(join(siteDir, "sitemap.xml"), sitemapXml());
 
-console.log(`Generated clean routes, legacy redirects, and deploy metadata in ${siteDir}`);
+console.log(`Generated RoadRunner Secure routes, assets, and deploy metadata in ${siteDir}`);
 
 function writeCleanPage(page) {
   if (!page.slug) {
@@ -1937,7 +2054,7 @@ function legacyRedirectPage(page, title = `${page.title} moved`) {
   <meta name="robots" content="noindex">
   <meta http-equiv="refresh" content="0; url=${target}">
   <title>${title}</title>
-  <link rel="canonical" href="${brand.root}/${page.slug}">
+  <link rel="canonical" href="${page.slug ? `${brand.root}/${page.slug}/` : `${brand.root}/`}">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -2003,7 +2120,7 @@ Sitemap: ${brand.root}/sitemap.xml
 
 function sitemapXml() {
   const urls = pages.map((page) => {
-    const loc = page.slug ? `${brand.root}/${page.slug}` : `${brand.root}/`;
+    const loc = page.slug ? `${brand.root}/${page.slug}/` : `${brand.root}/`;
     return `  <url><loc>${loc}</loc></url>`;
   }).join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>
