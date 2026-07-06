@@ -1,14 +1,61 @@
 // Home — the emotional arc: thesis, the finding, the proof, the model, the memo.
-import { sectionHead, exhibit, exhibitRow, findingArtifact, findings, contactSection } from "../helpers.mjs";
+import { sectionHead, exhibit, exhibitRow, contactSection } from "../helpers.mjs";
 
 export function homeBody() {
   return `
 ${manifesto()}
-${sampleFinding()}
+${theLoop()}
 ${productProof()}
 ${whiteLabel()}
 ${positioningMemo()}
 ${contactSection()}`;
+}
+
+// Moment 2: one finding travels evidence -> findings -> queue -> fix -> prove
+// as you scroll; the sticky card and ambient color walk rose -> amber -> green.
+function theLoop() {
+  const stage = (n, color, label, kicker, body, evi, cardTitle, state, evidence) =>
+    `<div class="loop-stage" data-color="${color}" data-label="${label}" data-title="${cardTitle}" data-state="${state}" data-evidence="${evidence}" style="--stage-c:${color}">
+      <span class="n">${n}</span>
+      <h3>${kicker}</h3>
+      <p>${body}</p>
+      <div class="evi">${evi}</div>
+    </div>`;
+  return `<section class="section loop" data-loop aria-label="How a finding travels from evidence to verified closure">
+    <div class="shell">
+      <div class="loop-intro rv" style="margin-bottom:8px">
+        <div class="eyebrow">The operating loop</div>
+        <h2 style="max-width:20ch">One finding, from raw evidence to <span class="ital">verified death.</span></h2>
+      </div>
+      <div class="loop-scroller">
+        <div class="loop-stages">
+          ${stage("01", "#fb7185", "Stage 01 · Evidence", "Read the tenant.", "Read-only connectors and the collector observe posture. No changes, no agents left behind — just a fresh snapshot with source health attached.", "entra.roles[] · sign_ins[14d] · rr-ad-2026-07-05.json", "Standing privileged access outside emergency workflow", "OPEN · EXPOSED", "3 Global Admins · no JIT activation record")}
+          ${stage("02", "#fb7185", "Stage 02 · Finding", "Name the exposure.", "Rules turn evidence into a named finding — the accounts, the risk, the blast radius. Not a score. A thing you can hand to a person.", "RR-F-0117 · severity HIGH · owner: identity", "Standing privileged access outside emergency workflow", "HIGH · NAMED", "3 Global Admins, 2 Privileged Role Admins")}
+          ${stage("03", "#fbbf24", "Stage 03 · Queue", "Rank and assign.", "The finding lands in the weekly queue, ranked by exposure and blast radius, routed to an owner with a fix and a lane. Now it is work.", "queued → identity · 72-hour lane", "Standing privileged access outside emergency workflow", "IN QUEUE · 72H", "move to PIM-eligible · require phishing-resistant MFA")}
+          ${stage("04", "#fbbf24", "Stage 04 · Fix", "The team acts.", "The customer or MSP makes the approved change outside RoadRunner. We recommend; we never auto-remediate. The evidence will decide, not the checkbox.", "admins moved to eligible access · break-glass documented", "Standing privileged access outside emergency workflow", "FIX CLAIMED", "awaiting next evidence run")}
+          ${stage("05", "#34d399", "Stage 05 · Prove", "The next run decides.", "The following run re-reads the evidence. If no standing assignment remains outside break-glass, the finding closes — with a hash. If it regresses, it reopens itself.", "next run: 0 standing assignments · closure sha 3af9", "Standing privileged access outside emergency workflow", "VERIFIED CLOSED", "evidence diff satisfied validation · sha 3af9")}
+        </div>
+        <div class="loop-sticky">
+          <div class="loop-card">
+            <div class="loop-track">
+              <div class="loop-pip"><i></i><span>EVIDENCE</span></div>
+              <div class="loop-pip"><i></i><span>FINDING</span></div>
+              <div class="loop-pip"><i></i><span>QUEUE</span></div>
+              <div class="loop-pip"><i></i><span>FIX</span></div>
+              <div class="loop-pip"><i></i><span>PROVE</span></div>
+            </div>
+            <div class="lc-label">Sample finding · RR-F-0117</div>
+            <h4>Standing privileged access outside emergency workflow</h4>
+            <span class="lc-state">OPEN · EXPOSED</span>
+            <div class="lc-meta">
+              <div><b>Evidence</b><span class="lc-evidence">3 Global Admins · no JIT activation record</span></div>
+              <div><b>Closure</b><span>Manual status cannot close it — the next run must prove it.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
 }
 
 function manifesto() {
@@ -36,15 +83,6 @@ function contrastRow(who, them, us, i) {
   </div>`;
 }
 
-function sampleFinding() {
-  return `<section class="section tight">
-    <div class="shell">
-      ${sectionHead("The unit of work", "This is what a finding looks like.", "Not a chart. Not a score. A named exposure with an owner-ready fix and the evidence condition that closes it.")}
-      ${findingArtifact(findings.home)}
-    </div>
-  </section>`;
-}
-
 function productProof() {
   return `<section class="section tinted tint-teal" style="--tint-x: 80%">
     <div class="shell">
@@ -69,27 +107,44 @@ function productProof() {
   </section>`;
 }
 
+// Moment 3: the same client portal, re-skinned live. RoadRunner owns the
+// engine; the MSP owns the brand on the client surface.
 function whiteLabel() {
   return `<section class="section">
     <div class="shell">
-      ${sectionHead("White-label model", "RoadRunner powers the assessment. MSPs own the client-facing brand.", "Polaris is the MSP you work for. The brand relationship is explicit: the assessment machine is RoadRunner's, and MSPs can put their name on the client surface.")}
-      <div class="chain rv">
-        <div class="chain-node">
-          <span class="who">The engine</span>
-          <h3>RoadRunner</h3>
-          <p>Owns the assessment method, product logic, evidence model, validation doctrine, and the RoadRunner Secure brand.</p>
+      ${sectionHead("White-label model", "One assessment engine. <span class='ital'>Your name on the door.</span>", "RoadRunner owns the method, the evidence model, and the validation doctrine. The MSP owns the brand the client sees. Flip the switch — same product, same proof, different logo.")}
+      <div class="brandswap rv" data-brandswap>
+        <div class="swap-controls" role="group" aria-label="Choose the client-facing brand">
+          <span class="k">Client sees</span>
+          <button class="swap-btn round" style="--sw:#2dd4bf" data-accent="#2dd4bf" data-name="RoadRunner" data-round="1" data-foot="ROADRUNNER SECURE · DIRECT ENGAGEMENT" aria-pressed="false">
+            <span class="dot"></span><span><span class="bn">RoadRunner</span><span class="bd">direct — the engine, unbranded</span></span>
+          </button>
+          <button class="swap-btn" style="--sw:#5b9cf6" data-accent="#5b9cf6" data-name="Polaris" data-round="0" data-foot="POLARIS · YOUR MSP'S SECURITY PRACTICE" aria-pressed="true">
+            <span class="dot"></span><span><span class="bn">Polaris MSP</span><span class="bd">white-label partner (demo)</span></span>
+          </button>
+          <button class="swap-btn round" style="--sw:#f59e0b" data-accent="#f59e0b" data-name="Meridian" data-round="1" data-foot="MERIDIAN MSP · MANAGED SECURITY REVIEW" aria-pressed="false">
+            <span class="dot"></span><span><span class="bn">Meridian MSP</span><span class="bd">a second partner brand</span></span>
+          </button>
         </div>
-        <span class="chain-link" aria-hidden="true">→</span>
-        <div class="chain-node">
-          <span class="who">The brand</span>
-          <h3>MSP partner</h3>
-          <p>Presents the client-facing portal, reporting language, and service package under its own brand.</p>
-        </div>
-        <span class="chain-link" aria-hidden="true">→</span>
-        <div class="chain-node">
-          <span class="who">The outcome</span>
-          <h3>Client</h3>
-          <p>Receives named findings, proof, remediation guidance, and a closure history they can review.</p>
+        <div class="swap-portal">
+          <div class="swap-portal-bar">
+            <span class="swap-gem"></span>
+            <span class="swap-brandname" data-brandname="mono">POLARIS</span>
+            <span class="live">● CURRENT</span>
+          </div>
+          <div class="swap-portal-body">
+            <div class="swap-kpis">
+              <div class="swap-kpi" style="--kc:#34d399"><b>6</b><span>Verified closed</span></div>
+              <div class="swap-kpi" style="--kc:#f43f5e"><b>5</b><span>In your queue</span></div>
+              <div class="swap-kpi"><b>3</b><span>Data gaps</span></div>
+            </div>
+            <div class="swap-rows">
+              <div class="r"><span class="v">VERIFIED</span><span>MFA exception removed — sign-in evidence attached</span><span class="meta mono">RUN 07</span></div>
+              <div class="r"><span class="v">VERIFIED</span><span>Anonymous sharing disabled tenant-wide — policy diff</span><span class="meta mono">RUN 07</span></div>
+              <div class="r"><span class="v">VERIFIED</span><span>Dormant admins removed from Server Operators</span><span class="meta mono">RUN 06</span></div>
+            </div>
+            <div class="swap-foot">Prepared by <b data-brandname="proper">Polaris</b> · <span data-brandfoot>POLARIS · YOUR MSP'S SECURITY PRACTICE</span> · powered by RoadRunner Secure</div>
+          </div>
         </div>
       </div>
     </div>

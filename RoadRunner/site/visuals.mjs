@@ -6,7 +6,7 @@ function feedRow(level, text, meta) {
 }
 
 export function runPanel() {
-  return `<aside class="runpanel" id="hero-run" aria-label="RoadRunner Secure weekly assessment run">
+  return `<aside class="runpanel" id="hero-run" data-replay aria-label="RoadRunner Secure weekly assessment run">
     <div class="runpanel-top">
       <div class="titleblock">
         <strong>Weekly assessment run</strong>
@@ -24,7 +24,7 @@ export function runPanel() {
       ${feedRow("HIGH", "Standing Global Admins remain assigned outside just-in-time access", "owner: identity")}
       ${feedRow("HIGH", "Legacy auth still active for named service accounts", "validate next run")}
       ${feedRow("GAP", "Cannot assess device compliance — Intune not onboarded", "source gap")}
-      ${feedRow("DONE", "MFA exception removed and evidence stamped closed", "closed")}
+      <div class="feed-row"><span class="tag done">DONE</span><span>MFA exception removed and evidence stamped closed<span class="stamp-mini">VERIFIED CLOSED</span></span><span class="meta">sha 3af9</span></div>
     </div>
   </aside>`;
 }

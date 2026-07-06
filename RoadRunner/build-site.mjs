@@ -10,6 +10,7 @@ import { tokens } from "./site/css/tokens.mjs";
 import { base } from "./site/css/base.mjs";
 import { components } from "./site/css/components.mjs";
 import { sections } from "./site/css/sections.mjs";
+import { moments } from "./site/css/moments.mjs";
 import { motion } from "./site/css/motion.mjs";
 import { clientJs } from "./site/js.mjs";
 import { shell, legacyRedirectPage, designArchivePage, notFoundPage, robotsTxt, sitemapXml } from "./site/shell.mjs";
@@ -43,7 +44,7 @@ if (missing.length) {
 }
 
 writeLogoVariants();
-writeFileSync(join(siteDir, "styles.css"), [tokens, base, components, sections, motion].join("\n"));
+writeFileSync(join(siteDir, "styles.css"), [tokens, base, components, sections, moments, motion].join("\n"));
 writeFileSync(join(siteDir, "script.js"), clientJs(brand));
 
 for (const page of pages) {

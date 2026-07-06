@@ -109,6 +109,88 @@
     a.addEventListener("click", () => a.closest("details")?.removeAttribute("open"));
   });
 
+  /* ---------- Moment 1: hero run replays ---------- */
+  const runpanel = document.querySelector("[data-replay]");
+  if (runpanel && motionOK() && "IntersectionObserver" in window) {
+    const scan = document.createElement("div");
+    scan.className = "scanline";
+    runpanel.prepend(scan);
+    let onScreen = false, timer = 0;
+    const play = () => {
+      runpanel.style.setProperty("--scan-h", runpanel.offsetHeight + "px");
+      runpanel.classList.remove("replaying");
+      void runpanel.offsetWidth; // reflow to restart animations
+      runpanel.classList.add("replaying");
+    };
+    const loop = () => {
+      if (!onScreen) return;
+      play();
+      timer = window.setTimeout(loop, 9000);
+    };
+    new IntersectionObserver((entries) => {
+      onScreen = entries[0].isIntersecting;
+      if (onScreen) { if (!timer) loop(); }
+      else { clearTimeout(timer); timer = 0; }
+    }, { threshold: 0.4 }).observe(runpanel);
+  }
+
+  /* ---------- Moment 2: the Loop scrollytelling ---------- */
+  const loopEl = document.querySelector("[data-loop]");
+  if (loopEl) {
+    const stages = [...loopEl.querySelectorAll(".loop-stage")];
+    const card = loopEl.querySelector(".loop-card");
+    const pips = [...loopEl.querySelectorAll(".loop-pip")];
+    const paintCard = (idx) => {
+      const s = stages[idx];
+      loopEl.style.setProperty("--stage-c", s.dataset.color);
+      pips.forEach((p, i) => {
+        p.classList.toggle("on", i === idx);
+        p.classList.toggle("done", i < idx);
+      });
+      if (card) {
+        card.querySelector(".lc-label").textContent = s.dataset.label;
+        card.querySelector("h4").textContent = s.dataset.title;
+        card.querySelector(".lc-state").textContent = s.dataset.state;
+        card.querySelector(".lc-evidence").textContent = s.dataset.evidence;
+      }
+    };
+    if ("IntersectionObserver" in window && !rm.matches) {
+      const setStage = (idx) => {
+        stages.forEach((el, i) => el.classList.toggle("active", i === idx));
+        paintCard(idx);
+      };
+      const sio = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) setStage(stages.indexOf(e.target)); });
+      }, { rootMargin: "-45% 0px -45% 0px", threshold: 0 });
+      stages.forEach((s) => sio.observe(s));
+      setStage(0);
+    } else {
+      // reduced motion / no IO: every stage readable, card rests on closure
+      stages.forEach((s) => s.classList.add("active"));
+      pips.forEach((p) => p.classList.add("done"));
+      paintCard(stages.length - 1);
+    }
+  }
+
+  /* ---------- Moment 3: brand swap ---------- */
+  const swap = document.querySelector("[data-brandswap]");
+  if (swap) {
+    const portal = swap.querySelector(".swap-portal");
+    const btns = [...swap.querySelectorAll(".swap-btn")];
+    const nameEls = swap.querySelectorAll("[data-brandname]");
+    const footEl = swap.querySelector("[data-brandfoot]");
+    const apply = (btn) => {
+      portal.style.setProperty("--accent", btn.dataset.accent);
+      portal.classList.toggle("round", btn.dataset.round === "1");
+      nameEls.forEach((el) => {
+        el.textContent = el.dataset.brandname === "mono" ? btn.dataset.name.toUpperCase() : btn.dataset.name;
+      });
+      if (footEl) footEl.textContent = btn.dataset.foot;
+      btns.forEach((b) => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+    };
+    btns.forEach((b) => b.addEventListener("click", () => apply(b)));
+  }
+
   /* ---------- contact form -> structured mailto draft ---------- */
   const form = document.querySelector("[data-contact-form]");
   if (form) {
