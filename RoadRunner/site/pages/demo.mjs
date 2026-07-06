@@ -1,0 +1,74 @@
+// Walkthrough — the guided casefile: scenario, three chapters, the combined finding.
+import { sectionHead, exhibit, flow, findingArtifact, findings, contactSection, stamp } from "../helpers.mjs";
+
+export function demoBody() {
+  return `
+${scenario()}
+${chapter(1, "walkthrough-executive", "Executive posture", "Leadership gets risk direction, closure counts, source gaps, and the story of what changed.", {
+    img: "/refs/polaris-executive-v2.png", url: "polaris.msp/executive", letter: "A",
+    alt: "Polaris executive posture view: composite gauge, needs-action count, savings, what-changed list",
+    caption: "Executive posture — the run in one screen", width: 1440, height: 900
+  }, "The composite number is context. The panel that matters is <em>what changed</em> — findings new and resolved, diffed against the previous run, plus the coverage panel that says out loud what cannot be assessed yet.")}
+${chapter(2, "walkthrough-onprem", "On-prem attack path", "The product does not stop at graph visualization. It points to the path edge that should be cut.", {
+    img: "/refs/polaris-onprem.png", url: "polaris.msp/on-prem", letter: "B",
+    alt: "Polaris on-prem view: AD attack-path graph and read-only collector run options",
+    caption: "On-prem — find the path, cut the edge", width: 1440, height: 992
+  }, "Click any node and the shortest privilege path to Tier 0 ignites hop by hop. Below it, four collector deployment options — one-liner, RMM, scheduled task, air-gapped — all read-only.", true)}
+${chapter(3, "walkthrough-microsoft", "Evidence-grounded vCISO", "Answers are grounded in findings and source evidence. Missing data is stated instead of invented.", {
+    img: "/refs/polaris-vciso-v2.png", url: "polaris.msp/vciso", letter: "C",
+    alt: "Polaris AI vCISO view answering with entity names and cited sources",
+    caption: "AI vCISO — cited, scoped, honest", width: 1440, height: 900
+  }, "Ask what to fix first and the answer names entities, cites the finding and the source for every claim, and refuses to invent around missing evidence.")}
+${combinedFinding()}
+${contactSection()}`;
+}
+
+function scenario() {
+  return `<section class="section" id="walkthrough">
+    <div class="shell">
+      ${sectionHead("Scenario", "A client has privilege sprawl, Conditional Access gaps, and on-prem lateral movement exposure.", "The walkthrough follows one synthetic weekly run from baseline through findings, remediation queue, validation, and reporting.")}
+      ${flow([
+        ["Baseline", "Connect read-only sources and establish the first evidence snapshot."],
+        ["Findings", "Create named findings tied to accounts, devices, policies, and paths."],
+        ["Queue", "Rank what should happen this week and assign owners."],
+        ["Fix", "Customer or MSP makes approved changes outside RoadRunner."],
+        ["Validate", "Next run checks whether evidence changed."],
+        ["Report", "Leadership sees verified closure and remaining exposure."],
+        ["Repeat", "Regressions and source gaps feed the next weekly run."]
+      ])}
+    </div>
+  </section>`;
+}
+
+function chapter(num, id, title, subtitle, shot, note, flip = false) {
+  return `<section class="section chapter tinted ${num === 2 ? "tint-rose" : num === 3 ? "tint-teal" : "tint-amber"}" id="${id}">
+    <div class="shell">
+      <div class="chapter-head rv">
+        <span class="chapter-num" aria-hidden="true">0${num}</span>
+        <div class="chapter-title">
+          <div class="eyebrow">Chapter 0${num} · Synthetic fixture</div>
+          <h2>${title}</h2>
+          <p class="lead" style="max-width:52ch">${subtitle}</p>
+        </div>
+      </div>
+      ${exhibit(shot)}
+      <div class="chapter-note rv">
+        <span class="k">Watch for</span>
+        <p>${note}</p>
+      </div>
+    </div>
+  </section>`;
+}
+
+function combinedFinding() {
+  return `<section class="section tinted tint-green">
+    <div class="shell">
+      ${sectionHead("The finale", "Two weak signals. One provable exposure.", "The walkthrough ends the way every week should: combined evidence becomes one artifact with a validation condition — and the next run decides.", "green")}
+      ${findingArtifact(findings.demo)}
+      <p style="margin-top:28px; display:flex; gap:18px; align-items:center; flex-wrap:wrap">
+        ${stamp("Next run decides")}
+        <span class="subtle" style="font-size:14px">Manual status cannot close it. That is the whole point.</span>
+      </p>
+    </div>
+  </section>`;
+}

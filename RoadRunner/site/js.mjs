@@ -1,4 +1,8 @@
-(() => {
+// Client-side JS, assembled into /script.js. Vanilla, no dependencies.
+// Signature-moment timelines are added by later build phases; everything here
+// degrades to a complete static page without JS.
+export function clientJs(brand) {
+  return String.raw`(() => {
   "use strict";
   document.documentElement.classList.add("js");
   const rm = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -134,9 +138,11 @@
         "Notes:",
         data.get("notes") || ""
       ].join("\n");
-      window.location.href = "mailto:drew@roadrunnerstrategies.com?subject=" +
+      window.location.href = "mailto:${brand.email}?subject=" +
         encodeURIComponent(subjectByInterest[interest] || subjectByInterest.pilot) +
         "&body=" + encodeURIComponent(body);
     });
   }
 })();
+`;
+}

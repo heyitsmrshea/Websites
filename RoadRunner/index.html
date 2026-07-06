@@ -5,32 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RoadRunner Secure | Evidence-verified security assessment</title>
   <meta name="description" content="RoadRunner Secure turns Microsoft, endpoint, cloud, and on-prem evidence into named findings, weekly remediation work, and evidence-verified closure.">
+  <meta name="theme-color" content="#04060a">
   <link rel="canonical" href="https://roadrunnersecure.com/">
+  <meta property="og:site_name" content="RoadRunner Secure">
   <meta property="og:title" content="RoadRunner Secure | Evidence-verified security assessment">
   <meta property="og:description" content="RoadRunner Secure turns Microsoft, endpoint, cloud, and on-prem evidence into named findings, weekly remediation work, and evidence-verified closure.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://roadrunnersecure.com/">
   <meta property="og:image" content="https://roadrunnersecure.com/assets/roadrunner-logo.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://roadrunnersecure.com/assets/roadrunner-logo.png">
   <link rel="icon" href="/assets/roadrunner-mark.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RoadRunner Secure","url":"https://roadrunnersecure.com","logo":"https://roadrunnersecure.com/assets/roadrunner-logo.png","email":"drew@roadrunnerstrategies.com","parentOrganization":{"@type":"Organization","name":"RoadRunner Strategies, LLC"}},{"@type":"WebSite","name":"RoadRunner Secure","url":"https://roadrunnersecure.com"}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav-shell">
       <a class="brand" href="/" aria-label="RoadRunner Secure home">
-        <span class="brand-mark"><img src="/assets/roadrunner-mark.svg" alt=""></span>
-        <span class="brand-title"><strong>RoadRunner Secure</strong><span>Evidence verified closure</span></span>
+        <img src="/assets/roadrunner-mark.svg" alt="" width="40" height="33">
+        <span class="brand-title"><strong>RoadRunner Secure</strong><span>Evidence-verified closure</span></span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation"><a href="/" aria-current="page">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
       <div class="nav-cta">
-        <a class="button secondary" href="/contact/">Scope pilot</a>
-        <a class="button primary" href="/demo/">Walkthrough</a>
+        <a class="button secondary small" href="/contact/">Scope pilot</a>
+        <a class="button primary small" href="/demo/">Walkthrough</a>
       </div>
       <details class="mobile-menu">
         <summary aria-label="Open navigation">Menu</summary>
@@ -39,150 +42,246 @@
     </div>
   </header>
   <main id="main">
-    <section class="hero hero-cockpit">
-    <div class="hero-inner hero-grid">
+    <section class="hero gridded">
+    <div class="shell hero-inner">
       <div class="hero-copy">
         <div class="eyebrow">RoadRunner-owned assessment platform</div>
-        <h1>A dashboard is not a decision.</h1>
+        <h1>A dashboard is not a <span class="ital">decision.</span></h1>
         <p class="lead">RoadRunner Secure converts tenant evidence into a weekly operating loop: what changed, who is affected, what to fix, who owns it, and what the next run must prove before closure.</p>
         <div class="hero-actions">
           <a class="button primary" href="/demo/">Open the walkthrough</a>
           <a class="button secondary" href="/contact/">Scope a pilot</a>
         </div>
         <div class="signal-row">
-          <span class="signal-chip">Read-only</span>
-          <span class="signal-chip">White-label</span>
-          <span class="signal-chip">Validated closure</span>
+          <span class="chip">Read-only</span>
+          <span class="chip plain">White-label</span>
+          <span class="chip green">Validated closure</span>
         </div>
       </div>
-      <div class="hero-visual"><aside class="command-surface" aria-label="RoadRunner Secure weekly assessment cockpit">
-    <div class="surface-top">
-      <div class="surface-title">
-        <img src="/assets/roadrunner-mark.svg" alt="">
-        <div><strong>Weekly assessment run</strong><span>tenant: RoadRunner live / run RR-2026-07</span></div>
+      <div class="hero-visual"><aside class="runpanel" id="hero-run" aria-label="RoadRunner Secure weekly assessment run">
+    <div class="runpanel-top">
+      <div class="titleblock">
+        <strong>Weekly assessment run</strong>
+        <span class="runid">tenant: roadrunner-live · run RR-2026-07 · evidence sha 9f21c4</span>
       </div>
       <span class="live-dot">LIVE</span>
     </div>
-    <div class="surface-grid">
-      <div class="metric-tile red"><strong>27</strong><span>Needs action now</span></div>
-      <div class="metric-tile green"><strong>19</strong><span>Verified closed</span></div>
-      <div class="metric-tile amber"><strong>3</strong><span>Source gaps</span></div>
-      <div class="metric-tile cyan"><strong>$10k</strong><span>Monthly savings found</span></div>
+    <div class="metric-row">
+      <div class="metric rose"><strong data-count="27">27</strong><span>Needs action now</span></div>
+      <div class="metric green"><strong data-count="19">19</strong><span>Verified closed</span></div>
+      <div class="metric amber"><strong data-count="3">3</strong><span>Source gaps</span></div>
+      <div class="metric teal"><strong data-count="10" data-prefix="$" data-suffix="k">$10k</strong><span>Monthly savings found</span></div>
     </div>
-    <div class="finding-feed">
-      <div class="feed-row"><span class="tag high">HIGH</span><span>Standing Global Admins remain assigned outside just-in-time access</span><span class="mono">owner: identity</span></div>
-      <div class="feed-row"><span class="tag high">HIGH</span><span>Legacy auth still active for named service accounts</span><span class="mono">validate next run</span></div>
-      <div class="feed-row"><span class="tag gap">GAP</span><span>Cannot assess device compliance because Intune is not onboarded</span><span class="mono">source gap</span></div>
-      <div class="feed-row"><span class="tag done">DONE</span><span>MFA exception removed and evidence stamped closed</span><span class="mono">closed</span></div>
+    <div class="feed">
+      <div class="feed-row"><span class="tag high">HIGH</span><span>Standing Global Admins remain assigned outside just-in-time access</span><span class="meta">owner: identity</span></div>
+      <div class="feed-row"><span class="tag high">HIGH</span><span>Legacy auth still active for named service accounts</span><span class="meta">validate next run</span></div>
+      <div class="feed-row"><span class="tag gap">GAP</span><span>Cannot assess device compliance — Intune not onboarded</span><span class="meta">source gap</span></div>
+      <div class="feed-row"><span class="tag done">DONE</span><span>MFA exception removed and evidence stamped closed</span><span class="meta">closed</span></div>
     </div>
   </aside></div>
     </div>
   </section>
     
-<section class="section">
-    <div class="section-inner manifesto">
-      <div class="statement">
-        <div class="eyebrow">Operating thesis</div>
-        <strong>Most security tools tell you to be afraid. RoadRunner tells you what to fix.</strong>
-        <span>Names. Hostnames. App IDs. Attack-path edges. Validation criteria. The artifact matters because it turns anxiety into a work queue.</span>
+<section class="section tinted tint-rose">
+    <div class="shell manifesto">
+      <div class="manifesto-statement rv">
+        <div class="eyebrow rose">Operating thesis</div>
+        <p class="fear">Most security tools tell you to be afraid.</p>
+        <p class="fix">RoadRunner tells you <em>what to fix.</em></p>
+        <p class="sub">NAMES. HOSTNAMES. APP IDS. ATTACK-PATH EDGES. VALIDATION CRITERIA.<br>The artifact matters because it turns anxiety into a work queue.</p>
       </div>
-      <div class="contrast-list">
-        <div class="contrast-row"><div><b>Dashboard</b><br><span class="subtle">You are at risk.</span></div><div><strong>RoadRunner</strong><br><span>These identities, devices, policies, and paths need action this week.</span></div></div>
-        <div class="contrast-row"><div><b>Audit</b><br><span class="subtle">Here is a point-in-time report.</span></div><div><strong>RoadRunner</strong><br><span>Here is the next run condition that proves closure.</span></div></div>
-        <div class="contrast-row"><div><b>Score</b><br><span class="subtle">Improve the number.</span></div><div><strong>RoadRunner</strong><br><span>Close the exposure and show the changed evidence.</span></div></div>
-      </div>
-    </div>
-  </section>
-<section class="section">
-    <div class="section-inner">
-      <div class="finding-artifact">
-        <div class="artifact-top">
-          <div>
-            <strong>Sample assessment finding</strong>
-            <h3>Standing privileged access remains assigned outside emergency workflow</h3>
-          </div>
-          <span class="tag high">HIGH</span>
-        </div>
-        <div class="artifact-grid">
-          <div class="artifact-field"><b>Affected</b><span>3 Global Admins, 2 Privileged Role Administrators</span></div>
-          <div class="artifact-field"><b>Evidence</b><span>Entra role assignments observed in current evidence snapshot; no just-in-time activation record attached.</span></div>
-          <div class="artifact-field"><b>Risk</b><span>Compromised daily-use or stale privileged accounts can bypass normal access controls and expand blast radius.</span></div>
-          <div class="artifact-field"><b>Recommended action</b><span>Move standing admins to eligible access, require phishing-resistant MFA, and document break-glass exceptions.</span></div>
-          <div class="artifact-field"><b>Validation</b><span>Next run must show no standing privileged assignment except approved break-glass accounts.</span></div>
-          <div class="artifact-field"><b>Closure rule</b><span>Manual status cannot close this finding. Evidence from the next run must satisfy the validation condition.</span></div>
-        </div>
+      <div class="contrast-ledger">
+        <div class="contrast-row rv" style="--d:0.0s">
+    <div class="them"><span class="who">Dashboard says</span><span>“You are at risk.”</span></div>
+    <div class="us"><span class="who">RoadRunner says</span><span>These identities, devices, policies, and paths need action this week.</span></div>
+  </div>
+        <div class="contrast-row rv" style="--d:0.1s">
+    <div class="them"><span class="who">Audit says</span><span>“Here is a point-in-time report.”</span></div>
+    <div class="us"><span class="who">RoadRunner says</span><span>Here is the next run condition that proves closure.</span></div>
+  </div>
+        <div class="contrast-row rv" style="--d:0.2s">
+    <div class="them"><span class="who">Score says</span><span>“Improve the number.”</span></div>
+    <div class="us"><span class="who">RoadRunner says</span><span>Close the exposure and show the changed evidence.</span></div>
+  </div>
       </div>
     </div>
   </section>
-<section class="section alt">
-    <div class="section-inner">
-      <div class="section-head">
+<section class="section tight">
+    <div class="shell">
+      <div class="section-head rv">
     <div>
-      <div class="eyebrow">Product proof</div>
+      <div class="eyebrow ">The unit of work</div>
+      <h2>This is what a finding looks like.</h2>
+    </div>
+    <p>Not a chart. Not a score. A named exposure with an owner-ready fix and the evidence condition that closes it.</p>
+  </div>
+      <div class="artifact rv-scale ">
+    <div class="artifact-top">
+      <div>
+        <span class="label">Sample assessment finding · RR-F-0117</span>
+        <h3>Standing privileged access remains assigned outside emergency workflow</h3>
+      </div>
+      <span class="tag high">HIGH</span>
+    </div>
+    <div class="artifact-grid">
+      <div class="artifact-field"><b>Affected</b><span>3 Global Admins, 2 Privileged Role Administrators</span></div>
+      <div class="artifact-field"><b>Evidence</b><span>Entra role assignments observed in current evidence snapshot; no just-in-time activation record attached.</span></div>
+      <div class="artifact-field"><b>Risk</b><span>Compromised daily-use or stale privileged accounts can bypass normal access controls and expand blast radius.</span></div>
+      <div class="artifact-field"><b>Recommended action</b><span>Move standing admins to eligible access, require phishing-resistant MFA, and document break-glass exceptions.</span></div>
+      <div class="artifact-field"><b>Validation</b><span>Next run must show no standing privileged assignment except approved break-glass accounts.</span></div>
+      <div class="artifact-field rule">
+        <b>Closure rule</b>
+        <span>Manual status cannot close this finding. Evidence from the next run must satisfy the validation condition.</span>
+      </div>
+    </div>
+  </div>
+    </div>
+  </section>
+<section class="section tinted tint-teal" style="--tint-x: 80%">
+    <div class="shell">
+      <div class="section-head rv">
+    <div>
+      <div class="eyebrow ">Product proof</div>
       <h2>Show the real surfaces, not decoration.</h2>
     </div>
     <p>The Polaris screens are MSP white-label examples. RoadRunner owns the assessment logic underneath.</p>
   </div>
-      <div class="grid three">
-        <div class="product-shot">
-    <img src="/refs/polaris-executive-v2.png" alt="Executive posture" loading="lazy">
-    <div class="caption">Leadership sees risk direction, closure counts, source gaps, and what changed.</div>
-  </div>
-        <div class="product-shot">
-    <img src="/refs/polaris-onprem.png" alt="On-prem attack paths" loading="lazy">
-    <div class="caption">Technical owners see the path, the risky edge, collector options, and validation target.</div>
-  </div>
-        <div class="product-shot">
-    <img src="/refs/polaris-vciso-v2.png" alt="Evidence-grounded vCISO" loading="lazy">
-    <div class="caption">Answers cite findings and source evidence instead of inventing around missing data.</div>
-  </div>
-      </div>
+      <div class="exhibit-row ">
+    <div class="exhibit-col"><figure class="exhibit rv-scale">
+    <div class="exhibit-bar">
+      <span class="exhibit-dots"><i></i><i></i><i></i></span>
+      <span class="exhibit-url">polaris.msp/executive</span>
+      <span class="exhibit-tag">EXHIBIT A · SYNTHETIC TENANT</span>
     </div>
-  </section>
-<section class="section light">
-    <div class="section-inner">
-      <div class="section-head">
-    <div>
-      <div class="eyebrow">White-label model</div>
-      <h2>RoadRunner powers the assessment. MSPs can own the client-facing brand.</h2>
+    <img src="/refs/polaris-executive-v2.png" alt="Polaris executive posture dashboard with composite score, needs-action count, and what-changed list" width="1440" height="900" loading="lazy" decoding="async">
+    <figcaption class="exhibit-caption"><span>Executive posture — risk direction, closure counts, source gaps</span><span>RUN RR-2026-07</span></figcaption>
+  </figure></div>
+    <div class="copy rv">
+      <h3>Leadership sees the story, not a wall of charts.</h3>
+      <p>Risk direction, verified closure counts, identified savings, and exactly what changed since last run — with the honesty panel showing what cannot be assessed yet.</p>
+      
     </div>
-    <p>Polaris is the MSP you work for. The site must make the brand relationship explicit: RoadRunner is yours, the assessment is yours, and MSPs can put their name on the client surface.</p>
   </div>
-      <div class="grid three">
-        <div class="info-card"><h3>RoadRunner</h3><p>Owns the assessment method, product logic, evidence model, validation doctrine, and RoadRunner Secure brand.</p></div>
-        <div class="info-card"><h3>MSP partner</h3><p>Can present the client-facing portal, reporting language, and service package under its own brand.</p></div>
-        <div class="info-card"><h3>Client</h3><p>Receives named findings, proof, remediation guidance, and closure history they can review.</p></div>
-      </div>
+      <div class="exhibit-row flip">
+    <div class="exhibit-col"><figure class="exhibit rv-scale">
+    <div class="exhibit-bar">
+      <span class="exhibit-dots"><i></i><i></i><i></i></span>
+      <span class="exhibit-url">polaris.msp/on-prem</span>
+      <span class="exhibit-tag">EXHIBIT B · SYNTHETIC TENANT</span>
     </div>
-  </section>
-<section class="section light">
-    <div class="section-inner">
-      <div class="section-head">
-    <div>
-      <div class="eyebrow">Positioning</div>
-      <h2>Dashboards report. Assessments age. RoadRunner closes.</h2>
+    <img src="/refs/polaris-onprem.png" alt="Polaris on-prem Active Directory attack path graph with collector run options" width="1440" height="992" loading="lazy" decoding="async">
+    <figcaption class="exhibit-caption"><span>On-prem attack paths — the edge that should die this week</span><span>RUN RR-2026-07</span></figcaption>
+  </figure></div>
+    <div class="copy rv">
+      <h3>Technical owners see the path and the cut.</h3>
+      <p>AD topology becomes a shortest-path-to-Tier-0 graph, the risky edge, low-disruption collector options, and the validation target for the next run.</p>
+      
     </div>
-    <p>The distinction matters: a finding is open until evidence changes, not until someone clicks done.</p>
   </div>
-      <div class="comparison">
-    <table>
-      <thead><tr><th>Question</th><th>Dashboard</th><th>Point-in-time assessment</th><th>RoadRunner Secure</th></tr></thead>
-      <tbody><tr><td data-label="Question">What changed this week?</td><td data-label="Dashboard">Usually buried in charts</td><td data-label="Point-in-time assessment">Not available after delivery</td><td data-label="RoadRunner Secure">Diffed every run</td></tr><tr><td data-label="Question">Who is affected?</td><td data-label="Dashboard">Often a count</td><td data-label="Point-in-time assessment">Usually sampled</td><td data-label="RoadRunner Secure">Named accounts, devices, resources, and paths</td></tr><tr><td data-label="Question">How does it close?</td><td data-label="Dashboard">Manual status or score movement</td><td data-label="Point-in-time assessment">Follow-up meeting</td><td data-label="RoadRunner Secure">Evidence must prove closure</td></tr><tr><td data-label="Question">What if data is missing?</td><td data-label="Dashboard">Silent blind spot</td><td data-label="Point-in-time assessment">Caveat in the report</td><td data-label="RoadRunner Secure">Visible data-gap finding</td></tr></tbody>
-    </table>
+      <div class="exhibit-row ">
+    <div class="exhibit-col"><figure class="exhibit rv-scale">
+    <div class="exhibit-bar">
+      <span class="exhibit-dots"><i></i><i></i><i></i></span>
+      <span class="exhibit-url">polaris.msp/vciso</span>
+      <span class="exhibit-tag">EXHIBIT C · SYNTHETIC TENANT</span>
+    </div>
+    <img src="/refs/polaris-vciso-v2.png" alt="Polaris AI vCISO answering with citations to live findings and source evidence" width="1440" height="900" loading="lazy" decoding="async">
+    <figcaption class="exhibit-caption"><span>Evidence-grounded vCISO — cited answers, no invention</span><span>RUN RR-2026-07</span></figcaption>
+  </figure></div>
+    <div class="copy rv">
+      <h3>Answers cite evidence instead of inventing it.</h3>
+      <p>The vCISO names entities, cites the finding and source for every claim, and says plainly when data is missing instead of writing fiction around it.</p>
+      
+    </div>
   </div>
     </div>
   </section>
 <section class="section">
-    <div class="section-inner contact-grid">
-      <div>
+    <div class="shell">
+      <div class="section-head rv">
+    <div>
+      <div class="eyebrow ">White-label model</div>
+      <h2>RoadRunner powers the assessment. MSPs own the client-facing brand.</h2>
+    </div>
+    <p>Polaris is the MSP you work for. The brand relationship is explicit: the assessment machine is RoadRunner's, and MSPs can put their name on the client surface.</p>
+  </div>
+      <div class="chain rv">
+        <div class="chain-node">
+          <span class="who">The engine</span>
+          <h3>RoadRunner</h3>
+          <p>Owns the assessment method, product logic, evidence model, validation doctrine, and the RoadRunner Secure brand.</p>
+        </div>
+        <span class="chain-link" aria-hidden="true">→</span>
+        <div class="chain-node">
+          <span class="who">The brand</span>
+          <h3>MSP partner</h3>
+          <p>Presents the client-facing portal, reporting language, and service package under its own brand.</p>
+        </div>
+        <span class="chain-link" aria-hidden="true">→</span>
+        <div class="chain-node">
+          <span class="who">The outcome</span>
+          <h3>Client</h3>
+          <p>Receives named findings, proof, remediation guidance, and a closure history they can review.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="section tinted tint-green" style="--tint-x: 15%">
+    <div class="shell">
+      <div class="section-head rv">
+    <div>
+      <div class="eyebrow green">Positioning</div>
+      <h2>Dashboards report. Assessments age. <span class='ital'>RoadRunner closes.</span></h2>
+    </div>
+    <p>The distinction matters: a finding is open until evidence changes, not until someone clicks done.</p>
+  </div>
+      <div class="paper rv-scale">
+        <div class="paper-doc"><span>RR-MEMO-001 · Positioning</span><span>Internal · Reviewed weekly</span></div>
+        <div class="memo-q rv" style="--d:0.00s">
+    <h3>What changed this week?</h3>
+    <div class="memo-answers">
+      <div><span class="who">Dashboard</span><span>Usually buried in charts</span></div>
+      <div><span class="who">Point-in-time assessment</span><span>Not available after delivery</span></div>
+      <div class="rr"><span class="who">RoadRunner Secure</span><span>Diffed every run</span></div>
+    </div>
+  </div>
+        <div class="memo-q rv" style="--d:0.08s">
+    <h3>Who is affected?</h3>
+    <div class="memo-answers">
+      <div><span class="who">Dashboard</span><span>Often a count</span></div>
+      <div><span class="who">Point-in-time assessment</span><span>Usually sampled</span></div>
+      <div class="rr"><span class="who">RoadRunner Secure</span><span>Named accounts, devices, resources, and paths</span></div>
+    </div>
+  </div>
+        <div class="memo-q rv" style="--d:0.16s">
+    <h3>How does it close?</h3>
+    <div class="memo-answers">
+      <div><span class="who">Dashboard</span><span>Manual status or score movement</span></div>
+      <div><span class="who">Point-in-time assessment</span><span>Follow-up meeting</span></div>
+      <div class="rr"><span class="who">RoadRunner Secure</span><span>Evidence must prove closure</span></div>
+    </div>
+  </div>
+        <div class="memo-q rv" style="--d:0.24s">
+    <h3>What if data is missing?</h3>
+    <div class="memo-answers">
+      <div><span class="who">Dashboard</span><span>Silent blind spot</span></div>
+      <div><span class="who">Point-in-time assessment</span><span>Caveat in the report</span></div>
+      <div class="rr"><span class="who">RoadRunner Secure</span><span>Visible data-gap finding</span></div>
+    </div>
+  </div>
+        <div class="paper-foot"><span>ROADRUNNER SECURE · POSITIONING MEMO</span><span>SHA 9F21C4 · PAGE 1/1</span></div>
+      </div>
+    </div>
+  </section>
+<section class="section tinted tint-teal" style="--tint-x: 85%">
+    <div class="shell contact-grid">
+      <div class="rv">
         <div class="eyebrow">Contact</div>
         <h2>Walk through the product or scope a pilot.</h2>
         <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
-        <div class="section-actions">
-          <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
-        </div>
+        <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
       </div>
-      <form class="contact-form" data-contact-form>
+      <form class="contact-form rv" style="--d:.12s" data-contact-form>
         <div class="field-grid">
           <label>Name<input name="name" autocomplete="name" required></label>
           <label>Work email<input name="email" type="email" autocomplete="email" required></label>
@@ -215,9 +314,12 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-top">
-        <div class="footer-brand">
-          <img src="/assets/roadrunner-mark.svg" alt="">
-          <div><strong>RoadRunner Secure</strong><br><span class="subtle">RoadRunner owns the assessment method. MSPs can deliver the client-facing surface under their own brand.</span></div>
+        <div>
+          <p class="footer-sign">Find the path. Cut the edge. <span class="ital">Prove it died.</span></p>
+          <div class="footer-brandline">
+            <img src="/assets/roadrunner-mark.svg" alt="">
+            <span>RoadRunner owns the assessment method. MSPs deliver the client-facing surface under their own brand.</span>
+          </div>
         </div>
         <nav class="footer-links" aria-label="Footer navigation"><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
       </div>
@@ -226,9 +328,10 @@
         <span>No automatic remediation by default</span>
         <span>Synthetic walkthrough uses fictional evidence</span>
         <span>&copy; RoadRunner Strategies, LLC</span>
+        <span>BUILD 2026-07-06</span>
       </div>
     </div>
   </footer>
-  <script src="/script.js"></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>

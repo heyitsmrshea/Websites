@@ -5,32 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Security | RoadRunner Secure data handling and connector posture</title>
   <meta name="description" content="Security posture for RoadRunner Secure: read-only collection, connector permissions, tenant isolation, retention, offboarding, and disclosure process.">
+  <meta name="theme-color" content="#04060a">
   <link rel="canonical" href="https://roadrunnersecure.com/security/">
+  <meta property="og:site_name" content="RoadRunner Secure">
   <meta property="og:title" content="Security | RoadRunner Secure data handling and connector posture">
   <meta property="og:description" content="Security posture for RoadRunner Secure: read-only collection, connector permissions, tenant isolation, retention, offboarding, and disclosure process.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://roadrunnersecure.com/security/">
   <meta property="og:image" content="https://roadrunnersecure.com/assets/roadrunner-logo.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://roadrunnersecure.com/assets/roadrunner-logo.png">
   <link rel="icon" href="/assets/roadrunner-mark.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="nav-shell">
       <a class="brand" href="/" aria-label="RoadRunner Secure home">
-        <span class="brand-mark"><img src="/assets/roadrunner-mark.svg" alt=""></span>
-        <span class="brand-title"><strong>RoadRunner Secure</strong><span>Evidence verified closure</span></span>
+        <img src="/assets/roadrunner-mark.svg" alt="" width="40" height="33">
+        <span class="brand-title"><strong>RoadRunner Secure</strong><span>Evidence-verified closure</span></span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/" aria-current="page">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
       <div class="nav-cta">
-        <a class="button secondary" href="/contact/">Scope pilot</a>
-        <a class="button primary" href="/demo/">Walkthrough</a>
+        <a class="button secondary small" href="/contact/">Scope pilot</a>
+        <a class="button primary small" href="/demo/">Walkthrough</a>
       </div>
       <details class="mobile-menu">
         <summary aria-label="Open navigation">Menu</summary>
@@ -39,131 +42,189 @@
     </div>
   </header>
   <main id="main">
-    <section class="hero hero-trust">
-    <div class="hero-inner hero-grid">
+    <section class="hero gridded">
+    <div class="shell hero-inner">
       <div class="hero-copy">
         <div class="eyebrow">Security and trust</div>
-        <h1>Sensitive evidence needs explicit rules.</h1>
+        <h1>Sensitive evidence needs <span class="ital">explicit rules.</span></h1>
         <p class="lead">RoadRunner Secure is designed around read-only evidence collection, least-privilege access, tenant separation, visible limitations, and customer-controlled deployment options where required.</p>
         <div class="hero-actions">
           <a class="button primary" href="/contact/">Ask security questions</a>
           <a class="button secondary" href="/pricing/">Discuss pilot</a>
         </div>
         <div class="signal-row">
-          <span class="signal-chip">Read-only</span>
-          <span class="signal-chip">White-label</span>
-          <span class="signal-chip">Validated closure</span>
+          <span class="chip">Read-only</span>
+          <span class="chip plain">White-label</span>
+          <span class="chip green">Validated closure</span>
         </div>
       </div>
-      <div class="hero-visual"><aside class="command-surface trust-map" aria-label="RoadRunner Secure trust controls">
-    <div class="surface-top">
-      <div><strong>Trust control ledger</strong><span class="surface-kicker">explicit rules for sensitive evidence</span></div>
-      <span class="tag live">READ ONLY</span>
+      <div class="hero-visual"><aside class="runpanel" aria-label="RoadRunner Secure trust controls">
+    <div class="runpanel-top">
+      <div class="titleblock">
+        <strong>Trust control ledger</strong>
+        <span class="runid">explicit rules for sensitive evidence</span>
+      </div>
+      <span class="tag live">READ-ONLY</span>
     </div>
-    <div class="trust-row"><strong>Collection</strong><span>Read-only connectors and offline collector options</span><span class="tag live">PASS</span></div>
-    <div class="trust-row"><strong>Retention</strong><span>Defined during pilot or contract</span><span class="tag live">SET</span></div>
-    <div class="trust-row"><strong>Offboarding</strong><span>Revoke, export, delete, confirm</span><span class="tag live">READY</span></div>
-    <div class="trust-row"><strong>Boundary</strong><span>No credentials, no auto-remediation</span><span class="tag live">LOCKED</span></div>
+    <div class="feed">
+      <div class="feed-row"><span class="tag done">DONE</span><span>Collection — read-only connectors, offline collector options</span><span class="meta">PASS</span></div>
+      <div class="feed-row"><span class="tag done">DONE</span><span>Boundary — no credentials, no auto-remediation</span><span class="meta">LOCKED</span></div>
+      <div class="feed-row"><span class="tag gap">GAP</span><span>Retention — defined during pilot or contract</span><span class="meta">SET</span></div>
+      <div class="feed-row"><span class="tag done">DONE</span><span>Offboarding — revoke, export, delete, confirm</span><span class="meta">READY</span></div>
+    </div>
   </aside></div>
     </div>
   </section>
     
 <section class="section">
-    <div class="section-inner">
-      <div class="section-head">
+    <div class="shell">
+      <div class="section-head rv">
     <div>
-      <div class="eyebrow">Trust posture</div>
+      <div class="eyebrow ">Trust posture</div>
       <h2>Security claims should be specific enough to review.</h2>
     </div>
     <p>This page covers the minimum categories a security reviewer expects before deeper due diligence.</p>
   </div>
-      <div class="grid three">
-        <div class="info-card"><h3>Data handling</h3><p>Evidence is collected for assessment, reporting, validation, and source-health visibility.</p></div>
-        <div class="info-card"><h3>Encryption</h3><p>Use encrypted transport for uploads and encrypted storage for retained evidence and reports.</p></div>
-        <div class="info-card"><h3>Access control</h3><p>Limit access by tenant, role, and operational need. Revoke access paths during offboarding.</p></div>
-        <div class="info-card"><h3>Tenant isolation</h3><p>Keep customer evidence scoped by tenant and separate client surfaces for MSP delivery.</p></div>
-        <div class="info-card"><h3>Logging</h3><p>Track connector status, evidence freshness, access activity, and validation runs.</p></div>
-        <div class="info-card"><h3>Retention</h3><p>Set retention during the pilot or contract; delete or export evidence during offboarding as agreed.</p></div>
+      <div class="ledger">
+        <div class="ledger-row rv">
+    <span class="k">Data handling</span>
+    <span class="v">Evidence is collected for assessment, reporting, validation, and source-health visibility — <strong>nothing else</strong>.</span>
+    <span class="tag done">PASS</span>
+  </div>
+        <div class="ledger-row rv">
+    <span class="k">Encryption</span>
+    <span class="v">Encrypted transport for uploads and encrypted storage for retained evidence and reports.</span>
+    <span class="tag done">PASS</span>
+  </div>
+        <div class="ledger-row rv">
+    <span class="k">Access control</span>
+    <span class="v">Access limited by tenant, role, and operational need. Access paths revoked during offboarding.</span>
+    <span class="tag done">PASS</span>
+  </div>
+        <div class="ledger-row rv">
+    <span class="k">Tenant isolation</span>
+    <span class="v">Customer evidence scoped by tenant; client surfaces separated for MSP delivery.</span>
+    <span class="tag done">PASS</span>
+  </div>
+        <div class="ledger-row rv">
+    <span class="k">Logging</span>
+    <span class="v">Connector status, evidence freshness, access activity, and validation runs are tracked.</span>
+    <span class="tag done">PASS</span>
+  </div>
+        <div class="ledger-row rv">
+    <span class="k">Retention</span>
+    <span class="v">Set during the pilot or contract; evidence deleted or exported during offboarding as agreed.</span>
+    <span class="tag gap">SET</span>
+  </div>
       </div>
     </div>
   </section>
-<section class="section light">
-    <div class="section-inner">
-      <div class="section-head">
+<section class="section tight tinted tint-teal">
+    <div class="shell">
+      <div class="section-head rv">
     <div>
-      <div class="eyebrow">Connector permissions</div>
+      <div class="eyebrow ">Connector permissions</div>
       <h2>Read-only by design, with permissions tied to assessment value.</h2>
     </div>
     <p>Final permission names should match the live implementation and customer approval package.</p>
   </div>
-      <div class="comparison">
+      <div class="paper rv-scale">
+        <div class="paper-doc"><span>RR-ACCESS-001 · Access manifest</span><span>Read-only · least privilege</span></div>
+        <div class="tablewrap rv ">
     <table>
       <thead><tr><th>Connector</th><th>Permission intent</th><th>Why it is needed</th></tr></thead>
       <tbody><tr><td data-label="Connector">Microsoft Graph</td><td data-label="Permission intent">Read directory, policy, device, and security posture where granted</td><td data-label="Why it is needed">Create identity, device, policy, and incident findings</td></tr><tr><td data-label="Connector">Defender / security signals</td><td data-label="Permission intent">Read alerts, exposure, and onboarding state where licensed</td><td data-label="Why it is needed">Surface detection backlog, endpoint gaps, and response work</td></tr><tr><td data-label="Connector">On-prem collector</td><td data-label="Permission intent">Read AD topology and privilege relationships</td><td data-label="Why it is needed">Map attack paths without collecting secrets or changing objects</td></tr><tr><td data-label="Connector">Manual evidence</td><td data-label="Permission intent">Accept customer/MSP notes and approved exceptions</td><td data-label="Why it is needed">Attach business context without overriding evidence validation</td></tr></tbody>
     </table>
   </div>
+        <div class="paper-foot"><span>ROADRUNNER SECURE · ACCESS MANIFEST</span><span>NO WRITE SCOPES REQUESTED</span></div>
+      </div>
     </div>
   </section>
-<section class="section alt">
-    <div class="section-inner">
-      <div class="section-head">
+<section class="section tight">
+    <div class="shell">
+      <div class="section-head rv">
     <div>
-      <div class="eyebrow">Data handling</div>
+      <div class="eyebrow ">Data handling</div>
       <h2>Make offboarding and limits explicit.</h2>
     </div>
     <p>This is the difference between a trust page and vague reassurance.</p>
   </div>
-      <div class="grid three">
-        <div class="info-card"><h3>Retention</h3><p>Pilot retention should be defined before access is granted. Long-term retention follows contract and reporting needs.</p></div>
-        <div class="info-card"><h3>Offboarding</h3><p>Revoke connectors, export agreed reports, delete retained evidence according to timeline, and confirm completion.</p></div>
-        <div class="info-card"><h3>Subprocessors</h3><p>List hosting, email, analytics, and operational subprocessors before production procurement.</p></div>
-      </div>
+      <div class="rail cols-3"><div class="railcard rv" style="--d:0.00s" >
+    <span class="num">RETAIN</span>
+    <h3>Retention</h3>
+    <p>Pilot retention should be defined before access is granted. Long-term retention follows contract and reporting needs.</p>
+  </div><div class="railcard rv" style="--d:0.07s" >
+    <span class="num">OFFBOARD</span>
+    <h3>Offboarding</h3>
+    <p>Revoke connectors, export agreed reports, delete retained evidence according to timeline, and confirm completion.</p>
+  </div><div class="railcard rv" style="--d:0.14s" >
+    <span class="num">SUBPROC</span>
+    <h3>Subprocessors</h3>
+    <p>List hosting, email, analytics, and operational subprocessors before production procurement.</p>
+  </div></div>
     </div>
   </section>
-<section class="section">
-    <div class="section-inner">
-      <div class="section-head">
+<section class="section tight tinted tint-rose" style="--tint-x: 80%">
+    <div class="shell">
+      <div class="section-head rv">
     <div>
-      <div class="eyebrow">Boundaries</div>
+      <div class="eyebrow rose">Boundaries</div>
       <h2>What RoadRunner does not do by default.</h2>
     </div>
     <p>Explicit boundaries reduce fear and prevent the product from sounding like an exploit platform.</p>
   </div>
-      <div class="grid four">
-        <div class="info-card"><h3>No destructive testing</h3><p>The assessment observes configuration and evidence. Destructive testing is not default behavior.</p></div>
-        <div class="info-card"><h3>No credential collection</h3><p>Collectors do not harvest passwords, hashes, tokens, or secrets.</p></div>
-        <div class="info-card"><h3>No automatic changes</h3><p>RoadRunner recommends fixes. Customers or MSPs execute approved changes.</p></div>
-        <div class="info-card"><h3>Disclosure path</h3><p>Send security reports to drew@roadrunnerstrategies.com. Valid reports receive direct remediation coordination.</p></div>
-      </div>
+      <div class="rail cols-4"><div class="railcard rv" style="--d:0.00s" >
+    <span class="num">01</span>
+    <h3>No destructive testing</h3>
+    <p>The assessment observes configuration and evidence. Destructive testing is not default behavior.</p>
+  </div><div class="railcard rv" style="--d:0.07s" >
+    <span class="num">02</span>
+    <h3>No credential collection</h3>
+    <p>Collectors do not harvest passwords, hashes, tokens, or secrets.</p>
+  </div><div class="railcard rv" style="--d:0.14s" >
+    <span class="num">03</span>
+    <h3>No automatic changes</h3>
+    <p>RoadRunner recommends fixes. Customers or MSPs execute approved changes.</p>
+  </div><div class="railcard rv" style="--d:0.21s" >
+    <span class="num">04</span>
+    <h3>Disclosure path</h3>
+    <p>Send security reports to drew@roadrunnerstrategies.com. Valid reports receive direct remediation coordination.</p>
+  </div></div>
     </div>
   </section>
-<section class="section light">
-    <div class="section-inner">
-      <div class="section-head">
+<section class="section tight">
+    <div class="shell">
+      <div class="section-head rv">
     <div>
-      <div class="eyebrow">Review maturity</div>
+      <div class="eyebrow ">Review maturity</div>
       <h2>Be clear about what exists now and what belongs in procurement.</h2>
     </div>
     <p>If formal certifications are not yet available, the page should not imply them.</p>
   </div>
-      <div class="grid three">
-        <div class="info-card"><h3>Current review package</h3><p>Connector purposes, read-only posture, retention plan, offboarding plan, subprocessors, and deployment model.</p></div>
-        <div class="info-card"><h3>Disclosure SLA</h3><p>Security reports sent to drew@roadrunnerstrategies.com should receive acknowledgement within one business day after validation.</p></div>
-        <div class="info-card"><h3>Compliance roadmap</h3><p>Formal control mapping and third-party assurance can be added as enterprise demand requires.</p></div>
-      </div>
+      <div class="rail cols-3"><div class="railcard rv" style="--d:0.00s" >
+    <span class="num">NOW</span>
+    <h3>Current review package</h3>
+    <p>Connector purposes, read-only posture, retention plan, offboarding plan, subprocessors, and deployment model.</p>
+  </div><div class="railcard rv" style="--d:0.07s" >
+    <span class="num">SLA</span>
+    <h3>Disclosure SLA</h3>
+    <p>Security reports sent to drew@roadrunnerstrategies.com should receive acknowledgement within one business day after validation.</p>
+  </div><div class="railcard rv" style="--d:0.14s" >
+    <span class="num">NEXT</span>
+    <h3>Compliance roadmap</h3>
+    <p>Formal control mapping and third-party assurance can be added as enterprise demand requires.</p>
+  </div></div>
     </div>
   </section>
-<section class="section">
-    <div class="section-inner contact-grid">
-      <div>
+<section class="section tinted tint-teal" style="--tint-x: 85%">
+    <div class="shell contact-grid">
+      <div class="rv">
         <div class="eyebrow">Contact</div>
         <h2>Walk through the product or scope a pilot.</h2>
         <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
-        <div class="section-actions">
-          <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
-        </div>
+        <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
       </div>
-      <form class="contact-form" data-contact-form>
+      <form class="contact-form rv" style="--d:.12s" data-contact-form>
         <div class="field-grid">
           <label>Name<input name="name" autocomplete="name" required></label>
           <label>Work email<input name="email" type="email" autocomplete="email" required></label>
@@ -196,9 +257,12 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-top">
-        <div class="footer-brand">
-          <img src="/assets/roadrunner-mark.svg" alt="">
-          <div><strong>RoadRunner Secure</strong><br><span class="subtle">RoadRunner owns the assessment method. MSPs can deliver the client-facing surface under their own brand.</span></div>
+        <div>
+          <p class="footer-sign">Find the path. Cut the edge. <span class="ital">Prove it died.</span></p>
+          <div class="footer-brandline">
+            <img src="/assets/roadrunner-mark.svg" alt="">
+            <span>RoadRunner owns the assessment method. MSPs deliver the client-facing surface under their own brand.</span>
+          </div>
         </div>
         <nav class="footer-links" aria-label="Footer navigation"><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
       </div>
@@ -207,9 +271,10 @@
         <span>No automatic remediation by default</span>
         <span>Synthetic walkthrough uses fictional evidence</span>
         <span>&copy; RoadRunner Strategies, LLC</span>
+        <span>BUILD 2026-07-06</span>
       </div>
     </div>
   </footer>
-  <script src="/script.js"></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
