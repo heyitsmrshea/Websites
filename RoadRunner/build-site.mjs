@@ -44,7 +44,7 @@ if (missing.length) {
 }
 
 writeLogoVariants();
-writeFileSync(join(siteDir, "styles.css"), [tokens, base, components, sections, moments, motion].join("\n"));
+writeFileSync(join(siteDir, "styles.css"), minifyCss([tokens, base, components, sections, moments, motion].join("\n")));
 writeFileSync(join(siteDir, "script.js"), clientJs(brand));
 
 for (const page of pages) {
@@ -78,8 +78,8 @@ function writeLogoVariants() {
   const markPath = source.match(/<path d="([^"]+)"/)?.[1];
   if (!markPath) return;
 
-  const markSvg = (fill) => `<svg width="180" height="120" viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="${markPath}" fill="${fill}" transform="translate(-110 0) scale(.22)"/>
+  const markSvg = (fill) => `<svg width="180" height="130" viewBox="120 0 590 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="${markPath}" fill="${fill}"/>
 </svg>
 `;
   const lockupSvg = (ink, accent) => `<svg width="760" height="140" viewBox="0 0 760 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RoadRunner Secure">
@@ -92,4 +92,44 @@ function writeLogoVariants() {
   writeFileSync(join(siteDir, "assets", "roadrunner-mark-dark.svg"), markSvg("#0D385B"));
   writeFileSync(join(siteDir, "assets", "roadrunner-lockup-secure.svg"), lockupSvg("#F4F8FB", "#2DD4BF"));
   writeFileSync(join(siteDir, "assets", "roadrunner-lockup-secure-dark.svg"), lockupSvg("#071019", "#0D385B"));
+}
+
+function minifyCss(css) {
+  let out = "";
+  let quote = "";
+  let token = "";
+  const strings = [];
+  for (let i = 0; i < css.length; i++) {
+    const ch = css[i];
+    const next = css[i + 1];
+    if (quote) {
+      token += ch;
+      if (ch === "\\" && next) token += css[++i];
+      else if (ch === quote) {
+        strings.push(token);
+        out += `__CSS_STRING_${strings.length - 1}__`;
+        token = "";
+        quote = "";
+      }
+      continue;
+    }
+    if (ch === '"' || ch === "'") {
+      quote = ch;
+      token = ch;
+      continue;
+    }
+    if (ch === "/" && next === "*") {
+      i += 2;
+      while (i < css.length && !(css[i] === "*" && css[i + 1] === "/")) i++;
+      i++;
+      continue;
+    }
+    out += ch;
+  }
+  return out
+    .replace(/\s+/g, " ")
+    .replace(/\s*([{}:;,>+~])\s*/g, "$1")
+    .replace(/;}/g, "}")
+    .trim()
+    .replace(/__CSS_STRING_(\d+)__/g, (_, i) => strings[Number(i)]);
 }

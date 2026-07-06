@@ -350,6 +350,7 @@ export const components = String.raw`
 }
 .term-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--muted); flex: 1; }
 .term-copy {
+  min-height: 32px;
   font-family: var(--font-mono);
   font-size: 10.5px;
   letter-spacing: .08em;
@@ -484,8 +485,10 @@ html.js [data-flow].flowed .flow-step { animation: flow-step-in .5s var(--ease-o
 
 /* ---------- contact ---------- */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 5vw, 72px); align-items: start; }
+.contact-grid > * { min-width: 0; }
 .contact-grid > div:first-child { display: grid; gap: 20px; justify-items: start; }
 .contact-form {
+  min-width: 0;
   display: grid;
   gap: 16px;
   background: linear-gradient(178deg, var(--panel-1), var(--panel-0));
@@ -506,6 +509,8 @@ html.js [data-flow].flowed .flow-step { animation: flow-step-in .5s var(--ease-o
   color: var(--muted);
 }
 .contact-form input, .contact-form select, .contact-form textarea {
+  min-width: 0;
+  width: 100%;
   font: 500 14.5px/1.5 var(--font-body);
   color: var(--ink);
   background: rgba(255, 255, 255, .03);
@@ -520,7 +525,7 @@ html.js [data-flow].flowed .flow-step { animation: flow-step-in .5s var(--ease-o
   background: rgba(45, 212, 191, .05);
 }
 .contact-form textarea { resize: vertical; }
-.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field-grid { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
 .form-note { font-size: 12px; color: var(--faint); }
 
 /* ---------- misc ---------- */

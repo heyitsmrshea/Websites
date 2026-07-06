@@ -13,13 +13,13 @@ html.js .rv-scale { opacity: 0; transform: scale(.965) translateY(10px); transit
 html.js .rv-scale.in { opacity: 1; transform: none; }
 
 /* hero entrance: staged once on load */
-html.js .hero-copy > * { opacity: 0; transform: translateY(18px); animation: rise .85s var(--ease-out) forwards; }
+html.js .hero-copy > * { transform: translateY(12px); animation: rise .65s var(--ease-out) forwards; }
 html.js .hero-copy > *:nth-child(1) { animation-delay: .05s; }
 html.js .hero-copy > *:nth-child(2) { animation-delay: .14s; }
 html.js .hero-copy > *:nth-child(3) { animation-delay: .26s; }
 html.js .hero-copy > *:nth-child(4) { animation-delay: .36s; }
 html.js .hero-copy > *:nth-child(5) { animation-delay: .44s; }
-html.js .hero-visual { opacity: 0; transform: translateY(22px) scale(.985); animation: rise-panel 1s var(--ease-out) .3s forwards; }
+html.js .hero-visual { transform: translateY(14px) scale(.99); animation: rise-panel .75s var(--ease-out) .22s forwards; }
 
 @keyframes rise { to { opacity: 1; transform: none; } }
 @keyframes rise-panel { to { opacity: 1; transform: none; } }
