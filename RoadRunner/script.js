@@ -172,6 +172,17 @@
     }
   }
 
+  /* ---------- walkthrough chapters ignite on approach ---------- */
+  const chapters = document.querySelectorAll(".chapter");
+  if (chapters.length && "IntersectionObserver" in window) {
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach((e) => e.target.classList.toggle("active", e.isIntersecting));
+    }, { rootMargin: "-30% 0px -45% 0px", threshold: 0 });
+    chapters.forEach((c) => cio.observe(c));
+  } else {
+    chapters.forEach((c) => c.classList.add("active"));
+  }
+
   /* ---------- Moment 3: brand swap ---------- */
   const swap = document.querySelector("[data-brandswap]");
   if (swap) {

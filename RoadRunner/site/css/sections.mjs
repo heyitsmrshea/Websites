@@ -178,6 +178,39 @@ export const sections = String.raw`
 .sow-exit .k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--paper-stamp); padding-top: 3px; font-weight: 700; }
 .sow-exit p { font-size: 14px; color: var(--paper-ink); line-height: 1.6; }
 
+/* ---------- report fold (walkthrough finale, Moment 6) ---------- */
+.fold { position: relative; overflow: clip; }
+.fold::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(1100px 480px at 30% 120%, rgba(52, 211, 153, .08), transparent 65%);
+}
+.fold-stage { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(30px, 5vw, 70px); align-items: center; }
+.report-frame {
+  margin: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-paper);
+  transform: perspective(1600px) rotateY(4deg) rotateX(1.5deg);
+  transition: transform .7s var(--ease-out);
+  transform-origin: left center;
+}
+.report-frame:hover { transform: perspective(1600px) rotateY(0deg) rotateX(0deg); }
+.report-frame img { display: block; width: 100%; }
+.fold-note { display: grid; gap: 18px; align-content: center; justify-items: start; }
+.fold-note p { color: var(--soft); font-size: 15.5px; line-height: 1.66; max-width: 44ch; }
+.fold-meta { display: grid; gap: 10px; width: 100%; max-width: 360px; margin: 4px 0; }
+.fold-meta div { display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line-soft); }
+.fold-meta b { font-family: var(--font-mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--faint); }
+.fold-meta span { font-size: 13.5px; color: var(--soft); font-family: var(--font-mono); }
+@media (max-width: 900px) {
+  .fold-stage { grid-template-columns: 1fr; }
+  .report-frame { transform: none; max-width: 520px; justify-self: center; }
+  .report-frame:hover { transform: none; }
+}
+
 /* ---------- 404 ---------- */
 .notfound { min-height: 72vh; display: grid; place-content: center; text-align: left; gap: 26px; padding-block: 80px; }
 .notfound .code { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--rose); }
