@@ -484,6 +484,7 @@ html.js [data-flow].flowed .flow-step { animation: flow-step-in .5s var(--ease-o
 }
 
 /* ---------- contact ---------- */
+.contact-section { border-top: 1px solid var(--line-soft); padding-top: calc(var(--sp-section) + 24px); }
 .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 5vw, 72px); align-items: start; }
 .contact-grid > * { min-width: 0; }
 .contact-grid > div:first-child { display: grid; gap: 20px; justify-items: start; }
@@ -563,6 +564,37 @@ html.js [data-flow].flowed .flow-step { animation: flow-step-in .5s var(--ease-o
   .metric-row { grid-template-columns: 1fr 1fr; }
   .field-grid { grid-template-columns: 1fr; }
   .ledger-row { grid-template-columns: 1fr; gap: 6px; }
+  .tablewrap { overflow: visible; border: 0; border-radius: 0; }
+  table, thead, tbody, tr, th, td { display: block; }
+  thead { display: none; }
+  tbody { display: grid; gap: 12px; }
+  tbody tr {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+    overflow: hidden;
+    background: rgba(255, 255, 255, .012);
+  }
+  tbody tr:hover { background: rgba(255, 255, 255, .018); }
+  tbody td {
+    display: grid;
+    grid-template-columns: minmax(84px, .38fr) minmax(0, 1fr);
+    gap: 14px;
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  tbody td::before {
+    content: attr(data-label);
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 650;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .paper .tablewrap { border: 0; }
+  .paper tbody tr { border-color: var(--paper-line); background: rgba(20, 24, 29, .025); }
+  .paper tbody td { border-color: var(--paper-line); }
+  .paper tbody td::before { color: var(--paper-muted); }
   .flow { grid-template-columns: 1fr 1fr; }
   .flow-step { border-bottom: 1px solid var(--line-soft); }
   .hero { padding-top: 56px; }

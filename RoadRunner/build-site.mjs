@@ -128,7 +128,7 @@ function minifyCss(css) {
   }
   return out
     .replace(/\s+/g, " ")
-    .replace(/\s*([{}:;,>+~])\s*/g, "$1")
+    .replace(/\s*([{}:;,>~])\s*/g, "$1")
     .replace(/;}/g, "}")
     .trim()
     .replace(/__CSS_STRING_(\d+)__/g, (_, i) => strings[Number(i)]);

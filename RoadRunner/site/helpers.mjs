@@ -162,7 +162,7 @@ export const findings = {
 };
 
 export function contactSection() {
-  return `<section class="section tinted tint-teal" style="--tint-x: 85%">
+  return `<section class="section contact-section tinted tint-teal" style="--tint-x: 85%">
     <div class="shell contact-grid">
       <div class="rv">
         <div class="eyebrow">Contact</div>
