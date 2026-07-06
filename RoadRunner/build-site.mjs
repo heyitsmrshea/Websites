@@ -258,6 +258,40 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   flex-wrap: wrap;
   justify-content: flex-end;
 }
+.mobile-menu {
+  display: none;
+}
+.mobile-menu summary {
+  list-style: none;
+}
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+.mobile-menu-panel {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+}
+.mobile-menu:not([open]) .mobile-menu-panel {
+  display: none;
+}
+.mobile-menu-panel a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+}
+.mobile-menu-panel a[aria-current="page"] {
+  background: rgba(13, 56, 91, .08);
+  color: var(--navy);
+  border-color: rgba(13, 56, 91, .28);
+}
 .button, button.button {
   display: inline-flex;
   align-items: center;
@@ -618,6 +652,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fff;
+  color: var(--ink);
 }
 .comparison table {
   width: 100%;
@@ -629,6 +664,7 @@ h3 {
   text-align: left;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
+  color: var(--ink);
 }
 .comparison tr:last-child th, .comparison tr:last-child td { border-bottom: 0; }
 .comparison th {
@@ -745,6 +781,33 @@ textarea { resize: vertical; }
   .nav-shell {
     padding: 12px 16px;
     gap: 14px;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    justify-self: end;
+  }
+  .mobile-menu[open] {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+  .mobile-menu summary {
+    min-width: 48px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--ink);
+    font-weight: 900;
+    cursor: pointer;
   }
   .brand-logo-box {
     width: 42px;
@@ -757,14 +820,121 @@ textarea { resize: vertical; }
     padding: 7px 8px;
     font-size: 12px;
   }
-  .nav-cta .button { flex: 1 1 150px; }
-  .logo-hero, .metrics, .queue-row, .grid.two, .grid.three, .grid.four, .field-grid, .proof-item, .artifact-grid, .flow {
+  h1 {
+    max-width: none;
+    font-size: clamp(34px, 10vw, 42px);
+  }
+  h2 {
+    font-size: clamp(28px, 9vw, 36px);
+  }
+  .lead {
+    font-size: 16px;
+  }
+  .queue-row, .grid.two, .grid.three, .grid.four, .field-grid, .proof-item, .artifact-grid, .flow {
     grid-template-columns: 1fr;
+  }
+  .logo-hero {
+    grid-template-columns: 84px 1fr;
+    gap: 14px;
+  }
+  .logo-hero img {
+    width: 84px;
+  }
+  .metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .metric {
+    padding: 12px 8px;
+  }
+  .metric strong {
+    font-size: 28px;
+  }
+  .metric span {
+    font-size: 11px;
   }
   .hero-grid { gap: 28px; }
   .hero-card { padding: 16px; }
+  .hero-card .queue {
+    display: none;
+  }
   .queue-row { align-items: start; }
   .button { width: 100%; }
+  .comparison {
+    overflow-x: visible;
+  }
+  .comparison table,
+  .comparison thead,
+  .comparison tbody,
+  .comparison tr,
+  .comparison th,
+  .comparison td {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+  .comparison thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .comparison tr {
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0;
+  }
+  .comparison tr:last-child {
+    border-bottom: 0;
+  }
+  .comparison td {
+    border-bottom: 0;
+    padding: 9px 14px;
+  }
+  .comparison td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .section.dark .comparison td::before {
+    color: var(--navy);
+  }
+  .code-block {
+    font-size: 12px;
+    padding: 12px;
+  }
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .footer-links a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-title span {
+    display: none;
+  }
+  .hero-inner, .section-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .metrics {
+    grid-template-columns: 1fr;
+  }
 }
 `;
 
@@ -873,6 +1043,10 @@ function header(active) {
         <a class="button secondary" href="/contact/">Scope pilot</a>
         <a class="button primary" href="/demo/">Walkthrough</a>
       </div>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation">Menu</summary>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation">${links}<a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+      </details>
     </div>
   </header>`;
 }
@@ -1709,7 +1883,7 @@ function table(rows) {
   return `<div class="comparison">
     <table>
       <thead><tr>${head.map((cell) => `<th>${cell}</th>`).join("")}</tr></thead>
-      <tbody>${body.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody>
+      <tbody>${body.map((row) => `<tr>${row.map((cell, index) => `<td data-label="${head[index] || ""}">${cell}</td>`).join("")}</tr>`).join("")}</tbody>
     </table>
   </div>`;
 }

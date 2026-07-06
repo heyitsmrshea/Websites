@@ -32,6 +32,10 @@
         <a class="button secondary" href="/contact/">Scope pilot</a>
         <a class="button primary" href="/demo/">Walkthrough</a>
       </div>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation">Menu</summary>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/platform/" aria-current="page">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+      </details>
     </div>
   </header>
   <main id="main">
@@ -105,7 +109,7 @@
       <div class="comparison">
     <table>
       <thead><tr><th>Source</th><th>Typical evidence</th><th>What RoadRunner does with it</th></tr></thead>
-      <tbody><tr><td>Microsoft</td><td>Entra roles, Conditional Access, sign-ins, Defender, Intune, M365, Azure posture</td><td>Creates identity, endpoint, cloud, and collaboration findings with owner-ready remediation.</td></tr><tr><td>On-prem AD</td><td>Groups, ACLs, delegation, sessions where available, local admin exposure, path topology</td><td>Maps attack paths and recommends low-disruption edge cuts.</td></tr><tr><td>Endpoint/security tools</td><td>Device health, onboarding state, incidents, alert backlog, exposure signals</td><td>Turns coverage and response gaps into weekly work.</td></tr><tr><td>Manual evidence</td><td>Exceptions, business context, compensating controls, MSP notes</td><td>Adds human context without letting manual status override validation evidence.</td></tr></tbody>
+      <tbody><tr><td data-label="Source">Microsoft</td><td data-label="Typical evidence">Entra roles, Conditional Access, sign-ins, Defender, Intune, M365, Azure posture</td><td data-label="What RoadRunner does with it">Creates identity, endpoint, cloud, and collaboration findings with owner-ready remediation.</td></tr><tr><td data-label="Source">On-prem AD</td><td data-label="Typical evidence">Groups, ACLs, delegation, sessions where available, local admin exposure, path topology</td><td data-label="What RoadRunner does with it">Maps attack paths and recommends low-disruption edge cuts.</td></tr><tr><td data-label="Source">Endpoint/security tools</td><td data-label="Typical evidence">Device health, onboarding state, incidents, alert backlog, exposure signals</td><td data-label="What RoadRunner does with it">Turns coverage and response gaps into weekly work.</td></tr><tr><td data-label="Source">Manual evidence</td><td data-label="Typical evidence">Exceptions, business context, compensating controls, MSP notes</td><td data-label="What RoadRunner does with it">Adds human context without letting manual status override validation evidence.</td></tr></tbody>
     </table>
   </div>
     </div>

@@ -32,6 +32,10 @@
         <a class="button secondary" href="/contact/">Scope pilot</a>
         <a class="button primary" href="/demo/">Walkthrough</a>
       </div>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation">Menu</summary>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/" aria-current="page">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+      </details>
     </div>
   </header>
   <main id="main">
@@ -154,7 +158,7 @@
       <div class="comparison">
     <table>
       <thead><tr><th>Finding</th><th>Evidence</th><th>Recommended fix</th><th>Validation</th></tr></thead>
-      <tbody><tr><td>Service account creates path to Tier 0</td><td>svc-build -> Workstation Admins -> ENG-WS-044 -> Domain Admins</td><td>Remove svc-build from workstation admin path or isolate admin session exposure</td><td>Next collector run no longer contains a route from svc-build to Tier 0</td></tr><tr><td>Stale admin group expands blast radius</td><td>Dormant users remain in Server Operators</td><td>Remove dormant members and document exception owner</td><td>Membership diff shows removed principals or approved exception</td></tr><tr><td>Delegation edge enables lateral movement</td><td>Unconstrained delegation detected on legacy app server</td><td>Move service to constrained delegation or isolate server</td><td>Delegation edge disappears or compensating control is attached</td></tr></tbody>
+      <tbody><tr><td data-label="Finding">Service account creates path to Tier 0</td><td data-label="Evidence">svc-build -> Workstation Admins -> ENG-WS-044 -> Domain Admins</td><td data-label="Recommended fix">Remove svc-build from workstation admin path or isolate admin session exposure</td><td data-label="Validation">Next collector run no longer contains a route from svc-build to Tier 0</td></tr><tr><td data-label="Finding">Stale admin group expands blast radius</td><td data-label="Evidence">Dormant users remain in Server Operators</td><td data-label="Recommended fix">Remove dormant members and document exception owner</td><td data-label="Validation">Membership diff shows removed principals or approved exception</td></tr><tr><td data-label="Finding">Delegation edge enables lateral movement</td><td data-label="Evidence">Unconstrained delegation detected on legacy app server</td><td data-label="Recommended fix">Move service to constrained delegation or isolate server</td><td data-label="Validation">Delegation edge disappears or compensating control is attached</td></tr></tbody>
     </table>
   </div>
     </div>

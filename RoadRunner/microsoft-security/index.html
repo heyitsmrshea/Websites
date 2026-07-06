@@ -32,6 +32,10 @@
         <a class="button secondary" href="/contact/">Scope pilot</a>
         <a class="button primary" href="/demo/">Walkthrough</a>
       </div>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation">Menu</summary>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/" aria-current="page">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+      </details>
     </div>
   </header>
   <main id="main">
@@ -117,7 +121,7 @@
       <div class="comparison">
     <table>
       <thead><tr><th>Question</th><th>Microsoft Secure Score</th><th>RoadRunner Secure</th></tr></thead>
-      <tbody><tr><td>What is wrong?</td><td>Control-level recommendations</td><td>Named findings with affected accounts, devices, policies, or resources</td></tr><tr><td>Who owns it?</td><td>Usually outside the score</td><td>Owner-ready queue with remediation context</td></tr><tr><td>Why this first?</td><td>Score impact may dominate</td><td>Prioritized by exposure, blast radius, confidence, and operational urgency</td></tr><tr><td>How does it close?</td><td>Score movement or manual review</td><td>Next evidence run must satisfy validation criteria</td></tr></tbody>
+      <tbody><tr><td data-label="Question">What is wrong?</td><td data-label="Microsoft Secure Score">Control-level recommendations</td><td data-label="RoadRunner Secure">Named findings with affected accounts, devices, policies, or resources</td></tr><tr><td data-label="Question">Who owns it?</td><td data-label="Microsoft Secure Score">Usually outside the score</td><td data-label="RoadRunner Secure">Owner-ready queue with remediation context</td></tr><tr><td data-label="Question">Why this first?</td><td data-label="Microsoft Secure Score">Score impact may dominate</td><td data-label="RoadRunner Secure">Prioritized by exposure, blast radius, confidence, and operational urgency</td></tr><tr><td data-label="Question">How does it close?</td><td data-label="Microsoft Secure Score">Score movement or manual review</td><td data-label="RoadRunner Secure">Next evidence run must satisfy validation criteria</td></tr></tbody>
     </table>
   </div>
     </div>
@@ -134,7 +138,7 @@
       <div class="comparison">
     <table>
       <thead><tr><th>Area</th><th>Typical read purpose</th><th>Assessment value</th></tr></thead>
-      <tbody><tr><td>Directory</td><td>Read users, groups, roles, guests, and assignments</td><td>Detect privilege sprawl, stale access, and risky identities</td></tr><tr><td>Policy</td><td>Read Conditional Access and authentication posture</td><td>Find MFA exceptions, weak access paths, and policy drift</td></tr><tr><td>Security</td><td>Read incidents, alerts, and exposure signals where licensed</td><td>Fold detection and response gaps into the weekly queue</td></tr><tr><td>Device</td><td>Read Intune compliance and device inventory where available</td><td>Find unmanaged or noncompliant endpoints tied to identity risk</td></tr><tr><td>Azure</td><td>Read subscription posture and security configuration</td><td>Assess cloud control coverage and prioritized misconfigurations</td></tr></tbody>
+      <tbody><tr><td data-label="Area">Directory</td><td data-label="Typical read purpose">Read users, groups, roles, guests, and assignments</td><td data-label="Assessment value">Detect privilege sprawl, stale access, and risky identities</td></tr><tr><td data-label="Area">Policy</td><td data-label="Typical read purpose">Read Conditional Access and authentication posture</td><td data-label="Assessment value">Find MFA exceptions, weak access paths, and policy drift</td></tr><tr><td data-label="Area">Security</td><td data-label="Typical read purpose">Read incidents, alerts, and exposure signals where licensed</td><td data-label="Assessment value">Fold detection and response gaps into the weekly queue</td></tr><tr><td data-label="Area">Device</td><td data-label="Typical read purpose">Read Intune compliance and device inventory where available</td><td data-label="Assessment value">Find unmanaged or noncompliant endpoints tied to identity risk</td></tr><tr><td data-label="Area">Azure</td><td data-label="Typical read purpose">Read subscription posture and security configuration</td><td data-label="Assessment value">Assess cloud control coverage and prioritized misconfigurations</td></tr></tbody>
     </table>
   </div>
     </div>

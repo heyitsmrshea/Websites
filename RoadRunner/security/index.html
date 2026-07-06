@@ -32,6 +32,10 @@
         <a class="button secondary" href="/contact/">Scope pilot</a>
         <a class="button primary" href="/demo/">Walkthrough</a>
       </div>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation">Menu</summary>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/" aria-current="page">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+      </details>
     </div>
   </header>
   <main id="main">
@@ -104,7 +108,7 @@
       <div class="comparison">
     <table>
       <thead><tr><th>Connector</th><th>Permission intent</th><th>Why it is needed</th></tr></thead>
-      <tbody><tr><td>Microsoft Graph</td><td>Read directory, policy, device, and security posture where granted</td><td>Create identity, device, policy, and incident findings</td></tr><tr><td>Defender / security signals</td><td>Read alerts, exposure, and onboarding state where licensed</td><td>Surface detection backlog, endpoint gaps, and response work</td></tr><tr><td>On-prem collector</td><td>Read AD topology and privilege relationships</td><td>Map attack paths without collecting secrets or changing objects</td></tr><tr><td>Manual evidence</td><td>Accept customer/MSP notes and approved exceptions</td><td>Attach business context without overriding evidence validation</td></tr></tbody>
+      <tbody><tr><td data-label="Connector">Microsoft Graph</td><td data-label="Permission intent">Read directory, policy, device, and security posture where granted</td><td data-label="Why it is needed">Create identity, device, policy, and incident findings</td></tr><tr><td data-label="Connector">Defender / security signals</td><td data-label="Permission intent">Read alerts, exposure, and onboarding state where licensed</td><td data-label="Why it is needed">Surface detection backlog, endpoint gaps, and response work</td></tr><tr><td data-label="Connector">On-prem collector</td><td data-label="Permission intent">Read AD topology and privilege relationships</td><td data-label="Why it is needed">Map attack paths without collecting secrets or changing objects</td></tr><tr><td data-label="Connector">Manual evidence</td><td data-label="Permission intent">Accept customer/MSP notes and approved exceptions</td><td data-label="Why it is needed">Attach business context without overriding evidence validation</td></tr></tbody>
     </table>
   </div>
     </div>
