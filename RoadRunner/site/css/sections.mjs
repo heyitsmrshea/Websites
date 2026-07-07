@@ -1,8 +1,8 @@
 // Page-specific section layouts: manifesto, loop, white-label, graphs, chapters, 404.
 export const sections = String.raw`
 /* ---------- manifesto (home) ---------- */
-.manifesto { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(36px, 5vw, 80px); align-items: start; }
-.manifesto-statement { display: grid; gap: 22px; position: sticky; top: 110px; }
+.manifesto { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(28px, 4vw, 60px); align-items: start; }
+.manifesto-statement { display: grid; gap: 18px; position: sticky; top: 96px; }
 .manifesto-statement .fear {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 1.15rem + 2.5vw, 3.1rem);
@@ -25,7 +25,7 @@ export const sections = String.raw`
 }
 .manifesto-statement .sub { font-family: var(--font-mono); font-size: 12px; line-height: 1.8; letter-spacing: .03em; color: var(--muted); max-width: 44ch; }
 .contrast-ledger { display: grid; gap: 0; border-top: 1px solid var(--line); }
-.contrast-row { padding: 24px 4px; border-bottom: 1px solid var(--line-soft); display: grid; gap: 12px; }
+.contrast-row { padding: 18px 4px; border-bottom: 1px solid var(--line-soft); display: grid; gap: 10px; }
 .contrast-row .them, .contrast-row .us { display: grid; grid-template-columns: 118px 1fr; gap: 16px; align-items: baseline; }
 .contrast-row .who {
   font-family: var(--font-mono);
@@ -44,7 +44,7 @@ export const sections = String.raw`
 .chain-node {
   border: 1px solid var(--line);
   border-radius: var(--radius-s);
-  padding: 24px 22px;
+  padding: 20px 18px;
   display: grid;
   gap: 10px;
   align-content: start;
@@ -97,7 +97,7 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
 
 /* ---------- collector rules ---------- */
 .rules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--radius-s); overflow: hidden; }
-.rule-cell { padding: 24px 22px; border-right: 1px solid var(--line-soft); display: grid; gap: 10px; align-content: start; background: rgba(255,255,255,.012); }
+.rule-cell { padding: 20px 18px; border-right: 1px solid var(--line-soft); display: grid; gap: 9px; align-content: start; background: rgba(255,255,255,.012); }
 .rule-cell:last-child { border-right: 0; }
 .rule-cell .k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--teal); }
 .rule-cell.no .k { color: var(--rose); }
@@ -106,7 +106,7 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
 
 /* ---------- walkthrough chapters ---------- */
 .chapter { position: relative; }
-.chapter-head { display: grid; grid-template-columns: auto 1fr; gap: clamp(20px, 3vw, 44px); align-items: baseline; margin-bottom: var(--sp-block); }
+.chapter-head { display: grid; grid-template-columns: auto 1fr; gap: clamp(16px, 2.4vw, 34px); align-items: baseline; margin-bottom: var(--sp-block); }
 .chapter-num {
   font-family: var(--font-display);
   font-size: clamp(4.4rem, 2.5rem + 8vw, 9rem);
@@ -123,8 +123,8 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
   grid-template-columns: auto 1fr;
   gap: 14px;
   align-items: start;
-  margin-top: 22px;
-  padding: 16px 18px;
+  margin-top: 16px;
+  padding: 14px 16px;
   border: 1px solid var(--line-soft);
   border-left: 2px solid var(--teal);
   border-radius: 0 var(--radius-s) var(--radius-s) 0;
@@ -190,8 +190,8 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
   grid-template-columns: auto 1fr;
   gap: 16px;
   align-items: start;
-  margin-top: 24px;
-  padding: 18px 20px;
+  margin-top: 18px;
+  padding: 16px 18px;
   border: 1px dashed rgba(26, 122, 94, .5);
   border-radius: 6px;
   background: rgba(26, 122, 94, .05);
@@ -208,7 +208,7 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
   pointer-events: none;
   background: radial-gradient(1100px 480px at 30% 120%, rgba(52, 211, 153, .08), transparent 65%);
 }
-.fold-stage { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(30px, 5vw, 70px); align-items: center; }
+.fold-stage { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
 .report-frame {
   margin: 0;
   border-radius: 4px;
@@ -233,7 +233,7 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
 }
 
 /* ---------- 404 ---------- */
-.notfound { min-height: 72vh; display: grid; place-content: center; text-align: left; gap: 26px; padding-block: 80px; }
+.notfound { min-height: 68vh; display: grid; place-content: center; text-align: left; gap: 22px; padding-block: 60px; }
 .notfound .code { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--rose); }
 .notfound h1 { max-width: 16ch; }
 .notfound .routes { display: grid; gap: 0; border-top: 1px solid var(--line); margin-top: 14px; min-width: min(520px, 86vw); }
@@ -253,7 +253,7 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
 .notfound .routes .mono { color: var(--faint); font-size: 11px; }
 
 /* ---------- score deconstruction (Moment 4) ---------- */
-.gauge-wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(30px, 4vw, 64px); align-items: center; }
+.gauge-wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(24px, 3.5vw, 52px); align-items: center; }
 .gauge-stage { position: relative; display: grid; justify-items: center; gap: 4px; transition: opacity .7s var(--ease-out), transform .7s var(--ease-out), filter .7s; }
 .gauge-stage svg { max-width: 300px; }
 .gauge-caption { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: var(--amber); opacity: .8; }

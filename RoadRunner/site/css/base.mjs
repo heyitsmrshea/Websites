@@ -262,10 +262,10 @@ textarea:focus-visible, summary:focus-visible {
 /* ---------- footer ---------- */
 .site-footer {
   border-top: 1px solid var(--line-soft);
-  margin-top: var(--sp-section);
+  margin-top: calc(var(--sp-section) * .7);
   background: linear-gradient(180deg, transparent, rgba(45, 212, 191, .035));
 }
-.footer-inner { max-width: var(--shell-max); margin: 0 auto; padding: 72px var(--shell-pad) 36px; }
+.footer-inner { max-width: var(--shell-max); margin: 0 auto; padding: 52px var(--shell-pad) 30px; }
 .footer-sign {
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 1.1rem + 2.4vw, 3rem);
@@ -278,9 +278,9 @@ textarea:focus-visible, summary:focus-visible {
 .footer-top {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
-  gap: 48px;
+  gap: 36px;
   align-items: start;
-  padding-bottom: 44px;
+  padding-bottom: 32px;
   border-bottom: 1px solid var(--line-soft);
 }
 .footer-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 28px; justify-self: end; }
@@ -293,13 +293,13 @@ textarea:focus-visible, summary:focus-visible {
   transition: color .15s;
 }
 .footer-links a:hover { color: var(--teal-hi); }
-.footer-brandline { display: flex; align-items: center; gap: 10px; margin-top: 26px; color: var(--muted); font-size: 13px; }
+.footer-brandline { display: flex; align-items: center; gap: 10px; margin-top: 18px; color: var(--muted); font-size: 13px; }
 .footer-brandline img { width: 30px; }
 .footer-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 26px;
-  padding-top: 26px;
+  padding-top: 20px;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: .08em;

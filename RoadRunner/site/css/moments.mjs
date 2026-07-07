@@ -40,10 +40,10 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
 
 /* ===================== Moment 2: the Loop scrollytelling ===================== */
 .loop { position: relative; }
-.loop-scroller { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(30px, 5vw, 80px); align-items: start; }
+.loop-scroller { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(24px, 4vw, 60px); align-items: start; }
 .loop-stages { display: grid; gap: 0; }
 .loop-stage {
-  padding: clamp(28px, 7vh, 68px) 0;
+  padding: clamp(22px, 5vh, 48px) 0;
   border-top: 1px solid var(--line-soft);
   opacity: .32;
   transition: opacity .5s var(--ease-out);
@@ -65,7 +65,7 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
   margin: 10px 0 12px;
 }
 .loop-stage p { color: var(--muted); font-size: 15px; line-height: 1.62; max-width: 42ch; }
-.loop-stage .evi { margin-top: 14px; font-family: var(--font-mono); font-size: 11.5px; color: var(--faint); letter-spacing: .03em; }
+.loop-stage .evi { margin-top: 10px; font-family: var(--font-mono); font-size: 11.5px; color: var(--faint); letter-spacing: .03em; }
 .loop-stage.active .evi { color: var(--stage-c, var(--teal)); }
 
 /* sticky visual — the traveling finding */
@@ -77,7 +77,7 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
   border-top-color: rgba(255, 255, 255, .12);
   border-radius: var(--radius);
   box-shadow: var(--shadow-panel);
-  padding: 24px;
+  padding: 20px;
   overflow: clip;
   transition: border-color .6s var(--ease-out);
 }
@@ -87,7 +87,7 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
   background: var(--stage-c, var(--teal));
   transition: background .6s var(--ease-out);
 }
-.loop-track { display: flex; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft); }
+.loop-track { display: flex; justify-content: space-between; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line-soft); }
 .loop-pip { display: grid; gap: 7px; justify-items: center; flex: 1; position: relative; }
 .loop-pip i {
   width: 11px; height: 11px; border-radius: 50%;
@@ -116,13 +116,13 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
   transition: all .5s var(--ease-out);
 }
 .loop-card .lc-state .stamp { transform: rotate(-3deg); }
-.loop-card .lc-meta { margin-top: 18px; display: grid; gap: 8px; }
+.loop-card .lc-meta { margin-top: 14px; display: grid; gap: 8px; }
 .loop-card .lc-meta div { display: grid; grid-template-columns: 92px 1fr; gap: 12px; font-size: 12.5px; }
 .loop-card .lc-meta b { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); padding-top: 2px; }
 .loop-card .lc-meta span { color: var(--soft); }
 
 /* ===================== Moment 3: brand swap ===================== */
-.brandswap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4vw, 60px); align-items: center; }
+.brandswap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(22px, 3.5vw, 48px); align-items: center; }
 .swap-controls { display: grid; gap: 10px; }
 .swap-controls .k { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
 .swap-btn {
