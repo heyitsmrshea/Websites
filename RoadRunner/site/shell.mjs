@@ -83,11 +83,11 @@ export function header(active) {
       <nav class="nav-links" aria-label="Primary navigation">${links}</nav>
       <div class="nav-cta">
         <a class="button secondary small" href="/contact/">Scope pilot</a>
-        <a class="button primary small" href="/demo/">Walkthrough</a>
+        <a class="button primary small" href="${brand.demoUrl}" target="_blank" rel="noopener">Live demo</a>
       </div>
       <details class="mobile-menu">
         <summary aria-label="Open navigation">Menu</summary>
-        <nav class="mobile-menu-panel" aria-label="Mobile navigation">${links}<a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation">${links}<a href="/contact/">Scope pilot</a><a href="${brand.demoUrl}" target="_blank" rel="noopener">Live demo</a></nav>
       </details>
     </div>
   </header>`;
@@ -95,6 +95,8 @@ export function header(active) {
 
 export function hero(page) {
   const visual = heroVisuals[page.key];
+  const primaryExternal = /^https?:\/\//.test(page.primary[0]);
+  const secondaryExternal = /^https?:\/\//.test(page.secondary[0]);
   return `<section class="hero gridded">
     <div class="shell hero-inner">
       <div class="hero-copy">
@@ -102,8 +104,8 @@ export function hero(page) {
         <h1>${page.h1}</h1>
         <p class="lead">${page.lead}</p>
         <div class="hero-actions">
-          <a class="button primary" href="${page.primary[0]}">${page.primary[1]}</a>
-          <a class="button secondary" href="${page.secondary[0]}">${page.secondary[1]}</a>
+          <a class="button primary" href="${page.primary[0]}"${primaryExternal ? ` target="_blank" rel="noopener"` : ""}>${page.primary[1]}</a>
+          <a class="button secondary" href="${page.secondary[0]}"${secondaryExternal ? ` target="_blank" rel="noopener"` : ""}>${page.secondary[1]}</a>
         </div>
         <div class="signal-row">
           <span class="chip">Read-only</span>

@@ -22,7 +22,7 @@
   <link rel="preload" href="/assets/fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RoadRunner Secure","url":"https://roadrunnersecure.com","logo":"https://roadrunnersecure.com/assets/roadrunner-logo.png","email":"drew@roadrunnerstrategies.com","parentOrganization":{"@type":"Organization","name":"RoadRunner Strategies, LLC"}},{"@type":"WebSite","name":"RoadRunner Secure","url":"https://roadrunnersecure.com"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"RoadRunner Secure","url":"https://roadrunnersecure.com","logo":"https://roadrunnersecure.com/assets/roadrunner-logo.png","email":"drew@roadrunnersecure.com","parentOrganization":{"@type":"Organization","name":"RoadRunner Strategies, LLC"}},{"@type":"WebSite","name":"RoadRunner Secure","url":"https://roadrunnersecure.com"}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -35,11 +35,11 @@
       <nav class="nav-links" aria-label="Primary navigation"><a href="/" aria-current="page">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
       <div class="nav-cta">
         <a class="button secondary small" href="/contact/">Scope pilot</a>
-        <a class="button primary small" href="/demo/">Walkthrough</a>
+        <a class="button primary small" href="https://demo.polarisconsulting.net" target="_blank" rel="noopener">Live demo</a>
       </div>
       <details class="mobile-menu">
         <summary aria-label="Open navigation">Menu</summary>
-        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/" aria-current="page">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/" aria-current="page">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="https://demo.polarisconsulting.net" target="_blank" rel="noopener">Live demo</a></nav>
       </details>
     </div>
   </header>
@@ -181,46 +181,80 @@
     <div class="exhibit-col"><figure class="exhibit rv-scale">
     <div class="exhibit-bar">
       <span class="exhibit-dots"><i></i><i></i><i></i></span>
-      <span class="exhibit-url">polaris.msp/executive</span>
+      <span class="exhibit-url">demo.polarisconsulting.net/executive</span>
       <span class="exhibit-tag">EXHIBIT A · SYNTHETIC TENANT</span>
     </div>
     <picture>
       <source srcset="/assets/img/exhibit-exec.webp" type="image/webp">
-      <img src="/assets/img/exhibit-exec.png" alt="Polaris executive posture dashboard: composite gauge at 65.8%, 27 needs-action, $10k savings, a what-changed list of new and resolved findings, and a coverage-and-honesty panel" width="1440" height="900" loading="lazy" decoding="async">
+      <img src="/assets/img/exhibit-exec.png" alt="Polaris executive command center with top decisions, risk work metrics, closure and regression counts, owner workload, and source health" width="1440" height="900" loading="lazy" decoding="async">
     </picture>
-    <figcaption class="exhibit-caption"><span>Executive posture — risk direction, closure counts, source gaps</span><span>RUN RR-2026-07</span></figcaption>
+    <figcaption class="exhibit-caption"><span>Executive posture — decisions, closure, blocked evidence</span><span>RUN RR-2026-07</span></figcaption>
   </figure></div>
     <div class="copy rv">
       <h3>Leadership sees the story, not a wall of charts.</h3>
-      <p>Risk direction, verified closure counts, identified savings, and exactly what changed since last run — with the honesty panel showing what cannot be assessed yet.</p>
-      
+      <p>Top decisions, verified closures, regressions, SLA breaches, savings, owner workload, and source health sit together so leadership can see what changed and what is blocked.</p>
     </div>
   </div>
       <div class="exhibit-row flip">
     <div class="exhibit-col"><figure class="exhibit rv-scale">
     <div class="exhibit-bar">
       <span class="exhibit-dots"><i></i><i></i><i></i></span>
-      <span class="exhibit-url">polaris.msp/on-prem</span>
+      <span class="exhibit-url">demo.polarisconsulting.net/workbench</span>
       <span class="exhibit-tag">EXHIBIT B · SYNTHETIC TENANT</span>
     </div>
     <picture>
-      <source srcset="/assets/img/exhibit-attack.webp" type="image/webp">
-      <img src="/assets/img/exhibit-attack.png" alt="Polaris on-prem view: an Active Directory attack-path graph with the shortest route from svc-build to Domain Admins ignited in red, a four-hop breakdown panel, and a recommended-cut callout" width="1440" height="900" loading="lazy" decoding="async">
+      <source srcset="/assets/img/exhibit-queue.webp" type="image/webp">
+      <img src="/assets/img/exhibit-queue.png" alt="Polaris Action Workbench with filters, open findings, owners, affected entities, timelines, confidence, and export controls" width="1440" height="900" loading="lazy" decoding="async">
     </picture>
-    <figcaption class="exhibit-caption"><span>On-prem attack paths — the edge that should die this week</span><span>RUN RR-2026-07</span></figcaption>
+    <figcaption class="exhibit-caption"><span>Action Workbench — filter, drill, export, validate</span><span>RUN RR-2026-07</span></figcaption>
   </figure></div>
     <div class="copy rv">
-      <h3>Technical owners see the path and the cut.</h3>
-      <p>AD topology becomes a shortest-path-to-Tier-0 graph, the risky edge, low-disruption collector options, and the validation target for the next run.</p>
-      
+      <h3>Operators get a queue, not a PDF scavenger hunt.</h3>
+      <p>Filter by owner, source, SLA, confidence, conflict, state, environment, and domain. Every row carries affected entities, source, timeline, and the path toward validation.</p>
     </div>
   </div>
       <div class="exhibit-row ">
     <div class="exhibit-col"><figure class="exhibit rv-scale">
     <div class="exhibit-bar">
       <span class="exhibit-dots"><i></i><i></i><i></i></span>
-      <span class="exhibit-url">polaris.msp/vciso</span>
+      <span class="exhibit-url">demo.polarisconsulting.net/onprem</span>
       <span class="exhibit-tag">EXHIBIT C · SYNTHETIC TENANT</span>
+    </div>
+    <picture>
+      <source srcset="/assets/img/exhibit-attack.webp" type="image/webp">
+      <img src="/assets/img/exhibit-attack.png" alt="Polaris on-prem assessment showing collector run registry, module coverage, failed and skipped modules, findings, entities, and graph counts" width="1440" height="900" loading="lazy" decoding="async">
+    </picture>
+    <figcaption class="exhibit-caption"><span>On-prem collector — module coverage before path closure</span><span>RUN RR-2026-07</span></figcaption>
+  </figure></div>
+    <div class="copy rv">
+      <h3>Technical owners see collector truth before graph drama.</h3>
+      <p>AD coverage is explicit: run ID, host, domain, collector version, modules requested, collected, failed, skipped, findings, entities, and graph counts.</p>
+    </div>
+  </div>
+      <div class="exhibit-row flip">
+    <div class="exhibit-col"><figure class="exhibit rv-scale">
+    <div class="exhibit-bar">
+      <span class="exhibit-dots"><i></i><i></i><i></i></span>
+      <span class="exhibit-url">demo.polarisconsulting.net/sources</span>
+      <span class="exhibit-tag">EXHIBIT D · SYNTHETIC TENANT</span>
+    </div>
+    <picture>
+      <source srcset="/assets/img/exhibit-sources.webp" type="image/webp">
+      <img src="/assets/img/exhibit-sources.png" alt="Polaris Source and Coverage Center showing collecting sources, available connectors, blocked coverage, closure capability, prerequisites, findings, and conflicts" width="1440" height="900" loading="lazy" decoding="async">
+    </picture>
+    <figcaption class="exhibit-caption"><span>Source coverage — collecting, available, blocked, unlockable</span><span>RUN RR-2026-07</span></figcaption>
+  </figure></div>
+    <div class="copy rv">
+      <h3>Blind spots become visible work.</h3>
+      <p>The Source & Coverage Center shows what is healthy, what is available to connect, what is blocked or limited, and which findings/conflicts each source unlocks.</p>
+    </div>
+  </div>
+      <div class="exhibit-row ">
+    <div class="exhibit-col"><figure class="exhibit rv-scale">
+    <div class="exhibit-bar">
+      <span class="exhibit-dots"><i></i><i></i><i></i></span>
+      <span class="exhibit-url">demo.polarisconsulting.net/vciso</span>
+      <span class="exhibit-tag">EXHIBIT E · SYNTHETIC TENANT</span>
     </div>
     <picture>
       <source srcset="/assets/img/exhibit-vciso.webp" type="image/webp">
@@ -231,7 +265,6 @@
     <div class="copy rv">
       <h3>Answers cite evidence instead of inventing it.</h3>
       <p>The vCISO names entities, cites the finding and source for every claim, and says plainly when data is missing instead of writing fiction around it.</p>
-      
     </div>
   </div>
     </div>
@@ -334,7 +367,7 @@
         <div class="eyebrow">Contact</div>
         <h2>Walk through the product or scope a pilot.</h2>
         <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
-        <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
+        <a class="button secondary" href="mailto:drew@roadrunnersecure.com">drew@roadrunnersecure.com</a>
       </div>
       <form class="contact-form rv" style="--d:.12s" data-contact-form>
         <div class="field-grid">
@@ -383,7 +416,7 @@
         <span>No automatic remediation by default</span>
         <span>Synthetic walkthrough uses fictional evidence</span>
         <span>&copy; RoadRunner Strategies, LLC</span>
-        <span>BUILD 2026-07-06</span>
+        <span>BUILD 2026-07-07</span>
       </div>
     </div>
   </footer>

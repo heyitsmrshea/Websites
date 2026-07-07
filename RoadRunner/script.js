@@ -304,7 +304,7 @@
         "Notes:",
         data.get("notes") || ""
       ].join("\n");
-      window.location.href = "mailto:drew@roadrunnerstrategies.com?subject=" +
+      window.location.href = "mailto:drew@roadrunnersecure.com?subject=" +
         encodeURIComponent(subjectByInterest[interest] || subjectByInterest.pilot) +
         "&body=" + encodeURIComponent(body);
     });

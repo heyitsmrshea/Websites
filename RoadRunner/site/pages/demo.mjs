@@ -1,24 +1,36 @@
 // Walkthrough — the guided casefile: scenario, three chapters, the combined finding.
 import { sectionHead, exhibit, flow, findingArtifact, findings, contactSection, stamp } from "../helpers.mjs";
+import { brand } from "../meta.mjs";
 
 export function demoBody() {
   return `
 ${scenario()}
-${chapter(1, "walkthrough-executive", "Executive posture", "Leadership gets risk direction, closure counts, source gaps, and the story of what changed.", {
-    img: "exhibit-exec", url: "polaris.msp/executive", letter: "A",
-    alt: "Polaris executive posture view: composite gauge at 65.8%, needs-action count, monthly savings, a what-changed list, and a coverage-and-honesty panel",
+${liveDemo()}
+${chapter(1, "walkthrough-executive", "Executive command center", "Leadership gets top decisions, open work, blocked visibility, owner load, source health, and the story of what changed.", {
+    img: "exhibit-exec", url: "demo.polarisconsulting.net/executive", letter: "A",
+    alt: "Polaris executive command center showing top critical decisions, risk and work metrics, closure and regression counts, what changed since last run, and source health",
     caption: "Executive posture — the run in one screen", width: 1440, height: 900
-  }, "The composite number is context. The panel that matters is <em>what changed</em> — findings new and resolved, diffed against the previous run, plus the coverage panel that says out loud what cannot be assessed yet.")}
-${chapter(2, "walkthrough-onprem", "On-prem attack path", "The product does not stop at graph visualization. It points to the path edge that should be cut.", {
-    img: "exhibit-attack", url: "polaris.msp/on-prem", letter: "B",
-    alt: "Polaris on-prem view: an AD attack-path graph with the svc-build-to-Tier-0 route ignited, a four-hop breakdown, a recommended cut, and a read-only collector command",
-    caption: "On-prem — find the path, cut the edge", width: 1440, height: 900
-  }, "Click any node and the shortest privilege path to Tier 0 ignites hop by hop. Beside it, the four-hop breakdown and the cheapest defensible edge to cut — with a read-only collector command below.", true)}
-${chapter(3, "walkthrough-microsoft", "Evidence-grounded vCISO", "Answers are grounded in findings and source evidence. Missing data is stated instead of invented.", {
-    img: "exhibit-vciso", url: "polaris.msp/vciso", letter: "C",
+  }, "The composite number is context. The decisions are the product: critical/high work, SLA breaches, regressions, data gaps, low confidence, conflicts, blocked sources, monthly savings, and source health are visible in the same executive surface.")}
+${chapter(2, "walkthrough-workbench", "Action Workbench", "Every open finding can be filtered, drilled, exported, and worked toward validation.", {
+    img: "exhibit-queue", url: "demo.polarisconsulting.net/workbench", letter: "B",
+    alt: "Polaris Action Workbench showing finding filters, 72-hour and two-week queues, severity and source filters, and a table of open actions with affected entities and timelines",
+    caption: "Action Workbench — filter, drill, close", width: 1440, height: 900
+  }, "The live demo now treats the queue as a real workbench: all open, my queue, 72-hour work, two-week work, blocked-by-source, waiting-on-customer, verified, regressed, SLA-breached, conflict, owner, confidence, source, and export views.")}
+${chapter(3, "walkthrough-onprem", "On-prem collector and attack paths", "The on-prem view shows module coverage before it asks anyone to trust the path output.", {
+    img: "exhibit-attack", url: "demo.polarisconsulting.net/onprem", letter: "C",
+    alt: "Polaris on-prem assessment showing collector run registry, requested and collected modules, failed modules, skipped modules, findings, entities, and graph counts",
+    caption: "On-prem — collector coverage before path closure", width: 1440, height: 900
+  }, "The current on-prem demo exposes the collector run registry, requested modules, collected modules, failures, skips, findings, entities, and graph counts. A failed ADReplication module becomes a visible limitation instead of a hidden blind spot.", true)}
+${chapter(4, "walkthrough-sources", "Source and Coverage Center", "Coverage is treated as evidence: collecting, available, blocked, limited, and what each source unlocks.", {
+    img: "exhibit-sources", url: "demo.polarisconsulting.net/sources", letter: "D",
+    alt: "Polaris Source and Coverage Center showing collecting sources, available connectors, blocked or limited coverage, closure capability, prerequisites, findings, and conflicts",
+    caption: "Source coverage — what is known, missing, blocked, or unlockable", width: 1440, height: 900
+  }, "The live demo now makes source readiness first-class: 13 collecting sources, 3 available connectors, blocked or limited Purview coverage, closure capability, prerequisites, unlocked finding families, and source conflicts.")}
+${chapter(5, "walkthrough-microsoft", "Evidence-grounded AI vCISO", "Answers are grounded in findings and source evidence. Missing data is stated instead of invented.", {
+    img: "exhibit-vciso", url: "demo.polarisconsulting.net/vciso", letter: "E",
     alt: "Polaris AI vCISO view answering with entity names and cited finding IDs and sources, and stating a data gap rather than inventing",
     caption: "AI vCISO — cited, scoped, honest", width: 1440, height: 900
-  }, "Ask what to fix first and the answer names entities, cites the finding and the source for every claim, and refuses to invent around missing evidence.")}
+  }, "Ask what to fix first and the answer names entities, cites the action queue, weekly finding status, closure history, source conflicts, and source readiness. When data is missing, it tells you exactly which connector unlocks the answer.")}
 ${combinedFinding()}
 ${reportFold()}
 ${contactSection()}`;
@@ -32,6 +44,7 @@ function scenario() {
         ["Baseline", "Connect read-only sources and establish the first evidence snapshot."],
         ["Findings", "Create named findings tied to accounts, devices, policies, and paths."],
         ["Queue", "Rank what should happen this week and assign owners."],
+        ["Coverage", "Show what is collecting, blocked, stale, or available to unlock."],
         ["Fix", "Customer or MSP makes approved changes outside RoadRunner."],
         ["Validate", "Next run checks whether evidence changed."],
         ["Report", "Leadership sees verified closure and remaining exposure."],
@@ -39,6 +52,36 @@ function scenario() {
       ])}
     </div>
   </section>`;
+}
+
+function liveDemo() {
+  return `<section class="section tight tinted tint-teal" style="--tint-x:82%">
+    <div class="shell">
+      <div class="artifact rv-scale">
+        <div class="artifact-top">
+          <div>
+            <span class="label">Live Polaris demo · Synthetic fixture</span>
+            <h3>Open the current white-label client portal.</h3>
+          </div>
+          <span class="tag live">LIVE DEMO</span>
+        </div>
+        <div class="artifact-grid">
+          ${demoField("Routes", "Executive, Action Workbench, On-Prem, Source & Coverage, AI vCISO")}
+          ${demoField("Fixture", "Northwind Trading Co. and Cascade Logistics demo tenants; all figures are fictional.")}
+          ${demoField("What changed", "The demo now foregrounds blocked sources, confidence, conflicts, module coverage, source unlocks, and queue filtering.")}
+          ${demoField("Use it for", "Showing how RoadRunner can power an MSP-branded client experience without pretending synthetic data is real.")}
+          <div class="artifact-field rule">
+            <b>Open demo</b>
+            <span><a class="textlink" href="${brand.demoUrl}" target="_blank" rel="noopener">Launch demo.polarisconsulting.net</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function demoField(label, text) {
+  return `<div class="artifact-field"><b>${label}</b><span>${text}</span></div>`;
 }
 
 function chapter(num, id, title, subtitle, shot, note, flip = false) {

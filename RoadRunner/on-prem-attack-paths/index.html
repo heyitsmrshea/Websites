@@ -35,11 +35,11 @@
       <nav class="nav-links" aria-label="Primary navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/" aria-current="page">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
       <div class="nav-cta">
         <a class="button secondary small" href="/contact/">Scope pilot</a>
-        <a class="button primary small" href="/demo/">Walkthrough</a>
+        <a class="button primary small" href="https://demo.polarisconsulting.net" target="_blank" rel="noopener">Live demo</a>
       </div>
       <details class="mobile-menu">
         <summary aria-label="Open navigation">Menu</summary>
-        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/" aria-current="page">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/platform/">Platform</a><a href="/on-prem-attack-paths/" aria-current="page">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="https://demo.polarisconsulting.net" target="_blank" rel="noopener">Live demo</a></nav>
       </details>
     </div>
   </header>
@@ -232,6 +232,23 @@
   </div>
     </div>
   </section>
+<section class="section tinted tint-amber">
+    <div class="shell">
+      <div class="section-head rv">
+    <div>
+      <div class="eyebrow amber">Collector run registry</div>
+      <h2>Coverage is part of the finding.</h2>
+    </div>
+    <p>The current Polaris demo shows the on-prem collector before the path story: run ID, domain, collector version, schema, mode, duration, elevation state, requested modules, collected modules, failures, skips, findings, entities, and graph counts.</p>
+  </div>
+      <div class="tablewrap rv ">
+    <table>
+      <thead><tr><th>Module</th><th>Status shown</th><th>Why it matters</th></tr></thead>
+      <tbody><tr><td data-label="Module">ADAttackPath</td><td data-label="Status shown">Collected · graph entities and path count</td><td data-label="Why it matters">Path findings can be generated and validated against the current run.</td></tr><tr><td data-label="Module">ADReplication</td><td data-label="Status shown">Failed · finding cannot verify</td><td data-label="Why it matters">A failed module becomes a visible limitation instead of hidden uncertainty.</td></tr><tr><td data-label="Module">ADCS</td><td data-label="Status shown">Collected · finding count</td><td data-label="Why it matters">Certificate template exposure can be raised as named work.</td></tr><tr><td data-label="Module">Exchange / IIS / Hybrid</td><td data-label="Status shown">Skipped when prerequisites are absent</td><td data-label="Why it matters">Skipped scope is explicit, so buyers know what is not being assessed yet.</td></tr></tbody>
+    </table>
+  </div>
+    </div>
+  </section>
 <section class="section">
     <div class="shell">
       <div class="section-head rv">
@@ -239,7 +256,7 @@
       <div class="eyebrow ">Collector model</div>
       <h2>Read-only, scoped, and deployable by normal IT operations.</h2>
     </div>
-    <p>The collector should be explainable to an AD owner before it ever runs.</p>
+    <p>The collector should be explainable to an AD owner before it ever runs, and its failed or skipped modules should be visible after every run.</p>
   </div>
       <div class="rules rv">
         <div class="rule-cell">
@@ -321,7 +338,7 @@
         <div class="eyebrow">Contact</div>
         <h2>Walk through the product or scope a pilot.</h2>
         <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
-        <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
+        <a class="button secondary" href="mailto:drew@roadrunnersecure.com">drew@roadrunnersecure.com</a>
       </div>
       <form class="contact-form rv" style="--d:.12s" data-contact-form>
         <div class="field-grid">
@@ -370,7 +387,7 @@
         <span>No automatic remediation by default</span>
         <span>Synthetic walkthrough uses fictional evidence</span>
         <span>&copy; RoadRunner Strategies, LLC</span>
-        <span>BUILD 2026-07-06</span>
+        <span>BUILD 2026-07-07</span>
       </div>
     </div>
   </footer>

@@ -191,10 +191,11 @@ export function walkthroughPanel() {
       <span class="tag gap">SYNTHETIC</span>
     </div>
     <div class="feed">
-      ${feedRow("LIVE", "Chapter 01 — Executive posture: direction, cost, what changed", "3 min")}
-      ${feedRow("HIGH", "Chapter 02 — On-prem attack path: find, cut, prove", "4 min")}
-      ${feedRow("LIVE", "Chapter 03 — Evidence-grounded vCISO: ask, cited, honest", "3 min")}
-      ${feedRow("DONE", "Finale — the weekly report your client actually receives", "stamped")}
+      ${feedRow("LIVE", "01 — Executive command center: decisions, blocked work, closure", "live")}
+      ${feedRow("HIGH", "02 — Action Workbench: filter, drill, export, validate", "queue")}
+      ${feedRow("LIVE", "03 — On-Prem: collector coverage, modules, paths", "AD")}
+      ${feedRow("GAP", "04 — Source Coverage: collecting, available, blocked", "sources")}
+      ${feedRow("DONE", "05 — AI vCISO: grounded answers, no invention", "cited")}
     </div>
   </aside>`;
 }

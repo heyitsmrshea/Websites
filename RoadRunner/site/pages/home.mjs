@@ -88,18 +88,29 @@ function productProof() {
     <div class="shell">
       ${sectionHead("Product proof", "Show the real surfaces, not decoration.", "The Polaris screens are MSP white-label examples. RoadRunner owns the assessment logic underneath.")}
       ${exhibitRow(
-        exhibit({ img: "exhibit-exec", url: "polaris.msp/executive", letter: "A", alt: "Polaris executive posture dashboard: composite gauge at 65.8%, 27 needs-action, $10k savings, a what-changed list of new and resolved findings, and a coverage-and-honesty panel", caption: "Executive posture — risk direction, closure counts, source gaps", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-exec", url: "demo.polarisconsulting.net/executive", letter: "A", alt: "Polaris executive command center with top decisions, risk work metrics, closure and regression counts, owner workload, and source health", caption: "Executive posture — decisions, closure, blocked evidence", width: 1440, height: 900 }),
         "Leadership sees the story, not a wall of charts.",
-        "Risk direction, verified closure counts, identified savings, and exactly what changed since last run — with the honesty panel showing what cannot be assessed yet."
+        "Top decisions, verified closures, regressions, SLA breaches, savings, owner workload, and source health sit together so leadership can see what changed and what is blocked."
       )}
       ${exhibitRow(
-        exhibit({ img: "exhibit-attack", url: "polaris.msp/on-prem", letter: "B", alt: "Polaris on-prem view: an Active Directory attack-path graph with the shortest route from svc-build to Domain Admins ignited in red, a four-hop breakdown panel, and a recommended-cut callout", caption: "On-prem attack paths — the edge that should die this week", width: 1440, height: 900 }),
-        "Technical owners see the path and the cut.",
-        "AD topology becomes a shortest-path-to-Tier-0 graph, the risky edge, low-disruption collector options, and the validation target for the next run.",
+        exhibit({ img: "exhibit-queue", url: "demo.polarisconsulting.net/workbench", letter: "B", alt: "Polaris Action Workbench with filters, open findings, owners, affected entities, timelines, confidence, and export controls", caption: "Action Workbench — filter, drill, export, validate", width: 1440, height: 900 }),
+        "Operators get a queue, not a PDF scavenger hunt.",
+        "Filter by owner, source, SLA, confidence, conflict, state, environment, and domain. Every row carries affected entities, source, timeline, and the path toward validation.",
         true
       )}
       ${exhibitRow(
-        exhibit({ img: "exhibit-vciso", url: "polaris.msp/vciso", letter: "C", alt: "Polaris AI vCISO answering what to fix first, naming entities and citing finding IDs and evidence sources for every claim, and stating a data gap instead of inventing", caption: "Evidence-grounded vCISO — cited answers, no invention", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-attack", url: "demo.polarisconsulting.net/onprem", letter: "C", alt: "Polaris on-prem assessment showing collector run registry, module coverage, failed and skipped modules, findings, entities, and graph counts", caption: "On-prem collector — module coverage before path closure", width: 1440, height: 900 }),
+        "Technical owners see collector truth before graph drama.",
+        "AD coverage is explicit: run ID, host, domain, collector version, modules requested, collected, failed, skipped, findings, entities, and graph counts."
+      )}
+      ${exhibitRow(
+        exhibit({ img: "exhibit-sources", url: "demo.polarisconsulting.net/sources", letter: "D", alt: "Polaris Source and Coverage Center showing collecting sources, available connectors, blocked coverage, closure capability, prerequisites, findings, and conflicts", caption: "Source coverage — collecting, available, blocked, unlockable", width: 1440, height: 900 }),
+        "Blind spots become visible work.",
+        "The Source & Coverage Center shows what is healthy, what is available to connect, what is blocked or limited, and which findings/conflicts each source unlocks.",
+        true
+      )}
+      ${exhibitRow(
+        exhibit({ img: "exhibit-vciso", url: "demo.polarisconsulting.net/vciso", letter: "E", alt: "Polaris AI vCISO answering what to fix first, naming entities and citing finding IDs and evidence sources for every claim, and stating a data gap instead of inventing", caption: "Evidence-grounded vCISO — cited answers, no invention", width: 1440, height: 900 }),
         "Answers cite evidence instead of inventing it.",
         "The vCISO names entities, cites the finding and source for every claim, and says plainly when data is missing instead of writing fiction around it."
       )}

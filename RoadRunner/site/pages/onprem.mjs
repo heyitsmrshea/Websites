@@ -6,6 +6,7 @@ export function onpremBody() {
   return `
 ${graphSection()}
 ${sampleFinding()}
+${moduleCoverage()}
 ${collectorRules()}
 ${collectorTerminal()}
 ${pathClosure()}
@@ -44,10 +45,25 @@ function sampleFinding() {
   </section>`;
 }
 
+function moduleCoverage() {
+  return `<section class="section tinted tint-amber">
+    <div class="shell">
+      ${sectionHead("Collector run registry", "Coverage is part of the finding.", "The current Polaris demo shows the on-prem collector before the path story: run ID, domain, collector version, schema, mode, duration, elevation state, requested modules, collected modules, failures, skips, findings, entities, and graph counts.", "amber")}
+      ${table([
+        ["Module", "Status shown", "Why it matters"],
+        ["ADAttackPath", "Collected · graph entities and path count", "Path findings can be generated and validated against the current run."],
+        ["ADReplication", "Failed · finding cannot verify", "A failed module becomes a visible limitation instead of hidden uncertainty."],
+        ["ADCS", "Collected · finding count", "Certificate template exposure can be raised as named work."],
+        ["Exchange / IIS / Hybrid", "Skipped when prerequisites are absent", "Skipped scope is explicit, so buyers know what is not being assessed yet."]
+      ])}
+    </div>
+  </section>`;
+}
+
 function collectorRules() {
   return `<section class="section">
     <div class="shell">
-      ${sectionHead("Collector model", "Read-only, scoped, and deployable by normal IT operations.", "The collector should be explainable to an AD owner before it ever runs.")}
+      ${sectionHead("Collector model", "Read-only, scoped, and deployable by normal IT operations.", "The collector should be explainable to an AD owner before it ever runs, and its failed or skipped modules should be visible after every run.")}
       <div class="rules rv">
         <div class="rule-cell">
           <span class="k">Permissions</span>

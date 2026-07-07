@@ -35,11 +35,11 @@
       <nav class="nav-links" aria-label="Primary navigation"><a href="/">Home</a><a href="/platform/" aria-current="page">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a></nav>
       <div class="nav-cta">
         <a class="button secondary small" href="/contact/">Scope pilot</a>
-        <a class="button primary small" href="/demo/">Walkthrough</a>
+        <a class="button primary small" href="https://demo.polarisconsulting.net" target="_blank" rel="noopener">Live demo</a>
       </div>
       <details class="mobile-menu">
         <summary aria-label="Open navigation">Menu</summary>
-        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/platform/" aria-current="page">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="/demo/">Walkthrough</a></nav>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/platform/" aria-current="page">Platform</a><a href="/on-prem-attack-paths/">On-Prem</a><a href="/microsoft-security/">Microsoft</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a href="/demo/">Walkthrough</a><a href="/contact/">Contact</a><a href="/contact/">Scope pilot</a><a href="https://demo.polarisconsulting.net" target="_blank" rel="noopener">Live demo</a></nav>
       </details>
     </div>
   </header>
@@ -124,12 +124,12 @@
       <div class="eyebrow ">Source coverage</div>
       <h2>Signals are useful only when their limits are visible.</h2>
     </div>
-    <p>Missing visibility should become a data-gap finding, not a quiet blank space in a dashboard.</p>
+    <p>The live Polaris demo separates collecting sources, available connectors, blocked or limited sources, confidence, conflicts, and what each source unlocks. Missing visibility becomes work, not a quiet blank space.</p>
   </div>
       <div class="tablewrap rv ">
     <table>
-      <thead><tr><th>Source</th><th>Typical evidence</th><th>Assessment value</th></tr></thead>
-      <tbody><tr><td data-label="Source">Microsoft</td><td data-label="Typical evidence">Entra roles, Conditional Access, sign-ins, Defender, Intune, M365, Azure posture</td><td data-label="Assessment value">Creates identity, endpoint, cloud, and collaboration findings with owner-ready remediation.</td></tr><tr><td data-label="Source">On-prem AD</td><td data-label="Typical evidence">Groups, ACLs, delegation, sessions where available, local admin exposure, path topology</td><td data-label="Assessment value">Maps attack paths and recommends low-disruption edge cuts.</td></tr><tr><td data-label="Source">Endpoint/security tools</td><td data-label="Typical evidence">Device health, onboarding state, incident backlog, exposure signals</td><td data-label="Assessment value">Turns coverage and response gaps into weekly work.</td></tr><tr><td data-label="Source">Manual evidence</td><td data-label="Typical evidence">Exceptions, business context, compensating controls, MSP notes</td><td data-label="Assessment value">Adds human context without letting manual status override validation evidence.</td></tr></tbody>
+      <thead><tr><th>Coverage state</th><th>What it says</th><th>Assessment value</th></tr></thead>
+      <tbody><tr><td data-label="Coverage state">Collecting</td><td data-label="What it says">The source is fresh enough to create findings, verify closures, and show confidence level.</td><td data-label="Assessment value">Turns evidence into owner-ready work and gives closure a source-backed proof path.</td></tr><tr><td data-label="Coverage state">Available to connect</td><td data-label="What it says">The product knows the connector would improve coverage, but it is not currently connected.</td><td data-label="Assessment value">Creates an honest opportunity list: Action1 patch, CrowdStrike EDR, XDR hunting, or similar sources.</td></tr><tr><td data-label="Coverage state">Blocked or limited</td><td data-label="What it says">The source is blocked by license, permission, export-only access, stale data, or unsupported API behavior.</td><td data-label="Assessment value">Prevents silent blind spots and explains exactly what would unlock better assessment.</td></tr><tr><td data-label="Coverage state">Conflict</td><td data-label="What it says">Two sources disagree or a source cannot fully support closure.</td><td data-label="Assessment value">Escalates ambiguity into a human decision instead of hiding it in a score.</td></tr></tbody>
     </table>
   </div>
     </div>
@@ -149,16 +149,16 @@
     <p>Collect evidence, detect gaps, and baseline the tenant.</p>
   </div><div class="railcard rv" style="--d:0.07s" >
     <span class="num">02</span>
-    <h3>Prioritize</h3>
-    <p>Rank findings across Microsoft, endpoint, cloud, and on-prem work.</p>
+    <h3>Qualify</h3>
+    <p>Classify findings by state, confidence, conflict, source health, SLA, and owner.</p>
   </div><div class="railcard rv" style="--d:0.14s" >
     <span class="num">03</span>
-    <h3>Assign</h3>
-    <p>Give owners the entities, fix steps, and validation criteria.</p>
+    <h3>Prioritize</h3>
+    <p>Rank 72-hour, two-week, 30-day, backlog, blocked, waiting, regressed, and verified work.</p>
   </div><div class="railcard rv" style="--d:0.21s" >
     <span class="num">04</span>
     <h3>Report</h3>
-    <p>Show verified closure, regressions, and blocked visibility to leadership.</p>
+    <p>Show verified closure, regressions, blocked visibility, and source unlocks to leadership.</p>
   </div></div>
     </div>
   </section>
@@ -192,7 +192,7 @@
         <div class="eyebrow">Contact</div>
         <h2>Walk through the product or scope a pilot.</h2>
         <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
-        <a class="button secondary" href="mailto:drew@roadrunnerstrategies.com">drew@roadrunnerstrategies.com</a>
+        <a class="button secondary" href="mailto:drew@roadrunnersecure.com">drew@roadrunnersecure.com</a>
       </div>
       <form class="contact-form rv" style="--d:.12s" data-contact-form>
         <div class="field-grid">
@@ -241,7 +241,7 @@
         <span>No automatic remediation by default</span>
         <span>Synthetic walkthrough uses fictional evidence</span>
         <span>&copy; RoadRunner Strategies, LLC</span>
-        <span>BUILD 2026-07-06</span>
+        <span>BUILD 2026-07-07</span>
       </div>
     </div>
   </footer>

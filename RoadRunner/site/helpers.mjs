@@ -71,12 +71,12 @@ export function exhibit({ img, url, letter, alt, caption, meta = "SYNTHETIC TENA
 }
 
 export function exhibitRow(exhibitHtml, title, text, flip = false, extra = "") {
+  const extraHtml = extra ? `\n      ${extra}` : "";
   return `<div class="exhibit-row ${flip ? "flip" : ""}">
     <div class="exhibit-col">${exhibitHtml}</div>
     <div class="copy rv">
       <h3>${title}</h3>
-      <p>${text}</p>
-      ${extra}
+      <p>${text}</p>${extraHtml}
     </div>
   </div>`;
 }

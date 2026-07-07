@@ -3,8 +3,9 @@
 export const brand = {
   name: "RoadRunner Secure",
   owner: "RoadRunner Strategies",
-  email: "drew@roadrunnerstrategies.com",
-  root: "https://roadrunnersecure.com"
+  email: "drew@roadrunnersecure.com",
+  root: "https://roadrunnersecure.com",
+  demoUrl: "https://demo.polarisconsulting.net"
 };
 
 export const navItems = [
@@ -110,12 +111,12 @@ export const pageMeta = [
     active: "Walkthrough",
     og: "demo",
     title: "Product Walkthrough | RoadRunner Secure",
-    description: "A guided synthetic RoadRunner Secure walkthrough showing baseline assessment, findings, remediation queue, validation, and white-label reporting.",
+    description: "A guided synthetic RoadRunner Secure walkthrough showing executive posture, action workbench, source coverage, on-prem collector evidence, AI vCISO, and white-label reporting.",
     eyebrow: "Guided product walkthrough",
     h1: `A weekly run, <span class="ital">start to finish.</span>`,
-    lead: "A synthetic run using fictional evidence. Polaris branding demonstrates an MSP white-label client portal powered by RoadRunner Secure.",
+    lead: "A synthetic run using fictional evidence. Polaris branding demonstrates the live MSP white-label demo powered by RoadRunner Secure.",
     primary: ["#walkthrough", "Start walkthrough"],
-    secondary: ["/contact/", "Walk through it live"]
+    secondary: ["https://demo.polarisconsulting.net", "Open live demo"]
   },
   {
     key: "contact",
@@ -128,7 +129,7 @@ export const pageMeta = [
     eyebrow: "Contact RoadRunner",
     h1: `Scope the <span class="ital">first assessment run.</span>`,
     lead: "Use this page to request a pilot, review the MSP white-label model, or walk through the synthetic product flow. The static form opens your email client and stores nothing on the site.",
-    primary: [`mailto:drew@roadrunnerstrategies.com?subject=RoadRunner%20Secure%20pilot%20scope`, "Email directly"],
+    primary: [`mailto:drew@roadrunnersecure.com?subject=RoadRunner%20Secure%20pilot%20scope`, "Email directly"],
     secondary: ["/demo/", "Review walkthrough"]
   }
 ];

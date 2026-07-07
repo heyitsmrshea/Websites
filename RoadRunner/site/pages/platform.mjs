@@ -30,13 +30,13 @@ function architecture() {
 function sourceCoverage() {
   return `<section class="section tinted tint-teal">
     <div class="shell">
-      ${sectionHead("Source coverage", "Signals are useful only when their limits are visible.", "Missing visibility should become a data-gap finding, not a quiet blank space in a dashboard.")}
+      ${sectionHead("Source coverage", "Signals are useful only when their limits are visible.", "The live Polaris demo separates collecting sources, available connectors, blocked or limited sources, confidence, conflicts, and what each source unlocks. Missing visibility becomes work, not a quiet blank space.")}
       ${table([
-        ["Source", "Typical evidence", "Assessment value"],
-        ["Microsoft", "Entra roles, Conditional Access, sign-ins, Defender, Intune, M365, Azure posture", "Creates identity, endpoint, cloud, and collaboration findings with owner-ready remediation."],
-        ["On-prem AD", "Groups, ACLs, delegation, sessions where available, local admin exposure, path topology", "Maps attack paths and recommends low-disruption edge cuts."],
-        ["Endpoint/security tools", "Device health, onboarding state, incident backlog, exposure signals", "Turns coverage and response gaps into weekly work."],
-        ["Manual evidence", "Exceptions, business context, compensating controls, MSP notes", "Adds human context without letting manual status override validation evidence."]
+        ["Coverage state", "What it says", "Assessment value"],
+        ["Collecting", "The source is fresh enough to create findings, verify closures, and show confidence level.", "Turns evidence into owner-ready work and gives closure a source-backed proof path."],
+        ["Available to connect", "The product knows the connector would improve coverage, but it is not currently connected.", "Creates an honest opportunity list: Action1 patch, CrowdStrike EDR, XDR hunting, or similar sources."],
+        ["Blocked or limited", "The source is blocked by license, permission, export-only access, stale data, or unsupported API behavior.", "Prevents silent blind spots and explains exactly what would unlock better assessment."],
+        ["Conflict", "Two sources disagree or a source cannot fully support closure.", "Escalates ambiguity into a human decision instead of hiding it in a score."]
       ])}
     </div>
   </section>`;
@@ -48,9 +48,9 @@ function lifecycle() {
       ${sectionHead("Lifecycle", "Discovery to closure without losing the thread.", "The workflow is built for recurring execution, not one more static report.")}
       ${rail(4, [
         railCard("01", "Discover", "Collect evidence, detect gaps, and baseline the tenant."),
-        railCard("02", "Prioritize", "Rank findings across Microsoft, endpoint, cloud, and on-prem work."),
-        railCard("03", "Assign", "Give owners the entities, fix steps, and validation criteria."),
-        railCard("04", "Report", "Show verified closure, regressions, and blocked visibility to leadership.")
+        railCard("02", "Qualify", "Classify findings by state, confidence, conflict, source health, SLA, and owner."),
+        railCard("03", "Prioritize", "Rank 72-hour, two-week, 30-day, backlog, blocked, waiting, regressed, and verified work."),
+        railCard("04", "Report", "Show verified closure, regressions, blocked visibility, and source unlocks to leadership.")
       ])}
     </div>
   </section>`;
