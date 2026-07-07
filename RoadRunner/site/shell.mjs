@@ -14,7 +14,7 @@ export function shell(page) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${page.title}</title>
   <meta name="description" content="${page.description}">
-  <meta name="theme-color" content="#04060a">
+  <meta name="theme-color" content="#070b10">
   <link rel="canonical" href="${canonical}">
   <meta property="og:site_name" content="${brand.name}">
   <meta property="og:title" content="${page.title}">
@@ -154,7 +154,7 @@ export function notFoundPage() {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>404 | RoadRunner Secure</title>
-  <meta name="theme-color" content="#04060a">
+  <meta name="theme-color" content="#070b10">
   <link rel="icon" href="/assets/roadrunner-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
 </head>

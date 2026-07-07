@@ -26,7 +26,9 @@ export const base = String.raw`
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  background: var(--void-0);
+  background:
+    radial-gradient(1100px 620px at 50% -18%, rgba(45, 212, 191, .055), transparent 64%),
+    linear-gradient(180deg, var(--void-1) 0%, var(--void-0) 36%, #06090e 100%);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--text-body);
@@ -138,7 +140,11 @@ textarea:focus-visible, summary:focus-visible {
   margin: 0 auto;
   padding-inline: var(--shell-pad);
 }
-.section { padding-block: var(--sp-section); position: relative; }
+.section {
+  padding-block: var(--sp-section);
+  position: relative;
+  background: var(--section-bg, transparent);
+}
 .section.tight { padding-block: calc(var(--sp-section) * .54); }
 
 /* ambient tints — the emotional temperature of a section */
@@ -152,10 +158,22 @@ textarea:focus-visible, summary:focus-visible {
   opacity: .5;
   transition: background 1.2s var(--ease-out);
 }
-.tint-rose { --tint: rgba(244, 63, 94, .075); }
-.tint-amber { --tint: rgba(251, 191, 36, .06); }
-.tint-green { --tint: rgba(52, 211, 153, .07); }
-.tint-teal { --tint: rgba(45, 212, 191, .06); }
+.tint-rose {
+  --tint: rgba(244, 63, 94, .075);
+  --section-bg: linear-gradient(180deg, rgba(16, 9, 15, .62), rgba(8, 13, 18, .2));
+}
+.tint-amber {
+  --tint: rgba(251, 191, 36, .06);
+  --section-bg: linear-gradient(180deg, rgba(18, 15, 8, .5), rgba(8, 13, 18, .18));
+}
+.tint-green {
+  --tint: rgba(52, 211, 153, .07);
+  --section-bg: linear-gradient(180deg, rgba(7, 18, 14, .58), rgba(8, 13, 18, .18));
+}
+.tint-teal {
+  --tint: rgba(45, 212, 191, .06);
+  --section-bg: linear-gradient(180deg, rgba(7, 17, 19, .58), rgba(8, 13, 18, .18));
+}
 
 /* engineering grid — only where the machine lives */
 .gridded {
@@ -263,7 +281,7 @@ textarea:focus-visible, summary:focus-visible {
 .site-footer {
   border-top: 1px solid var(--line-soft);
   margin-top: calc(var(--sp-section) * .52);
-  background: linear-gradient(180deg, transparent, rgba(45, 212, 191, .035));
+  background: linear-gradient(180deg, rgba(8, 16, 24, .42), rgba(45, 212, 191, .035));
 }
 .footer-inner { max-width: var(--shell-max); margin: 0 auto; padding: 40px var(--shell-pad) 24px; }
 .footer-sign {

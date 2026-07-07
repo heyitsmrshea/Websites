@@ -4,11 +4,11 @@ export const tokens = String.raw`
   color-scheme: dark;
 
   /* ---- void: the ops surface ---- */
-  --void-0: #04060a;
-  --void-1: #070c13;
-  --panel-0: #0b121b;
-  --panel-1: #0f1722;
-  --panel-2: #131e2b;
+  --void-0: #070b10;
+  --void-1: #081018;
+  --panel-0: #0c141c;
+  --panel-1: #111b25;
+  --panel-2: #172635;
 
   --ink: #f2f6f9;
   --soft: #b4c0cb;

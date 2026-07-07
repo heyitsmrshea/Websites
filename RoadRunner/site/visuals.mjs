@@ -56,7 +56,7 @@ export function pipelinePanel() {
 
 function pipeNode(x, y, title, sub, width = 140, hot = false) {
   return `<g transform="translate(${x} ${y})">
-    <rect width="${width}" height="52" rx="9" fill="${hot ? "rgba(45,212,191,.09)" : "#0f1722"}" stroke="${hot ? "rgba(45,212,191,.55)" : "rgba(198,220,236,.18)"}" stroke-width="1.4"/>
+    <rect width="${width}" height="52" rx="9" fill="${hot ? "rgba(45,212,191,.09)" : "#111b25"}" stroke="${hot ? "rgba(45,212,191,.55)" : "rgba(198,220,236,.18)"}" stroke-width="1.4"/>
     <text x="14" y="22" fill="#f2f6f9" font-family="ui-monospace, Menlo, monospace" font-size="11.5" font-weight="600">${title}</text>
     <text x="14" y="38" fill="#6d7b88" font-family="ui-monospace, Menlo, monospace" font-size="8.5">${sub}</text>
   </g>`;
