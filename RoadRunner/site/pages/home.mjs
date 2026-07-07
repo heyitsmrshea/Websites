@@ -1,4 +1,4 @@
-// Home — the emotional arc: thesis, the finding, the proof, the model, the memo.
+// Home — the emotional arc: thesis, the finding, the proof, and the model.
 import { sectionHead, exhibit, exhibitRow, contactSection } from "../helpers.mjs";
 
 export function homeBody() {
@@ -7,7 +7,6 @@ ${manifesto()}
 ${theLoop()}
 ${productProof()}
 ${whiteLabel()}
-${positioningMemo()}
 ${contactSection()}`;
 }
 
@@ -157,30 +156,6 @@ function whiteLabel() {
             <div class="swap-foot">Prepared by <b data-brandname="proper">Polaris</b> · <span data-brandfoot>POLARIS · YOUR MSP'S SECURITY PRACTICE</span> · powered by RoadRunner Secure</div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>`;
-}
-
-function positioningMemo() {
-  const q = (question, dash, pit, rr, i) => `<div class="memo-q rv" style="--d:${(i * 0.08).toFixed(2)}s">
-    <h3>${question}</h3>
-    <div class="memo-answers">
-      <div><span class="who">Dashboard</span><span>${dash}</span></div>
-      <div><span class="who">Point-in-time assessment</span><span>${pit}</span></div>
-      <div class="rr"><span class="who">RoadRunner Secure</span><span>${rr}</span></div>
-    </div>
-  </div>`;
-  return `<section class="section tinted tint-green" style="--tint-x: 15%">
-    <div class="shell">
-      ${sectionHead("Positioning", "Dashboards report. Assessments age. <span class='ital'>RoadRunner closes.</span>", "The distinction matters: a finding is open until evidence changes, not until someone clicks done.", "green")}
-      <div class="paper rv-scale">
-        <div class="paper-doc"><span>RR-MEMO-001 · Positioning</span><span>Internal · Reviewed weekly</span></div>
-        ${q("What changed this week?", "Usually buried in charts", "Not available after delivery", "Diffed every run", 0)}
-        ${q("Who is affected?", "Often a count", "Usually sampled", "Named accounts, devices, resources, and paths", 1)}
-        ${q("How does it close?", "Manual status or score movement", "Follow-up meeting", "Evidence must prove closure", 2)}
-        ${q("What if data is missing?", "Silent blind spot", "Caveat in the report", "Visible data-gap finding", 3)}
-        <div class="paper-foot"><span>ROADRUNNER SECURE · POSITIONING MEMO</span><span>SHA 9F21C4 · PAGE 1/1</span></div>
       </div>
     </div>
   </section>`;

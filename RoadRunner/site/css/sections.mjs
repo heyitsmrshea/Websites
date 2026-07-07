@@ -133,30 +133,6 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
 .chapter-note .k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--teal); text-transform: uppercase; padding-top: 3px; }
 .chapter-note p { font-size: 14px; color: var(--soft); line-height: 1.6; }
 
-/* ---------- positioning memo (paper) ---------- */
-.memo-q { padding: 22px 0; border-bottom: 1px solid var(--paper-line); }
-.memo-q:last-of-type { border-bottom: 0; }
-.memo-q h3 {
-  font-family: var(--font-display);
-  font-weight: 520;
-  font-size: 1.3rem;
-  letter-spacing: -.008em;
-  margin-bottom: 14px;
-}
-.memo-answers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.memo-answers > div { display: grid; gap: 6px; align-content: start; }
-.memo-answers .who {
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  font-weight: 650;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--paper-muted);
-}
-.memo-answers span:last-child { font-size: 13.5px; color: var(--paper-soft); line-height: 1.55; font-style: italic; font-family: var(--font-display); }
-.memo-answers .rr .who { color: var(--paper-stamp); }
-.memo-answers .rr span:last-child { color: var(--paper-ink); font-style: normal; font-family: var(--font-body); font-weight: 620; }
-
 /* ---------- pilot SOW (paper) ---------- */
 .sow-row {
   display: grid;
@@ -285,9 +261,6 @@ html.js [data-worklist].cascade .workitem { animation: shard-in .55s var(--ease-
   .rule-cell:nth-child(2n) { border-right: 0; }
   .rule-cell { border-bottom: 1px solid var(--line-soft); }
   .gauge-wrap { grid-template-columns: 1fr; }
-}
-@media (max-width: 700px) {
-  .memo-answers { grid-template-columns: 1fr; gap: 12px; }
 }
 @media (max-width: 560px) {
   .rules { grid-template-columns: 1fr; }
