@@ -55,10 +55,10 @@ export const tokens = String.raw`
   --text-mono-s: .72rem;
 
   /* ---- rhythm ---- */
-  --sp-section: clamp(4rem, 3rem + 4.5vw, 7.5rem);
-  --sp-block: clamp(1.8rem, 1.45rem + 1.4vw, 3rem);
-  --shell-max: 1280px;
-  --shell-pad: clamp(16px, 2.6vw, 30px);
+  --sp-section: clamp(3.25rem, 2.5rem + 3.5vw, 6.25rem);
+  --sp-block: clamp(1.45rem, 1.2rem + 1vw, 2.4rem);
+  --shell-max: 1340px;
+  --shell-pad: clamp(12px, 2vw, 22px);
 
   /* ---- surface ---- */
   --radius: 12px;

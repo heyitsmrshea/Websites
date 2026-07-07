@@ -40,10 +40,10 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
 
 /* ===================== Moment 2: the Loop scrollytelling ===================== */
 .loop { position: relative; }
-.loop-scroller { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(24px, 4vw, 60px); align-items: start; }
+.loop-scroller { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(18px, 3vw, 46px); align-items: start; }
 .loop-stages { display: grid; gap: 0; }
 .loop-stage {
-  padding: clamp(22px, 5vh, 48px) 0;
+  padding: clamp(18px, 4vh, 38px) 0;
   border-top: 1px solid var(--line-soft);
   opacity: .32;
   transition: opacity .5s var(--ease-out);
@@ -77,7 +77,7 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
   border-top-color: rgba(255, 255, 255, .12);
   border-radius: var(--radius);
   box-shadow: var(--shadow-panel);
-  padding: 20px;
+  padding: 18px;
   overflow: clip;
   transition: border-color .6s var(--ease-out);
 }
@@ -122,7 +122,7 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
 .loop-card .lc-meta span { color: var(--soft); }
 
 /* ===================== Moment 3: brand swap ===================== */
-.brandswap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(22px, 3.5vw, 48px); align-items: center; }
+.brandswap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(18px, 2.8vw, 38px); align-items: center; }
 .swap-controls { display: grid; gap: 10px; }
 .swap-controls .k { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
 .swap-btn {
