@@ -178,9 +178,9 @@ textarea:focus-visible, summary:focus-visible {
   -webkit-backdrop-filter: blur(16px) saturate(140%);
 }
 .nav-shell {
-  max-width: 1360px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 10px clamp(16px, 3vw, 28px);
+  padding: 8px clamp(10px, 1.6vw, 20px);
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;

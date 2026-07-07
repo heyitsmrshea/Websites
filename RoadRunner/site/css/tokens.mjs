@@ -57,8 +57,8 @@ export const tokens = String.raw`
   /* ---- rhythm ---- */
   --sp-section: clamp(3.25rem, 2.5rem + 3.5vw, 6.25rem);
   --sp-block: clamp(1.45rem, 1.2rem + 1vw, 2.4rem);
-  --shell-max: 1340px;
-  --shell-pad: clamp(12px, 2vw, 22px);
+  --shell-max: 1400px;
+  --shell-pad: clamp(8px, 1.3vw, 16px);
 
   /* ---- surface ---- */
   --radius: 12px;
