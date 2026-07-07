@@ -39,7 +39,7 @@ ${contactSection()}`;
 function scenario() {
   return `<section class="section" id="walkthrough">
     <div class="shell">
-      ${sectionHead("Scenario", "A client has privilege sprawl, Conditional Access gaps, and on-prem lateral movement exposure.", "The walkthrough follows one synthetic weekly run from baseline through findings, remediation queue, validation, and reporting.")}
+      ${sectionHead("Scenario", "Privilege sprawl, CA gaps, and on-prem exposure.", "The walkthrough follows one synthetic weekly run from baseline through findings, remediation queue, validation, and reporting.")}
       ${flow([
         ["Baseline", "Connect read-only sources and establish the first evidence snapshot."],
         ["Findings", "Create named findings tied to accounts, devices, policies, and paths."],

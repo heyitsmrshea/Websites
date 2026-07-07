@@ -63,7 +63,7 @@ function moduleCoverage() {
 function collectorRules() {
   return `<section class="section">
     <div class="shell">
-      ${sectionHead("Collector model", "Read-only, scoped, and deployable by normal IT operations.", "The collector is explainable to an AD owner before it runs, with failed or skipped modules visible after every run.")}
+      ${sectionHead("Collector model", "Read-only, scoped, normal-IT deployable.", "The collector is explainable to an AD owner before it runs, with failed or skipped modules visible after every run.")}
       <div class="rules rv">
         <div class="rule-cell">
           <span class="k">Permissions</span>
@@ -121,7 +121,7 @@ function collectorTerminal() {
 function pathClosure() {
   return `<section class="section tight tinted tint-green">
     <div class="shell">
-      ${sectionHead("Path closure", "Every path finding maps to a fix and a validation condition.", "The useful output is not a large graph. It is the cheapest defensible change that kills meaningful exposure.", "green")}
+      ${sectionHead("Path closure", "Every path finding maps to fix and proof.", "The useful output is not a large graph. It is the cheapest defensible change that kills meaningful exposure.", "green")}
       ${table([
         ["Finding", "Evidence", "Recommended fix", "Validation"],
         ["Service account creates path to Tier 0", "svc-build → Workstation Admins → ENG-WS-044 → Domain Admins", "Remove svc-build from workstation admin path or isolate admin session exposure", "Next collector run no longer contains a route from svc-build to Tier 0"],

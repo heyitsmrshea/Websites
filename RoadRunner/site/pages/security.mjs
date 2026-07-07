@@ -31,7 +31,7 @@ function trustLedger() {
 function connectorPermissions() {
   return `<section class="section tight tinted tint-teal">
     <div class="shell">
-      ${sectionHead("Connector permissions", "Read-only by design, with permissions tied to assessment value.", "Permission names are confirmed against the live implementation and customer approval package.")}
+      ${sectionHead("Connector permissions", "Read-only, with permissions tied to value.", "Permission names are confirmed against the live implementation and customer approval package.")}
       <div class="paper rv-scale">
         <div class="paper-doc"><span>RR-ACCESS-001 · Access manifest</span><span>Read-only · least privilege</span></div>
         ${table([
@@ -77,7 +77,7 @@ function boundaries() {
 function maturity() {
   return `<section class="section tight">
     <div class="shell">
-      ${sectionHead("Review maturity", "Clear separation between current controls and procurement artifacts.", "Formal certifications are represented only when they are available and reviewable.")}
+      ${sectionHead("Review maturity", "Current controls, separate from procurement artifacts.", "Formal certifications are represented only when they are available and reviewable.")}
       ${rail(3, [
         railCard("NOW", "Current review package", "Connector purposes, read-only posture, retention plan, offboarding plan, subprocessors, and deployment model."),
         railCard("SLA", "Disclosure SLA", `Security reports sent to ${brand.email} receive acknowledgement within one business day after validation.`),

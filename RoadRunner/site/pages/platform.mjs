@@ -13,7 +13,7 @@ ${contactSection()}`;
 function architecture() {
   return `<section class="section">
     <div class="shell">
-      ${sectionHead("Architecture", "Simple enough to inspect. Strong enough to operate weekly.", "RoadRunner is organized around the assessment chain: source evidence, stored proof, generated findings, assigned work, validation, and reporting.")}
+      ${sectionHead("Architecture", "Inspectable enough to run weekly.", "RoadRunner is organized around the assessment chain: source evidence, stored proof, generated findings, assigned work, validation, and reporting.")}
       ${flow([
         ["Sources", "Microsoft, endpoint, cloud, AD, and manual evidence."],
         ["Collect", "Read-only connectors and collector exports observe posture."],

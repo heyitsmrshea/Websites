@@ -60,7 +60,7 @@ html.js .runpanel.replaying .feed-row:last-child .stamp-mini { animation: stamp-
 .loop-stage h3 {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.4rem);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.85rem);
   letter-spacing: -.012em;
   margin: 10px 0 12px;
 }

@@ -129,7 +129,7 @@ export const findings = {
   onprem: {
     label: "Sample path finding",
     id: "RR-F-0142",
-    title: "Service account creates path from workstation admin to Tier 0",
+    title: "Service account opens a Tier 0 path",
     severity: "HIGH",
     affected: "CORP\\svc-build, Workstation Admins, ENG-WS-044, Domain Admins",
     evidence: "Collector graph shows memberOf, localAdmin, and activeSession edges forming a route to Tier 0.",
@@ -140,7 +140,7 @@ export const findings = {
   microsoft: {
     label: "Sample Microsoft finding",
     id: "RR-F-0155",
-    title: "Conditional Access excludes legacy service accounts without compensating control",
+    title: "Legacy accounts bypass access policy",
     severity: "HIGH",
     affected: "4 accounts excluded from MFA policy; 2 observed interactive sign-ins in the last 14 days",
     evidence: "Policy exclusion list plus sign-in evidence shows recent use outside expected service context.",
@@ -151,7 +151,7 @@ export const findings = {
   demo: {
     label: "Walkthrough finding",
     id: "RR-F-0161",
-    title: "MFA exception and AD path combine into a priority remediation item",
+    title: "MFA exception and AD path combine",
     severity: "HIGH",
     affected: "One excluded identity, one exposed admin path, one client-visible closure objective",
     evidence: "Microsoft policy evidence plus AD collector path evidence create a higher-confidence exposure story.",

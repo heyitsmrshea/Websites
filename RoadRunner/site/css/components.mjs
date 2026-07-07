@@ -169,7 +169,7 @@ export const components = String.raw`
 /* ---------- section head ---------- */
 .section-head {
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
   gap: 16px 42px;
   align-items: end;
   margin-bottom: var(--sp-block);
@@ -247,7 +247,7 @@ export const components = String.raw`
 .artifact-top .label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 10px; }
 .artifact-top h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 1.05rem + 1.2vw, 1.9rem);
+  font-size: clamp(1.2rem, 1rem + .72vw, 1.55rem);
   font-weight: 490;
   letter-spacing: -.01em;
   line-height: 1.18;
@@ -329,7 +329,7 @@ export const components = String.raw`
 .exhibit-row + .exhibit-row { margin-top: clamp(26px, 3.6vw, 50px); }
 .exhibit-row.flip .exhibit-col { order: 2; }
 .exhibit-row .copy { display: grid; gap: 14px; align-content: center; }
-.exhibit-row .copy h3 { font-family: var(--font-display); font-weight: 490; font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); letter-spacing: -.01em; line-height: 1.15; }
+.exhibit-row .copy h3 { font-family: var(--font-display); font-weight: 490; font-size: clamp(1.12rem, .94rem + .7vw, 1.48rem); letter-spacing: -.01em; line-height: 1.14; }
 .exhibit-row .copy p { color: var(--muted); font-size: 15px; line-height: 1.66; }
 
 /* ---------- terminal ---------- */
@@ -485,7 +485,7 @@ html.js [data-flow].flowed .flow-step { animation: flow-step-in .5s var(--ease-o
 
 /* ---------- contact ---------- */
 .contact-section { border-top: 1px solid var(--line-soft); padding-top: var(--sp-section); }
-.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(22px, 3.2vw, 44px); align-items: start; }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(22px, 3.2vw, 44px); align-items: start; }
 .contact-grid > * { min-width: 0; }
 .contact-grid > div:first-child { display: grid; gap: 20px; justify-items: start; }
 .contact-form {

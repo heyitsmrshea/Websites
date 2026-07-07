@@ -25,7 +25,7 @@ function theLoop() {
     <div class="shell">
       <div class="loop-intro rv" style="margin-bottom:8px">
         <div class="eyebrow">The operating loop</div>
-        <h2 style="max-width:20ch">One finding, from raw evidence to <span class="ital">verified death.</span></h2>
+        <h2 style="max-width:34ch">One finding. <span class="ital">Verified dead.</span></h2>
       </div>
       <div class="loop-scroller">
         <div class="loop-stages">
@@ -89,18 +89,18 @@ function productProof() {
       ${sectionHead("Product proof", "Show the real surfaces, not decoration.", "The Polaris screens are MSP white-label examples. RoadRunner owns the assessment logic underneath.")}
       ${exhibitRow(
         exhibit({ img: "exhibit-exec", url: "demo.polarisconsulting.net/executive", letter: "A", alt: "Polaris executive command center with top decisions, risk work metrics, closure and regression counts, owner workload, and source health", caption: "Executive posture — decisions, closure, blocked evidence", width: 1440, height: 900 }),
-        "Leadership sees the story, not a wall of charts.",
+        "Leadership sees the story, not the charts.",
         "Top decisions, verified closures, regressions, SLA breaches, savings, owner workload, and source health sit together so leadership can see what changed and what is blocked."
       )}
       ${exhibitRow(
         exhibit({ img: "exhibit-queue", url: "demo.polarisconsulting.net/workbench", letter: "B", alt: "Polaris Action Workbench with filters, open findings, owners, affected entities, timelines, confidence, and export controls", caption: "Action Workbench — filter, drill, export, validate", width: 1440, height: 900 }),
-        "Operators get a queue, not a PDF scavenger hunt.",
+        "Operators get a queue, not a scavenger hunt.",
         "Filter by owner, source, SLA, confidence, conflict, state, environment, and domain. Every row carries affected entities, source, timeline, and the path toward validation.",
         true
       )}
       ${exhibitRow(
         exhibit({ img: "exhibit-attack", url: "demo.polarisconsulting.net/onprem", letter: "C", alt: "Polaris on-prem assessment showing collector run registry, module coverage, failed and skipped modules, findings, entities, and graph counts", caption: "On-prem collector — module coverage before path closure", width: 1440, height: 900 }),
-        "Technical owners see collector truth before graph drama.",
+        "Technical owners see collector truth first.",
         "AD coverage is explicit: run ID, host, domain, collector version, modules requested, collected, failed, skipped, findings, entities, and graph counts."
       )}
       ${exhibitRow(

@@ -47,9 +47,9 @@ export const tokens = String.raw`
   --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
-  --text-hero: clamp(2.65rem, 1.1rem + 4.7vw, 5.35rem);
-  --text-h2: clamp(1.78rem, 1.18rem + 1.9vw, 2.85rem);
-  --text-h3: clamp(1.18rem, 1.02rem + .5vw, 1.48rem);
+  --text-hero: clamp(2.45rem, 1.05rem + 4.15vw, 4.85rem);
+  --text-h2: clamp(1.48rem, 1.04rem + 1.4vw, 2.25rem);
+  --text-h3: clamp(1.08rem, .98rem + .35vw, 1.32rem);
   --text-lead: clamp(1.08rem, 1rem + .3vw, 1.22rem);
   --text-body: 1.02rem;
   --text-mono-s: .72rem;
