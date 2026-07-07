@@ -1,11 +1,11 @@
 // Page-specific section layouts: manifesto, loop, white-label, graphs, chapters, 404.
 export const sections = String.raw`
 /* ---------- manifesto (home) ---------- */
-.manifesto { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(22px, 3.2vw, 46px); align-items: start; }
+.manifesto { display: grid; grid-template-columns: minmax(0, 6.8fr) minmax(0, 4.2fr); gap: clamp(22px, 3.2vw, 46px); align-items: start; }
 .manifesto-statement { display: grid; gap: 15px; position: sticky; top: 84px; }
 .manifesto-statement .fear {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 1.15rem + 2.5vw, 3.1rem);
+  font-size: clamp(1.4rem, .92rem + 1.65vw, 2.4rem);
   font-weight: 450;
   font-style: italic;
   letter-spacing: -.012em;
@@ -14,7 +14,7 @@ export const sections = String.raw`
 }
 .manifesto-statement .fix {
   font-family: var(--font-display);
-  font-size: clamp(1.95rem, 1.2rem + 3vw, 3.6rem);
+  font-size: clamp(1.45rem, .95rem + 2vw, 2.75rem);
   font-weight: 500;
   letter-spacing: -.015em;
   line-height: 1.08;
@@ -260,7 +260,7 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
 html.js [data-gauge].shattered .gauge-stage { opacity: .32; transform: scale(.94); filter: saturate(.5); }
 #gauge-arc { transition: stroke-dashoffset 1.3s var(--ease-out); }
 
-.worklist { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.worklist { display: grid; gap: 0; border-top: 1px solid var(--line); overflow: clip; }
 .worklist-head { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding: 12px 4px; }
 .workitem { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 15px 4px; border-bottom: 1px solid var(--line-soft); }
 html.js [data-worklist] .workitem { opacity: 0; transform: translateX(18px); }
