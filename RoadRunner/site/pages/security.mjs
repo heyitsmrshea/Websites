@@ -15,7 +15,7 @@ ${contactSection()}`;
 function trustLedger() {
   return `<section class="section">
     <div class="shell">
-      ${sectionHead("Trust posture", "Security claims should be specific enough to review.", "This page covers the minimum categories a security reviewer expects before deeper due diligence.")}
+      ${sectionHead("Trust posture", "Security claims stay specific enough to review.", "This page covers the minimum categories a security reviewer expects before deeper due diligence.")}
       <div class="ledger">
         ${ledgerRow("Data handling", "Evidence is collected for assessment, reporting, validation, and source-health visibility — <strong>nothing else</strong>.", tag("PASS"))}
         ${ledgerRow("Encryption", "Encrypted transport for uploads and encrypted storage for retained evidence and reports.", tag("PASS"))}
@@ -31,7 +31,7 @@ function trustLedger() {
 function connectorPermissions() {
   return `<section class="section tight tinted tint-teal">
     <div class="shell">
-      ${sectionHead("Connector permissions", "Read-only by design, with permissions tied to assessment value.", "Final permission names should match the live implementation and customer approval package.")}
+      ${sectionHead("Connector permissions", "Read-only by design, with permissions tied to assessment value.", "Permission names are confirmed against the live implementation and customer approval package.")}
       <div class="paper rv-scale">
         <div class="paper-doc"><span>RR-ACCESS-001 · Access manifest</span><span>Read-only · least privilege</span></div>
         ${table([
@@ -52,7 +52,7 @@ function dataHandling() {
     <div class="shell">
       ${sectionHead("Data handling", "Make offboarding and limits explicit.", "This is the difference between a trust page and vague reassurance.")}
       ${rail(3, [
-        railCard("RETAIN", "Retention", "Pilot retention should be defined before access is granted. Long-term retention follows contract and reporting needs."),
+        railCard("RETAIN", "Retention", "Pilot retention is defined before access is granted. Long-term retention follows contract and reporting needs."),
         railCard("OFFBOARD", "Offboarding", "Revoke connectors, export agreed reports, delete retained evidence according to timeline, and confirm completion."),
         railCard("SUBPROC", "Subprocessors", "List hosting, email, analytics, and operational subprocessors before production procurement.")
       ])}
@@ -77,10 +77,10 @@ function boundaries() {
 function maturity() {
   return `<section class="section tight">
     <div class="shell">
-      ${sectionHead("Review maturity", "Be clear about what exists now and what belongs in procurement.", "If formal certifications are not yet available, the page should not imply them.")}
+      ${sectionHead("Review maturity", "Clear separation between current controls and procurement artifacts.", "Formal certifications are represented only when they are available and reviewable.")}
       ${rail(3, [
         railCard("NOW", "Current review package", "Connector purposes, read-only posture, retention plan, offboarding plan, subprocessors, and deployment model."),
-        railCard("SLA", "Disclosure SLA", `Security reports sent to ${brand.email} should receive acknowledgement within one business day after validation.`),
+        railCard("SLA", "Disclosure SLA", `Security reports sent to ${brand.email} receive acknowledgement within one business day after validation.`),
         railCard("NEXT", "Compliance roadmap", "Formal control mapping and third-party assurance can be added as enterprise demand requires.")
       ])}
     </div>

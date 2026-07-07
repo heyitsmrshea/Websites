@@ -19,7 +19,7 @@ function pilotSow() {
   </div>`;
   return `<section class="section">
     <div class="shell">
-      ${sectionHead("Pilot shape", "A useful pilot proves the loop in 2 to 4 weeks.", "If the weekly findings and closure trail do not create usable work, the pilot should end cleanly with the output retained.")}
+      ${sectionHead("Pilot shape", "A useful pilot proves the loop in 2 to 4 weeks.", "If the weekly findings and closure trail do not create usable work, the pilot ends cleanly with the output retained.")}
       <div class="paper rv-scale sow">
         <div class="paper-doc"><span>RR-SOW-DRAFT · Pilot scope of work</span><span>2–4 weeks · read-only</span></div>
         ${week("W0", "Scope and access", "Confirm tenant count, Microsoft/on-prem scope, white-label needs, and read-only access.")}
@@ -39,7 +39,7 @@ function pilotSow() {
 function commercialModels() {
   return `<section class="section tight tinted tint-teal">
     <div class="shell">
-      ${sectionHead("Commercial models", "Pricing follows scope, not a generic seat grid.", "Exact numbers can be quoted after deployment shape is known. The public page should still make the buying motion concrete.")}
+      ${sectionHead("Commercial models", "Pricing follows scope, not a generic seat grid.", "Quotes are based on deployment shape, evidence sources, and the support model required to keep closure moving.")}
       ${table([
         ["Model", "Best fit", "Included shape"],
         ["Pilot", "A first tenant or controlled client sample", "Baseline assessment, weekly finding review, final report, and remediation roadmap"],
@@ -53,7 +53,7 @@ function commercialModels() {
 function pricingInputs() {
   return `<section class="section tight">
     <div class="shell">
-      ${sectionHead("Pricing inputs", "Bring the facts that change the scope.", "These inputs keep the conversation concrete without publishing a fake one-size-fits-all price.")}
+      ${sectionHead("Pricing inputs", "Bring the facts that change the scope.", "These inputs help size the assessment accurately without pretending every tenant needs the same plan.")}
       ${rail(3, [
         railCard("SIZE", "Environment size", "Users, endpoints, tenants, subscriptions, and on-prem domains."),
         railCard("SOURCES", "Evidence sources", "Microsoft-only, on-prem AD, endpoint/security tooling, and manual evidence needs."),

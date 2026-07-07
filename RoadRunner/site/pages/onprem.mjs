@@ -63,7 +63,7 @@ function moduleCoverage() {
 function collectorRules() {
   return `<section class="section">
     <div class="shell">
-      ${sectionHead("Collector model", "Read-only, scoped, and deployable by normal IT operations.", "The collector should be explainable to an AD owner before it ever runs, and its failed or skipped modules should be visible after every run.")}
+      ${sectionHead("Collector model", "Read-only, scoped, and deployable by normal IT operations.", "The collector is explainable to an AD owner before it runs, with failed or skipped modules visible after every run.")}
       <div class="rules rv">
         <div class="rule-cell">
           <span class="k">Permissions</span>

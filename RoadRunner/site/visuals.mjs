@@ -205,7 +205,7 @@ export function contactPanel() {
     <div class="runpanel-top">
       <div class="titleblock">
         <strong>Pilot intake</strong>
-        <span class="runid">the first call should produce a run plan</span>
+        <span class="runid">first call output: run plan</span>
       </div>
       <span class="tag live">READY</span>
     </div>

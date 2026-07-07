@@ -43,7 +43,7 @@ function scenario() {
       ${flow([
         ["Baseline", "Connect read-only sources and establish the first evidence snapshot."],
         ["Findings", "Create named findings tied to accounts, devices, policies, and paths."],
-        ["Queue", "Rank what should happen this week and assign owners."],
+        ["Queue", "Rank this week’s work and assign owners."],
         ["Coverage", "Show what is collecting, blocked, stale, or available to unlock."],
         ["Fix", "Customer or MSP makes approved changes outside RoadRunner."],
         ["Validate", "Next run checks whether evidence changed."],
@@ -107,7 +107,7 @@ function chapter(num, id, title, subtitle, shot, note, flip = false) {
 function combinedFinding() {
   return `<section class="section tinted tint-green">
     <div class="shell">
-      ${sectionHead("The finale", "Two weak signals. One provable exposure.", "The walkthrough ends the way every week should: combined evidence becomes one artifact with a validation condition — and the next run decides.", "green")}
+      ${sectionHead("The finale", "Two weak signals. One provable exposure.", "The walkthrough ends with combined evidence, one artifact, a validation condition, and a next run that decides.", "green")}
       ${findingArtifact(findings.demo)}
       <p style="margin-top:28px; display:flex; gap:18px; align-items:center; flex-wrap:wrap">
         ${stamp("Next run decides")}

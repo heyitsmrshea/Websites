@@ -81,7 +81,7 @@ function workItem(rank, what, meta) {
 function permissions() {
   return `<section class="section tight">
     <div class="shell">
-      ${sectionHead("Connector permissions", "Permissions are part of the buying decision.", "Exact permission names should match implementation, but the public page should explain purpose and read-only posture.")}
+      ${sectionHead("Connector permissions", "Every permission has a reason.", "RoadRunner explains what each connector needs, why it is requested, and how read-only posture is preserved.")}
       ${table([
         ["Area", "Typical read purpose", "Assessment value"],
         ["Directory", "Read users, groups, roles, guests, and assignments", "Detect privilege sprawl, stale access, and risky identities"],

@@ -59,7 +59,7 @@ function lifecycle() {
 function roleViews() {
   return `<section class="section">
     <div class="shell">
-      ${sectionHead("Role-based views", "Same evidence, different decisions.", "RoadRunner should not make every stakeholder read the same security artifact.")}
+      ${sectionHead("Role-based views", "Same evidence, different decisions.", "RoadRunner gives each stakeholder the same evidence in the format they can act on.")}
       ${rail(3, [
         railCard("MSP", "MSP operator", "Needs source health, client queues, owner status, blocked evidence, and service delivery notes."),
         railCard("EXEC", "Client executive", "Needs risk direction, verified closures, unresolved priority items, and business-facing posture summaries."),
