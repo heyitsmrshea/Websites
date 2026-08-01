@@ -9,7 +9,7 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
             })));
           }
         }
-        
+
         if (${n}.value === undefined) {
           if (${o} in input) {
             newResult[${o}] = undefined;
@@ -17,7 +17,7 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
         } else {
           newResult[${o}] = ${n}.value;
         }
-        
+
       `):c?t.write(`
         if (${n}.issues.length) {
           payload.issues = payload.issues.concat(${n}.issues.map(iss => ({
@@ -25,7 +25,7 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
             path: iss.path ? [${o}, ...iss.path] : [${o}]
           })));
         }
-        
+
         if (${n}.value === undefined) {
           if (${o} in input) {
             newResult[${o}] = undefined;
@@ -33,7 +33,7 @@ var e=Object.create,t=Object.defineProperty,n=Object.getOwnPropertyDescriptor,r=
         } else {
           newResult[${o}] = ${n}.value;
         }
-        
+
       `):t.write(`
         const ${n}_present = ${o} in input;
         if (${n}.issues.length) {
