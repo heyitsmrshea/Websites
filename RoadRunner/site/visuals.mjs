@@ -186,7 +186,7 @@ export function walkthroughPanel() {
     <div class="runpanel-top">
       <div class="titleblock">
         <strong>Product walkthrough</strong>
-        <span class="runid">Polaris is the MSP white-label surface</span>
+        <span class="runid">A partner brand can be the client-facing surface</span>
       </div>
       <span class="tag gap">SYNTHETIC</span>
     </div>

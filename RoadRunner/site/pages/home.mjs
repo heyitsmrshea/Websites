@@ -85,31 +85,31 @@ function contrastRow(who, them, us, i) {
 function productProof() {
   return `<section class="section tinted tint-teal" style="--tint-x: 80%">
     <div class="shell">
-      ${sectionHead("Product proof", "Show the real surfaces, not decoration.", "The Polaris screens are MSP white-label examples. RoadRunner owns the assessment logic underneath.")}
+      ${sectionHead("Product proof", "Show the real surfaces, not decoration.", "These are current RoadRunner Secure product surfaces rendered with synthetic evidence.")}
       ${exhibitRow(
-        exhibit({ img: "exhibit-exec", url: "demo.polarisconsulting.net/executive", letter: "A", alt: "Polaris executive command center with top decisions, risk work metrics, closure and regression counts, owner workload, and source health", caption: "Executive posture — decisions, closure, blocked evidence", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-exec", url: "roadrunnersecure.com/demo/executive", letter: "A", alt: "RoadRunner Secure executive command center with top decisions, risk work metrics, closure and regression counts, owner workload, and source health", caption: "Executive posture — decisions, closure, blocked evidence", width: 1280, height: 720 }),
         "Leadership sees the story, not the charts.",
         "Top decisions, verified closures, regressions, SLA breaches, savings, owner workload, and source health sit together so leadership can see what changed and what is blocked."
       )}
       ${exhibitRow(
-        exhibit({ img: "exhibit-queue", url: "demo.polarisconsulting.net/workbench", letter: "B", alt: "Polaris Action Workbench with filters, open findings, owners, affected entities, timelines, confidence, and export controls", caption: "Action Workbench — filter, drill, export, validate", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-queue", url: "roadrunnersecure.com/demo/workbench", letter: "B", alt: "RoadRunner Secure Action Workbench with filters, open findings, owners, affected entities, timelines, confidence, and export controls", caption: "Action Workbench — filter, drill, export, validate", width: 1280, height: 720 }),
         "Operators get a queue, not a scavenger hunt.",
         "Filter by owner, source, SLA, confidence, conflict, state, environment, and domain. Every row carries affected entities, source, timeline, and the path toward validation.",
         true
       )}
       ${exhibitRow(
-        exhibit({ img: "exhibit-attack", url: "demo.polarisconsulting.net/onprem", letter: "C", alt: "Polaris on-prem assessment showing collector run registry, module coverage, failed and skipped modules, findings, entities, and graph counts", caption: "On-prem collector — module coverage before path closure", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-attack", url: "roadrunnersecure.com/demo/onprem", letter: "C", alt: "RoadRunner Secure on-prem assessment showing collector run registry, module coverage, failed and skipped modules, findings, entities, and graph counts", caption: "On-prem collector — module coverage before path closure", width: 1280, height: 720 }),
         "Technical owners see collector truth first.",
         "AD coverage is explicit: run ID, host, domain, collector version, modules requested, collected, failed, skipped, findings, entities, and graph counts."
       )}
       ${exhibitRow(
-        exhibit({ img: "exhibit-sources", url: "demo.polarisconsulting.net/sources", letter: "D", alt: "Polaris Source and Coverage Center showing collecting sources, available connectors, blocked coverage, closure capability, prerequisites, findings, and conflicts", caption: "Source coverage — collecting, available, blocked, unlockable", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-sources", url: "roadrunnersecure.com/demo/sources", letter: "D", alt: "RoadRunner Secure Source and Coverage Center showing collecting sources, available connectors, blocked coverage, closure capability, prerequisites, findings, and conflicts", caption: "Source coverage — collecting, available, blocked, unlockable", width: 1280, height: 720 }),
         "Blind spots become visible work.",
         "The Source & Coverage Center shows what is healthy, what is available to connect, what is blocked or limited, and which findings/conflicts each source unlocks.",
         true
       )}
       ${exhibitRow(
-        exhibit({ img: "exhibit-vciso", url: "demo.polarisconsulting.net/vciso", letter: "E", alt: "Polaris AI vCISO answering what to fix first, naming entities and citing finding IDs and evidence sources for every claim, and stating a data gap instead of inventing", caption: "Evidence-grounded vCISO — cited answers, no invention", width: 1440, height: 900 }),
+        exhibit({ img: "exhibit-vciso", url: "roadrunnersecure.com/demo/vciso", letter: "E", alt: "RoadRunner Secure AI vCISO answering what to fix first, naming entities and citing finding IDs and evidence sources for every claim, and stating a data gap instead of inventing", caption: "Evidence-grounded vCISO — cited answers, no invention", width: 1280, height: 720 }),
         "Answers cite evidence instead of inventing it.",
         "The vCISO names entities, cites the finding and source for every claim, and says plainly when data is missing instead of writing fiction around it."
       )}
@@ -129,8 +129,8 @@ function whiteLabel() {
           <button class="swap-btn round" style="--sw:#2dd4bf" data-accent="#2dd4bf" data-name="RoadRunner" data-round="1" data-foot="ROADRUNNER SECURE · DIRECT ENGAGEMENT" aria-pressed="false">
             <span class="dot"></span><span><span class="bn">RoadRunner</span><span class="bd">direct — the engine, unbranded</span></span>
           </button>
-          <button class="swap-btn" style="--sw:#5b9cf6" data-accent="#5b9cf6" data-name="Polaris" data-round="0" data-foot="POLARIS · YOUR MSP'S SECURITY PRACTICE" aria-pressed="true">
-            <span class="dot"></span><span><span class="bn">Polaris MSP</span><span class="bd">white-label partner (demo)</span></span>
+          <button class="swap-btn" style="--sw:#5b9cf6" data-accent="#5b9cf6" data-name="Northstar" data-round="0" data-foot="NORTHSTAR · YOUR MSP'S SECURITY PRACTICE" aria-pressed="true">
+            <span class="dot"></span><span><span class="bn">Northstar MSP</span><span class="bd">fictional white-label partner</span></span>
           </button>
           <button class="swap-btn round" style="--sw:#f59e0b" data-accent="#f59e0b" data-name="Meridian" data-round="1" data-foot="MERIDIAN MSP · MANAGED SECURITY REVIEW" aria-pressed="false">
             <span class="dot"></span><span><span class="bn">Meridian MSP</span><span class="bd">a second partner brand</span></span>
@@ -139,7 +139,7 @@ function whiteLabel() {
         <div class="swap-portal">
           <div class="swap-portal-bar">
             <span class="swap-gem"></span>
-            <span class="swap-brandname" data-brandname="mono">POLARIS</span>
+            <span class="swap-brandname" data-brandname="mono">NORTHSTAR</span>
             <span class="live">● CURRENT</span>
           </div>
           <div class="swap-portal-body">
@@ -153,7 +153,7 @@ function whiteLabel() {
               <div class="r"><span class="v">VERIFIED</span><span>Anonymous sharing disabled tenant-wide — policy diff</span><span class="meta mono">RUN 07</span></div>
               <div class="r"><span class="v">VERIFIED</span><span>Dormant admins removed from Server Operators</span><span class="meta mono">RUN 06</span></div>
             </div>
-            <div class="swap-foot">Prepared by <b data-brandname="proper">Polaris</b> · <span data-brandfoot>POLARIS · YOUR MSP'S SECURITY PRACTICE</span> · powered by RoadRunner Secure</div>
+            <div class="swap-foot">Prepared by <b data-brandname="proper">Northstar</b> · <span data-brandfoot>NORTHSTAR · YOUR MSP'S SECURITY PRACTICE</span> · powered by RoadRunner Secure</div>
           </div>
         </div>
       </div>

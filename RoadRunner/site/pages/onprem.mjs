@@ -48,7 +48,7 @@ function sampleFinding() {
 function moduleCoverage() {
   return `<section class="section tinted tint-amber">
     <div class="shell">
-      ${sectionHead("Collector run registry", "Coverage is part of the finding.", "The current Polaris demo shows the on-prem collector before the path story: run ID, domain, collector version, schema, mode, duration, elevation state, requested modules, collected modules, failures, skips, findings, entities, and graph counts.", "amber")}
+      ${sectionHead("Collector run registry", "Coverage is part of the finding.", "The current RoadRunner demo shows the on-prem collector before the path story: run ID, domain, collector version, schema, mode, duration, elevation state, requested modules, collected modules, failures, skips, findings, entities, and graph counts.", "amber")}
       ${table([
         ["Module", "Status shown", "Why it matters"],
         ["ADAttackPath", "Collected · graph entities and path count", "Path findings can be generated and validated against the current run."],

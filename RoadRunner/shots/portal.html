@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>White-label portal (exhibit source) — ?brand=polaris|meridian|roadrunner</title>
-<link rel="stylesheet" href="/shots/polaris.css">
+<title>White-label portal (exhibit source) — ?brand=northstar|meridian|roadrunner</title>
+<link rel="stylesheet" href="/shots/product.css">
 <style>
   body { width: 1280px; height: 800px; }
   .nav { height: 58px; }
@@ -26,11 +26,11 @@
   body { --accent: #2dd4bf; }
 </style>
 </head>
-<body data-brand="polaris">
+<body data-brand="roadrunner">
   <nav class="nav">
     <div class="brand">
       <span class="gem"></span>
-      <div><div class="brand-name" id="bn">POLARIS</div><div class="brand-sub" id="bs">Weekly Security Assessment</div></div>
+      <div><div class="brand-name" id="bn">ROADRUNNER SECURE</div><div class="brand-sub" id="bs">Weekly Security Assessment</div></div>
     </div>
     <div class="nav-item on"><span class="n">01</span><span class="t">Your posture</span><span class="s">this week</span></div>
     <div class="nav-item"><span class="n">02</span><span class="t">Closed with proof</span><span class="s">verified history</span></div>
@@ -43,7 +43,7 @@
 
   <div class="hero">
     <h1>Your week in security — verified, not vibes.</h1>
-    <p>What changed, what your team closed with evidence, and what happens next. Prepared by <b id="msp1" style="color:var(--soft)">Polaris</b> · powered by RoadRunner Secure.</p>
+    <p>What changed, what your team closed with evidence, and what happens next. Prepared by <b id="msp1" style="color:var(--soft)">RoadRunner Secure</b>.</p>
   </div>
 
   <div class="cards">
@@ -74,20 +74,20 @@
   </div>
 
   <div class="msp-note">
-    <span id="msp2">POLARIS · YOUR MSP'S SECURITY PRACTICE</span>
+    <span id="msp2">ROADRUNNER SECURE · DIRECT ASSESSMENT</span>
     <span>SYNTHETIC FIXTURE · POWERED BY ROADRUNNER SECURE</span>
   </div>
 
 <script>
   const q = new URLSearchParams(location.search);
-  const b = q.get("brand") || "polaris";
+  const b = q.get("brand") || "roadrunner";
   document.body.dataset.brand = b;
   const names = {
-    polaris: ["POLARIS", "Weekly Security Assessment", "Polaris", "POLARIS · YOUR MSP'S SECURITY PRACTICE"],
+    northstar: ["NORTHSTAR MSP", "Weekly Security Assessment", "Northstar MSP", "NORTHSTAR · YOUR MSP'S SECURITY PRACTICE"],
     meridian: ["MERIDIAN MSP", "Managed Security Review", "Meridian MSP", "MERIDIAN MSP · YOUR MSP'S SECURITY PRACTICE"],
     roadrunner: ["ROADRUNNER", "Evidence-Verified Assessment", "RoadRunner Secure", "ROADRUNNER SECURE · DIRECT"]
   };
-  const n = names[b] || names.polaris;
+  const n = names[b] || names.roadrunner;
   document.getElementById("bn").textContent = n[0];
   document.getElementById("bs").textContent = n[1];
   document.getElementById("msp1").textContent = n[2];

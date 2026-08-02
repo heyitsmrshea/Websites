@@ -30,7 +30,7 @@ function architecture() {
 function sourceCoverage() {
   return `<section class="section tinted tint-teal">
     <div class="shell">
-      ${sectionHead("Source coverage", "Signals are useful only when their limits are visible.", "The live Polaris demo separates collecting sources, available connectors, blocked or limited sources, confidence, conflicts, and what each source unlocks. Missing visibility becomes work, not a quiet blank space.")}
+      ${sectionHead("Source coverage", "Signals are useful only when their limits are visible.", "The live RoadRunner demo separates collecting sources, available connectors, blocked or limited sources, confidence, conflicts, and what each source unlocks. Missing visibility becomes work, not a quiet blank space.")}
       ${table([
         ["Coverage state", "What it says", "Assessment value"],
         ["Collecting", "The source is fresh enough to create findings, verify closures, and show confidence level.", "Turns evidence into owner-ready work and gives closure a source-backed proof path."],

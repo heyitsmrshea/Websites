@@ -7,29 +7,29 @@ export function demoBody() {
 ${scenario()}
 ${liveDemo()}
 ${chapter(1, "walkthrough-executive", "Executive command center", "Leadership gets top decisions, open work, blocked visibility, owner load, source health, and the story of what changed.", {
-    img: "exhibit-exec", url: "demo.polarisconsulting.net/executive", letter: "A",
-    alt: "Polaris executive command center showing top critical decisions, risk and work metrics, closure and regression counts, what changed since last run, and source health",
-    caption: "Executive posture — the run in one screen", width: 1440, height: 900
+    img: "exhibit-exec", url: "roadrunnersecure.com/demo/executive", letter: "A",
+    alt: "RoadRunner Secure executive command center showing top critical decisions, risk and work metrics, closure and regression counts, what changed since last run, and source health",
+    caption: "Executive posture — the run in one screen", width: 1280, height: 720
   }, "The composite number is context. The decisions are the product: critical/high work, SLA breaches, regressions, data gaps, low confidence, conflicts, blocked sources, monthly savings, and source health are visible in the same executive surface.")}
 ${chapter(2, "walkthrough-workbench", "Action Workbench", "Every open finding can be filtered, drilled, exported, and worked toward validation.", {
-    img: "exhibit-queue", url: "demo.polarisconsulting.net/workbench", letter: "B",
-    alt: "Polaris Action Workbench showing finding filters, 72-hour and two-week queues, severity and source filters, and a table of open actions with affected entities and timelines",
-    caption: "Action Workbench — filter, drill, close", width: 1440, height: 900
+    img: "exhibit-queue", url: "roadrunnersecure.com/demo/workbench", letter: "B",
+    alt: "RoadRunner Secure Action Workbench showing finding filters, 72-hour and two-week queues, severity and source filters, and a table of open actions with affected entities and timelines",
+    caption: "Action Workbench — filter, drill, close", width: 1280, height: 720
   }, "The live demo now treats the queue as a real workbench: all open, my queue, 72-hour work, two-week work, blocked-by-source, waiting-on-customer, verified, regressed, SLA-breached, conflict, owner, confidence, source, and export views.")}
 ${chapter(3, "walkthrough-onprem", "On-prem collector and attack paths", "The on-prem view shows module coverage before it asks anyone to trust the path output.", {
-    img: "exhibit-attack", url: "demo.polarisconsulting.net/onprem", letter: "C",
-    alt: "Polaris on-prem assessment showing collector run registry, requested and collected modules, failed modules, skipped modules, findings, entities, and graph counts",
-    caption: "On-prem — collector coverage before path closure", width: 1440, height: 900
+    img: "exhibit-attack", url: "roadrunnersecure.com/demo/onprem", letter: "C",
+    alt: "RoadRunner Secure on-prem assessment showing collector run registry, requested and collected modules, failed modules, skipped modules, findings, entities, and graph counts",
+    caption: "On-prem — collector coverage before path closure", width: 1280, height: 720
   }, "The current on-prem demo exposes the collector run registry, requested modules, collected modules, failures, skips, findings, entities, and graph counts. A failed ADReplication module becomes a visible limitation instead of a hidden blind spot.", true)}
 ${chapter(4, "walkthrough-sources", "Source and Coverage Center", "Coverage is treated as evidence: collecting, available, blocked, limited, and what each source unlocks.", {
-    img: "exhibit-sources", url: "demo.polarisconsulting.net/sources", letter: "D",
-    alt: "Polaris Source and Coverage Center showing collecting sources, available connectors, blocked or limited coverage, closure capability, prerequisites, findings, and conflicts",
-    caption: "Source coverage — what is known, missing, blocked, or unlockable", width: 1440, height: 900
+    img: "exhibit-sources", url: "roadrunnersecure.com/demo/sources", letter: "D",
+    alt: "RoadRunner Secure Source and Coverage Center showing collecting sources, available connectors, blocked or limited coverage, closure capability, prerequisites, findings, and conflicts",
+    caption: "Source coverage — what is known, missing, blocked, or unlockable", width: 1280, height: 720
   }, "The live demo now makes source readiness first-class: 13 collecting sources, 3 available connectors, blocked or limited Purview coverage, closure capability, prerequisites, unlocked finding families, and source conflicts.")}
 ${chapter(5, "walkthrough-microsoft", "Evidence-grounded AI vCISO", "Answers are grounded in findings and source evidence. Missing data is stated instead of invented.", {
-    img: "exhibit-vciso", url: "demo.polarisconsulting.net/vciso", letter: "E",
-    alt: "Polaris AI vCISO view answering with entity names and cited finding IDs and sources, and stating a data gap rather than inventing",
-    caption: "AI vCISO — cited, scoped, honest", width: 1440, height: 900
+    img: "exhibit-vciso", url: "roadrunnersecure.com/demo/vciso", letter: "E",
+    alt: "RoadRunner Secure AI vCISO view answering with entity names and cited finding IDs and sources, and stating a data gap rather than inventing",
+    caption: "AI vCISO — cited, scoped, honest", width: 1280, height: 720
   }, "Ask what to fix first and the answer names entities, cites the action queue, weekly finding status, closure history, source conflicts, and source readiness. When data is missing, it tells you exactly which connector unlocks the answer.")}
 ${combinedFinding()}
 ${reportFold()}
@@ -60,8 +60,8 @@ function liveDemo() {
       <div class="artifact rv-scale">
         <div class="artifact-top">
           <div>
-            <span class="label">Live Polaris demo · Synthetic fixture</span>
-            <h3>Open the current white-label client portal.</h3>
+            <span class="label">Live RoadRunner demo · Synthetic fixture</span>
+            <h3>Open the current RoadRunner Secure assessment.</h3>
           </div>
           <span class="tag live">LIVE DEMO</span>
         </div>
@@ -72,7 +72,7 @@ function liveDemo() {
           ${demoField("Use it for", "Showing how RoadRunner can power an MSP-branded client experience without pretending synthetic data is real.")}
           <div class="artifact-field rule">
             <b>Open demo</b>
-            <span><a class="textlink" href="${brand.demoUrl}" target="_blank" rel="noopener">Launch demo.polarisconsulting.net</a></span>
+            <span><a class="textlink" href="${brand.demoUrl}" target="_blank" rel="noopener">Launch roadrunnersecure.com/demo</a></span>
           </div>
         </div>
       </div>

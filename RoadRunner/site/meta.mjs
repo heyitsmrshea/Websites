@@ -5,7 +5,7 @@ export const brand = {
   owner: "RoadRunner Strategies",
   email: "drew@roadrunnersecure.com",
   root: "https://roadrunnersecure.com",
-  demoUrl: "https://demo.polarisconsulting.net"
+  demoUrl: "https://roadrunnersecure.com/demo/"
 };
 
 export const navItems = [
@@ -114,9 +114,9 @@ export const pageMeta = [
     description: "A guided synthetic RoadRunner Secure walkthrough showing executive posture, action workbench, source coverage, on-prem collector evidence, AI vCISO, and white-label reporting.",
     eyebrow: "Guided product walkthrough",
     h1: `A weekly run, <span class="ital">start to finish.</span>`,
-    lead: "A synthetic run using fictional evidence. Polaris branding demonstrates the live MSP white-label demo powered by RoadRunner Secure.",
+    lead: "A synthetic RoadRunner Secure run using fictional organizations, fictional evidence, and no connected tenant.",
     primary: ["#walkthrough", "Start walkthrough"],
-    secondary: ["https://demo.polarisconsulting.net", "Open live demo"]
+    secondary: ["https://roadrunnersecure.com/demo/", "Open live demo"]
   },
   {
     key: "contact",
