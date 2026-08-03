@@ -80,8 +80,8 @@ function writeLogoVariants() {
   const markPath = source.match(/<path d="([^"]+)"/)?.[1];
   if (!markPath) return;
 
-  const markSvg = (fill) => `<svg width="180" height="130" viewBox="120 0 590 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="${markPath}" fill="${fill}"/>
+  const markSvg = (fill) => `<svg width="590" height="420" viewBox="0 0 590 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="${markPath}" fill="${fill}" transform="translate(-120 0)"/>
 </svg>
 `;
   const faviconSvg = (fill, background) => `<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RoadRunner">

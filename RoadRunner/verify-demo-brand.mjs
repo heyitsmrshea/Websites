@@ -31,6 +31,7 @@ const publishedPages = [
 ]
 const screenshotSources = ['attack.html', 'exec.html', 'portal.html', 'queue.html', 'report.html', 'vciso.html']
 const forbiddenPolarisBranding = /polaris(?:consulting(?:\.net)?)?|polaris-logo|polaris-icon/i
+const marketingAssetVersion = 'rr-mobile-header-20260803-1'
 const failures = []
 
 const indexPath = path.join(demo, 'index.html')
@@ -72,6 +73,23 @@ if (fs.existsSync(home)) {
   const html = fs.readFileSync(home, 'utf8')
   const hasDemoUrl = html.includes('href="/demo/"') || html.includes('https://roadrunnersecure.com/demo/')
   if (!hasDemoUrl) failures.push('RoadRunner homepage is missing its first-party demo URL')
+  if (!html.includes(`/styles.css?v=${marketingAssetVersion}`)) failures.push('marketing stylesheet is not cache-versioned')
+  if (!html.includes(`/assets/roadrunner-mark.svg?v=${marketingAssetVersion}`)) failures.push('marketing header mark is not cache-versioned')
+}
+
+const marketingCss = path.join(root, 'styles.css')
+if (!fs.existsSync(marketingCss)) failures.push('marketing stylesheet is missing')
+else {
+  const css = fs.readFileSync(marketingCss, 'utf8')
+  if (!css.includes('.brand img{width:40px;height:29px;flex:0 0 40px')) failures.push('mobile header mark width is not locked')
+  if (!css.includes('padding-left:max(16px,env(safe-area-inset-left))')) failures.push('mobile header safe-area padding is missing')
+}
+
+const marketingMark = path.join(root, 'assets', 'roadrunner-mark.svg')
+if (!fs.existsSync(marketingMark)) failures.push('marketing RoadRunner mark is missing')
+else {
+  const svg = fs.readFileSync(marketingMark, 'utf8')
+  if (!svg.includes('viewBox="0 0 590 420"')) failures.push('marketing RoadRunner mark has a non-zero viewBox origin')
 }
 
 for (const [file, expected] of expectedMarks) {

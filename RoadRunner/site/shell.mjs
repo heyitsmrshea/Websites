@@ -5,6 +5,15 @@ import { heroVisuals } from "./visuals.mjs";
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 const FAVICON_VERSION = "rr-logo-20260802-1";
 const SOCIAL_PREVIEW_VERSION = "rr-bird-20260802-1";
+const SITE_ASSET_VERSION = "rr-mobile-header-20260803-1";
+
+function stylesheetLink() {
+  return `<link rel="stylesheet" href="/styles.css?v=${SITE_ASSET_VERSION}">`;
+}
+
+function markUrl() {
+  return `/assets/roadrunner-mark.svg?v=${SITE_ASSET_VERSION}`;
+}
 
 function faviconLinks() {
   return `<link rel="icon" href="/assets/roadrunner-favicon.svg?v=${FAVICON_VERSION}" type="image/svg+xml">
@@ -41,7 +50,7 @@ export function shell(page) {
   ${faviconLinks()}
   <link rel="preload" href="/assets/fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css">
+  ${stylesheetLink()}
   ${page.slug === "" ? structuredData() : ""}
 </head>
 <body>
@@ -88,7 +97,7 @@ export function header(active) {
   return `<header class="site-header">
     <div class="nav-shell">
       <a class="brand" href="/" aria-label="RoadRunner Secure home">
-        <img src="/assets/roadrunner-mark.svg" alt="" width="40" height="33">
+        <img src="${markUrl()}" alt="" width="40" height="29">
         <span class="brand-title"><strong>RoadRunner Secure</strong><span>Evidence-verified closure</span></span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">${links}</nav>
@@ -136,7 +145,7 @@ export function footer() {
         <div>
           <p class="footer-sign">Clear findings. Accountable work. <span class="ital">Verified closure.</span></p>
           <div class="footer-brandline">
-            <img src="/assets/roadrunner-mark.svg" alt="">
+            <img src="${markUrl()}" alt="">
             <span>RoadRunner owns the assessment method. MSPs deliver the client-facing surface under their own brand.</span>
           </div>
         </div>
@@ -166,7 +175,7 @@ export function notFoundPage() {
   <title>404 | RoadRunner Secure</title>
   <meta name="theme-color" content="#070b10">
   ${faviconLinks()}
-  <link rel="stylesheet" href="/styles.css">
+  ${stylesheetLink()}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -200,7 +209,7 @@ export function legacyRedirectPage(page, title = `${page.title} moved`) {
   <title>${title}</title>
   <link rel="canonical" href="${page.slug ? `${brand.root}/${page.slug}/` : `${brand.root}/`}">
   ${faviconLinks()}
-  <link rel="stylesheet" href="/styles.css">
+  ${stylesheetLink()}
 </head>
 <body>
   ${header(page.active)}
@@ -232,7 +241,7 @@ export function designArchivePage() {
   <title>RoadRunner Secure internal design archive</title>
   <meta name="description" content="Internal noindex design archive for RoadRunner Secure homepage directions.">
   ${faviconLinks()}
-  <link rel="stylesheet" href="/styles.css">
+  ${stylesheetLink()}
 </head>
 <body>
   <main id="main">

@@ -204,9 +204,9 @@ textarea:focus-visible, summary:focus-visible {
   align-items: center;
   gap: 20px;
 }
-.brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; min-width: 0; }
-.brand img { width: 40px; height: auto; display: block; }
-.brand-title { display: grid; gap: 0; line-height: 1.15; }
+.brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; min-width: 0; overflow: visible; }
+.brand img { width: 40px; height: 29px; flex: 0 0 40px; max-width: none; object-fit: contain; display: block; }
+.brand-title { display: grid; gap: 0; min-width: 0; line-height: 1.15; }
 .brand-title strong { font-size: 14.5px; font-weight: 750; letter-spacing: -.01em; }
 .brand-title span {
   font-family: var(--font-mono);
@@ -328,8 +328,15 @@ textarea:focus-visible, summary:focus-visible {
 
 @media (max-width: 960px) {
   .nav-links, .nav-cta { display: none; }
-  .nav-shell { grid-template-columns: auto 1fr auto; }
-  .mobile-menu { display: block; justify-self: end; position: relative; }
+  .nav-shell {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  .brand { grid-column: 1; }
+  .brand-title strong, .brand-title span { white-space: nowrap; }
+  .mobile-menu { display: block; grid-column: 2; justify-self: end; position: relative; }
   .mobile-menu summary {
     list-style: none;
     cursor: pointer;
@@ -341,6 +348,9 @@ textarea:focus-visible, summary:focus-visible {
     border: 1px solid var(--line);
     border-radius: 8px;
     padding: 9px 14px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
   .mobile-menu summary::-webkit-details-marker { display: none; }
   .mobile-menu[open] summary { border-color: var(--line-strong); color: var(--teal-hi); }
@@ -368,5 +378,9 @@ textarea:focus-visible, summary:focus-visible {
   .mobile-menu-panel a:hover, .mobile-menu-panel a[aria-current="page"] { color: var(--teal-hi); background: rgba(45, 212, 191, .07); }
   .footer-top { grid-template-columns: 1fr; }
   .footer-links { justify-self: start; }
+}
+
+@media (max-width: 360px) {
+  .brand-title span { display: none; }
 }
 `;
