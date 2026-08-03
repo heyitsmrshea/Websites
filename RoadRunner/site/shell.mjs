@@ -3,6 +3,14 @@ import { brand, footerItems, navItems } from "./meta.mjs";
 import { heroVisuals } from "./visuals.mjs";
 
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
+const FAVICON_VERSION = "rr-logo-20260802-1";
+
+function faviconLinks() {
+  return `<link rel="icon" href="/assets/roadrunner-favicon.svg?v=${FAVICON_VERSION}" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png?v=${FAVICON_VERSION}" sizes="32x32" type="image/png">
+  <link rel="alternate icon" href="/favicon.ico?v=${FAVICON_VERSION}">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=${FAVICON_VERSION}">`;
+}
 
 export function shell(page) {
   const canonical = page.slug ? `${brand.root}/${page.slug}/` : `${brand.root}/`;
@@ -24,10 +32,7 @@ export function shell(page) {
   <meta property="og:image" content="${ogImage}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="${ogImage}">
-  <link rel="icon" href="/assets/roadrunner-mark.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="alternate icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  ${faviconLinks()}
   <link rel="preload" href="/assets/fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
@@ -154,7 +159,7 @@ export function notFoundPage() {
   <meta name="robots" content="noindex">
   <title>404 | RoadRunner Secure</title>
   <meta name="theme-color" content="#070b10">
-  <link rel="icon" href="/assets/roadrunner-mark.svg" type="image/svg+xml">
+  ${faviconLinks()}
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -188,6 +193,7 @@ export function legacyRedirectPage(page, title = `${page.title} moved`) {
   <meta http-equiv="refresh" content="0; url=${target}">
   <title>${title}</title>
   <link rel="canonical" href="${page.slug ? `${brand.root}/${page.slug}/` : `${brand.root}/`}">
+  ${faviconLinks()}
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -219,6 +225,7 @@ export function designArchivePage() {
   <meta name="robots" content="noindex">
   <title>RoadRunner Secure internal design archive</title>
   <meta name="description" content="Internal noindex design archive for RoadRunner Secure homepage directions.">
+  ${faviconLinks()}
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
