@@ -41,6 +41,18 @@ else {
   if (!index.includes('roadrunner-favicon.svg?v=rr-logo-20260802-1')) failures.push('versioned RoadRunner favicon is missing')
   if (!index.includes('roadrunner-preview.png?v=rr-bird-20260802-1')) failures.push('RoadRunner social preview is missing')
   if (/polarisconsulting\.net\/icon\.svg/i.test(index)) failures.push('Polaris favicon leaked into the RoadRunner entry point')
+  const activeBundleMatch = index.match(/src="\/demo\/assets\/(index-[^"]+\.js)"/)
+  if (!activeBundleMatch) failures.push('RoadRunner demo entry bundle is missing')
+  else {
+    const activeBundlePath = path.join(demo, 'assets', activeBundleMatch[1])
+    if (!fs.existsSync(activeBundlePath)) failures.push(`RoadRunner demo entry bundle is missing: ${activeBundleMatch[1]}`)
+    else {
+      const activeBundle = fs.readFileSync(activeBundlePath, 'utf8')
+      if (forbiddenPolarisBranding.test(activeBundle)) failures.push('Polaris branding leaked into the active RoadRunner demo bundle')
+      if (!activeBundle.includes('rr-bird-20260803-1')) failures.push('active RoadRunner mark version is stale')
+      if (!activeBundle.includes('?v=${') || !activeBundle.includes('.markVersion}')) failures.push('active RoadRunner mark URL is not cache-versioned')
+    }
+  }
 }
 
 for (const route of routes) {
