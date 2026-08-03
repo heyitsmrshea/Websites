@@ -39,6 +39,7 @@ else {
   const index = fs.readFileSync(indexPath, 'utf8')
   if (!index.includes('<title>RoadRunner Secure — Synthetic Security Assessment</title>')) failures.push('RoadRunner demo title is missing')
   if (!index.includes('roadrunner-favicon.svg?v=rr-logo-20260802-1')) failures.push('versioned RoadRunner favicon is missing')
+  if (!index.includes('roadrunner-preview.png?v=rr-bird-20260802-1')) failures.push('RoadRunner social preview is missing')
   if (/polarisconsulting\.net\/icon\.svg/i.test(index)) failures.push('Polaris favicon leaked into the RoadRunner entry point')
 }
 

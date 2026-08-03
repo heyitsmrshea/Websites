@@ -89,6 +89,11 @@ function writeLogoVariants() {
   <path d="${markPath}" fill="${fill}" transform="translate(-48 91) scale(.743)"/>
 </svg>
 `;
+  const socialPreviewSvg = (fill, background) => `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RoadRunner bird logo">
+  <rect width="1200" height="630" fill="${background}"/>
+  <path d="${markPath}" fill="${fill}" transform="translate(60 42) scale(1.3)"/>
+</svg>
+`;
   const lockupSvg = (ink, accent) => `<svg width="760" height="140" viewBox="0 0 760 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RoadRunner Secure">
   <path d="${markPath}" fill="${accent}" transform="translate(-86 -8) scale(.25)"/>
   <text x="176" y="58" fill="${ink}" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="850">RoadRunner Secure</text>
@@ -98,6 +103,7 @@ function writeLogoVariants() {
   writeFileSync(join(siteDir, "assets", "roadrunner-mark.svg"), markSvg("#2DD4BF"));
   writeFileSync(join(siteDir, "assets", "roadrunner-mark-dark.svg"), markSvg("#0D385B"));
   writeFileSync(join(siteDir, "assets", "roadrunner-favicon.svg"), faviconSvg("#2DD4BF", "#071019"));
+  writeFileSync(join(siteDir, "assets", "og", "roadrunner-preview.svg"), socialPreviewSvg("#2DD4BF", "#071019"));
   writeFileSync(join(siteDir, "assets", "roadrunner-lockup-secure.svg"), lockupSvg("#F4F8FB", "#2DD4BF"));
   writeFileSync(join(siteDir, "assets", "roadrunner-lockup-secure-dark.svg"), lockupSvg("#071019", "#0D385B"));
 }

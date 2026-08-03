@@ -4,6 +4,7 @@ import { heroVisuals } from "./visuals.mjs";
 
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 const FAVICON_VERSION = "rr-logo-20260802-1";
+const SOCIAL_PREVIEW_VERSION = "rr-bird-20260802-1";
 
 function faviconLinks() {
   return `<link rel="icon" href="/assets/roadrunner-favicon.svg?v=${FAVICON_VERSION}" type="image/svg+xml">
@@ -14,7 +15,7 @@ function faviconLinks() {
 
 export function shell(page) {
   const canonical = page.slug ? `${brand.root}/${page.slug}/` : `${brand.root}/`;
-  const ogImage = `${brand.root}/assets/og/${page.og}.jpg`;
+  const ogImage = `${brand.root}/assets/og/roadrunner-preview.png?v=${SOCIAL_PREVIEW_VERSION}`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -30,8 +31,13 @@ export function shell(page) {
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${ogImage}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="RoadRunner bird logo">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="${ogImage}">
+  <meta name="twitter:image:alt" content="RoadRunner bird logo">
   ${faviconLinks()}
   <link rel="preload" href="/assets/fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
