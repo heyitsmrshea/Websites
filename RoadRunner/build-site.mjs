@@ -48,7 +48,9 @@ writeFileSync(join(siteDir, "styles.css"), minifyCss([tokens, base, components, 
 writeFileSync(join(siteDir, "script.js"), clientJs(brand));
 
 for (const page of pages) {
-  writeCleanPage(page);
+  // /demo/ is the separately built interactive product demo. Keep its entry
+  // point intact while still generating the legacy redirect and sitemap entry.
+  if (page.key !== "demo") writeCleanPage(page);
   if (page.file !== "index.html") {
     writeFileSync(join(siteDir, page.file), legacyRedirectPage(page));
   }

@@ -149,7 +149,7 @@ export const findings = {
     validation: "Next run must show no recent interactive sign-ins for excluded service accounts or an approved exception."
   },
   demo: {
-    label: "Walkthrough finding",
+    label: "Demo finding",
     id: "RR-F-0161",
     title: "MFA exception and AD path combine",
     severity: "HIGH",
@@ -166,7 +166,7 @@ export function contactSection() {
     <div class="shell contact-grid">
       <div class="rv">
         <div class="eyebrow">Contact</div>
-        <h2>Walk through the product or scope a pilot.</h2>
+        <h2>See the product or scope a pilot.</h2>
         <p class="lead">The form opens a structured email draft. The static site does not collect, transmit, or store form data by itself.</p>
         <a class="button secondary" href="mailto:${brand.email}">${brand.email}</a>
       </div>
@@ -183,7 +183,7 @@ export function contactSection() {
           <select name="interest">
             <option value="pilot">Scope a pilot</option>
             <option value="white-label">Review MSP white-label model</option>
-            <option value="walkthrough">Product walkthrough</option>
+            <option value="demo">Product demo</option>
             <option value="security">Security review</option>
           </select>
         </label>

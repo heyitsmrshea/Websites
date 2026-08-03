@@ -9,13 +9,20 @@ export const brand = {
 };
 
 export const navItems = [
-  ["/", "Home"],
+  ["/platform/", "Platform"],
+  ["/pricing/", "Pricing"],
+  ["/security/", "Security"],
+  ["/contact/", "Contact"]
+];
+
+// Detailed routes remain available in the footer without crowding the primary navigation.
+export const footerItems = [
   ["/platform/", "Platform"],
   ["/on-prem-attack-paths/", "On-Prem"],
   ["/microsoft-security/", "Microsoft"],
   ["/pricing/", "Pricing"],
   ["/security/", "Security"],
-  ["/demo/", "Walkthrough"],
+  ["/demo/", "Demo"],
   ["/contact/", "Contact"]
 ];
 
@@ -28,10 +35,10 @@ export const pageMeta = [
     og: "home",
     title: "RoadRunner Secure | Evidence-verified security assessment",
     description: "RoadRunner Secure turns Microsoft, endpoint, cloud, and on-prem evidence into named findings, weekly remediation work, and evidence-verified closure.",
-    eyebrow: "RoadRunner-owned assessment platform",
-    h1: `A dashboard is not a <span class="ital">decision.</span>`,
-    lead: "RoadRunner Secure converts tenant evidence into a weekly operating loop: what changed, who is affected, what to fix, who owns it, and what the next run must prove before closure.",
-    primary: ["/demo/", "Open the walkthrough"],
+    eyebrow: "Security assessment platform",
+    h1: `Turn security evidence into clear, verified action.`,
+    lead: "RoadRunner Secure identifies the identities, devices, policies, and attack paths that need attention, assigns the work, and verifies closure on the next assessment run.",
+    primary: ["/demo/", "Live Demo"],
     secondary: ["/contact/", "Scope a pilot"]
   },
   {
@@ -43,9 +50,9 @@ export const pageMeta = [
     title: "Platform | RoadRunner Secure evidence workflow",
     description: "How RoadRunner Secure turns read-only evidence into findings, remediation queues, validation runs, and client-ready reporting.",
     eyebrow: "Platform workflow",
-    h1: `Evidence in. <span class="ital">Verified closure</span> out.`,
+    h1: `Turn evidence into verified security work.`,
     lead: "The product is a repeatable assessment machine. Sources are read, findings are generated, work is prioritized, and the next run decides what is actually closed.",
-    primary: ["/demo/", "See the workflow"],
+    primary: ["/demo/", "View Live Demo"],
     secondary: ["/security/", "Review trust model"]
   },
   {
@@ -57,9 +64,9 @@ export const pageMeta = [
     title: "On-Prem Attack Paths | Active Directory path assessment",
     description: "RoadRunner Secure maps Active Directory attack paths, recommends low-disruption fixes, and verifies path closure on the next run.",
     eyebrow: "On-prem attack paths",
-    h1: `Find the path. Cut the edge. <span class="ital">Prove it died.</span>`,
+    h1: `Find and close Active Directory attack paths.`,
     lead: "RoadRunner turns Active Directory topology into practical path-closure work: which account, group, delegation, or server creates exposure, what to change, and what the next collector run must prove.",
-    primary: ["/demo/#walkthrough-onprem", "Open AD walkthrough"],
+    primary: ["/demo/#walkthrough-onprem", "Open AD demo"],
     secondary: ["/contact/", "Scope on-prem"]
   },
   {
@@ -71,9 +78,9 @@ export const pageMeta = [
     title: "Microsoft Security | Entra, Defender, Intune, M365, and Azure assessment",
     description: "RoadRunner Secure converts Microsoft security evidence into prioritized findings, owner-ready remediation, and verified closure.",
     eyebrow: "Microsoft security assessment",
-    h1: `Microsoft posture without <span class="ital">score theater.</span>`,
+    h1: `Prioritize Microsoft security findings.`,
     lead: "Secure Score is useful context, not the assessment. RoadRunner turns Entra, Defender, Intune, M365, and Azure evidence into specific work your team can assign and validate.",
-    primary: ["/demo/#walkthrough-microsoft", "Open Microsoft walkthrough"],
+    primary: ["/demo/#walkthrough-microsoft", "Open Microsoft demo"],
     secondary: ["/security/", "Review permissions"]
   },
   {
@@ -85,10 +92,10 @@ export const pageMeta = [
     title: "Pricing | RoadRunner Secure pilot and MSP partner models",
     description: "RoadRunner Secure starts with a scoped pilot, then prices by tenant count, evidence sources, deployment model, and white-label requirements.",
     eyebrow: "Pilot-first pricing",
-    h1: `Price the assessment around <span class="ital">proof.</span>`,
+    h1: `Start with a focused assessment pilot.`,
     lead: "Start with a focused pilot that produces real findings, a weekly queue, and a final remediation roadmap. Continue only if the output creates useful work.",
     primary: ["/contact/", "Scope a pilot"],
-    secondary: ["/demo/", "Review walkthrough"]
+    secondary: ["/demo/", "View Live Demo"]
   },
   {
     key: "security",
@@ -99,7 +106,7 @@ export const pageMeta = [
     title: "Security | RoadRunner Secure data handling and connector posture",
     description: "Security posture for RoadRunner Secure: read-only collection, connector permissions, tenant isolation, retention, offboarding, and disclosure process.",
     eyebrow: "Security and trust",
-    h1: `Sensitive evidence needs <span class="ital">explicit rules.</span>`,
+    h1: `Protect sensitive evidence with explicit controls.`,
     lead: "RoadRunner Secure is designed around read-only evidence collection, least-privilege access, tenant separation, visible limitations, and customer-controlled deployment options where required.",
     primary: ["/contact/", "Ask security questions"],
     secondary: ["/pricing/", "Discuss pilot"]
@@ -108,15 +115,15 @@ export const pageMeta = [
     key: "demo",
     file: "Demo.dc.html",
     slug: "demo",
-    active: "Walkthrough",
+    active: "Demo",
     og: "demo",
-    title: "Product Walkthrough | RoadRunner Secure",
-    description: "A guided synthetic RoadRunner Secure walkthrough showing executive posture, action workbench, source coverage, on-prem collector evidence, AI vCISO, and white-label reporting.",
-    eyebrow: "Guided product walkthrough",
-    h1: `A weekly run, <span class="ital">start to finish.</span>`,
+    title: "Live Demo | RoadRunner Secure",
+    description: "A synthetic RoadRunner Secure demo showing executive posture, action workbench, source coverage, on-prem collector evidence, AI vCISO, and white-label reporting.",
+    eyebrow: "Live product demo",
+    h1: `Explore a weekly assessment run.`,
     lead: "A synthetic RoadRunner Secure run using fictional organizations, fictional evidence, and no connected tenant.",
-    primary: ["#walkthrough", "Start walkthrough"],
-    secondary: ["https://roadrunnersecure.com/demo/", "Open live demo"]
+    primary: ["#demo-overview", "Explore the demo"],
+    secondary: ["/contact/", "Talk to us"]
   },
   {
     key: "contact",
@@ -127,9 +134,9 @@ export const pageMeta = [
     title: "Contact | RoadRunner Secure pilot and white-label assessment",
     description: "Contact RoadRunner Secure to scope a pilot, review the MSP white-label model, or walk through the synthetic assessment demo.",
     eyebrow: "Contact RoadRunner",
-    h1: `Scope the <span class="ital">first assessment run.</span>`,
-    lead: "Use this page to request a pilot, review the MSP white-label model, or walk through the synthetic product flow. The static form opens your email client and stores nothing on the site.",
+    h1: `Plan your first assessment run.`,
+    lead: "Use this page to request a pilot, review the MSP white-label model, or view the synthetic product demo. The static form opens your email client and stores nothing on the site.",
     primary: [`mailto:drew@roadrunnersecure.com?subject=RoadRunner%20Secure%20pilot%20scope`, "Email directly"],
-    secondary: ["/demo/", "Review walkthrough"]
+    secondary: ["/demo/", "View Live Demo"]
   }
 ];

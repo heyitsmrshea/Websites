@@ -1,5 +1,5 @@
 // Document shell: head, header, hero, footer, 404, legacy redirects, robots, sitemap.
-import { brand, navItems } from "./meta.mjs";
+import { brand, footerItems, navItems } from "./meta.mjs";
 import { heroVisuals } from "./visuals.mjs";
 
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
@@ -82,12 +82,11 @@ export function header(active) {
       </a>
       <nav class="nav-links" aria-label="Primary navigation">${links}</nav>
       <div class="nav-cta">
-        <a class="button secondary small" href="/contact/">Scope pilot</a>
-        <a class="button primary small" href="${brand.demoUrl}" target="_blank" rel="noopener">Live demo</a>
+        <a class="button primary small" href="/demo/">Live Demo</a>
       </div>
       <details class="mobile-menu">
         <summary aria-label="Open navigation">Menu</summary>
-        <nav class="mobile-menu-panel" aria-label="Mobile navigation">${links}<a href="/contact/">Scope pilot</a><a href="${brand.demoUrl}" target="_blank" rel="noopener">Live demo</a></nav>
+        <nav class="mobile-menu-panel" aria-label="Mobile navigation">${links}<a href="/demo/">Live Demo</a></nav>
       </details>
     </div>
   </header>`;
@@ -119,12 +118,12 @@ export function hero(page) {
 }
 
 export function footer() {
-  const links = navItems.slice(1).map(([href, label]) => `<a href="${href}">${label}</a>`).join("");
+  const links = footerItems.map(([href, label]) => `<a href="${href}">${label}</a>`).join("");
   return `<footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <p class="footer-sign">Find the path. Cut the edge. <span class="ital">Prove it died.</span></p>
+          <p class="footer-sign">Clear findings. Accountable work. <span class="ital">Verified closure.</span></p>
           <div class="footer-brandline">
             <img src="/assets/roadrunner-mark.svg" alt="">
             <span>RoadRunner owns the assessment method. MSPs deliver the client-facing surface under their own brand.</span>
@@ -135,7 +134,7 @@ export function footer() {
       <div class="footer-meta">
         <span>Read-only evidence posture</span>
         <span>No automatic remediation by default</span>
-        <span>Synthetic walkthrough uses fictional evidence</span>
+        <span>Synthetic demo uses fictional evidence</span>
         <span>&copy; ${brand.owner}, LLC</span>
         <span>BUILD ${BUILD_DATE}</span>
       </div>
@@ -144,7 +143,7 @@ export function footer() {
 }
 
 export function notFoundPage() {
-  const routes = navItems.map(([href, label]) => {
+  const routes = footerItems.map(([href, label]) => {
     return `<a href="${href}"><span>${label}</span><span class="mono">${href}</span></a>`;
   }).join("");
   return `<!doctype html>
@@ -231,7 +230,7 @@ export function designArchivePage() {
         <p class="lead">This page is intentionally noindexed and unlinked from the public navigation. Use the current RoadRunner Secure pages for review.</p>
         <div class="hero-actions" style="margin-top:22px">
           <a class="button primary" href="/">Open current homepage</a>
-          <a class="button secondary" href="/demo/">Open walkthrough</a>
+          <a class="button secondary" href="/demo/">Open Live Demo</a>
         </div>
       </div>
     </section>

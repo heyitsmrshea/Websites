@@ -1,4 +1,4 @@
-// Walkthrough — the guided casefile: scenario, three chapters, the combined finding.
+// Demo — a guided synthetic run through the product.
 import { sectionHead, exhibit, flow, findingArtifact, findings, contactSection, stamp } from "../helpers.mjs";
 import { brand } from "../meta.mjs";
 
@@ -37,9 +37,9 @@ ${contactSection()}`;
 }
 
 function scenario() {
-  return `<section class="section" id="walkthrough">
+  return `<section class="section" id="demo-overview">
     <div class="shell">
-      ${sectionHead("Scenario", "Privilege sprawl, CA gaps, and on-prem exposure.", "The walkthrough follows one synthetic weekly run from baseline through findings, remediation queue, validation, and reporting.")}
+      ${sectionHead("Scenario", "Privilege sprawl, CA gaps, and on-prem exposure.", "The demo follows one synthetic weekly run from baseline through findings, remediation, validation, and reporting.")}
       ${flow([
         ["Baseline", "Connect read-only sources and establish the first evidence snapshot."],
         ["Findings", "Create named findings tied to accounts, devices, policies, and paths."],
@@ -107,7 +107,7 @@ function chapter(num, id, title, subtitle, shot, note, flip = false) {
 function combinedFinding() {
   return `<section class="section tinted tint-green">
     <div class="shell">
-      ${sectionHead("The finale", "Two weak signals. One provable exposure.", "The walkthrough ends with combined evidence, one artifact, a validation condition, and a next run that decides.", "green")}
+      ${sectionHead("Combined finding", "Two weak signals. One provable exposure.", "The demo combines the evidence into one finding with a validation condition for the next run.", "green")}
       ${findingArtifact(findings.demo)}
       <p style="margin-top:28px; display:flex; gap:18px; align-items:center; flex-wrap:wrap">
         ${stamp("Next run decides")}

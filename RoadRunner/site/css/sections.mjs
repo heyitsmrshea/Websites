@@ -109,7 +109,7 @@ svg[data-graph].severed .cut-mark { opacity: 1; }
 .chapter-head { display: grid; grid-template-columns: auto 1fr; gap: clamp(12px, 2vw, 28px); align-items: baseline; margin-bottom: var(--sp-block); }
 .chapter-num {
   font-family: var(--font-display);
-  font-size: clamp(4.4rem, 2.5rem + 8vw, 9rem);
+  font-size: clamp(3rem, 2rem + 3.5vw, 5rem);
   font-weight: 380;
   line-height: .8;
   color: transparent;

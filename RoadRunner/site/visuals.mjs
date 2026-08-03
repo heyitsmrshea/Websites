@@ -181,11 +181,11 @@ export function trustPanel() {
   </aside>`;
 }
 
-export function walkthroughPanel() {
-  return `<aside class="runpanel" aria-label="RoadRunner walkthrough preview">
+export function demoPanel() {
+  return `<aside class="runpanel" aria-label="RoadRunner demo preview">
     <div class="runpanel-top">
       <div class="titleblock">
-        <strong>Product walkthrough</strong>
+        <strong>Live product demo</strong>
         <span class="runid">A partner brand can be the client-facing surface</span>
       </div>
       <span class="tag gap">SYNTHETIC</span>
@@ -225,6 +225,6 @@ export const heroVisuals = {
   microsoft: matrixPanel,
   pricing: deploymentPanel,
   security: trustPanel,
-  demo: walkthroughPanel,
+  demo: demoPanel,
   contact: contactPanel
 };

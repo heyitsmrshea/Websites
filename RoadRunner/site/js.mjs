@@ -253,7 +253,7 @@ export function clientJs(brand) {
     flows.forEach((f) => f.classList.add("flowed"));
   }
 
-  /* ---------- walkthrough chapters ignite on approach ---------- */
+  /* ---------- demo chapters highlight on approach ---------- */
   const chapters = document.querySelectorAll(".chapter");
   if (chapters.length && "IntersectionObserver" in window) {
     const cio = new IntersectionObserver((entries) => {
@@ -290,7 +290,7 @@ export function clientJs(brand) {
       event.preventDefault();
       const data = new FormData(form);
       const subjectByInterest = {
-        walkthrough: "RoadRunner Secure product walkthrough",
+        demo: "RoadRunner Secure product demo",
         pilot: "RoadRunner Secure pilot scope",
         "white-label": "RoadRunner Secure MSP white-label model",
         security: "RoadRunner Secure security review"

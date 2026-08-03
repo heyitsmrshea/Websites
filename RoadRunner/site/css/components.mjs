@@ -3,8 +3,8 @@ export const components = String.raw`
 /* ---------- hero ---------- */
 .hero {
   position: relative;
-  padding-top: clamp(40px, 6vh, 74px);
-  padding-bottom: clamp(34px, 5.5vh, 64px);
+  padding-top: clamp(32px, 4.5vh, 54px);
+  padding-bottom: clamp(30px, 4vh, 48px);
   overflow: clip;
 }
 .hero::before {
@@ -14,8 +14,8 @@ export const components = String.raw`
   height: 130%;
   pointer-events: none;
   background:
-    radial-gradient(1000px 480px at 74% -12%, rgba(45, 212, 191, .13), transparent 62%),
-    radial-gradient(720px 420px at 8% 4%, rgba(59, 130, 246, .06), transparent 60%);
+    radial-gradient(1000px 480px at 74% -12%, rgba(45, 212, 191, .08), transparent 62%),
+    radial-gradient(720px 420px at 8% 4%, rgba(59, 130, 246, .035), transparent 60%);
 }
 .hero-inner {
   position: relative;
@@ -24,7 +24,7 @@ export const components = String.raw`
   gap: clamp(22px, 3.2vw, 44px);
   align-items: center;
 }
-.hero-copy { display: grid; gap: 18px; justify-items: start; }
+.hero-copy { display: grid; gap: 16px; justify-items: start; }
 .hero-copy .lead { max-width: 54ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 .signal-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }

@@ -286,7 +286,7 @@ textarea:focus-visible, summary:focus-visible {
 .footer-inner { max-width: var(--shell-max); margin: 0 auto; padding: 40px var(--shell-pad) 24px; }
 .footer-sign {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 1.1rem + 2.4vw, 3rem);
+  font-size: clamp(1.5rem, 1.18rem + 1.2vw, 2.2rem);
   font-weight: 460;
   letter-spacing: -.014em;
   line-height: 1.12;
@@ -298,7 +298,7 @@ textarea:focus-visible, summary:focus-visible {
   grid-template-columns: 1.2fr .8fr;
   gap: 28px;
   align-items: start;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--line-soft);
 }
 .footer-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 28px; justify-self: end; }

@@ -57,7 +57,8 @@ for (const file of screenshotSources) assertRoadRunnerSurface(path.join('shots',
 const home = path.join(root, 'index.html')
 if (fs.existsSync(home)) {
   const html = fs.readFileSync(home, 'utf8')
-  if (!html.includes('https://roadrunnersecure.com/demo/')) failures.push('RoadRunner homepage is missing its first-party demo URL')
+  const hasDemoUrl = html.includes('href="/demo/"') || html.includes('https://roadrunnersecure.com/demo/')
+  if (!hasDemoUrl) failures.push('RoadRunner homepage is missing its first-party demo URL')
 }
 
 for (const [file, expected] of expectedMarks) {
