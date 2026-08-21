@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'">
+  <title>Register — South Florida Select Softball</title>
+  <meta name="description" content="The 2026 exposure camp is currently full. Join the free waitlist to be first in line if a spot opens — and to hear about the next camp first.">
+  <link rel="icon" href="assets/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Schibsted+Grotesk:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.webp" alt="South Florida Select Softball shield logo" width="500" height="500" loading="eager">
+        <span class="brand-name">South Florida
+          <span class="script">Select Softball</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="camp-details.html">Camp Details</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="btn btn-primary" href="register.html" aria-current="page">Join the Waitlist</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ page hero ============ -->
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="page-hero-sun" aria-hidden="true"></div>
+    <div class="container">
+      <span class="eyebrow">save your spot</span>
+      <h1 id="page-heading">Registration &amp; <span class="stitched" style="color: var(--coral-deep)">Waitlist
+        <svg viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10C30 3 90 13 118 5" fill="none" stroke="#cf4229" stroke-width="3.5" stroke-linecap="round"/></svg>
+      </span></h1>
+      <p class="lead">The July 31, 2026 camp filled up fast. The waitlist is free, takes about a minute, and puts your family first in line.</p>
+      <div class="hero-badges" role="list">
+        <span class="pill--alert pill" role="listitem"><span class="dot" aria-hidden="true"></span>2026 camp: sold out</span>
+        <span class="pill" role="listitem">Waitlist: open</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ register cards ============ -->
+  <section class="section" aria-labelledby="cards-heading" style="padding-top: 0">
+    <div class="container">
+      <h2 id="cards-heading" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Ways to sign up</h2>
+      <div class="register-grid">
+        <article class="register-card register-card--primary reveal">
+          <span class="pill" style="align-self: flex-start">Recommended right now</span>
+          <h2>Join the waitlist</h2>
+          <p>If a spot opens for the 2026 camp, waitlist families are contacted first &mdash; and you'll be the first to hear when the next camp is announced. No cost, no commitment.</p>
+          <p class="price">Free <small>&middot; about 1 minute</small></p>
+          <a class="btn btn-primary" href="https://form.jotform.com/262007029279053" target="_blank" rel="noopener">Join the Waitlist</a>
+        </article>
+        <article class="register-card reveal" style="--reveal-delay: 120ms">
+          <span class="sold-out" aria-hidden="true">Sold out</span>
+          <h2>Camp registration</h2>
+          <p>Full-day exposure camp registration &mdash; 9:00 AM to 3:00 PM in Pompano Beach with college coaches on-site for evaluation and instruction all day.</p>
+          <p><strong>Registration for the 2026 camp is currently full.</strong> The link below is where registration lives whenever spots are available.</p>
+          <p class="price">$300 <small>&middot; per player</small></p>
+          <a class="btn btn-ghost" href="https://www.southfloridaselectsoftball.com/store/p/south-florida-select-softball-exposure-camp-registration" target="_blank" rel="noopener">View Registration Page</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ how it works ============ -->
+  <svg class="wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 60C180 96 360 20 560 38 760 56 900 96 1100 78 1260 64 1370 40 1440 52L1440 96 0 96Z" fill="#ddeeea"/>
+  </svg>
+  <section class="band" aria-labelledby="steps-heading" style="background: var(--seafoam-soft)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">how the waitlist works</span>
+        <h2 id="steps-heading">Three easy steps</h2>
+      </div>
+      <ol class="steps reveal" role="list">
+        <li>
+          <div><strong>Add your player's info</strong>
+          <p>Fill out the short waitlist form &mdash; it takes about a minute.</p></div>
+        </li>
+        <li>
+          <div><strong>We reach out if a spot opens</strong>
+          <p>Cancellations happen. Waitlist families get the call first, in order.</p></div>
+        </li>
+        <li>
+          <div><strong>Hear about the next camp first</strong>
+          <p>When new dates are announced, the waitlist knows before anyone else.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <svg class="wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" style="transform: scaleY(-1)">
+    <path d="M0 60C180 96 360 20 560 38 760 56 900 96 1100 78 1260 64 1370 40 1440 52L1440 96 0 96Z" fill="#ddeeea"/>
+  </svg>
+
+  <!-- ============ follow ============ -->
+  <section class="section center" aria-labelledby="follow-heading">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">stay in the loop</span>
+        <h2 id="follow-heading">Camp news drops on socials first</h2>
+        <p class="lead">Follow along for announcements, added coaches, and behind-the-scenes from camp day.</p>
+      </div>
+      <div class="social-row reveal" style="justify-content: center">
+        <a href="https://www.instagram.com/sofloselectprospectcamp/" target="_blank" rel="noopener" aria-label="Instagram" style="border-color: rgba(20,56,75,0.3); color: var(--ink)">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61586011121960" target="_blank" rel="noopener" aria-label="Facebook" style="border-color: rgba(20,56,75,0.3); color: var(--ink)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.7V14h2.6v8h3.2z"/></svg>
+        </a>
+        <a href="https://x.com/SoFloSelectSB" target="_blank" rel="noopener" aria-label="X (formerly Twitter)" style="border-color: rgba(20,56,75,0.3); color: var(--ink)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ cta ============ -->
+  <section class="cta-band band on-dark" aria-labelledby="cta-heading">
+    <div class="container reveal">
+      <span class="eyebrow">one minute, that's it</span>
+      <h2 id="cta-heading">Get your player on the list.</h2>
+      <div class="hero-ctas mt-2">
+        <a class="btn btn-sun" href="https://form.jotform.com/262007029279053" target="_blank" rel="noopener">Join the Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.webp" alt="" width="500" height="500" loading="lazy">
+        <p class="script">Est. 2026 &middot; Pompano Beach, FL</p>
+        <p>Where South Florida's young softball stars find their stage.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <h2 class="footer-heading">Explore</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="camp-details.html">Camp Details</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-heading">Follow the fun</h2>
+        <div class="social-row">
+          <a href="https://www.instagram.com/sofloselectprospectcamp/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61586011121960" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.7V14h2.6v8h3.2z"/></svg>
+          </a>
+          <a href="https://x.com/SoFloSelectSB" target="_blank" rel="noopener" aria-label="X (formerly Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg>
+          </a>
+        </div>
+        <p class="footer-disclaimer">@sofloselectprospectcamp</p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">This camp is not affiliated with or endorsed by any college or university. Coach attendance is subject to change.</p>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> South Florida Select Softball</span>
+      <span>Made with sunshine in South Florida</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
